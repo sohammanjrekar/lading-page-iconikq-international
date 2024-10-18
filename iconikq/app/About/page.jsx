@@ -1,12 +1,15 @@
 // components/LandingPage.js
 import React from 'react';
+import Navbar from '../layout/Navbar';
+import Footer from '../layout/Footer';
 
 const Page = () => {
   return (
     <>
+    <Navbar/>
     <>
   {/* component */}
-  <div className="bg-white relative   flex items-center  n justify-center overflow-hidden z-50 ">
+  <div className="bg-white relative flex items-center  justify-center overflow-hidden z-30 ">
     <div className="relative mx-auto h-full px-4  pb-20   md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
       <div className="flex flex-col items-center justify-between lg:flex-row py-16">
         <div className=" relative ">
@@ -290,6 +293,7 @@ const Page = () => {
         </div>
       </section>
     </section>
+    <Footer/>
     </>
   );
 };

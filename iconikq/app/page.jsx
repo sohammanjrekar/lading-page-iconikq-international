@@ -12,6 +12,7 @@ import Team from "./ui/Team";
 import Intro from "./ui/Intro";
 import Autoscrollcompany from "./ui/Autoscrollcompany";
 import Testimonial from "./ui/Testimonial";
+import Mapsection from "./ui/Mapsection";
 import VideoCarousel from "./ui/VideoCarousel";
 
 
@@ -30,7 +31,7 @@ export default function Home() {
 <Testimonial/>
 <BlogSection/>
 <SocialMediaCards/>
-
+<Mapsection/>
   <ScrollToTopButton/>
   <Footer/>
   </>

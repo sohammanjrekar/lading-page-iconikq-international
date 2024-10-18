@@ -29,7 +29,7 @@ const ScrollToTopButton = () => {
       } else {
         clearInterval(scrollInterval); // Clear the interval when reaching the top
       }
-    }, 20); // 16ms for roughly 60 frames per second
+    }, 30); // 16ms for roughly 60 frames per second
   };
 
   return (
