@@ -6,7 +6,7 @@ const Services = () => {
     {
       image: 'images/transport.jpg',
       title: 'TRANSPORTATION '+'&'+' WAREHOUSING',
-      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
+      description: 'Iconikq International provides tailored transportation and warehousing solutions for your logistics needs. Our secure facilities ensure timely delivery and safe storage of your goods. Trust us to optimize your supply chain for maximum efficiency.',
       link: 'javascript:void(0)', // replace with actual link when available
     },
     {
@@ -18,7 +18,7 @@ const Services = () => {
     {
       image: 'images/inventory.jpg',
       title: 'INVENTORY MANAGEMENT',
-      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
+      description: 'Iconikq International offers expert inventory management services to streamline your supply chain. Our solutions ensure optimal stock levels, reduce costs, and enhance order accuracy. Trust us to maximize efficiency and support your business growth.',
       link: 'javascript:void(0)',
     },
     {
@@ -36,7 +36,7 @@ const Services = () => {
     {
       image: 'images/aeo.jpg',
       title: 'AEO CONSULTANTS',
-      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
+      description: 'Our AEO certification offers significant benefits, including faster customs clearance, reduced inspections, and priority treatment. Enjoy streamlined global trade with enhanced security and compliance. Maximize efficiency and minimize delays with our trusted AEO status.',
       link: 'javascript:void(0)',
     },
     
