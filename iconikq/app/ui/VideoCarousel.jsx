@@ -3,27 +3,27 @@ import React, { useEffect, useRef, useState } from 'react';
 const videoData = {
     0: {
         src: 'videoes/water.mp4',
-        name: 'Video 1',
+        name: 'Navigate. Transport. Deliver Globally.',
         description: 'Description for Video 1',
     },
     1: {
         src: 'videoes/Air.mp4',
-        name: 'Video 2',
-        description: 'Description for Video 2',
+        name: 'Fly High. Deliver Fast. Reach Global.',
+        description: 'Fly High. Deliver Fast. Reach Global.',
     },
     2: {
         src: 'videoes/road.mp4',
-        name: 'Video 3',
-        description: 'Description for Video 3',
+        name: 'Smooth. Efficient. Connect Seamlessly.',
+        description: 'Smooth. Efficient. Connect Seamlessly.',
     },
     3: {
         src: 'videoes/tain.mp4',
-        name: 'Video 4',
-        description: 'Description for Video 4',
+        name: 'Swift. Reliable. Connect Everywhere',
+        description: 'Swift. Reliable. Connect Everywhere',
     },
     4: {
         src: 'videoes/warehouse.mp4',
-        name: 'Video 5',
+        name: 'Store Smart. Manage Efficiently. Deliver Fast',
         description: 'Description for Video 5',
     },
     
@@ -65,15 +65,16 @@ const VideoCarousel = () => {
                             <video className="w-full h-full object-cover" loop muted autoPlay>
                                 <source src={src} type="video/mp4" />
                             </video>
-                            <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-[15vh] font-bold">
-                                <div>{name}</div>
-                                <div className="text-sm">{description}</div>
-                            </div>
+                           
+                           <h1 className="shadow-2xl bg-myred rounded-lg backdrop-blur-sm bg-opacity-10 bg-white h-[20vh] absolute  w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-center justify-center text-white text-[7vh] font-bold uppercase my-auto"> {name}</h1>
+                               
+                           
+                           
                         </div>
                     );
                 })}
             </div>
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 flex carousel-controls">
+            <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10 flex carousel-controls">
                 <button 
                     onClick={() => setCurrentIndex((currentIndex - 1 + totalItems) % totalItems)} 
                     className="bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition duration-300"

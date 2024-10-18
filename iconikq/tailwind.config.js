@@ -21,6 +21,9 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 0.2s ease-in-out forwards',
       },
+      backgroundImage: {
+        'heromy': "url('/images/boat.jpg')"
+      }
     },
   },
   plugins: [],

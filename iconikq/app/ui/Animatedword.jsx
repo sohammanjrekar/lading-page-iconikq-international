@@ -2,7 +2,7 @@ import React from 'react';
 
 const Animatedword = () => {
   return (
-    <div className="flex min-h-[30vh] items-center justify-center bg-myblue font-bold text-white">
+    <div className="flex min-h-[20vh] rounded-t-[20px] items-center justify-center  font-bold text-myblue">
       <div className="text-center space-y-5">
         <div className="text-center text-5xl font-bold">
           Services offered

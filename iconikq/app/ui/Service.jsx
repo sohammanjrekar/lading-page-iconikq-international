@@ -1,3 +1,4 @@
+import Animatedword from "./Animatedword";
 import Button from "./Button";
 
 const Services = () => {
@@ -44,8 +45,9 @@ const Services = () => {
 
   return (
     <>
-      <section className="pt-10 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
+      <section className="  pb-5 lg:pb-10 bg-[#F3F4F6]">
         <div className="container mx-auto">
+          <Animatedword/>
           <div className="flex flex-wrap -mx-4">
             {/* Step 2: Use map to dynamically generate cards */}
             {cardData.map((card, index) => (

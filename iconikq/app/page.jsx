@@ -21,7 +21,7 @@ export default function Home() {
   <>
   <Navbar/>
   <VideoCarousel/>
- <Animatedword/>
+
   
  <Services/>
  <Autoscrollcompany/>

@@ -1,3 +1,4 @@
+
 const Mapsection = () => {
   return (
     <>
@@ -12,7 +13,7 @@ const Mapsection = () => {
           marginWidth={0}
           title="map"
           scrolling="no"
-          src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.808556918118!2d72.93450307502964!3d19.15985558206205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9b18fe9f6a7%3A0x7fa376a0e7022678!2z4KSr4KS_4KSy4KS_4KSV4KWN4KS4IOCkn-ClieCkteCksOCljeCkuA!5e0!3m2!1smr!2sin!4v1729279258607!5m2!1smr!2sin"
           style={{}}
         />
       </div>
