@@ -3,9 +3,9 @@
 @tailwind utilities;
 :root {
     /* Color Variables */
-    --mybg-light: #fcfefd; /* Light Pink */
-    --mybg-red: #ee412a; /* Bright Red */
-    --mybg-blue: #102c3a;  /* Dark Blue */
+    --mybg-light: #fff; /* Light Pink */
+    --mybg-red: #EF412B; /* Bright Red */
+    --mybg-blue: #0B2A39;  /* Dark Blue */
 
     /* Font Variables */
     --font-headline: 'Playfair', serif; /* Replace with your headline font */
