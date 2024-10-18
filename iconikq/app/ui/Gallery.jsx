@@ -46,7 +46,7 @@ const Gallery = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
       {images.slice(0, visibleImages).map((src, index) => (
     <div
       className="group relative cursor-pointer"

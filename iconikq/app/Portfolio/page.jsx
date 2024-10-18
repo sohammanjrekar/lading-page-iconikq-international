@@ -158,6 +158,184 @@ const page = () => {
       </footer>
     </section>
   </main>
+  <>
+  {/* component */}
+  <link
+    rel="stylesheet"
+    href="https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/css/main.ad49aa9b.css"
+  />
+  <div className="flex flex-col justify-center items-center h-[100vh]">
+    <div className="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none p-3">
+      <div className="mt-2 mb-8 w-full">
+        <h4 className="px-2 text-xl font-bold text-navy-700 dark:text-white">
+          General Information
+        </h4>
+        <p className="mt-2 px-2 text-base text-gray-600">
+          As we live, our hearts turn colder. Cause pain is what we go through
+          as we become older. We get insulted by others, lose trust for those
+          others. We get back stabbed by friends. It becomes harder for us to
+          give others a hand. We get our heart broken by people we love, even
+          that we give them all...
+        </p>
+      </div>
+      <div className="grid grid-cols-2 gap-4 px-2 w-full">
+        <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+          <p className="text-sm text-gray-600">Education</p>
+          <p className="text-base font-medium text-navy-700 dark:text-white">
+            Stanford University
+          </p>
+        </div>
+        <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+          <p className="text-sm text-gray-600">Languages</p>
+          <p className="text-base font-medium text-navy-700 dark:text-white">
+            English, Spanish, Italian
+          </p>
+        </div>
+        <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+          <p className="text-sm text-gray-600">Department</p>
+          <p className="text-base font-medium text-navy-700 dark:text-white">
+            Product Design
+          </p>
+        </div>
+        <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+          <p className="text-sm text-gray-600">Work History</p>
+          <p className="text-base font-medium text-navy-700 dark:text-white">
+            English, Spanish, Italian
+          </p>
+        </div>
+        <div className="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+          <p className="text-sm text-gray-600">Organization</p>
+          <p className="text-base font-medium text-navy-700 dark:text-white">
+            Simmmple Web LLC
+          </p>
+        </div>
+        <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+          <p className="text-sm text-gray-600">Birthday</p>
+          <p className="text-base font-medium text-navy-700 dark:text-white">
+            20 July 1986
+          </p>
+        </div>
+      </div>
+    </div>
+    <p className="font-normal text-navy-700 mt-20 mx-auto w-max">
+      Profile Card component from{" "}
+      <a
+        href="https://horizon-ui.com?ref=tailwindcomponents.com"
+        target="_blank"
+        className="text-brand-500 font-bold"
+      >
+        Horizon UI Tailwind React
+      </a>
+    </p>
+  </div>
+
+</>
+<>
+  {/* component */}
+  <div className="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8">
+    <h4 className="text-xl text-gray-900 font-bold">Activity log</h4>
+    <div className="relative px-4">
+      <div className="absolute h-full border border-dashed border-opacity-20 border-secondary" />
+      {/* start::Timeline item */}
+      <div className="flex items-center w-full my-6 -ml-1.5">
+        <div className="w-1/12 z-10">
+          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full" />
+        </div>
+        <div className="w-11/12">
+          <p className="text-sm">Profile informations changed.</p>
+          <p className="text-xs text-gray-500">3 min ago</p>
+        </div>
+      </div>
+      {/* end::Timeline item */}
+      {/* start::Timeline item */}
+      <div className="flex items-center w-full my-6 -ml-1.5">
+        <div className="w-1/12 z-10">
+          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full" />
+        </div>
+        <div className="w-11/12">
+          <p className="text-sm">
+            Connected with{" "}
+            <a href="#" className="text-blue-600 font-bold">
+              Colby Covington
+            </a>
+            .
+          </p>
+          <p className="text-xs text-gray-500">15 min ago</p>
+        </div>
+      </div>
+      {/* end::Timeline item */}
+      {/* start::Timeline item */}
+      <div className="flex items-center w-full my-6 -ml-1.5">
+        <div className="w-1/12 z-10">
+          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full" />
+        </div>
+        <div className="w-11/12">
+          <p className="text-sm">
+            Invoice{" "}
+            <a href="#" className="text-blue-600 font-bold">
+              #4563
+            </a>{" "}
+            was created.
+          </p>
+          <p className="text-xs text-gray-500">57 min ago</p>
+        </div>
+      </div>
+      {/* end::Timeline item */}
+      {/* start::Timeline item */}
+      <div className="flex items-center w-full my-6 -ml-1.5">
+        <div className="w-1/12 z-10">
+          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full" />
+        </div>
+        <div className="w-11/12">
+          <p className="text-sm">
+            Message received from{" "}
+            <a href="#" className="text-blue-600 font-bold">
+              Cecilia Hendric
+            </a>
+            .
+          </p>
+          <p className="text-xs text-gray-500">1 hour ago</p>
+        </div>
+      </div>
+      {/* end::Timeline item */}
+      {/* start::Timeline item */}
+      <div className="flex items-center w-full my-6 -ml-1.5">
+        <div className="w-1/12 z-10">
+          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full" />
+        </div>
+        <div className="w-11/12">
+          <p className="text-sm">
+            New order received{" "}
+            <a href="#" className="text-blue-600 font-bold">
+              #OR9653
+            </a>
+            .
+          </p>
+          <p className="text-xs text-gray-500">2 hours ago</p>
+        </div>
+      </div>
+      {/* end::Timeline item */}
+      {/* start::Timeline item */}
+      <div className="flex items-center w-full my-6 -ml-1.5">
+        <div className="w-1/12 z-10">
+          <div className="w-3.5 h-3.5 bg-blue-600 rounded-full" />
+        </div>
+        <div className="w-11/12">
+          <p className="text-sm">
+            Message received from{" "}
+            <a href="#" className="text-blue-600 font-bold">
+              Jane Stillman
+            </a>
+            .
+          </p>
+          <p className="text-xs text-gray-500">2 hours ago</p>
+        </div>
+      </div>
+      {/* end::Timeline item */}
+    </div>
+  </div>
+</>
+
 </>
 
   )

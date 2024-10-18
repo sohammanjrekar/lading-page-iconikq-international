@@ -1,8 +1,9 @@
 import Button from "../ui/Button";
+import Social from "../ui/Social"
 
 const Footer = () => {
     return (
-      <footer className="bg-white dark:bg-gray-900">
+      <footer className="bg-white dark:bg-gray-900 shadow-2xl shadow-white">
         <div className="container px-6 py-12 mx-auto">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             
@@ -44,10 +45,11 @@ const Footer = () => {
           </div>
         </div>
   
-        <div className="py-6 mt-10 bg-gray-100 dark:bg-gray-800">
-          <div className="container flex items-center justify-center mx-auto text-sm text-gray-600 dark:text-gray-300">
+        <div className="px-8 py-3 mt-10 flex justify-between items-center bg-gray-100 dark:bg-gray-800">
+          <div className="text-sm text-gray-600 dark:text-gray-300">
             © 2024 Your Company. All rights reserved.
           </div>
+          <Social/>
         </div>
       </footer>
     );
