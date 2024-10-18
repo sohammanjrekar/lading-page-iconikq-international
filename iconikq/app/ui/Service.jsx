@@ -77,7 +77,7 @@ const Services = () => {
                       </a>
                     </h3>
                     <p className="text-base text-body-color leading-relaxed mb-7">
-                      {card.description}
+                    {card.description.length > 100 ? `${card.description.slice(0, 130)}...` : card.description}
                     </p>
                     <Button text="View Details" href={`/Services/${card.link}`} />
                       
