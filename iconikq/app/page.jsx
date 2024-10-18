@@ -9,6 +9,7 @@ import Services from "./ui/Service";
 import SocialMediaCards from "./ui/Socailmedia";
 import Animatedword from "./ui/Animatedword";
 import Team from "./ui/Team";
+import Intro from "./ui/Intro";
 import Testimonial from "./ui/Testimonial";
 import VideoCarousel from "./ui/VideoCarousel";
 
@@ -22,10 +23,12 @@ export default function Home() {
   
  <Services/>
 <Team/>
+<Intro/>
 <Gallery/>
 <Testimonial/>
 <BlogSection/>
 <SocialMediaCards/>
+
   <ScrollToTopButton/>
   <Footer/>
   </>

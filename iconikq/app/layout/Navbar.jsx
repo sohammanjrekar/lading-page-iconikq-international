@@ -31,7 +31,7 @@ const Navbar = () => {
         </div>
 
         <div className={`w-full md:block md:w-auto ${menuOpen ? '' : 'hidden'} md:flex`} id="mobile-menu">
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium">
+          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium items-center">
             <li>
               <Link href="/" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</Link>
             </li>
@@ -53,8 +53,23 @@ const Navbar = () => {
             <li>
               <Link href="/contact" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
             </li>
+            <li>
+            <form action="" class="relative mx-auto w-max">
+        <input type="search" 
+              class="peer cursor-pointer relative z-10 h-10 w-10 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-myred focus:pl-16 focus:pr-4" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-myred peer-focus:stroke-myred" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </form>
+            </li>
           </ul>
         </div>
+        
+
+
+    
+
+
       </div>
     </nav>
   );

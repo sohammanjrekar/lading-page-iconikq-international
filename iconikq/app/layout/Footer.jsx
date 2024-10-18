@@ -25,28 +25,57 @@ const Footer = () => {
               </div>
             </div>
   
-            <div>
-              <p className="font-semibold text-gray-800 dark:text-white">Quick Links</p>
-              <div className="flex flex-col items-start mt-5 space-y-2">
-                <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Home</a>
-                <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Who We Are</a>
-                <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Our Philosophy</a>
-              </div>
-            </div>
-  
-            <div>
-              <p className="font-semibold text-gray-800 dark:text-white">Industries</p>
-              <div className="flex flex-col items-start mt-5 space-y-2">
-                <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Industry 1</a>
-                <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Industry 2</a>
-                <a href="#" className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Industry 3</a>
-              </div>
-            </div>
-          </div>
+            <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4 items-center justify-center text-center">
+        <div>
+          <p class="font-medium">
+            Company
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a class="hover:opacity-75" href> About </a>
+            <a class="hover:opacity-75" href> Meet the Team </a>
+            <a class="hover:opacity-75" href> History </a>
+            <a class="hover:opacity-75" href> Careers </a>
+          </nav>
+        </div>
+        <div>
+          <p class="font-medium">
+            Services
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a class="hover:opacity-75" href> 1on1 Coaching </a>
+            <a class="hover:opacity-75" href> Company Review </a>
+            <a class="hover:opacity-75" href> Accounts Review </a>
+            <a class="hover:opacity-75" href> HR Consulting </a>
+            <a class="hover:opacity-75" href> SEO Optimisation </a>
+          </nav>
+        </div>
+        <div>
+          <p class="font-medium">
+            Helpful Links
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a class="hover:opacity-75" href> Contact </a>
+            <a class="hover:opacity-75" href> FAQs </a>
+            <a class="hover:opacity-75" href> Live Chat </a>
+          </nav>
+        </div>
+        <div>
+          <p class="font-medium">
+            Legal
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a class="hover:opacity-75" href> Privacy Policy </a>
+            <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
+            <a class="hover:opacity-75" href> Returns Policy </a>
+            <a class="hover:opacity-75" href> Accessibility </a>
+          </nav>
+        </div>
+      </div>
+    </div>
         </div>
   
-        <div className="px-8 py-3 mt-10 flex justify-between items-center bg-gray-100 dark:bg-gray-800">
-          <div className="text-sm text-gray-600 dark:text-gray-300">
+        <div className="px-8 py-3 mt-10 flex justify-between items-center bg-gray-100 dark:bg-gray-800 ">
+          <div className="text-[2vh] md:text-sm text-gray-600 dark:text-gray-300">
             © 2024 Your Company. All rights reserved.
           </div>
           <Social/>
