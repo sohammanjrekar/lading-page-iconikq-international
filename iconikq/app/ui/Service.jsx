@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const Services = () => {
   // Step 1: Define the data for each card
   const cardData = [
@@ -23,7 +25,7 @@ const Services = () => {
       image: 'images/custom.jpg',
       title: 'CUSTOM BROKER SERVICES',
       description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
-      link: 'javascript:void(0)', // replace with actual link when available
+      link: 'javascript:void(0)', 
     },
     {
       image: 'images/supply.png',
@@ -77,22 +79,9 @@ const Services = () => {
                     <p className="text-base text-body-color leading-relaxed mb-7">
                       {card.description}
                     </p>
-                    <a
-                      href={card.link}
-                      className="
-                        inline-block
-                        py-2
-                        px-7
-                        border border-[#E5E7EB]
-                        rounded-full
-                        text-base text-body-color
-                        font-medium
-                        hover:border-primary hover:bg-primary hover:text-white
-                        transition
-                      "
-                    >
-                      View Details
-                    </a>
+                    <Button text="View Details" href="/Services/card.link"/>
+                      
+                    
                   </div>
                 </div>
               </div>

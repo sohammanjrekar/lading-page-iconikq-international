@@ -1,8 +1,8 @@
 const BlogSection = () => {
     return (
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white bg-gray-900">
         <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
+          <h1 className="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl text-white">
             From the blog
           </h1>
   
@@ -15,10 +15,10 @@ const BlogSection = () => {
                   alt={post.title}
                 />
                 <div className="flex flex-col justify-between py-6 lg:mx-6">
-                  <a href="#" className="text-xl font-semibold text-gray-800 hover:underline dark:text-white">
+                  <a href="#" className="text-xl font-semibold text-gray-800 hover:underline text-white">
                     {post.title}
                   </a>
-                  <span className="text-sm text-gray-500 dark:text-gray-300">On: {post.date}</span>
+                  <span className="text-sm text-gray-500 text-gray-300">On: {post.date}</span>
                 </div>
               </div>
             ))}

@@ -27,26 +27,37 @@
     transform: translateY(-110%);
   }
 }
-
 .animate-word {
   animation: word 7s infinite;
 }
+
 .animate-word-delay-1 {
   animation: word 7s infinite;
-  animation-delay: -1.4s;
+  animation-delay: 1.4s; /* Positive delay for staggered animation */
 }
+
 .animate-word-delay-2 {
   animation: word 7s infinite;
-  animation-delay: -2.8s;
+  animation-delay: 2.8s;
 }
+
 .animate-word-delay-3 {
   animation: word 7s infinite;
-  animation-delay: -4.2s;
+  animation-delay: 4.2s;
 }
+
 .animate-word-delay-4 {
   animation: word 7s infinite;
-  animation-delay: -5.6s;
+  animation-delay: 5.6s;
 }
+
+.animate-word-delay-5 {
+  animation: word 7s infinite;
+  animation-delay: 7.0s; /* Adjusted to match the timing sequence */
+}
+
+
+
 html, body {
     font-family: var(--font-content);
     margin: 0;           /* Ensure there's no default margin on body */

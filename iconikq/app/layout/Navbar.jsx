@@ -10,10 +10,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border w-full  fixed z-50 border-gray-200 dark:border-gray-700 px-2 sm:px-8 py-[2vh] rounded-b-[20px] dark:bg-gray-800  shadow-[inset_0_7px_5px_rgba(0,0,0,0.3),_0px_4px_10px_rgba(255,255,255,0.2)]  ">
+    <nav className="bg-myblue border w-full  fixed z-50  border-gray-700 px-2 sm:px-8 py-[2vh] rounded-b-[20px]   shadow-[inset_0_7px_5px_rgba(0,0,0,0.3),_0px_4px_10px_rgba(255,255,255,0.2)]  ">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <Link href="/" className="flex items-center">
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
             <img src="/images/logo.png" alt="Logo" className="max-h-[6vh]" />
           </span>
         </Link>
@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="flex items-center md:hidden">
           <button
             onClick={toggleMenu}
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2  text-white hover:bg-gray-700 focus:ring-gray-600"
           >
             <span className="sr-only">Open main menu</span>
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -33,25 +33,25 @@ const Navbar = () => {
         <div className={`w-full md:block md:w-auto ${menuOpen ? '' : 'hidden'} md:flex`} id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium items-center">
             <li>
-              <Link href="/" className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</Link>
+              <Link href="/" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0" aria-current="page">Home</Link>
             </li>
             <li>
-              <Link href="/About" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
+              <Link href="/About" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0">About</Link>
             </li>
             <li>
-              <Link href="/Services" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</Link>
+              <Link href="/Services" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0">Services</Link>
             </li>
             <li>
-              <Link href="/Faq" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">FAQ</Link>
+              <Link href="/Faq" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0">FAQ</Link>
             </li>
             <li>
-              <Link href="/Blog" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</Link>
+              <Link href="/Blog" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0">Blog</Link>
             </li>
             <li>
-              <Link href="/Podcast" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Podcast</Link>
+              <Link href="/Podcast" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0">Podcast</Link>
             </li>
             <li>
-              <Link href="/Contact" className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
+              <Link href="/Contact" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0">Contact</Link>
             </li>
             <li>
             <form action="" class="relative mx-auto w-max">
