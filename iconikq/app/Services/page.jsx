@@ -1,13 +1,17 @@
 import React from 'react'
 import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
-
+import cardData from '../Data/page'
+import Button from '../ui/Button'
 const page = () => {
   return (
    <>
    <Navbar/>
    <section className="pt-10 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
         <div className="container mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-8">
+      All  Services 
+      </h1>
           <div className="flex flex-wrap -mx-4">
            
             {cardData.map((card, index) => (
@@ -41,7 +45,7 @@ const page = () => {
                     <p className="text-base text-body-color leading-relaxed mb-7">
                     {card.description.length > 100 ? `${card.description.slice(0, 130)}...` : card.description}
                     </p>
-                    <Button text="View Details" href={`/Services/${card.link}`} />
+                    <Button text="View Details" href={`/Services/${card.categorySlug}`} />
                       
                     
                   </div>

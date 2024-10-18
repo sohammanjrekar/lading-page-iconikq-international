@@ -31,7 +31,7 @@ const Navbar = () => {
         </div>
 
         <div className={`w-full md:block md:w-auto ${menuOpen ? '' : 'hidden'} md:flex`} id="mobile-menu">
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium items-center">
+          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
             <li>
               <Link href="/" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent  md:p-0" aria-current="page">Home</Link>
             </li>
