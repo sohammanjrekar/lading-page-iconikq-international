@@ -6,7 +6,7 @@ const Services = () => {
     {
       image: 'images/transport.jpg',
       title: 'TRANSPORTATION '+'&'+' WAREHOUSING',
-      description: 'Iconikq International provides efficient global air and sea freight solutions. With a vast agent network, we ensure reliable and flexible shipping worldwide. Tailored to meet your needs.',
+      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
       link: 'javascript:void(0)', // replace with actual link when available
     },
     {
@@ -79,7 +79,7 @@ const Services = () => {
                     <p className="text-base text-body-color leading-relaxed mb-7">
                       {card.description}
                     </p>
-                    <Button text="View Details" href="/Services/card.link"/>
+                    <Button text="View Details" href={`/Services/${card.link}`} />
                       
                     
                   </div>

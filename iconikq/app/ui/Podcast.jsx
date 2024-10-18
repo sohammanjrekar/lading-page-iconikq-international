@@ -23,7 +23,7 @@ const Podcast = () => {
         <p className="text-center mt-4 font-medium text-slate-500">
           - Miorena tsara -
         </p>
-        <div className="rounded-lg overflow-hidden mt-10 relative before:absolute before:z-20 before:bg-black before:h-full before:w-full before:bg-gradient-to-tr before:from-black before:to-emerald-600 before:opacity-80">
+        <div className="rounded-lg overflow-hidden mt-10 relative before:absolute before:z-20 before:bg-myblue before:h-full before:w-full before:bg-gradient-to-tr before:from-black before:to-emerald-600 before:opacity-80">
           <img
             src="https://loremflickr.com/320/240?random=1"
             className="absolute z-10 object-cover h-80 w-full h-full"

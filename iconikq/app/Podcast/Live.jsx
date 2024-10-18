@@ -4,7 +4,7 @@ const Live = () => {
   return (
     <>
     {/* component */}
-    <div className="py-8 bg-black text-white">
+    <div className="py-8 bg-myblue text-white">
       <h1 className="text-3xl md:text-5xl text-yellow-500 text-center mt-20 leading-relaxed md:leading-snug">
         Youtube Live Stream
       </h1>
