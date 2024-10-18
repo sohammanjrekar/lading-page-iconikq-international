@@ -6,13 +6,13 @@ const Services = () => {
     {
       image: 'images/transport.jpg',
       title: 'TRANSPORTATION '+'&'+' WAREHOUSING',
-      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
+      description: 'Iconikq International provides efficient global air and sea freight solutions. With a vast agent network, we ensure reliable and flexible shipping worldwide. Tailored to meet your needs.',
       link: 'javascript:void(0)', // replace with actual link when available
     },
     {
       image: 'images/freight forwarder.png',
       title: 'FREIGHT FORWARDING',
-      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
+      description: 'Iconikq International offers reliable global freight forwarding with tailored air and sea cargo solutions. Our expert team ensures smooth shipping and flexible delivery to key markets worldwide.',
       link: 'javascript:void(0)',
     },
     {
@@ -24,13 +24,13 @@ const Services = () => {
     {
       image: 'images/custom.jpg',
       title: 'CUSTOM BROKER SERVICES',
-      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
+      description: 'Iconikq International provides fast and reliable sea and air customs clearance. Our expert team ensures smooth processing with services like import/export clearance, documentation, shipment examination, and warehousing.',
       link: 'javascript:void(0)', 
     },
     {
       image: 'images/supply.png',
       title: 'SUPPLY CHAIN CONSULTING',
-      description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
+      description: 'Iconikq International   We offer expert supply chain consulting services, optimizing logistics for seamless operations. From customs clearance to freight management, we streamline your entire supply chain. Trust us to enhance efficiency and reduce costs across your logistics processes.',
       link: 'javascript:void(0)',
     },
     {
