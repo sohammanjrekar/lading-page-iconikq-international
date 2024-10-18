@@ -10,6 +10,7 @@ import SocialMediaCards from "./ui/Socailmedia";
 import Animatedword from "./ui/Animatedword";
 import Team from "./ui/Team";
 import Intro from "./ui/Intro";
+import Autoscrollcompany from "./ui/Autoscrollcompany";
 import Testimonial from "./ui/Testimonial";
 import VideoCarousel from "./ui/VideoCarousel";
 
@@ -18,10 +19,11 @@ export default function Home() {
   return (
   <>
   <Navbar/>
-  {/* <VideoCarousel/> */}
+  <VideoCarousel/>
  <Animatedword/>
   
  <Services/>
+ <Autoscrollcompany/>
 <Team/>
 <Intro/>
 <Gallery/>

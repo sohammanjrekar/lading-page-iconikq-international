@@ -1,14 +1,111 @@
 import React from 'react'
+import Footer from '../layout/Footer'
+import Navbar from '../layout/Navbar'
 
 const page = () => {
   return (
     <>
- <>
-  {/* component */}
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css"
-  />
+  <Navbar/>
+  <div className="py-4 bg-black text-white">
+    <div className="container mx-auto flex flex-col md:flex-row my-12 md:my-36">
+      <div className="flex flex-col w-full lg:w-2/5 p-8">
+        <p className="text-3xl md:text-5xl text-yellow-500 my-4 leading-relaxed md:leading-snug">
+          Contact our team
+        </p>
+        <p className="font-sans text-sm md:text-lg my-2 md:my-4">
+          <svg
+            className="inline-block fill-current mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+          </svg>
+          Guru Nank Dev Engineering College, Ludhiana
+        </p>
+        <p className="font-sans text-sm md:text-lg my-2 md:my-4">
+          <svg
+            className="inline-block fill-current mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z" />
+          </svg>{" "}
+          techfestgndec@gmail.com
+        </p>
+        <p className="font-sans text-sm md:text-lg my-2 md:my-4">
+          <svg
+            className="inline-block fill-current mr-2"
+            xmlns="http://www.w3.org/2000/svg"
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+          >
+            <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z" />
+          </svg>
+          +91745435433
+        </p>{" "}
+        <br /> <br />
+        <p className="font-sans text-sm md:text-lg my-2 md:my-4">
+          Press the chat icon at the right bottom corner to have a live chat
+          with our team.
+        </p>
+      </div>
+      <div className=" flex flex-col lg:w-3/5 justify-center w-full lg:-mt-12">
+        <div className="container">
+          <div className="relative flex flex-col min-w-0 break-words w-full">
+            <div className="flex-auto p-5 lg:p-10">
+              <img
+                src="https://user-images.githubusercontent.com/54521023/152731049-cc744a56-1d6f-4945-9566-0fa3b7ad1d24.png"
+                alt="contact image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="max-w-5xl mx-auto px-6  mt-28 sm:px-6 lg:px-8 mb-12">
+        <div class="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72">
+            <p class="text-3xl font-bold leading-7 text-center">Contact me</p>
+            <form action="" method="post">
+                <div class="md:flex items-center mt-12">
+                    <div class="w-full md:w-1/2 flex flex-col">
+                        <label class="font-semibold leading-none">Name</label>
+                        <input type="text" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200" />
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
+                        <label class="font-semibold leading-none">Phone</label>
+                        <input type="email" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"/>
+                    </div>
+                </div>
+                <div class="md:flex items-center mt-8">
+                    <div class="w-full flex flex-col">
+                        <label class="font-semibold leading-none">Subject</label>
+                        <input type="text" class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"/>
+                    </div>
+                    
+                </div>
+                <div>
+                    <div class="w-full flex flex-col mt-8">
+                        <label class="font-semibold leading-none">Message</label>
+                        <textarea type="text" class="h-40 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200"></textarea>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center w-full">
+                    <button class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none">
+                        Send message
+                    </button>
+                </div>
+            </form>
+        </div>
+        </div>
+ 
+ 
   <div className="container flex flex-col mx-auto bg-white">
     <div className="w-full draggable">
       <div className="container flex flex-col items-center gap-16 mx-auto my-32">
@@ -99,7 +196,6 @@ const page = () => {
     </div>
   </div>
  
-</>
 
   <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
     <div className="bg-white max-w-4xl mx-auto w-full">
@@ -188,6 +284,7 @@ const page = () => {
       </div>
     </div>
   </div>
+  <Footer/>
 </>
 
   )

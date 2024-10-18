@@ -10,11 +10,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border w-full  fixed z-50 border-gray-200 dark:border-gray-700 px-2 sm:px-8 py-[2vh] rounded-b-[20px] dark:bg-gray-800 shadow-2xl">
+    <nav className="bg-white border w-full  fixed z-50 border-gray-200 dark:border-gray-700 px-2 sm:px-8 py-[2vh] rounded-b-[20px] dark:bg-gray-800  shadow-[inset_0_7px_5px_rgba(0,0,0,0.3),_0px_4px_10px_rgba(255,255,255,0.2)]  ">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <Link href="/" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            <img src="images/logo.png" alt="Logo" className="max-h-[6vh]" />
+            <img src="/images/logo.png" alt="Logo" className="max-h-[6vh]" />
           </span>
         </Link>
 

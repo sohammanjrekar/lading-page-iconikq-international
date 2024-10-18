@@ -38,7 +38,7 @@ const VideoCarousel = () => {
                         <video className="w-full h-full object-cover" loop muted autoPlay>
                             <source src={`videoes/v${index + 1}.mp4`} type="video/mp4" />
                         </video>
-                        <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-bold">
+                        <div className="absolute inset-0 flex items-center justify-center text-white text-[15vh] font-bold">
                             Video {index + 1} Text
                         </div>
                     </div>
