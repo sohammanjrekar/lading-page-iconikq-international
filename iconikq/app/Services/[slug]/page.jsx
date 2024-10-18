@@ -1,6 +1,8 @@
 "use client"
 import React from 'react';
 import Button from '../../ui/Button';
+import Footer from '../../layout/Footer';
+import Navbar from '../../layout/Navbar';
 
 // Sample transportation data
 const transportationData = [
@@ -41,6 +43,8 @@ const SlugPage = ({ params }) => {
   }
 
   return (
+    <>
+    <Navbar/>
     <section className="pt-10 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
     <div className="container mx-auto">
       <div className="flex flex-wrap -mx-4">
@@ -87,6 +91,8 @@ const SlugPage = ({ params }) => {
           </div>
         </div>
       </section>
+      <Footer/>
+      </>
   );
 };
 
