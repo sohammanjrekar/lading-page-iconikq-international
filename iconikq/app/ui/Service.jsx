@@ -7,7 +7,7 @@ const Services = () => {
       image: 'images/transport.jpg',
       title: 'TRANSPORTATION '+'&'+' WAREHOUSING',
       description: 'Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.',
-      link: 'javascript:void(0)', // replace with actual link when available
+      link: 'transportationData', // replace with actual link when available
     },
     {
       image: 'images/freight forwarder.png',
@@ -79,7 +79,7 @@ const Services = () => {
                     <p className="text-base text-body-color leading-relaxed mb-7">
                       {card.description}
                     </p>
-                    <Button text="View Details" href="/Services/card.link"/>
+                    <Button text="View Details" href={`/Services/${card.link}`} />
                       
                     
                   </div>

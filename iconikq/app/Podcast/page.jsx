@@ -64,7 +64,7 @@ const page = () => {
           <div className="p-6 bg-gradient-to-b from-green-500/50">
             <div className="flex flex-row items-center justify-between">
               <div className="flex items-center gap-2">
-                <button className="flex w-8 h-8 items-center justify-center rounded-full bg-black/40 p-1">
+                <button className="flex w-8 h-8 items-center justify-center rounded-full bg-myblue/40 p-1">
                   <svg
                     className="w-4 h-4 text-current fill-current"
                     viewBox="0 0 16 16"
@@ -72,7 +72,7 @@ const page = () => {
                     <path d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z" />
                   </svg>
                 </button>
-                <button className="flex w-8 h-8 items-center justify-center rounded-full bg-black/40 p-1">
+                <button className="flex w-8 h-8 items-center justify-center rounded-full bg-myblue/40 p-1">
                   <svg
                     className="w-4 h-4 text-current fill-current"
                     viewBox="0 0 16 16"
@@ -82,7 +82,7 @@ const page = () => {
                 </button>
               </div>
               <div>
-                <button className="flex w-8 h-8 items-center justify-center rounded-full bg-black/40 p-1">
+                <button className="flex w-8 h-8 items-center justify-center rounded-full bg-myblue/40 p-1">
                   <svg
                     className="w-4 h-4 text-current fill-current"
                     viewBox="0 0 16 16"
@@ -316,7 +316,7 @@ const page = () => {
         </div>
       </main>
     </div>
-    <footer className="flex items-center justify-between border-t border-zinc-700 bg-black px-6 py-4">
+    <footer className="flex items-center justify-between border-t border-zinc-700 bg-myblue px-6 py-4">
       <div className="flex items-center gap-3">
         <img
           className="w-14 h-14"

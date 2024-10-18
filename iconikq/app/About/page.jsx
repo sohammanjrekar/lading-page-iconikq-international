@@ -143,7 +143,7 @@ const Page = () => {
               "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
           }}
         >
-          <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>
+          <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-myblue"></span>
         </div>
         <div className="container relative mx-auto">
           <div className="items-center flex flex-wrap">
@@ -233,7 +233,7 @@ const Page = () => {
           alt="bg"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-myblue/70" />
         <div className="p-6 relative flex flex-col justify-end">
           <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-white">
             Record-breaking Profits
@@ -252,7 +252,7 @@ const Page = () => {
           alt="bg"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-myblue/70" />
         <div className="p-6 relative flex flex-col justify-end">
           <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-white">
             Expansion into New Markets
@@ -272,7 +272,7 @@ const Page = () => {
           alt="bg"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-myblue/70" />
         <div className="p-6 relative flex flex-col justify-end">
           <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-white">
             Digital Transformation Success

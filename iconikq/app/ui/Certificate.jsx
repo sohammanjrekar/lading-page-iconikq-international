@@ -13,7 +13,7 @@ const Certificate = () => {
           alt="Img by Meriç Dağlı https://unsplash.com/@meric"
           className="w-full h-auto object-cover rounded-lg"
         />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-myblue bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
           <h1 className="text-2xl font-semibold">Nature Image</h1>
           <p className="mt-2">
             This is a beautiful nature image placeholder. You can replace it
@@ -28,7 +28,7 @@ const Certificate = () => {
           alt="Img by Meriç Dağlı https://unsplash.com/@meric"
           className="w-full h-auto object-cover rounded-lg"
         />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-myblue bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
           <h1 className="text-2xl font-semibold">Nature Image</h1>
           <p className="mt-2">
             This is a beautiful nature image placeholder. You can replace it
@@ -43,7 +43,7 @@ const Certificate = () => {
           alt="Img by Meriç Dağlı https://unsplash.com/@meric"
           className="w-full h-auto object-cover rounded-lg"
         />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-myblue bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
           <h1 className="text-2xl font-semibold">Nature Image</h1>
           <p className="mt-2">
             This is a beautiful nature image placeholder. You can replace it
