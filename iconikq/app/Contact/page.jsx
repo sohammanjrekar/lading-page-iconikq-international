@@ -427,7 +427,6 @@ const page = () => {
     <i className="fas fa-phone-alt pt-2 pr-2">
       <i className="fab fa-facebook-f text-blue-900">
         <i className="fab fa-linkedin-in text-blue-900">
-          {/* BUY ME A PIZZA AND HELP SUPPORT OPEN-SOURCE RESOURCES */}
           <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
             <div>
               <a
