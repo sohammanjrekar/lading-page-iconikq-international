@@ -36,9 +36,9 @@ const Services = () => {
     },
     {
       image: 'images/aeo.jpg',
-      title: 'AEO CONSULTANTS',
+      title: 'Legal CONSULTANTS',
       description: 'Our AEO certification offers significant benefits, including faster customs clearance, reduced inspections, and priority treatment. Enjoy streamlined global trade with enhanced security and compliance. Maximize efficiency and minimize delays with our trusted AEO status.',
-      link: 'javascript:void(0)',
+      link: 'legal',
     },
     
   ];

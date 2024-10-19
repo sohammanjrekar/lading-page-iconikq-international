@@ -35,24 +35,18 @@ const Footer = () => {
       <a class="hover:opacity-75" href="#">Careers</a>
     </nav>
   </div>
-  <div class="flex flex-col">
+  <div class="flex flex-col col-span-2">
     <p class="font-medium text-myred">Services</p>
     <nav class="flex flex-col mt-4 space-y-2 text-sm text-mylight">
-      <a class="hover:opacity-75" href="#">1on1 Coaching</a>
-      <a class="hover:opacity-75" href="#">Company Review</a>
-      <a class="hover:opacity-75" href="#">Accounts Review</a>
-      <a class="hover:opacity-75" href="#">HR Consulting</a>
-      <a class="hover:opacity-75" href="#">SEO Optimisation</a>
+      <a class="hover:opacity-75" href="#">TRANSPORTATION</a>
+      <a class="hover:opacity-75" href="#">WAREHOUSING</a>
+      <a class="hover:opacity-75" href="#">FREIGHT FORWARDING</a>
+      <a class="hover:opacity-75" href="#">INVENTORY MANAGEMENT</a>
+      <a class="hover:opacity-75" href="#">SUPPLY CHAIN CONSULTING</a>
+      <a class="hover:opacity-75" href="#">AEO CONSULTANTS</a>
     </nav>
   </div>
-  <div class="flex flex-col">
-    <p class="font-medium text-myred">Helpful Links</p>
-    <nav class="flex flex-col mt-4 space-y-2 text-sm text-mylight">
-      <a class="hover:opacity-75" href="#">Contact</a>
-      <a class="hover:opacity-75" href="#">FAQs</a>
-      <a class="hover:opacity-75" href="#">Live Chat</a>
-    </nav>
-  </div>
+  
   <div class="flex flex-col">
     <p class="font-medium text-myred">Legal</p>
     <nav class="flex flex-col mt-4 space-y-2 text-sm text-mylight">
@@ -70,7 +64,7 @@ const Footer = () => {
       <div className="px-8 py-3 mt-10 flex justify-between items-center shadow-white shadow-xl bg-myblue ">
         
         <div className="text-[2vh] md:text-sm text-gray-300 ">
-          © 2024 Your Company. All rights reserved.
+          © 2024 <span className="text-myred">ICONIKQ</span>. All rights reserved.
         </div>
         <Social />
       </div>
