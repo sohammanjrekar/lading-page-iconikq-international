@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const Team = () => {
   return (
@@ -12,17 +13,19 @@ const Team = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2">
-            <div>
+           <Link href={'/ParthPortfolio'}>           <div>
               <img className="object-cover rounded-xl h-64 w-full" src="/images/parth2.jpg" alt="John Doe" />
               <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize text-white">Mr. Parth Ruparel</h1>
               <p className="mt-2  capitalize text-gray-300">Partner</p>
             </div>
-
+            </Link>
+            <Link href={'/DrustiPortfolio'}>     
             <div>
               <img className="object-cover rounded-xl h-64 w-full" src="images/drusti2.jpg" alt="Mia" />
               <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize text-white">Ms. Drishti Ruparel</h1>
               <p className="mt-2  capitalize text-gray-300">Partner</p>
             </div>
+            </Link>
           </div>
         </div>
       </div>

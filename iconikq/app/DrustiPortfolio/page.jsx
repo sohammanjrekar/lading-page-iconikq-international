@@ -17,12 +17,12 @@ const page = () => {
         {/* image */}
         <img
           className="md:hidden object-cover w-15 h-40 rounded-full mb-5 ring-2 ring-gray-500/50 ring-offset-[10px]"
-          src="https://i.ibb.co/Byd813Q/mateus-campos-felipe-Zxd-JFg-SGQBA-unsplash.jpg"
+          src="/images/drusti2.jpg"
           alt="Your Name Here"
         />
-        <h1 className="text-5xl sm:text-6xl lg:text-9xl">Jane Doe</h1>
+        <h1 className="text-5xl sm:text-6xl lg:text-9xl">Ms. Drishti Ruparel</h1>
         <h2 className="font-light text-4xl sm:text-5xl lg:text-8xl">
-          Business Manager
+          Partner
         </h2>
       </div>
     </section>
@@ -34,19 +34,19 @@ const page = () => {
         <div className="flex flex-col px-10 md:px-20">
           <h3 className="text-xl font-bold">Skills</h3>
           <br />
-          <span className="text-lg">Management</span>
+          <span className="text-lg">Advertising</span>
           <span className="text-lg">Collaboration</span>
           <span className="text-lg">Communication</span>
-          <span className="text-lg">Microsoft Office</span>
+          <span className="text-lg">Soft Skills</span>
+          <span className="text-lg">Leadership</span>
         </div>
+
         <div className="px-10 md:px-20">
           <h3 className="text-xl font-bold">Summary</h3>
           <br />
           <p className="w-full md:w-2/3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eaque
-            delectus consequuntur harum doloremque assumenda omnis quibusdam
-            quia neque, adipisci iste laborum sed nostrum.
-          </p>
+    A highly motivated and detail-oriented professional with a strong background in management and a proven track record in team collaboration and communication. Skilled in data analysis and proficient in Microsoft Office Suite, with the ability to adapt to new challenges and deliver results in fast-paced environments.
+  </p>
         </div>
         <div className="px-10 md:px-20">
           <br />
@@ -55,15 +55,15 @@ const page = () => {
             className="text-xl hover:text-blue-600"
             href="mailto:test@nomail.com"
           >
-            test@email.com
+            drishti@iconikqinternational.com
           </a>
-          <p>675 234 4323</p>
+          <p>+91 9870176503</p>
         </div>
       </div>
       {/* image */}
       <img
         className="hidden md:block object-cover w-1/4 h-screen rounded-full ring-2 ring-gray-500/50 ring-offset-[30px]"
-        src="https://i.ibb.co/Byd813Q/mateus-campos-felipe-Zxd-JFg-SGQBA-unsplash.jpg"
+        src="/images/drusti3.jpg"
         alt="Your Name Here"
       />
       {/* statistics (right) */}
@@ -88,94 +88,65 @@ const page = () => {
     {/* /image section */}
     <hr className="border-gray-400 mx-44" />
     {/* Resume */}
-    <section className="px-20 mt-10">
-      <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
-        Experience
-      </h4>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl font-bold">
-            Full Stack Developer
-          </h5>
-          <h6 className="text-lg font-bold">Facebook</h6>
-          <p>Jan 2015 - present</p>
+       {/* Experience Section */}
+       <section className="px-20 mt-10">
+        <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
+          Experience
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+          <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+            <h5 className="text-xl md:text-2xl font-bold">
+              Partner
+            </h5>
+            <h6 className="text-lg font-bold">ICONIKQ INTERNATIONAL LLP</h6>
+            <p>Jan 2022 - Present · 2 yrs 10 mos</p>
+            <p>Mumbai, Maharashtra, India</p>
+          </div>
+          <div className="flex flex-col col-span-4">
+            <p>
+              Currently managing logistics operations and business strategies at ICONIKQ International LLP, ensuring efficient and transparent services. Key focus on freight forwarding, customs clearance, and transport management. Working closely with partners and stakeholders to deliver excellence in international and domestic logistics solutions.
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col col-span-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
+      </section>
+
+      {/* Education Section */}
+      <section className="px-20 mt-10">
+        <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
+          Education
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+          <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+            <h5 className="text-xl md:text-2xl font-bold">
+              Diploma in Business Management
+            </h5>
+            <h6 className="text-lg font-bold">NMIMS CDOE</h6>
+            <p>Jan 2021 - Jan 2022</p>
+            <p>Grade: A</p>
+          </div>
+          <div className="flex flex-col col-span-4">
+            <p>
+              Focused on business administration, marketing, and management. Participated in various activities, including the debate team, to hone communication and leadership skills.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl  font-bold">Software Developer</h5>
-          <h6 className="text-lg font-bold">Google</h6>
-          <p>Feb 2010 - Jan 2015</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+          <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+            <h5 className="text-xl md:text-2xl font-bold">
+              Bachelor of Management Studies
+            </h5>
+            <h6 className="text-lg font-bold">S.M. Shetty College - Degree Section</h6>
+            <p>Jun 2017 - Nov 2020</p>
+            <p>Grade: A+</p>
+          </div>
+          <div className="flex flex-col col-span-4">
+            <p>
+              Specialized in Business Administration and Management. Actively participated in extracurriculars like badminton, dance, sports, and debates to enhance soft skills, leadership, and communication.
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col col-span-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl  font-bold">Web Developer</h5>
-          <h6 className="text-lg font-bold">IBM</h6>
-          <p>Apr 2008 - Feb 2010</p>
-        </div>
-        <div className="flex flex-col col-span-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
-        </div>
-      </div>
-    </section>
-    <hr className="border-gray-400 mx-44" />
-    {/* Resume */}
-    <section className="px-20 mt-10">
-      <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
-        Education
-      </h4>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl  font-bold">
-            B.S. Computer Science
-          </h5>
-          <h6 className="text-lg font-bold">Harward University</h6>
-          <p>Jan 2015 - present</p>
-        </div>
-        <div className="flex flex-col col-span-4 ">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
     <Footer/>
   </>
 

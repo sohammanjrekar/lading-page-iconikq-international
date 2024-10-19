@@ -14,12 +14,12 @@ const page = () => {
         {/* image */}
         <img
           className="md:hidden object-cover w-15 h-40 rounded-full mb-5 ring-2 ring-gray-500/50 ring-offset-[10px]"
-          src="https://i.ibb.co/Byd813Q/mateus-campos-felipe-Zxd-JFg-SGQBA-unsplash.jpg"
+          src="/images/parth2.jpg"
           alt="Your Name Here"
         />
-        <h1 className="text-5xl sm:text-6xl lg:text-9xl">Jane Doe</h1>
+        <h1 className="text-5xl sm:text-6xl lg:text-9xl">Mr. Parth Ruparel</h1>
         <h2 className="font-light text-4xl sm:text-5xl lg:text-8xl">
-          Business Manager
+          Partner
         </h2>
       </div>
     </section>
@@ -40,10 +40,9 @@ const page = () => {
           <h3 className="text-xl font-bold">Summary</h3>
           <br />
           <p className="w-full md:w-2/3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eaque
-            delectus consequuntur harum doloremque assumenda omnis quibusdam
-            quia neque, adipisci iste laborum sed nostrum.
-          </p>
+  Results-driven professional with over 3 years of experience in international logistics and supply chain management. Currently a Partner at Iconikq International LLP, where I utilize leadership skills to enhance logistics solutions and foster business growth. Holds a Master's in International Business Management from Coventry University and a Bachelor's in Finance and Financial Management Services. Skilled in collaboration, communication, and strategic planning, with proficiency in Microsoft Office and project management tools.
+</p>
+
         </div>
         <div className="px-10 md:px-20">
           <br />
@@ -52,15 +51,15 @@ const page = () => {
             className="text-xl hover:text-blue-600"
             href="mailto:test@nomail.com"
           >
-            test@email.com
+         parth@iconikqinternational.com
           </a>
-          <p>675 234 4323</p>
+          <p>+91 9870725060 </p>
         </div>
       </div>
       {/* image */}
       <img
         className="hidden md:block object-cover w-1/4 h-screen rounded-full ring-2 ring-gray-500/50 ring-offset-[30px]"
-        src="https://i.ibb.co/Byd813Q/mateus-campos-felipe-Zxd-JFg-SGQBA-unsplash.jpg"
+        src="images/parth3.jpg"
         alt="Your Name Here"
       />
       {/* statistics (right) */}
@@ -84,95 +83,82 @@ const page = () => {
     </section>
     {/* /image section */}
     <hr className="border-gray-400 mx-44" />
-    {/* Resume */}
-    <section className="px-20 mt-10">
-      <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
-        Experience
-      </h4>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl font-bold">
-            Full Stack Developer
-          </h5>
-          <h6 className="text-lg font-bold">Facebook</h6>
-          <p>Jan 2015 - present</p>
-        </div>
-        <div className="flex flex-col col-span-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl  font-bold">Software Developer</h5>
-          <h6 className="text-lg font-bold">Google</h6>
-          <p>Feb 2010 - Jan 2015</p>
-        </div>
-        <div className="flex flex-col col-span-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl  font-bold">Web Developer</h5>
-          <h6 className="text-lg font-bold">IBM</h6>
-          <p>Apr 2008 - Feb 2010</p>
-        </div>
-        <div className="flex flex-col col-span-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
-        </div>
-      </div>
-    </section>
-    <hr className="border-gray-400 mx-44" />
-    {/* Resume */}
-    <section className="px-20 mt-10">
-      <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
-        Education
-      </h4>
-      <div className="grid grid-cols-1 md:grid-cols-6 my-10">
-        <div className="flex flex-col col-span-2 mb-4 md:mb-0">
-          <h5 className="text-xl md:text-2xl  font-bold">
-            B.S. Computer Science
-          </h5>
-          <h6 className="text-lg font-bold">Harward University</h6>
-          <p>Jan 2015 - present</p>
-        </div>
-        <div className="flex flex-col col-span-4 ">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            eveniet deleniti tempore veritatis adipisci accusantium voluptatibus
-            vel aperiam ex alias officiis deserunt, ad, iste id cum minus sit
-            laudantium ullam! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Animi non incidunt voluptates molestiae delectus
-            nulla quisquam aperiam voluptas tempora distinctio! Ipsa cupiditate
-            harum voluptates praesentium. Suscipit itaque officiis odio ut!
-          </p>
-        </div>
-      </div>
-    </section>
+{/* Resume */}
+<section className="px-20 mt-10">
+  <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
+    Experience
+  </h4>
+  <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+    <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+      <h5 className="text-xl md:text-2xl font-bold">Partner</h5>
+      <h6 className="text-lg font-bold">Iconikq International LLP</h6>
+      <p>Apr 2021 - Present · 3 yrs 7 mos</p>
+      <p>Mumbai, Maharashtra, India · On-site</p>
+      <p>International Logistics</p>
+      <p>Leadership and Management</p>
+    </div>
+    <div className="flex flex-col col-span-4">
+      <p>
+        Involved in providing efficient and reliable logistics solutions. 
+        Responsibilities include overseeing operations, managing client relationships, 
+        and ensuring timely deliveries while maintaining high-quality standards. 
+        Focus on enhancing operational efficiency and driving growth through customized solutions.
+      </p>
+    </div>
+  </div>
+  <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+    <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+      <h5 className="text-xl md:text-2xl font-bold">Intern</h5>
+      <h6 className="text-lg font-bold">Sharon Enterprises</h6>
+      <p>May 2018 - Apr 2021 · 3 yrs</p>
+      <p>Mulund</p>
+    </div>
+    <div className="flex flex-col col-span-4">
+      <p>
+        Assisted in various operational tasks, gaining practical experience in logistics and supply chain management. 
+        Worked closely with the team to enhance workflow efficiency and supported customer service initiatives.
+      </p>
+    </div>
+  </div>
+</section>
+<hr className="border-gray-400 mx-44" />
+{/* Resume */}
+<section className="px-20 mt-10">
+  <h4 className="mb-8 text-3xl font-bold text-center md:text-left">
+    Education
+  </h4>
+  <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+    <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+      <h5 className="text-xl md:text-2xl font-bold">
+        M.Sc. International Business Management
+      </h5>
+      <h6 className="text-lg font-bold">Coventry University</h6>
+      <p>2019 - 2020</p>
+    </div>
+    <div className="flex flex-col col-span-4">
+      <p>
+        Completed a master's degree focused on international business strategies, 
+        enhancing skills in global market analysis and management practices.
+      </p>
+    </div>
+  </div>
+  <div className="grid grid-cols-1 md:grid-cols-6 my-10">
+    <div className="flex flex-col col-span-2 mb-4 md:mb-0">
+      <h5 className="text-xl md:text-2xl font-bold">
+        BMS, Finance and Financial Management Services
+      </h5>
+      <h6 className="text-lg font-bold">S.M. Shetty College</h6>
+      <p>2015 - 2018</p>
+    </div>
+    <div className="flex flex-col col-span-4">
+      <p>
+        Graduated with a bachelor's degree, acquiring foundational knowledge in finance, 
+        investment strategies, and financial management, preparing for a career in the business sector.
+      </p>
+    </div>
+  </div>
+</section>
+
     <Footer/>
   </>
 

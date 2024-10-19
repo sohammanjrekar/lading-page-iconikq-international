@@ -2,7 +2,7 @@
 import React from 'react';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
-import BentoBox from '../ui/BentoBox';
+import Certificate from '../ui/Certificate';
 
 const Page = () => {
   return (
@@ -163,7 +163,7 @@ const Page = () => {
     </section>
 
 
-    <
+    <Certificate/>
     <Footer/>
     </>
   );
