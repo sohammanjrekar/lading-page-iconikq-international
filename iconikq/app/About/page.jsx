@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
+import BentoBox from '../ui/BentoBox';
 
 const Page = () => {
   return (
@@ -91,9 +92,7 @@ const Page = () => {
     <p className="block antialiased font-sans text-xl font-normal leading-relaxed text-inherit mt-2 w-full font-normal !text-gray-500 lg:w-5/12">
       Read about our latest achievements and milestones.
     </p>
-    <a href="https://www.material-tailwind.com/" target="_blank">
-      Generated with <b>Magic AI Blocks</b> by Creative Tim
-    </a>
+  
     .
     <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3">
       <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-md relative grid min-h-[30rem] items-end overflow-hidden rounded-xl">
@@ -162,6 +161,9 @@ const Page = () => {
         </div>
       </section>
     </section>
+
+
+    <
     <Footer/>
     </>
   );
