@@ -10,7 +10,7 @@ const Live = () => {
       </h1>
       <h2 className="text-center">
         Get the popcorns ready and enjoy the live stream of i-GNEz Tech Fest at
-        your home :)
+        your home 
       </h2>
       <div className="flex w-full h-screen justify-center pt-12 pb-36">
         <iframe
