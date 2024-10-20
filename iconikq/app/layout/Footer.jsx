@@ -11,10 +11,10 @@ const Footer = () => {
          {/* Newsletter Section */}
 <div className="sm:col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
   <Image
-    width={300}
-    height={200}
-    layout="responsive"
-    className="mb-4 max-h-[15vh] lg:max-h-[25vh] w-auto"
+    width={500}
+    height={300}
+   
+    className="mb-4 max-h-[10vh] lg:max-h-[25vh] max-w-[50vw] sm:!max-w-[20vw]"
     src="/images/logo.png"
     alt="Logo"
   />
@@ -22,7 +22,7 @@ const Footer = () => {
     Subscribe to our newsletter for updates.
   </h1>
 
-  <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+  <div className="flex flex-col mx-auto mt-6 space-y-3 justify-center items-center md:space-y-0 md:flex-row">
     <input
       id="email"
       type="email"
@@ -35,16 +35,17 @@ const Footer = () => {
 
 
           {/* Footer Links Section */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 sm:grid-cols-2 lg:col-span-3 items-start justify-center text-center">
-            
+          <div className="grid grid-cols-1 sm:col-span-2 gap=8 md:gap-10 lg:grid-cols-3 sm:grid-cols-3 lg:col-span-3 mx-auto items-start justify-items-center text-center ">
+ 
+   
             {/* Company Section */}
             <div className="flex flex-col">
               <p className="font-medium text-myred">Company</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-mylight">
-                <a className="hover:opacity-75" href="#">About</a>
-                <a className="hover:opacity-75" href="#">Meet the Team</a>
-                <a className="hover:opacity-75" href="#">History</a>
-                <a className="hover:opacity-75" href="#">Careers</a>
+                <a className="hover:text-myred" href="#">About</a>
+                <a className="hover:text-myred" href="#">Meet the Team</a>
+                <a className="hover:text-myred" href="#">History</a>
+                <a className="hover:text-myred" href="#">Careers</a>
               </nav>
             </div>
 
@@ -52,12 +53,12 @@ const Footer = () => {
             <div className="flex flex-col">
               <p className="font-medium text-myred">Services</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-mylight">
-                <a className="hover:opacity-75" href="#">TRANSPORTATION</a>
-                <a className="hover:opacity-75" href="#">WAREHOUSING</a>
-                <a className="hover:opacity-75" href="#">FREIGHT FORWARDING</a>
-                <a className="hover:opacity-75" href="#">INVENTORY MANAGEMENT</a>
-                <a className="hover:opacity-75" href="#">SUPPLY CHAIN CONSULTING</a>
-                <a className="hover:opacity-75" href="#">AEO CONSULTANTS</a>
+                <a className="hover:text-myred" href="#">TRANSPORTATION</a>
+                <a className="hover:text-myred" href="#">WAREHOUSING</a>
+                <a className="hover:text-myred" href="#">FREIGHT FORWARDING</a>
+                <a className="hover:text-myred" href="#">INVENTORY MANAGEMENT</a>
+                <a className="hover:text-myred" href="#">SUPPLY CHAIN CONSULTING</a>
+                <a className="hover:text-myred" href="#">AEO CONSULTANTS</a>
               </nav>
             </div>
 
@@ -65,10 +66,10 @@ const Footer = () => {
             <div className="flex flex-col">
               <p className="font-medium text-myred">Legal</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-mylight">
-                <a className="hover:opacity-75" href="#">Privacy Policy</a>
-                <a className="hover:opacity-75" href="#">Terms & Conditions</a>
-                <a className="hover:opacity-75" href="#">Returns Policy</a>
-                <a className="hover:opacity-75" href="#">Accessibility</a>
+                <a className="hover:text-myred" href="#">Privacy Policy</a>
+                <a className="hover:text-myred" href="#">Terms & Conditions</a>
+                <a className="hover:text-myred" href="#">Returns Policy</a>
+                <a className="hover:text-myred" href="#">Accessibility</a>
               </nav>
             </div>
 
@@ -77,8 +78,8 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="px-8 py-3 mt-10 flex flex-row flex-wrap justify-between items-center  shadow-white shadow-xl bg-myblue">
-        <div className="text-[2vh] md:text-sm my-4 text-gray-300">
+      <div className="px-8 py-3 mt-10 flex flex-row flex-wrap justify-center sm:justify-between items-center  shadow-2xl bg-myblue shadow-white">
+        <div className="text-[2vh] md:text-sm my-4 mx-2 text-gray-300">
           © 2024 <span className="text-myred">ICONIKQ</span>. All rights reserved.
         </div>
         <Social />

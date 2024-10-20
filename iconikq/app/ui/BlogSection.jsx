@@ -11,13 +11,13 @@ const BlogSection = () => {
         <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
           {blogPosts.slice(0, 4).map((post, index) => ( 
             <div key={index} className="lg:flex">
-              <div className="relative w-full h-56 lg:w-64 rounded-lg">
+              <div className="relative w-full h-56 lg:w-[45vw] rounded-lg">
                 <Image
                   className="object-cover w-full h-full rounded-lg"
                   src={post.images[0]} 
                   alt={post.title}
-                  layout="fill"
-                  objectFit="cover"
+                  width={500}
+                  height={100}
                 />
               </div>
               <div className="flex flex-col justify-between py-6 lg:mx-6">
@@ -60,9 +60,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/logistics-impact1.jpg",
-      "https://example.com/logistics-impact2.jpg",
-      "https://example.com/logistics-impact3.jpg"
+      "/images/b1.jpg",
+      "/images/b2.jpg",
+      "/images/b3.jpg",
+
     ]
   }
   ,{
@@ -82,9 +83,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/warehousing-impact1.jpg",
-      "https://example.com/warehousing-impact2.jpg",
-      "https://example.com/warehousing-impact3.jpg"
+      "/images/b4.jpg",
+      "/images/b5.jpg",
+      "/images/b6.jpg",
+
     ]
   }
   ,{
@@ -104,9 +106,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/customs-clearance1.jpg",
-      "https://example.com/customs-clearance2.jpg",
-      "https://example.com/customs-clearance3.jpg"
+      "/images/b7.jpg",
+      "/images/b8.jpg",
+      "/images/b9.jpg",
+
     ]
   },
   {
@@ -126,9 +129,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/freight-forwarding1.jpg",
-      "https://example.com/freight-forwarding2.jpg",
-      "https://example.com/freight-forwarding3.jpg"
+      "/images/b10.jpg",
+      "/images/b11.jpg",
+      "/images/b12.jpg",
+
     ]
   }
   ,{
@@ -148,9 +152,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/warehouse-management1.jpg",
-      "https://example.com/warehouse-management2.jpg",
-      "https://example.com/warehouse-management3.jpg"
+      "/images/b13.jpg",
+      "/images/b14.jpg",
+      "/images/b15.jpg",
+
     ]
   }
   ,{
@@ -170,9 +175,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/customs-clearance1.jpg",
-      "https://example.com/customs-clearance2.jpg",
-      "https://example.com/customs-clearance3.jpg"
+      "/images/b16.jpg",
+      "/images/b17.jpg",
+      "/images/b18.jpg",
+
     ]
   }
   ,{
@@ -192,9 +198,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/freight-forwarding1.jpg",
-      "https://example.com/freight-forwarding2.jpg",
-      "https://example.com/freight-forwarding3.jpg"
+      "/images/b19.jpg",
+      "/images/b20.jpg",
+      "/images/b21.jpg",
+
     ]
   }
   ,{
@@ -214,9 +221,10 @@ const blogPosts = [
       }
     ],
     "images": [
-      "https://example.com/warehousing1.jpg",
-      "https://example.com/warehousing2.jpg",
-      "https://example.com/warehousing3.jpg"
+      "/images/b22.jpg",
+      "/images/b23.jpg",
+      "/images/b24.jpg",
+
     ]
   }
   
