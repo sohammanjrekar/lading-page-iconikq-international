@@ -10,12 +10,12 @@ const AnimatedWord = () => {
   }, []);
 
   return (
-    <div className={`flex min-h-[20vh] rounded-t-[20px] items-center justify-center font-bold text-myblue`}>
-      <div className="text-center space-y-5">
-        <div className="text-center text-5xl font-bold">
+    <div className={`flex h-[10vh] container sm:min-h-[20vh] rounded-t-[20px] items-center justify-center font-bold text-myblue`}>
+      <div className="text-center md:space-y-5">
+        <div className="text-center text-lg md:text-xl lg:text-5xl font-bold">
           Services offered
           <div
-            className={`relative inline-grid grid-cols-1 grid-rows-5 gap-12 overflow-hidden text-myred transition-opacity duration-500 ${
+            className={`relative inline-grid grid-cols-1 grid-rows-5 gap-2 sm:gap-12 overflow-hidden text-myred transition-opacity duration-500 ${
               isMounted ? "opacity-100" : "opacity-0"
             }`}
           >

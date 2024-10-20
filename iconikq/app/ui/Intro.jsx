@@ -79,14 +79,16 @@ const Intro = () => {
           </div>
         </div>
 
-        <div className="w-full bg-myblue shadow-xl shadow-indigo-200 py-10 px-20 flex justify-between items-center">
-          <p className="text-white">
-            <span className="text-4xl font-medium text-myred">Still Confused?</span>
-            <br />
-            <span className="text-lg">Book for Free Career Consultation Today!</span>
-          </p>
-          <Button text="Contact Us" href="Contact/" />
-        </div>
+        <div className="w-full bg-myblue shadow-xl shadow-indigo-200 py-10 px-5 lg:px-20 flex flex-col justify-between items-center">
+  <p className="text-white text-center">
+    <span className="text-4xl font-medium text-myred block">Still Confused?</span>
+    <span className="text-lg block">Book for Free Career Consultation Today!</span>
+  </p>
+  <div className="mt-5"> {/* Added margin-top to provide space between text and button */}
+    <Button text="Contact Us" href="Contact/" />
+  </div>
+</div>
+
       </div>
     </>
   );

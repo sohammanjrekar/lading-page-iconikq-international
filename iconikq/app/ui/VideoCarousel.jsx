@@ -32,15 +32,15 @@ const videoData = {
 const VideoCarousel = () => {
     const carouselInnerRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false); // For smooth transition control
+    const [isTransitioning, setIsTransitioning] = useState(false);
     const totalItems = Object.keys(videoData).length;
     const autoScrollInterval = 6000; // Change video every 6 seconds
 
     const updateCarousel = useCallback((index) => {
         if (carouselInnerRef.current) {
-            const offset = -index * 100; // Calculate offset based on current index
-            carouselInnerRef.current.style.transition = isTransitioning ? 'transform 1s ease-in-out' : 'none'; // Add smooth transition when required
-            carouselInnerRef.current.style.transform = `translateX(${offset}%)`; // Move to the correct item
+            const offset = -index * 100;
+            carouselInnerRef.current.style.transition = isTransitioning ? 'transform 1s ease-in-out' : 'none';
+            carouselInnerRef.current.style.transform = `translateX(${offset}%)`;
         }
     }, [isTransitioning]);
 
@@ -49,26 +49,25 @@ const VideoCarousel = () => {
             setCurrentIndex((prevIndex) => {
                 if (prevIndex === totalItems) {
                     setIsTransitioning(false);
-                    return 1; // Reset to 1 (after the clone)
+                    return 1; 
                 } else {
                     setIsTransitioning(true);
-                    return (prevIndex + 1) % (totalItems + 1); // Move to the next item
+                    return (prevIndex + 1) % (totalItems + 1);
                 }
             });
         }, autoScrollInterval);
 
-        return () => clearInterval(interval); // Clean up the interval on unmount
+        return () => clearInterval(interval);
     }, [totalItems]);
 
     useEffect(() => {
-        updateCarousel(currentIndex); // Update carousel on index change
+        updateCarousel(currentIndex);
 
-        // Reset to the actual first slide after transition from the cloned one
         if (currentIndex === totalItems) {
             setTimeout(() => {
                 setIsTransitioning(false);
                 setCurrentIndex(0);
-            }, 1000); // Wait for the transition to end
+            }, 1000);
         }
     }, [currentIndex, totalItems, updateCarousel]);
 
@@ -79,36 +78,39 @@ const VideoCarousel = () => {
                 {Object.keys(videoData).map((key) => {
                     const { src, name } = videoData[key];
                     return (
-                        <div key={key} className="min-w-full h-full relative carousel-item">
+                        <div key={key} className="min-w-full h-[80vh] relative carousel-item">
                             <video className="w-full h-full object-cover" loop muted autoPlay>
                                 <source src={src} type="video/mp4" />
                             </video>
-                           
-                           <h1 className="shadow-2xl bg-myred rounded-lg backdrop-blur-sm bg-opacity-10 bg-white h-[20vh] absolute  w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-center justify-center text-white text-[7vh] font-bold uppercase my-auto"> {name}</h1>
+                            <h1 className="shadow-2xl bg-myred rounded-lg backdrop-blur-sm bg-opacity-10 bg-white h-[18vh] sm:h-[22vh] md:h-[20vh] absolute w-2/3 lg:w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-center justify-center text-white text-[2vh] md:text-[5vh] lg:text-[5vh] font-bold uppercase my-auto">
+                                {name}
+                            </h1>
                         </div>
                     );
                 })}
 
-                {/* Clone the first item at the end for smooth transition */}
+                {/* Clone the first item for smooth transition */}
                 <div className="min-w-full h-full relative carousel-item">
                     <video className="w-full h-full object-cover" loop muted autoPlay>
                         <source src={videoData[0].src} type="video/mp4" />
                     </video>
-                    <h1 className="shadow-2xl bg-myred rounded-lg backdrop-blur-sm bg-opacity-10 bg-white h-[20vh] absolute  w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-center justify-center text-white text-[7vh] font-bold uppercase my-auto"> {videoData[0].name}</h1>
+                    <h1 className="shadow-2xl bg-myred rounded-lg backdrop-blur-sm bg-opacity-10 bg-white h-[20vh] absolute w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-center justify-center text-white text-[4vw] md:text-[5vw] lg:text-[7vh] font-bold uppercase my-auto">
+                        {videoData[0].name}
+                    </h1>
                 </div>
             </div>
 
             <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10 flex carousel-controls">
-                <button 
-                    onClick={() => setCurrentIndex((currentIndex - 1 + totalItems) % totalItems)} 
+                <button
+                    onClick={() => setCurrentIndex((currentIndex - 1 + totalItems) % totalItems)}
                     className="bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition duration-300"
                 >
                     <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
-                <button 
-                    onClick={() => setCurrentIndex((currentIndex + 1) % (totalItems + 1))} 
+                <button
+                    onClick={() => setCurrentIndex((currentIndex + 1) % (totalItems + 1))}
                     className="bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition duration-300"
                 >
                     <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
