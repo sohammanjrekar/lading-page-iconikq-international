@@ -49,7 +49,7 @@ const Page = () => {
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
                     <Image  width={500}
               height={500}
-              layout="responsive" src="images/icon4.png" alt=""/>
+              layout="responsive" src="/images/icon4.png" alt=""/>
                   </div>
                   <h6 className="text-xl font-semibold text-myred">FREIGHT FORWARDING</h6>
                   <p className="mt-2 mb-4 text-blueGray-500">
@@ -64,7 +64,7 @@ const Page = () => {
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-lightBlue-400">
                   <Image  width={500}
               height={500}
-              layout="responsive" src="images/icon5.png" alt=""/>
+              layout="responsive" src="/images/icon5.png" alt=""/>
                   </div>
                   <h6 className="text-xl font-semibold text-myred">INVENTORY MANAGEMENT</h6>
                   <p className="mt-2 mb-4 text-blueGray-500">
@@ -79,7 +79,7 @@ const Page = () => {
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
                   <Image  width={500}
               height={500}
-              layout="responsive" src="images/icon1.png" alt=""/>
+              layout="responsive" src="/images/icon1.png" alt=""/>
                   </div>
                   <h6 className="text-xl font-semibold text-myred">Warehousing Solutions</h6>
                   <p className="mt-2 mb-4 text-blueGray-500">

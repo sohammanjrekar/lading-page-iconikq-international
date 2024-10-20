@@ -9,9 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
 
           <div className="sm:col-span-2">
-            <Image  width={500}
-              height={500}
-              layout="responsive" className="mb-4 h-[6vh]" src="/images/logo.png" alt="" />
+       <Image  width={300}
+        height={200}              layout="responsive" className="mb-4 max-h-[8vh] max-w-[13vw]" src="/images/logo.png" alt="" />
             <h1 className="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl text-white">
               Subscribe to our newsletter for updates.
             </h1>

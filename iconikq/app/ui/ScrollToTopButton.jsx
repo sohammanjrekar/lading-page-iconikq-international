@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image"; // Importing next/image for optimized images
+import Image from "next/image"; // Importing next/image for optimized /images
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,9 +48,9 @@ const ScrollToTopButton = () => {
           <Image
             src="/images/up-arrow.png" // Using next/image for image optimization
             alt="Scroll to top"
-            width={50} // Set width and height for image optimization
-            height={50}
-            className="h-[6vh] w-[7vw] transition-transform duration-500 ease-in-out hover:scale-105"
+            width={45} // Set width and height for image optimization
+            height={45}
+            className="max-h-[7vh] max-w-[8vw] transition-transform duration-500 ease-in-out hover:scale-105"
           />
         </button>
       )}

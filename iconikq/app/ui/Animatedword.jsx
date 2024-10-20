@@ -1,18 +1,39 @@
+"use client"
+import { useEffect, useState } from "react";
 
+const AnimatedWord = () => {
+  const [isMounted, setIsMounted] = useState(false);
 
-const Animatedword = () => {
+  // Use useEffect to trigger the mounting state after initial render
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <div className="flex min-h-[20vh] rounded-t-[20px] items-center justify-center  font-bold text-myblue">
+    <div className={`flex min-h-[20vh] rounded-t-[20px] items-center justify-center font-bold text-myblue`}>
       <div className="text-center space-y-5">
         <div className="text-center text-5xl font-bold">
           Services offered
-          <div className="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden text-myred">
-            <span className="animate-word animate-word-delay-1 col-span-full row-span-full">TRANSPORTATION</span>
-            <span className="animate-word animate-word-delay-2 col-span-full row-span-full">FREIGHT FORWARDING</span>
-            <span className="animate-word animate-word-delay-3 col-span-full row-span-full">INVENTORY MANAGEMENT</span>
-            <span className="animate-word animate-word-delay-4 col-span-full row-span-full">AEO CONSULTANTS</span>
-             <span className="animate-word animate-word-delay-5 col-span-full row-span-full">WAREHOUSING</span>
-            {/* <span className="animate-word animate-word-delay-5 col-span-full row-span-full">CUSTOM BROKER SERVICES</span> */}
+          <div
+            className={`relative inline-grid grid-cols-1 grid-rows-5 gap-12 overflow-hidden text-myred transition-opacity duration-500 ${
+              isMounted ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <span className="animate-word animate-word-delay-1 col-span-full row-span-full flex justify-center items-center">
+              TRANSPORTATION
+            </span>
+            <span className="animate-word animate-word-delay-2 col-span-full row-span-full flex justify-center items-center">
+              FREIGHT FORWARDING
+            </span>
+            <span className="animate-word animate-word-delay-3 col-span-full row-span-full flex justify-center items-center">
+              INVENTORY MANAGEMENT
+            </span>
+            <span className="animate-word animate-word-delay-4 col-span-full row-span-full flex justify-center items-center">
+              AEO CONSULTANTS
+            </span>
+            <span className="animate-word animate-word-delay-5 col-span-full row-span-full flex justify-center items-center">
+              WAREHOUSING
+            </span>
           </div>
         </div>
       </div>
@@ -20,4 +41,4 @@ const Animatedword = () => {
   );
 };
 
-export default Animatedword;
+export default AnimatedWord;

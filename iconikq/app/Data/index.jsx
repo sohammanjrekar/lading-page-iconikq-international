@@ -1,6 +1,6 @@
 export const data = [
   {
-    image: 'images/transport.jpg',
+    image: '/images/transport.jpg',
     title: 'EPR Registration',
     titleSlug: 'epr-registration',
     passage1:"Overview of EPR Registration: The Extended Producer Responsibility (EPR) Registration Certificate is a legal document issued to producers and importers of goods, signifying their compliance with EPR regulations. EPR mandates that these entities take responsibility for the entire lifecycle of their products, particularly regarding waste management and recycling. This certification is crucial in promoting sustainable practices, as it ensures that producers actively contribute to reducing environmental impact by managing the disposal and recycling of their products.",
@@ -9,7 +9,7 @@ export const data = [
     link: 'Legal', categorySlug: 'legal',
   },
   {
-    image: 'images/freight forwarder.png',
+    image: '/images/freight forwarder.png',
     title: 'BIS Certification',
     titleSlug: 'bis-certification',
     passage1:"Overview of BIS Registration: The Bureau of Indian Standards (BIS) Registration Certificate is an official document that verifies a product's compliance with Indian quality and safety standards. This certification ensures that products meet specific requirements set by BIS, promoting consumer safety and enhancing product reliability in the market. It is essential for manufacturers and importers looking to establish credibility and trust among consumers.",
@@ -18,7 +18,7 @@ export const data = [
     link: 'Legal', categorySlug: 'legal',
   },
   {
-    image: 'images/inventory.jpg',
+    image: '/images/inventory.jpg',
     title: 'LMPC Certification',
     titleSlug: 'lmpc-certification',
     passage1:"Overview of LMPC Registration: The LMPC (Laboratory and Manufacturing Processes Certification) Registration Certificate is an official recognition granted to laboratories and manufacturing facilities that meet specific quality and operational standards. This certification ensures that processes adhere to stringent guidelines, promoting accuracy, reliability, and safety in testing and manufacturing. It serves as a benchmark for quality assurance, helping organizations build credibility and trust with clients and stakeholders.",
@@ -27,7 +27,7 @@ export const data = [
     link: 'Legal', categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'DGFT Registrations',
     titleSlug: 'dgft-registrations',
     passage1:"DGFT Portal Related Registrations and Certifications: The Directorate General of Foreign Trade (DGFT) plays a crucial role in regulating and facilitating international trade in India. The DGFT portal is a one-stop platform for various registrations and certifications essential for businesses engaged in exports and imports. Below is a detailed list of the types of registrations and certifications available through the DGFT, along with the associated benefits.",
@@ -36,7 +36,7 @@ export const data = [
     link: 'Legal',  categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'AEO Certification',titleSlug: 'aeo-certification',
     passage1:"Overview of AEO Registrations and Certifications: Authorized Economic Operator (AEO) registrations and certifications are international accreditations granted to businesses engaged in international trade that meet specific security and compliance criteria. These certifications, issued by customs authorities, recognize the reliability of companies in managing their supply chain and ensuring secure customs procedures. AEO status is vital for businesses that aim to streamline their cross-border operations, as it signifies adherence to best practices in compliance, security, and efficiency. By obtaining AEO certification, businesses can enhance their credibility in the global market, as it reflects their commitment to maintaining high standards of operational integrity and compliance with customs regulations.",
     passage2:"Benefits of AEO Registrations and Certifications: The benefits of AEO registrations and certifications are manifold. Firstly, certified companies enjoy expedited customs clearance, reducing delays and enhancing supply chain efficiency, which can lead to significant cost savings. AEO certification also provides access to various trade facilitation programs, allowing businesses to participate in simplified customs procedures and enjoy priority treatment in customs inspections. Moreover, having AEO status can strengthen a company’s reputation and foster trust with customers and partners, as it demonstrates compliance with international standards. This certification can also enhance competitiveness by opening up new market opportunities and enabling businesses to establish smoother trade relations within the global marketplace.",
@@ -44,7 +44,7 @@ export const data = [
     link: 'Legal',  categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'Icegate Registration',titleSlug: 'icegate-registration',
     passage1:"Overview of ICEGATE Registrations and Certifications: ICEGATE (Indian Customs E-Gateway) registrations and certifications are essential for businesses engaged in international trade with Indian customs authorities. This digital platform facilitates electronic communication between customs and trade stakeholders, enabling efficient processing of import and export documents. By obtaining ICEGATE registration, businesses gain access to a streamlined system that simplifies customs procedures, enhances data accuracy, and ensures compliance with Indian customs regulations. The registration process involves providing necessary documentation and undergoing verification by customs officials, ultimately allowing businesses to submit bills of entry, shipping bills, and other customs-related applications online, reducing paperwork and processing times.",
     passage2:"Benefits of ICEGATE Registrations and Certifications: The benefits of ICEGATE registrations and certifications are significant for businesses in the global trade arena. Firstly, it enhances operational efficiency by allowing for the electronic submission of documents, significantly reducing delays and the potential for errors associated with manual processes. Registered businesses can track their shipments and customs status in real-time, improving transparency and decision-making. Additionally, ICEGATE registration can lead to faster customs clearances, resulting in cost savings and quicker access to markets. By ensuring compliance with customs regulations and facilitating smoother interactions with customs authorities, ICEGATE registration strengthens a company’s credibility and can enhance relationships with suppliers, customers, and logistics partners.",
@@ -52,7 +52,7 @@ export const data = [
     link: 'Legal',  categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'MTO License',titleSlug: 'mto-license',
     passage1:"Overview of MTO License Registrations and Certifications: The Multimodal Transport Operator (MTO) license is a crucial certification for businesses engaged in the multimodal transportation of goods across international borders. This license, issued by national regulatory authorities, allows operators to combine various modes of transport—such as road, rail, sea, and air—under a single contract, providing a seamless logistics solution. Obtaining an MTO license involves meeting specific criteria related to financial stability, operational capability, and compliance with international transport regulations. This certification not only legitimizes a company's operations in multimodal transport but also ensures adherence to safety and quality standards, ultimately enhancing trust among clients and partners.",
     passage2:"Benefits of MTO License Registrations and Certifications: The benefits of holding an MTO license are numerous for logistics and transportation companies. Firstly, it allows for the integration of different transport modes, which can significantly reduce transit times and lower transportation costs. This flexibility enables businesses to offer comprehensive logistics solutions tailored to client needs, enhancing customer satisfaction. Additionally, having an MTO license boosts credibility and competitive advantage in the market, as it demonstrates compliance with international transport standards. This certification can also open doors to new business opportunities, as many clients prefer to work with licensed operators who can ensure reliable and efficient multimodal transport services.",
@@ -60,7 +60,7 @@ export const data = [
     link: 'Legal',  categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'IATA Certification',titleSlug: 'iata-certification',
     passage1:"Overview of IATA Registrations and Certifications: The International Air Transport Association (IATA) offers registrations and certifications that are essential for businesses involved in air transport and logistics. IATA certification signifies that an airline, freight forwarder, or travel agent meets specific operational and safety standards, ensuring compliance with international regulations. To obtain IATA certification, companies must demonstrate their ability to handle air cargo, maintain high service quality, and adhere to safety protocols. This certification not only enhances a company's credibility in the global air transport market but also facilitates smoother operations by ensuring that the business is recognized by industry stakeholders, including airlines, customs authorities, and regulatory bodies.",
     passage2:"Benefits of IATA Registrations and Certifications: Holding IATA registration and certification offers numerous advantages to businesses in the air transport sector. Firstly, it enhances operational efficiency by providing access to a global network of airlines and freight services, which can lead to better pricing and improved service offerings. IATA-certified companies also gain access to valuable training programs and resources that help them stay updated on industry best practices and regulatory changes. Additionally, IATA certification boosts market credibility, making it easier to attract clients and partners who prioritize safety and compliance. Overall, this certification enhances a company’s competitive edge and opens up new market opportunities in the rapidly evolving air transport industry.",
@@ -68,7 +68,7 @@ export const data = [
     link: 'Legal',  categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'IGCR Registration',titleSlug: 'Igcr-registration',
     passage1:"Overview of IGCR Registrations: The Importer-Exporter Code (IEC) registration under the IGCR (Import General Control Regulations) is a mandatory certification for businesses involved in international trade in India. This registration, issued by the Directorate General of Foreign Trade (DGFT), enables companies to legally import and export goods across borders. The IEC registration process involves submitting specific documentation, including proof of identity, address, and bank details, to ensure that businesses comply with regulatory requirements. By obtaining IGCR registration, companies can access various benefits, including the ability to engage in cross-border trade, participate in government schemes, and expand their market reach.",
     passage2:"Benefits of IGCR Registrations: The benefits of IGCR registration are significant for businesses engaged in international trade. Firstly, having an IEC allows companies to import and export goods legally, reducing the risk of penalties or legal issues associated with non-compliance. It also opens up access to various government incentives and schemes designed to promote exports, such as duty exemptions and subsidies. Additionally, IGCR registration enhances a company's credibility and trustworthiness in the global market, making it easier to establish relationships with foreign suppliers and customers. Overall, this registration is a vital step for businesses looking to navigate the complexities of international trade and enhance their competitive advantage.",
@@ -76,7 +76,7 @@ export const data = [
     link: 'Legal',  categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'ADCODE & IFSCODE Registrations',titleSlug: 'adcode-and-ifscode-registrations',
     passage1:"Overview of ADCODE/IFSCODE Registrations: ADCODE (Account Description Code) and IFSCODE (Indian Financial System Code) are essential codes used in the banking and financial sector in India to facilitate electronic fund transfers. The ADCODE identifies specific accounts within banks, while the IFSCODE uniquely identifies bank branches participating in the electronic payment system, such as NEFT, RTGS, and IMPS. Registration for these codes is crucial for businesses and individuals to ensure smooth and accurate transactions. Banks and financial institutions generate these codes during account setup, and proper registration guarantees that funds are directed to the correct accounts without delay or error.",
     passage2:"Benefits of ADCODE/IFSCODE Registrations:The benefits of ADCODE and IFSCODE registrations are significant for both businesses and individual users. Firstly, these codes streamline electronic fund transfers, making transactions faster and more efficient, which is essential for businesses managing cash flow. Proper registration also reduces the risk of errors in fund transfers, ensuring that payments reach the intended recipients without issues. Additionally, having the correct ADCODE and IFSCODE enhances trust and reliability in financial dealings, as it provides clarity and confidence to both senders and recipients. Overall, these registrations are vital for maintaining effective and secure banking operations in today’s digital economy.",
@@ -84,7 +84,7 @@ export const data = [
     link: 'Legal',  categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'CESTAT / Cases',titleSlug: 'cestate',
     passage1:"Overview of CESTAT Cases: The Customs, Excise and Service Tax Appellate Tribunal (CESTAT) is a quasi-judicial body in India that adjudicates disputes related to customs, excise, and service tax matters. Established to provide a speedy and efficient resolution of appeals filed against orders from lower authorities, CESTAT plays a crucial role in ensuring that tax laws are applied fairly and consistently. The cases brought before CESTAT often involve complex issues such as classification of goods, valuation disputes, and eligibility for exemptions. The tribunal's decisions help interpret tax laws, providing clarity for businesses and individuals and influencing future tax practices and compliance.",
     passage2:"Benefits of CESTAT Cases: The benefits of CESTAT cases extend to various stakeholders, including businesses, government authorities, and the broader economy. For businesses, CESTAT provides a platform for resolving disputes with tax authorities, potentially saving them significant amounts in disputed taxes and penalties. The tribunal's rulings contribute to the development of jurisprudence in the field of indirect taxes, creating a more predictable regulatory environment. Additionally, by ensuring fair adjudication and expediting the resolution of disputes, CESTAT helps foster compliance and enhances taxpayer confidence in the tax system. Ultimately, CESTAT's role is vital in maintaining a balanced and efficient tax regime that supports economic growth.",
@@ -93,7 +93,7 @@ export const data = [
     categorySlug: 'legal',
   },
   {
-    image: 'images/custom.jpg',
+    image: '/images/custom.jpg',
     title: 'CUSTOM BROKER SERVICES',titleSlug: 'custom-broker-services',
     passage1:"",
     passage2:"",

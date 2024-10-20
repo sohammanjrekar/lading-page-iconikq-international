@@ -6,27 +6,27 @@ import Image from "next/image";
 const AutoCarousel = () => {
   const images = [
     {
-      src: "http://arveelabs.com/img/logo.png",
+      src: "/images/comapny1.png",
       name: "arveelabs",
     },
     {
-      src: "https://www.actiontesa.com/wp-content/uploads/2024/08/fianl-logo.png",
+      src: "/images/company2.png",
       name: "Balaji Action",
     },
     {
-      src: "https://cleenaind.com/images/logo-2.png",
+      src: "/images/company3.png",
       name: "Cleena",
     },
     {
-      src: "https://hemanigroup.com/storage/2019/04/Hemani-logo.png",
+      src: "/images/company4.png",
       name: "Hemani",
     },
     {
-      src: "https://www.welspunspecialty.com/images/wel-tube-logo.jpg",
+      src: "/images/company5.jpg",
       name: "Welspun",
     },
     {
-      src: "https://www.jmbaxi.com/images/jm-main-logo.svg",
+      src: "/images/company7.svg",
       name: "JMBaxi",
     },
   ];
@@ -65,10 +65,10 @@ const AutoCarousel = () => {
             key={image.name}
             src={image.src}
             alt={image.name}
-            width={500}
-            height={500}
-            layout="responsive"
-            className="mx-4 h-[15vh]"
+            width={400}
+            height={100}
+            object-fit="fill"
+            className=" mx-10"
           />
         ))}
       </div>

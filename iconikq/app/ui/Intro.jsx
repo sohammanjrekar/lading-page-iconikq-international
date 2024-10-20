@@ -1,6 +1,6 @@
 
 import Button from './Button';
-import Image from 'next/image'; // Added for optimized images
+import Image from 'next/image'; // Added for optimized /images
 
 const Intro = () => {
   return (
