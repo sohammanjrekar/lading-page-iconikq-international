@@ -1,6 +1,14 @@
 import Image from 'next/image';
+import Button from './Button';
 
 const BlogSection = () => {
+  const convertToDate = (dateStr) => {
+    const [day, month, year] = dateStr.split('-');
+    return new Date(`${year}-${month}-${day}`);
+  };
+  
+  // Now, sort the blog posts based on the converted date
+  const sortedBlogData = [...blogData].sort((a, b) => convertToDate(b.Date) - convertToDate(a.Date));
   return (
     <section className="bg-myblue">
       <div className="container px-6 py-10 mx-auto">
@@ -9,7 +17,7 @@ const BlogSection = () => {
         </h1>
 
         <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
-          {blogPosts.slice(0, 4).map((post, index) => ( 
+          {sortedBlogData.slice(0, 4).map((post, index) => ( 
             <div key={index} className="lg:flex">
               <div className="relative w-full h-56 lg:w-[45vw] rounded-lg">
                 <Image
@@ -20,7 +28,7 @@ const BlogSection = () => {
                   height={100}
                 />
               </div>
-              <div className="flex flex-col justify-between py-6 lg:mx-6">
+              <div className="flex flex-col justify-center items-start gap-2 sm:justify-between py-1 lg:mx-6">
                 <a
                   href="#"
                   className="text-xl font-semibold  hover:underline text-myred"
@@ -28,11 +36,12 @@ const BlogSection = () => {
                   {post.title}
                 </a>
                 <span className="text-sm  text-white">
-                  On: {post.date}
+                  On: {post.Date}
                 </span>
-                <p className="text-sm text-white">
-                  {post.passages[0].passage.substring(0, 200)}... {/* First 200 characters of the first passage */}
+                <p className="text-sm text-white mb-2">
+                  {post.passages[0].passage.substring(0, 200)}... 
                 </p>
+                <Button text="Read More" href={`/Blog/${post.id}`}/>
               </div>
             </div>
           ))}
@@ -41,8 +50,7 @@ const BlogSection = () => {
     </section>
   );
 };
-
-const blogPosts = [
+const blogData = [
   {
     "title": "The Impact of Efficient Logistics on Global Trade",
     "passages": [
@@ -63,8 +71,9 @@ const blogPosts = [
       "/images/b1.jpg",
       "/images/b2.jpg",
       "/images/b3.jpg",
-
-    ]
+    ]  ,"Date":"14-10-2024",
+    "Topic":"Loistics",
+    "id":1,
   }
   ,{
     "title": "The Importance of Warehousing in Supply Chain Management",
@@ -83,11 +92,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b4.jpg",
+     "/images/b4.jpg",
       "/images/b5.jpg",
       "/images/b6.jpg",
-
-    ]
+    ]   ,"Date":"1-10-2024",
+    "Topic":"Loistics",
+    "id":2,
   }
   ,{
     "title": "Customs Clearance: Simplifying Global Trade",
@@ -106,11 +116,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b7.jpg",
+     "/images/b7.jpg",
       "/images/b8.jpg",
       "/images/b9.jpg",
-
-    ]
+    ]   ,"Date":"11-9-2024",
+    "Topic":"Loistics",
+    "id":3,
   },
   {
     "title": "Freight Forwarding: Navigating Global Trade with Efficiency",
@@ -129,11 +140,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b10.jpg",
+     "/images/b10.jpg",
       "/images/b11.jpg",
       "/images/b12.jpg",
-
-    ]
+    ]   ,"Date":"1-09-2024",
+    "Topic":"Loistics",
+    "id":4,
   }
   ,{
     "title": "Warehouse Management: Streamlining Operations for Global Trade",
@@ -152,11 +164,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b13.jpg",
+    "/images/b13.jpg",
       "/images/b14.jpg",
       "/images/b15.jpg",
-
-    ]
+    ]   ,"Date":"25-10-2024",
+    "Topic":"Loistics",
+    "id":5,
   }
   ,{
     "title": "Customs Clearance: Ensuring Smooth International Trade",
@@ -171,15 +184,16 @@ const blogPosts = [
         "passage": "One of the key benefits of having a streamlined customs clearance process is the reduction of unnecessary delays. With accurate documentation and proper compliance with customs regulations, goods can be processed faster and shipped without disruption. Businesses can take advantage of simplified customs procedures through free trade agreements (FTAs) or programs like Authorized Economic Operator (AEO) status, which often provide preferential treatment in the clearance process. These advantages help reduce the time and costs involved in customs clearance, making international trade more efficient and competitive for companies. By improving the efficiency of customs clearance, businesses can maintain better control over their supply chains and enhance their ability to meet customer expectations."
       },
       {
-        "passage": "Technology has played an increasingly important role in modern customs clearance processes. Customs authorities around the world are integrating technologies like blockchain, artificial intelligence, and data analytics to automate procedures and ensure compliance. Blockchain, for example, can provide an immutable, transparent record of goods’ movement, making it easier to track shipments and verify compliance. AI and machine learning help customs officials predict risks, detect fraud, and expedite the clearance of goods by automating routine tasks. This technological shift enhances the overall efficiency of international trade, reduces the risk of errors, and provides businesses with greater transparency and predictability when navigating customs procedures."
+        "passage": "Technology has played an increasingly important role in modern customs clearance processes. Customs authorities around the world are integrating technologies like blockchain, artificial intelligence, and data analytics to automate procedures and ensure compliance. Blockchain, for example, can provide an immutable, transparent record of goods movement, making it easier to track shipments and verify compliance. AI and machine learning help customs officials predict risks, detect fraud, and expedite the clearance of goods by automating routine tasks. This technological shift enhances the overall efficiency of international trade, reduces the risk of errors, and provides businesses with greater transparency and predictability when navigating customs procedures."
       }
     ],
     "images": [
+     "/images/b16.jpg",
       "/images/b16.jpg",
       "/images/b17.jpg",
-      "/images/b18.jpg",
-
-    ]
+    ]   ,"Date":"10-11-2024",
+    "Topic":"Loistics",
+    "id":6,
   }
   ,{
     "title": "Freight Forwarding: Navigating Global Shipping Challenges",
@@ -198,11 +212,12 @@ const blogPosts = [
       }
     ],
     "images": [
+    "/images/b18.jpg",
       "/images/b19.jpg",
       "/images/b20.jpg",
-      "/images/b21.jpg",
-
-    ]
+    ]   ,"Date":"4-10-2024",
+    "Topic":"Loistics",
+    "id":7,
   }
   ,{
     "title": "Warehousing: The Backbone of Efficient Supply Chains",
@@ -221,12 +236,17 @@ const blogPosts = [
       }
     ],
     "images": [
+     "/images/b21.jpg",
       "/images/b22.jpg",
       "/images/b23.jpg",
-      "/images/b24.jpg",
-
     ]
+    ,"Date":"14-9-2024",
+    "Topic":"Loistics",
+    "id":8,
   }
+  
+  
+
   
   
 ];

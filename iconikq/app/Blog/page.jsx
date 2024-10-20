@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 
 // Sample data for the blog posts
 
-const blogPosts = [
+const blogData = [
   {
     "title": "The Impact of Efficient Logistics on Global Trade",
     "passages": [
@@ -26,8 +26,9 @@ const blogPosts = [
       "/images/b1.jpg",
       "/images/b2.jpg",
       "/images/b3.jpg",
-
-    ]
+    ]  ,"Date":"14-10-2024",
+    "Topic":"Loistics",
+    "id":1,
   }
   ,{
     "title": "The Importance of Warehousing in Supply Chain Management",
@@ -46,11 +47,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b4.jpg",
+     "/images/b4.jpg",
       "/images/b5.jpg",
       "/images/b6.jpg",
-
-    ]
+    ]   ,"Date":"1-10-2024",
+    "Topic":"Loistics",
+    "id":2,
   }
   ,{
     "title": "Customs Clearance: Simplifying Global Trade",
@@ -69,11 +71,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b7.jpg",
+     "/images/b7.jpg",
       "/images/b8.jpg",
       "/images/b9.jpg",
-
-    ]
+    ]   ,"Date":"11-9-2024",
+    "Topic":"Loistics",
+    "id":3,
   },
   {
     "title": "Freight Forwarding: Navigating Global Trade with Efficiency",
@@ -92,11 +95,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b10.jpg",
+     "/images/b10.jpg",
       "/images/b11.jpg",
       "/images/b12.jpg",
-
-    ]
+    ]   ,"Date":"1-09-2024",
+    "Topic":"Loistics",
+    "id":4,
   }
   ,{
     "title": "Warehouse Management: Streamlining Operations for Global Trade",
@@ -115,11 +119,12 @@ const blogPosts = [
       }
     ],
     "images": [
-      "/images/b13.jpg",
+    "/images/b13.jpg",
       "/images/b14.jpg",
       "/images/b15.jpg",
-
-    ]
+    ]   ,"Date":"25-10-2024",
+    "Topic":"Loistics",
+    "id":5,
   }
   ,{
     "title": "Customs Clearance: Ensuring Smooth International Trade",
@@ -134,15 +139,16 @@ const blogPosts = [
         "passage": "One of the key benefits of having a streamlined customs clearance process is the reduction of unnecessary delays. With accurate documentation and proper compliance with customs regulations, goods can be processed faster and shipped without disruption. Businesses can take advantage of simplified customs procedures through free trade agreements (FTAs) or programs like Authorized Economic Operator (AEO) status, which often provide preferential treatment in the clearance process. These advantages help reduce the time and costs involved in customs clearance, making international trade more efficient and competitive for companies. By improving the efficiency of customs clearance, businesses can maintain better control over their supply chains and enhance their ability to meet customer expectations."
       },
       {
-        "passage": "Technology has played an increasingly important role in modern customs clearance processes. Customs authorities around the world are integrating technologies like blockchain, artificial intelligence, and data analytics to automate procedures and ensure compliance. Blockchain, for example, can provide an immutable, transparent record of goods’ movement, making it easier to track shipments and verify compliance. AI and machine learning help customs officials predict risks, detect fraud, and expedite the clearance of goods by automating routine tasks. This technological shift enhances the overall efficiency of international trade, reduces the risk of errors, and provides businesses with greater transparency and predictability when navigating customs procedures."
+        "passage": "Technology has played an increasingly important role in modern customs clearance processes. Customs authorities around the world are integrating technologies like blockchain, artificial intelligence, and data analytics to automate procedures and ensure compliance. Blockchain, for example, can provide an immutable, transparent record of goods movement, making it easier to track shipments and verify compliance. AI and machine learning help customs officials predict risks, detect fraud, and expedite the clearance of goods by automating routine tasks. This technological shift enhances the overall efficiency of international trade, reduces the risk of errors, and provides businesses with greater transparency and predictability when navigating customs procedures."
       }
     ],
     "images": [
+     "/images/b16.jpg",
       "/images/b16.jpg",
       "/images/b17.jpg",
-      "/images/b18.jpg",
-
-    ]
+    ]   ,"Date":"10-11-2024",
+    "Topic":"Loistics",
+    "id":6,
   }
   ,{
     "title": "Freight Forwarding: Navigating Global Shipping Challenges",
@@ -161,11 +167,12 @@ const blogPosts = [
       }
     ],
     "images": [
+    "/images/b18.jpg",
       "/images/b19.jpg",
       "/images/b20.jpg",
-      "/images/b21.jpg",
-
-    ]
+    ]   ,"Date":"4-10-2024",
+    "Topic":"Loistics",
+    "id":7,
   }
   ,{
     "title": "Warehousing: The Backbone of Efficient Supply Chains",
@@ -184,15 +191,18 @@ const blogPosts = [
       }
     ],
     "images": [
+     "/images/b21.jpg",
       "/images/b22.jpg",
       "/images/b23.jpg",
-      "/images/b24.jpg",
-
     ]
+    ,"Date":"14-9-2024",
+    "Topic":"Loistics",
+    "id":8,
   }
   
   
 ];
+
 
 
 const BlogPage = () => {

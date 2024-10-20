@@ -1,165 +1,113 @@
-
 import Image from 'next/image'
 import Footer from '../../layout/Footer'
 import Navbar from '../../layout/Navbar'
-const page = () => {
+
+const Page = () => {
+  const blogData = [
+    {
+      "title": "The Impact of Efficient Logistics on Global Trade",
+      "passages": [
+        {
+          "passage": "Efficient logistics is the backbone of successful global trade. The seamless movement of goods from one country to another relies on a well-coordinated logistics chain that encompasses transportation, warehousing, customs clearance, and freight forwarding. In today’s global economy, businesses must rely on advanced logistics solutions to ensure that their products reach their destination on time and in good condition. Inefficient logistics, on the other hand, can lead to delays, increased costs, and dissatisfied customers, ultimately impacting a company’s competitiveness..."
+        },
+        {
+          "passage": "One key aspect of modern logistics is the use of technology to optimize supply chain operations. From real-time shipment tracking to automated warehousing solutions, logistics companies leverage digital tools to reduce inefficiencies. Tracking technologies allow businesses to monitor the status of their shipments in real-time, providing transparency and allowing for quick problem-solving when issues arise..."
+        },
+        {
+          "passage": "Customs clearance is another critical component of logistics. For goods to cross international borders, they must comply with the laws and regulations of both the exporting and importing countries. Customs clearance involves the submission of documents, payment of duties and taxes, and the inspection of goods by customs officials..."
+        },
+        {
+          "passage": "Freight forwarding plays a significant role in facilitating international trade. Freight forwarders act as intermediaries between the shipper and various transportation services, coordinating the movement of goods through air, sea, or land. They also handle the logistical complexities of international shipping, such as managing cargo insurance, preparing documentation, and negotiating freight rates with carriers..."
+        }
+      ],
+      "images": [
+        "/images/b1.jpg",
+        "/images/b2.jpg",
+        "/images/b3.jpg",
+      ]
+    }
+  ];
+
   return (
     <>
-   <Navbar/>
-    <div className="max-w-screen-lg mx-auto">
-    
-      <main className="mt-10 pt-12">
-        <div className="mb-4 md:mb-0 w-full mx-auto relative">
-          <div className="px-4 lg:px-0">
-            <h2 className="text-4xl font-semibold text-gray-800 leading-tight">
-              Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales,
-              massa et auctor.
-            </h2>
-            <a
-              href="#"
-              className="py-2 text-green-700 inline-flex items-center justify-center mb-2"
-            >
-              Cryptocurrency
-            </a>
-          </div>
-          <Image
-          alt=''
-           width={500}
-           height={500}
-           layout="responsive"
-            src="https://images.unsplash.com/photo-1587614387466-0a72ca909e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-            className="w-full object-cover lg:rounded"
-            style={{ height: "28em" }}
-          />
-        </div>
-        <div className="flex flex-col lg:flex-row lg:space-x-12">
-          <div className="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
-            <p className="pb-6">
-              Advantage old had otherwise sincerity dependent additions. It in
-              adapted natural hastily is justice. Six draw you him full not mean
-              evil. Prepare garrets it expense windows shewing do an. She
-              projection advantages resolution son indulgence. Part sure on no
-              long life am at ever. In songs above he as drawn to. Gay was
-              outlived peculiar rendered led six.
-            </p>
-            <p className="pb-6">
-              Difficulty on insensible reasonable in. From as went he they.
-              Preference themselves me as thoroughly partiality considered on in
-              estimating. Middletons acceptance discovered projecting so is so or.
-              In or attachment inquietude remarkably comparison at an. Is
-              surrounded prosperous stimulated am me discretion expression. But
-              truth being state can she china widow. Occasional preference fat
-              remarkably now projecting uncommonly dissimilar. Sentiments
-              projection particular companions interested do at my delightful.
-              Listening newspaper in advantage frankness to concluded unwilling.
-            </p>
-            <p className="pb-6">
-              Adieus except say barton put feebly favour him. Entreaties
-              unpleasant sufficient few pianoforte discovered uncommonly ask.
-              Morning cousins amongst in mr weather do neither. Warmth object
-              matter course active law spring six. Pursuit showing tedious unknown
-              winding see had man add. And park eyes too more him. Simple excuse
-              active had son wholly coming number add. Though all excuse ladies
-              rather regard assure yet. If feelings so prospect no as raptures
-              quitting.
-            </p>
-            <div className="border-l-4 border-gray-500 pl-4 mb-6 italic rounded">
-              Sportsman do offending supported extremity breakfast by listening.
-              Decisively advantages nor expression unpleasing she led met. Estate
-              was tended ten boy nearer seemed. As so seeing latter he should
-              thirty whence. Steepest speaking up attended it as. Made neat an on
-              be gave show snug tore.
+      <Navbar />
+      <div className="max-w-screen-lg mx-auto">
+        <main className="mt-10 pt-12">
+          <div className="mb-4 md:mb-0 w-full mx-auto relative">
+            <div className="px-4 lg:px-0">
+              <h2 className="text-4xl font-semibold text-gray-800 leading-tight">
+                Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.
+              </h2>
+              <a
+                href="#"
+                className="py-2 text-green-700 inline-flex items-center justify-center mb-2"
+              >
+                Cryptocurrency
+              </a>
             </div>
-            <p className="pb-6">
-              Exquisite cordially mr happiness of neglected distrusts. Boisterous
-              impossible unaffected he me everything. Is fine loud deal an rent
-              open give. Find upon and sent spot song son eyes. Do endeavor he
-              differed carriage is learning my graceful. Feel plan know is he like
-              on pure. See burst found sir met think hopes are marry among.
-              Delightful remarkably new assistance saw literature mrs favourable.
-            </p>
-            <h2 className="text-2xl text-gray-800 font-semibold mb-4 mt-4">
-              Uneasy barton seeing remark happen his has
-            </h2>
-            <p className="pb-6">
-              Guest it he tears aware as. Make my no cold of need. He been past in
-              by my hard. Warmly thrown oh he common future. Otherwise concealed
-              favourite frankness on be at dashwoods defective at. Sympathize
-              interested simplicity at do projecting increasing terminated. As
-              edward settle limits at in.
-            </p>
-            <p className="pb-6">
-              Dashwood contempt on mr unlocked resolved provided of of. Stanhill
-              wondered it it welcomed oh. Hundred no prudent he however smiling at
-              an offence. If earnestly extremity he he propriety something
-              admitting convinced ye. Pleasant in to although as if differed
-              horrible. Mirth his quick its set front enjoy hoped had there. Who
-              connection imprudence middletons too but increasing celebrated
-              principles joy. Herself too improve gay winding ask expense are
-              compact. New all paid few hard pure she.
-            </p>
-            <p className="pb-6">
-              Breakfast agreeable incommode departure it an. By ignorant at on
-              wondered relation. Enough at tastes really so cousin am of.
-              Extensive therefore supported by extremity of contented. Is pursuit
-              compact demesne invited elderly be. View him she roof tell her case
-              has sigh. Moreover is possible he admitted sociable concerns. By in
-              cold no less been sent hard hill.
-            </p>
-            <p className="pb-6">
-              Detract yet delight written farther his general. If in so bred at
-              dare rose lose good. Feel and make two real miss use easy.
-              Celebrated delightful an especially increasing instrument am.
-              Indulgence contrasted sufficient to unpleasant in in insensible
-              favourable. Latter remark hunted enough vulgar say man. Sitting
-              hearted on it without me.
-            </p>
+            <Image
+              alt="Image of logistics"
+              width={500}
+              height={500}
+              layout="responsive"
+              src="https://images.unsplash.com/photo-1587614387466-0a72ca909e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+              className="w-full object-cover lg:rounded"
+              style={{ height: "28em" }}
+            />
           </div>
-          <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
-            <div className="p-4 border-t border-b md:border md:rounded">
-              <div className="flex py-2">
-                <Image
-                alt=''
-                 width={500}
-                 height={500}
-                 layout="responsive"
-                  src="https://randomuser.me/api/portraits/men/97.jpg"
-                  className="h-10 w-10 rounded-full mr-2 object-cover"
-                />
-                <div>
-                  <p className="font-semibold text-gray-700 text-sm">
-                    {" "}
-                    Mike Sullivan{" "}
-                  </p>
-                  <p className="font-semibold text-gray-600 text-xs"> Editor </p>
+          
+          {/* Blog Data */}
+          <div className="flex flex-col lg:flex-row lg:space-x-12">
+            <div className="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
+              {blogData.map((blog, index) => (
+                <div key={index}>
+                  <h2 className="text-2xl text-gray-800 font-semibold mb-4 mt-4">{blog.title}</h2>
+                  {blog.passages.map((passage, idx) => (
+                    <p key={idx} className="pb-6">
+                      {passage.passage}
+                    </p>
+                  ))}
                 </div>
+              ))}
+            </div>
+            <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
+              <div className="p-4 border-t border-b md:border md:rounded">
+                <div className="flex py-2">
+                  <Image
+                    alt="Mike Sullivan"
+                    width={500}
+                    height={500}
+                    layout="responsive"
+                    src="https://randomuser.me/api/portraits/men/97.jpg"
+                    className="h-10 w-10 rounded-full mr-2 object-cover"
+                  />
+                  <div>
+                    <p className="font-semibold text-gray-700 text-sm">Mike Sullivan</p>
+                    <p className="font-semibold text-gray-600 text-xs">Editor</p>
+                  </div>
+                </div>
+                <p className="text-gray-700 py-3">
+                  Mike writes about technology. Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it.
+                </p>
+                <button className="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
+                  Follow
+                  <i className="bx bx-user-plus ml-2" />
+                </button>
               </div>
-              <p className="text-gray-700 py-3">
-                Mike writes about technology Yourself required no at thoughts
-                delicate landlord it be. Branched dashwood do is whatever it.
-              </p>
-              <button className="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
-                Follow
-                <i className="bx bx-user-plus ml-2" />
-              </button>
             </div>
           </div>
-        </div>
-      </main>
-      
-    </div>
-    <Footer/>
-  </>
-  
+        </main>
+      </div>
+      <Footer />
+    </>
   )
 }
 
-export default page
+export default Page;
 
 
 
-
-const blogPosts = [
+const blogData = [
   {
     "title": "The Impact of Efficient Logistics on Global Trade",
     "passages": [
