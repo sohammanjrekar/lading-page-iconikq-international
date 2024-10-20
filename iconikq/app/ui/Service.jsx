@@ -49,7 +49,7 @@ const Services = () => {
       <section className="pb-5 lg:pb-10 bg-[#F3F4F6]">
         <div className="container mx-auto">
           <Animatedword />
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap mx-4">
             {/* Step 2: Use map to dynamically generate cards */}
             {cardData.map((card, index) => (
               <div key={index} className="w-full md:w-1/2 xl:w-1/3 px-4">
@@ -65,7 +65,7 @@ const Services = () => {
                     <h3>
                       <Link
                         href={card.link}
-                        className="font-semibold text-dark text-xl sm:text-[20px] md:text-[20px] lg:text-[20px] xl:text-xl 2xl:text-[20px] mb-4 block hover:text-primary"
+                        className="font-semibold text-dark uppercase text-xl sm:text-[20px] md:text-[20px] lg:text-[20px] xl:text-xl 2xl:text-[20px] mb-4 block hover:text-primary"
                       >
                         {card.title}
                       </Link>

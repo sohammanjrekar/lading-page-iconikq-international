@@ -15,38 +15,38 @@ const Team = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2">
-            <Link href={'/ParthPortfolio'}>
+          <div className="grid grid-cols-1 gap-5 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2">
+          
               <div>
                 <Image 
-                  className="object-cover rounded-xl h-64 w-full"
-                  src="/images/parth2.jpg" 
+                  className="object-cover rounded-xl h-[45vh] w-full"
+                  src="/images/parth1.jpg" 
                   alt="Mr. Parth Ruparel" 
-                  width={400}
-                  height={256}
+                  width={600}
+                  height={700}
                 />
-                <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize text-white">
+                <h1 className="mt-4 text-2xl font-semibold  capitalize text-white">
                   Mr. Parth Ruparel
                 </h1>
                 <p className="mt-2 capitalize text-gray-300">Partner</p>
               </div>
-            </Link>
+           
             
-            <Link href={'/DrustiPortfolio'}>
+            
               <div>
                 <Image 
-                  className="object-cover rounded-xl h-64 w-full"
+                  className="object-cover rounded-xl h-[45vh] w-full"
                   src="/images/drusti2.jpg" 
                   alt="Ms. Drishti Ruparel" 
-                  width={400}
-                  height={256}
+                  width={600}
+                  height={700}
                 />
-                <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize text-white">
+                <h1 className="mt-4 text-2xl font-semibold  capitalize text-white">
                   Ms. Drishti Ruparel
                 </h1>
                 <p className="mt-2 capitalize text-gray-300">Partner</p>
               </div>
-            </Link>
+            
           </div>
         </div>
       </div>

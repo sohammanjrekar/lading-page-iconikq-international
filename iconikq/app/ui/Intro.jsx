@@ -79,7 +79,7 @@ const Intro = () => {
           </div>
         </div>
 
-        <div className="w-full bg-myblue shadow-xl shadow-indigo-200 py-10 px-5 lg:px-20 flex flex-col justify-between items-center">
+        <div className="w-full bg-myblue shadow-xl shadow-indigo-200 py-10 px-5 lg:px-20 flex flex-wrap justify-center sm:justify-between items-center">
   <p className="text-white text-center">
     <span className="text-4xl font-medium text-myred block">Still Confused?</span>
     <span className="text-lg block">Book for Free Career Consultation Today!</span>

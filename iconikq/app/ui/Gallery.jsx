@@ -5,21 +5,24 @@ import Image from 'next/image';
 const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [visibleImages, setVisibleImages] = useState(9); // Initially show 9 images
+  const [visibleImages, setVisibleImages] = useState(6); // Initially show 9 images
 
   const images = [
-    "/images/img1.jpg",
+    "/images/img10.jpg",
+    "/images/img11.jpg",
+    "/images/img8.jpg",
+    "/images/img9.jpg",
+    "/images/img12.jpg",
+  
     "/images/img2.jpg",
     "/images/img3.jpg",
     "/images/img4.jpg",
-    "/images/img5.jpg",
-    "/images/img6.jpg",  
+   
+     
     "/images/img7.jpg",
-    "/images/img8.jpg",
-    "/images/img9.jpg",
-    "/images/img10.jpg",
-    "/images/img11.jpg",
-    "/images/img12.jpg"
+    "/images/img1.jpg",
+    "/images/img6.jpg",
+   
   ];
 
   const openModal = (src) => {
@@ -33,7 +36,7 @@ const Gallery = () => {
   };
 
   const loadMoreImages = () => {
-    setVisibleImages((prev) => prev + 9); // Load 9 more images
+    setVisibleImages((prev) => prev + 6); // Load 9 more images
   };
 
   return (
@@ -74,7 +77,7 @@ const Gallery = () => {
                 alt={`Image ${index + 1}`}
                 width={500} // Adjust width
                 height={500} // Adjust height
-                layout="responsive" // Make it responsive
+             
               />
             </div>
           </div>

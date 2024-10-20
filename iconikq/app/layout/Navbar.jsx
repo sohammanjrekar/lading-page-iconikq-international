@@ -51,7 +51,7 @@ const Navbar = () => {
               <Link href="/Blog" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Blog</Link>
             </li>
             <li>
-              <Link href="/Podcast" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Podcast</Link>
+              <Link href="/Media" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Media</Link>
             </li>
             <li>
               <Link href="/Contact" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Contact</Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
           <Link href="/Services" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Services</Link>
           <Link href="/Faq" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">FAQ</Link>
           <Link href="/Blog" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Blog</Link>
-          <Link href="/Podcast" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Podcast</Link>
+          <Link href="/Media" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Media</Link>
           <Link href="/Contact" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Contact</Link>
         </div>
       </div>

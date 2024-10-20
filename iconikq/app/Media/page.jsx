@@ -54,7 +54,7 @@ const page = () => {
       <div className="flex bg-zinc-900 text-zinc-50 flex-col">
         <div className="flex flex-1">
           <main className="flex-1 bg-myred">
-            <div className="bg-gradient-to-tr from-myblue py-20">
+            <div className="bg-gradient-to-br from-myblue py-20">
               <h1 className="mt-10 text-3xl font-semibold ml-5">Video Library</h1>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-3 sm:px-10">
                 {videos.map((video) => (
@@ -80,14 +80,14 @@ const page = () => {
                       {/* Video Information */}
                       <div className="flex flex-col">
                         <a href="#">
-                          <p className="text-gray-100 text-sm font-semibold group-hover:text-white transition">
+                          <p className="text-white text-md font-semibold group-hover:text-white transition">
                             {video.title}
                           </p>
                         </a>
-                        <a className="text-gray-400 text-xs mt-2 hover:text-gray-100" href="#">
+                        <a className="text-white text-xs mt-2 hover:text-gray-100" href="#">
                           {video.channel}
                         </a>
-                        <p className="text-gray-400 text-xs mt-1">
+                        <p className="text-white text-xs mt-1">
                           {video.views} . {video.time}
                         </p>
                       </div>

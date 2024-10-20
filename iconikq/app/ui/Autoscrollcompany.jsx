@@ -67,8 +67,7 @@ const AutoCarousel = () => {
             alt={image.name}
             width={400}
             height={100}
-            object-fit="fill"
-            className=" mx-10"
+            className="h-[10vh] mx-10"
           />
         ))}
       </div>
