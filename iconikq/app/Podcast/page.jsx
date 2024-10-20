@@ -1,5 +1,4 @@
-import React from 'react'
-
+import Image from 'next/image';
 const page = () => {
   return (
     <>
@@ -96,7 +95,10 @@ const page = () => {
             <div className="mt-4 grid grid-cols-4 gap-2">
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -114,7 +116,10 @@ const page = () => {
               </div>
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -132,7 +137,10 @@ const page = () => {
               </div>
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -150,7 +158,10 @@ const page = () => {
               </div>
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -168,7 +179,10 @@ const page = () => {
               </div>
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -186,7 +200,10 @@ const page = () => {
               </div>
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -204,7 +221,10 @@ const page = () => {
               </div>
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -222,7 +242,10 @@ const page = () => {
               </div>
               <div className="group flex items-center justify-between gap-4 rounded-md bg-white/5 overflow-hidden transition-colors cursor-pointer hover:bg-white/10">
                 <div className="flex flex-row items-center gap-2">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     className="w-12 h-12"
                     src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
                     alt="Foto do álbum"
@@ -248,11 +271,12 @@ const page = () => {
           </div>
           <div className="mt-4 -ml-3 grid grid-cols-5 gap-2">
             <div className="flex flex-col p-3 cursor-pointer gap-2 rounded-md hover:bg-white/5">
-              <img
+              <Image
                 className="w-48 h-48 rounded-md"
                 src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
-                width="{120}"
-                height="{120}"
+                width={500}
+                height={500}
+                layout="responsive"
                 alt="Foto do álbum"
               />
               <div>
@@ -261,11 +285,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-col p-3 cursor-pointer gap-2 rounded-md hover:bg-white/5">
-              <img
+              <Image
                 className="w-48 h-48 rounded-md"
                 src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
-                width="{120}"
-                height="{120}"
+                width={500}
+                height={500}
+                layout="responsive"
                 alt="Foto do álbum"
               />
               <div>
@@ -274,11 +299,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-col p-3 cursor-pointer gap-2 rounded-md hover:bg-white/5">
-              <img
+              <Image
                 className="w-48 h-48 rounded-md"
                 src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
-                width="{120}"
-                height="{120}"
+                width={500}
+                height={500}
+                layout="responsive"
                 alt="Foto do álbum"
               />
               <div>
@@ -287,11 +313,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-col p-3 cursor-pointer gap-2 rounded-md hover:bg-white/5">
-              <img
+              <Image
                 className="w-48 h-48 rounded-md"
                 src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
-                width="{120}"
-                height="{120}"
+                width={500}
+                height={500}
+                layout="responsive"
                 alt="Foto do álbum"
               />
               <div>
@@ -300,11 +327,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-col p-3 cursor-pointer gap-2 rounded-md hover:bg-white/5">
-              <img
+              <Image
                 className="w-48 h-48 rounded-md"
                 src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
-                width="{120}"
-                height="{120}"
+                width={500}
+              height={500}
+              layout="responsive"
                 alt="Foto do álbum"
               />
               <div>
@@ -318,11 +346,12 @@ const page = () => {
     </div>
     <footer className="flex items-center justify-between border-t border-zinc-700 bg-myblue px-6 py-4">
       <div className="flex items-center gap-3">
-        <img
+        <Image
           className="w-14 h-14"
           src="https://i.scdn.co/image/ab67616d00001e023562c44947cd0b7696f95178"
-          width="{56}"
-          height="{56}"
+          width={500}
+              height={500}
+              layout="responsive"
           alt="Foto do álbum"
         />
         <div className="flex flex-col">

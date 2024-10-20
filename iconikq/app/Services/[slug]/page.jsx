@@ -1,9 +1,10 @@
-import React from 'react';
+
 import cardData from '../../Data/page.jsx'
 import Link from 'next/link';
 import Button from '../../ui/Button.jsx';
 import Navbar from '../../layout/Navbar.jsx';
 import Footer from '../../layout/Footer.jsx';
+import Image from 'next/image.js';
 
 const CategoryPage = ({ params }) => {
   const { slug } = params;
@@ -68,7 +69,10 @@ const CategoryPage = ({ params }) => {
               {filteredCards.map((card, index) => (
                 <div key={index} className=" w-full md:w-1/2 xl:w-1/3 px-4">
                   <div className="shadow-2xl bg-white rounded-lg overflow-hidden mb-10">
-                    <img
+                    <Image
+                     width={500}
+                     height={500}
+                     layout="responsive"
                       src={card.image}
                       alt="image"
                       className="w-full h-[35vh]"

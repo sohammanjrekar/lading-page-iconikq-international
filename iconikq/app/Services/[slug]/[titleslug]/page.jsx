@@ -1,4 +1,4 @@
-import React from 'react';
+
 import cardData from '../../../Data/page'
 import Navbar from '../../../layout/Navbar';
 import Footer from '../../../layout/Footer';
@@ -24,7 +24,7 @@ const ServiceDetailPage = ({ params }) => {
     return (
       <div className="text-center text-red-500">
         <h1>Service Not Found</h1>
-        <p>We couldn't find the service you're looking for.</p>
+        <p>We couldn&apos;t find the service you&apos;re looking for.</p>
       </div>
     );
   }

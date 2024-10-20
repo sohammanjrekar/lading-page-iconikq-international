@@ -1,6 +1,6 @@
 "use client"
 // components/SocialButtons.js
-import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faWhatsapp, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Tippy from '@tippyjs/react';

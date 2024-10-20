@@ -1,4 +1,4 @@
-import React from 'react'
+import Image from 'next/image';
 
 const BentoBox = () => {
   return (
@@ -319,19 +319,25 @@ const BentoBox = () => {
                         Glodie
                       </span>
                       <div className="size-7 ring-4 ring-white ring-[--card-dark-bg]">
-                        <img
+                        <Image
                           className="rounded-full  border border-gray-950/5 border-white/5 size-full"
                           src="https://pbs.twimg.com/profile_images/1585976646468763648/OlbJkLL0_400x400.jpg"
                           alt=""
+                          width={500}
+                          height={500}
+                          layout="responsive"
                         />
                       </div>
                     </div>
                     <div className="flex items-center gap-2 ml-[calc(50%-1rem)] relative">
                       <div className="size-8 ring-4 ring-white ring-[--card-dark-bg]">
-                        <img
+                        <Image
                           className="rounded-full  border border-gray-950/5 border-white/5 size-full"
                           src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/124.jpg"
                           alt=""
+                          width={500}
+                          height={500}
+                          layout="responsive"
                         />
                       </div>
                       <span className="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md bg-gray-800 border-white/5 text-white">
@@ -343,10 +349,13 @@ const BentoBox = () => {
                         B. Ng
                       </span>
                       <div className="size-7 ring-4 ring-white ring-[--card-dark-bg]">
-                        <img
+                        <Image
                           className="rounded-full  border border-gray-950/5 border-white/5 size-full"
                           src="https://pbs.twimg.com/profile_images/1585976646468763648/OlbJkLL0_400x400.jpg"
                           alt=""
+                          width={500}
+                          height={500}
+                          layout="responsive"
                         />
                       </div>
                     </div>

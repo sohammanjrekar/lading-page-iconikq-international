@@ -1,9 +1,9 @@
 // components/LandingPage.js
-import React from 'react';
+
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 import Certificate from '../ui/Certificate';
-
+import Image from 'next/image';
 const Page = () => {
   return (
     <>
@@ -47,7 +47,9 @@ const Page = () => {
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
-                    <img src="images/icon4.png" alt=""/>
+                    <Image  width={500}
+              height={500}
+              layout="responsive" src="images/icon4.png" alt=""/>
                   </div>
                   <h6 className="text-xl font-semibold text-myred">FREIGHT FORWARDING</h6>
                   <p className="mt-2 mb-4 text-blueGray-500">
@@ -60,7 +62,9 @@ const Page = () => {
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                  <img src="images/icon5.png" alt=""/>
+                  <Image  width={500}
+              height={500}
+              layout="responsive" src="images/icon5.png" alt=""/>
                   </div>
                   <h6 className="text-xl font-semibold text-myred">INVENTORY MANAGEMENT</h6>
                   <p className="mt-2 mb-4 text-blueGray-500">
@@ -73,7 +77,9 @@ const Page = () => {
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
-                  <img src="images/icon1.png" alt=""/>
+                  <Image  width={500}
+              height={500}
+              layout="responsive" src="images/icon1.png" alt=""/>
                   </div>
                   <h6 className="text-xl font-semibold text-myred">Warehousing Solutions</h6>
                   <p className="mt-2 mb-4 text-blueGray-500">
@@ -96,7 +102,10 @@ const Page = () => {
     .
     <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3">
       <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-md relative grid min-h-[30rem] items-end overflow-hidden rounded-xl">
-        <img
+        <Image
+         width={500}
+         height={500}
+         layout="responsive"
           src="https://bucket.material-tailwind.com/magic-ai/58b51625af5803baea7811b7e9128c8b23c0706c3271fa863b6bc287c2d3958a.jpg"
           alt="bg"
           className="absolute inset-0 h-full w-full object-cover object-center"
@@ -115,7 +124,10 @@ const Page = () => {
         </div>
       </div>
       <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-md relative grid min-h-[30rem] items-end overflow-hidden rounded-xl">
-        <img
+        <Image
+         width={500}
+         height={500}
+         layout="responsive"
           src="https://bucket.material-tailwind.com/magic-ai/36e7d64250cd9568062f658a26b4d0107c00235cb3b85fa4919b3ba4070c9bed.jpg"
           alt="bg"
           className="absolute inset-0 h-full w-full object-cover object-center"
@@ -135,7 +147,9 @@ const Page = () => {
         </div>
       </div>
       <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-md relative grid min-h-[30rem] items-end overflow-hidden rounded-xl">
-        <img
+        <Image  width={500}
+              height={500}
+              layout="responsive"
           src="https://bucket.material-tailwind.com/magic-ai/36e7d64250cd9568062f658a26b4d0107c00235cb3b85fa4919b3ba4070c9bed.jpg"
           alt="bg"
           className="absolute inset-0 h-full w-full object-cover object-center"

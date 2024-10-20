@@ -1,5 +1,7 @@
 "use client";
-import React from 'react';
+
+import Image from "next/image";
+
 
 const AutoCarousel = () => {
   const images = [
@@ -59,10 +61,13 @@ const AutoCarousel = () => {
         <div className="flex mt-12 animate-scroll" style={{ width: `${images.length * 20}vh` }}>
         {images.concat(images).map((image) => ( // Duplicate images for seamless scrolling
          
-          <img
+          <Image
             key={image.name}
             src={image.src}
             alt={image.name}
+            width={500}
+            height={500}
+            layout="responsive"
             className="mx-4 h-[15vh]"
           />
         ))}

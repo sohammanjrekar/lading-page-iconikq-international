@@ -1,4 +1,5 @@
-import React from 'react';
+
+import Image from 'next/image';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
 
@@ -59,7 +60,10 @@ const BlogPage = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <img
+              <Image
+               width={500}
+               height={500}
+               layout="responsive"
                 src="https://images.unsplash.com/photo-1626314928277-1d373ddb6428?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                 alt="Creative content"
                 className="object-cover rounded-lg max-h-64 sm:max-h-96 w-full h-full"
@@ -69,7 +73,10 @@ const BlogPage = () => {
           <div className="grid grid-cols-12 sm:px-5 gap-x-8 gap-y-16">
             {Array.from({ length: 3 }).map((_, index) => (
               <div key={index} className="flex flex-col items-start col-span-12 sm:col-span-6 xl:col-span-4 space-y-3">
-                <img
+                <Image
+                 width={500}
+                 height={500}
+                 layout="responsive"
                   src={`https://images.unsplash.com/photo-1626318305863-bb23d0297c0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60`}
                   alt={`Article ${index + 1}`}
                   className="object-cover w-full mb-2 rounded-lg shadow-md"

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +15,9 @@ const Navbar = () => {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <Link href="/" className="flex items-center">
           <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
-            <img src="/images/logo.png" alt="Logo" className="max-h-[6vh]" />
+            <Image  width={500}
+              height={500}
+              layout="responsive" src="/images/logo.png" alt="Logo" className="max-h-[6vh]" />
           </span>
         </Link>
 

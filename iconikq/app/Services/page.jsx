@@ -3,6 +3,7 @@ import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
 import cardData from '../Data/page'
 import Button from '../ui/Button'
+import Image from 'next/image';
 const page = () => {
   return (
    <>
@@ -17,7 +18,10 @@ const page = () => {
             {cardData.map((card, index) => (
               <div key={index} className=" w-full md:w-1/2 xl:w-1/3 px-4">
                 <div className="shadow-2xl bg-white rounded-lg overflow-hidden mb-10">
-                  <img
+                  <Image
+                   width={500}
+                   height={500}
+                   layout="responsive"
                     src={card.image}
                     alt="image"
                     className="w-full h-[35vh]"

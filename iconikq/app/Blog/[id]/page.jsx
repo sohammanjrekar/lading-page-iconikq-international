@@ -1,4 +1,5 @@
 
+import Image from 'next/image'
 import Footer from '../../layout/Footer'
 import Navbar from '../../layout/Navbar'
 const page = () => {
@@ -21,7 +22,11 @@ const page = () => {
               Cryptocurrency
             </a>
           </div>
-          <img
+          <Image
+          alt=''
+           width={500}
+           height={500}
+           layout="responsive"
             src="https://images.unsplash.com/photo-1587614387466-0a72ca909e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
             className="w-full object-cover lg:rounded"
             style={{ height: "28em" }}
@@ -113,7 +118,11 @@ const page = () => {
           <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
             <div className="p-4 border-t border-b md:border md:rounded">
               <div className="flex py-2">
-                <img
+                <Image
+                alt=''
+                 width={500}
+                 height={500}
+                 layout="responsive"
                   src="https://randomuser.me/api/portraits/men/97.jpg"
                   className="h-10 w-10 rounded-full mr-2 object-cover"
                 />

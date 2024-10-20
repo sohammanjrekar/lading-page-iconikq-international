@@ -340,7 +340,7 @@ const page = () => {
             Drop in our office
           </h1>
           <p className="text-gray-400">
-          We'd love to meet you in person! Visit us at our Mumbai office for a consultation or to discuss your logistics needs.
+          We&apos;d love to meet you in person! Visit us at our Mumbai office for a consultation or to discuss your logistics needs.
           </p>
           <div className="flex my-4 w-2/3 lg:w-1/2">
             <div className="flex flex-col">
