@@ -37,16 +37,17 @@ const Testimonial = () => {
       </div>
     <div className="mb-10 md:mb-24  container mx-auto flex flex-col md:flex-row shadow-sm overflow-hidden">
       
-      <div className="relative w-full py-2 md:py-24 bg-heromy  bg-cover md:w-1/2 flex flex-col items-center justify-center">
-        <div className="absolute top-0 left-0 z-10 grid-indigo w-16 h-16 md:w-40 md:h-40 md:ml-20 md:mt-24"></div>
-        <div className="relative text-2xl md:text-5xl py-2 px-6 md:py-6 md:px-1 md:w-64 md:mx-auto text-indigo-100 font-semibold leading-tight tracking-tight mb-0 z-20">
-          <span className="md:block  shadow-inner">What Our</span>
-          <span className="md:block  shadow-inner">Customers</span>
-          <span className="block  shadow-inner">Are Saying!</span>
-        </div>
+    <div className="relative h-[35vh] sm:h-full w-full py-2 md:py-24 bg-heromy bg-cover md:w-1/2 flex flex-col items-center justify-center">
+  {/* Semi-Transparent Overlay */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-10"></div>
 
-        
-      </div>
+  <div className="relative text-2xl md:text-5xl py-2 px-6 md:py-6 md:px-1 md:w-64 md:mx-auto text-indigo-100 font-semibold leading-tight tracking-tight mb-0 z-20">
+    <span className="md:block shadow-inner text-shadow-md">What Our</span>
+    <span className="md:block shadow-inner text-shadow-md">Customers</span>
+    <span className="block shadow-inner text-shadow-md">Are Saying!</span>
+  </div> 
+</div>
+
 
       <div className="bg-myblue md:w-1/2">
         <div className="flex flex-col h-full relative">

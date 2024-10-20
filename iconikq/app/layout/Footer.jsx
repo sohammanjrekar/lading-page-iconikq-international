@@ -8,30 +8,31 @@ const Footer = () => {
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-          {/* Newsletter Section */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Image
-              width={300}
-              height={200}
-              layout="responsive"
-              className="mb-4 max-h-[7vh] max-w-[10vw]"
-              src="/images/logo.png"
-              alt="Logo"
-            />
-            <h1 className="max-w-lg text-xl font-semibold tracking-tight xl:text-2xl text-white">
-              Subscribe to our newsletter for updates.
-            </h1>
+         {/* Newsletter Section */}
+<div className="sm:col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
+  <Image
+    width={300}
+    height={200}
+    layout="responsive"
+    className="mb-4 max-h-[15vh] lg:max-h-[25vh] w-auto"
+    src="/images/logo.png"
+    alt="Logo"
+  />
+  <h1 className="max-w-lg text-xl font-semibold tracking-tight xl:text-2xl text-white text-center lg:text-left">
+    Subscribe to our newsletter for updates.
+  </h1>
 
-            <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
-              <input
-                id="email"
-                type="email"
-                className="shadow-inner ring-2 ring-myred ring-offset-2 px-4 py-1 text-gray-700 bg-white border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-                placeholder="Email Address"
-              />
-              <Button text="Subscribe" />
-            </div>
-          </div>
+  <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+    <input
+      id="email"
+      type="email"
+      className="shadow-inner ring-2 ring-myred ring-offset-2 px-4 py-1 text-gray-700 bg-white border rounded-md focus:outline-none focus:ring focus:ring-blue-300 w-full md:w-auto"
+      placeholder="Email Address"
+    />
+    <Button text="Subscribe" />
+  </div>
+</div>
+
 
           {/* Footer Links Section */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 sm:grid-cols-2 lg:col-span-3 items-start justify-center text-center">
