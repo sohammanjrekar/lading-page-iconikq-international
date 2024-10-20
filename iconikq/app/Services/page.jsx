@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
-import cardData from '../Data/page'
+import {data} from '../Data';
+
 import Button from '../ui/Button'
 import Image from 'next/image';
 const page = () => {
@@ -15,7 +16,7 @@ const page = () => {
       </h1>
           <div className="flex flex-wrap -mx-4">
            
-            {cardData.map((card, index) => (
+            {data.map((card, index) => (
               <div key={index} className=" w-full md:w-1/2 xl:w-1/3 px-4">
                 <div className="shadow-2xl bg-white rounded-lg overflow-hidden mb-10">
                   <Image

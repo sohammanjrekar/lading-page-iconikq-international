@@ -1,11 +1,10 @@
-
-import cardData from '../../../Data/page'
+import { data } from '../../../Data';
 import Navbar from '../../../layout/Navbar';
 import Footer from '../../../layout/Footer';
 import Link from 'next/link';
 export async function generateStaticParams() {
   // Get all slugs for categories and titles
-  return cardData.map((item) => ({
+  return data.map((item) => ({
     slug: item.categorySlug,
     titleslug: item.titleSlug,
   }));

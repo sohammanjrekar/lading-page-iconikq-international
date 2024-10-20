@@ -1,4 +1,4 @@
-const cardData = [
+export const data = [
   {
     image: 'images/transport.jpg',
     title: 'EPR Registration',
@@ -104,5 +104,3 @@ const cardData = [
   
 ];
 
-
-export default cardData;

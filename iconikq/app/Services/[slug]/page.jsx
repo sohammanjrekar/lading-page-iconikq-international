@@ -1,5 +1,5 @@
 
-import cardData from '../../Data/page.jsx'
+import {data} from '../../Data';
 import Link from 'next/link';
 import Button from '../../ui/Button.jsx';
 import Navbar from '../../layout/Navbar.jsx';
@@ -10,7 +10,7 @@ const CategoryPage = ({ params }) => {
   const { slug } = params;
 
   // Filter cardData to get only the services belonging to the current category
-  const filteredCards = cardData.filter((item) => item.categorySlug === slug);
+  const filteredCards = data.filter((item) => item.categorySlug === slug);
 
   // If no matching services are found for the category
   if (filteredCards.length === 0) {
