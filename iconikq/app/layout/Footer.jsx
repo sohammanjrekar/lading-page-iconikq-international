@@ -4,7 +4,7 @@ import Social from "../ui/Social";
 
 const Footer = () => {
   return (
-    <footer className="bg-myblue shadow-2xl shadow-white">
+    <footer className="bg-myblue shadow-3xl shadow-white">
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -14,7 +14,7 @@ const Footer = () => {
     width={500}
     height={300}
    
-    className="mb-4 max-h-[10vh] lg:max-h-[25vh] max-w-[50vw] sm:!max-w-[20vw]"
+    className="mb-4 max-h-[30vh] lg:max-h-[25vh] max-w-[50vw] sm:!max-w-[20vw]"
     src="/images/logo.png"
     alt="Logo"
   />

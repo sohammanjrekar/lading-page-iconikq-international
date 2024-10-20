@@ -5,10 +5,16 @@ const Certificate = () => {
   return (
     <>
       {/* component */}
-      <div className="container mx-auto p-4 lg:h-screen flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="container mx-auto py-3  w-[85vw]">
+      <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900   lg:!text-4xl">
+     Certification
+    </h2>
+    <p className="block antialiased font-sans text-xl  leading-relaxed text-inherit mt-2 w-full font-normal !text-gray-500 lg:w-5/12">
+      Read about our latest achievements and milestones.
+    </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
           {/* Blog Entry 1 */}
-          <div className="max-w-sm mx-auto relative shadow-md rounded-lg cursor-pointer">
+          <div className=" mx-auto relative shadow-md rounded-lg cursor-pointer">
             <Image
               src="https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Img by Meriç Dağlı https://unsplash.com/@meric"
@@ -26,7 +32,7 @@ const Certificate = () => {
             </div>
           </div>
           {/* Blog Entry 2 */}
-          <div className="max-w-sm mx-auto relative shadow-md rounded-lg cursor-pointer">
+          <div className=" mx-auto relative shadow-md rounded-lg cursor-pointer">
             <Image
               src="https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Img by Meriç Dağlı https://unsplash.com/@meric"
@@ -44,7 +50,7 @@ const Certificate = () => {
             </div>
           </div>
           {/* Blog Entry 3 */}
-          <div className="max-w-sm mx-auto relative shadow-md rounded-lg cursor-pointer">
+          <div className=" mx-auto relative shadow-md rounded-lg cursor-pointer">
             <Image
               src="https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Img by Meriç Dağlı https://unsplash.com/@meric"

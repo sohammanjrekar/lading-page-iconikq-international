@@ -1,98 +1,100 @@
-import Image from 'next/image'
-import Footer from '../../layout/Footer'
-import Navbar from '../../layout/Navbar'
+import Image from 'next/image';
+import Footer from '../../layout/Footer';
+import Navbar from '../../layout/Navbar';
+import Button from '../../ui/Button';
 
-const Page = () => {
-  const blogData = [
-    {
-      "title": "The Impact of Efficient Logistics on Global Trade",
-      "passages": [
-        {
-          "passage": "Efficient logistics is the backbone of successful global trade. The seamless movement of goods from one country to another relies on a well-coordinated logistics chain that encompasses transportation, warehousing, customs clearance, and freight forwarding. In today’s global economy, businesses must rely on advanced logistics solutions to ensure that their products reach their destination on time and in good condition. Inefficient logistics, on the other hand, can lead to delays, increased costs, and dissatisfied customers, ultimately impacting a company’s competitiveness..."
-        },
-        {
-          "passage": "One key aspect of modern logistics is the use of technology to optimize supply chain operations. From real-time shipment tracking to automated warehousing solutions, logistics companies leverage digital tools to reduce inefficiencies. Tracking technologies allow businesses to monitor the status of their shipments in real-time, providing transparency and allowing for quick problem-solving when issues arise..."
-        },
-        {
-          "passage": "Customs clearance is another critical component of logistics. For goods to cross international borders, they must comply with the laws and regulations of both the exporting and importing countries. Customs clearance involves the submission of documents, payment of duties and taxes, and the inspection of goods by customs officials..."
-        },
-        {
-          "passage": "Freight forwarding plays a significant role in facilitating international trade. Freight forwarders act as intermediaries between the shipper and various transportation services, coordinating the movement of goods through air, sea, or land. They also handle the logistical complexities of international shipping, such as managing cargo insurance, preparing documentation, and negotiating freight rates with carriers..."
-        }
-      ],
-      "images": [
-        "/images/b1.jpg",
-        "/images/b2.jpg",
-        "/images/b3.jpg",
-      ]
-    }
-  ];
+const Page = ({ params }) => {
+  const { id } = params;
+
+  // Find the blog data by id
+  const blog = blogData.find((b) => b.id === parseInt(id));
+
+  if (!blog) {
+    return <div>Loading...</div>; // Handle loading state when blog is not found
+  }
 
   return (
     <>
       <Navbar />
-      <div className="max-w-screen-lg mx-auto">
-        <main className="mt-10 pt-12">
-          <div className="mb-4 md:mb-0 w-full mx-auto relative">
-            <div className="px-4 lg:px-0">
-              <h2 className="text-4xl font-semibold text-gray-800 leading-tight">
-                Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.
-              </h2>
-              <a
-                href="#"
-                className="py-2 text-green-700 inline-flex items-center justify-center mb-2"
-              >
-                Cryptocurrency
-              </a>
+      <div className="container w-[70vw] my-5 pt-10 mx-auto">
+        <main className="mt-12">
+          {/* Header Section */}
+          <header className="mb-12">
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
+              {blog.title}
+            </h1>
+            <div className="bg-myred flex w-[9vw] items-center text-center rounded-full text-white px-2 py-1 uppercase ">
+                  <p className="text-sm text-center font-medium">{blog.Topic}</p>
+                </div>    
+          </header>
+
+          {/* Top Image */}
+          {blog.images[0] && (
+            <div className="relative mb-12">
+              <Image
+                alt="Image of logistics"
+                width={800}
+                height={500}
+                layout="responsive"
+                src={blog.images[0]} // First image as the hero image
+                className="rounded-lg object-cover shadow-lg transition-transform transform hover:scale-105"
+              />
             </div>
-            <Image
-              alt="Image of logistics"
-              width={500}
-              height={500}
-              layout="responsive"
-              src="https://images.unsplash.com/photo-1587614387466-0a72ca909e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-              className="w-full object-cover lg:rounded"
-              style={{ height: "28em" }}
-            />
-          </div>
-          
-          {/* Blog Data */}
+          )}
+
+          {/* Blog Content Section */}
           <div className="flex flex-col lg:flex-row lg:space-x-12">
-            <div className="px-4 lg:px-0 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:w-3/4">
-              {blogData.map((blog, index) => (
-                <div key={index}>
-                  <h2 className="text-2xl text-gray-800 font-semibold mb-4 mt-4">{blog.title}</h2>
-                  {blog.passages.map((passage, idx) => (
-                    <p key={idx} className="pb-6">
-                      {passage.passage}
-                    </p>
-                  ))}
+            {/* Main Content */}
+            <div className="lg:w-3/4 px-4 lg:px-0 mb-12 lg:mb-0">
+              {blog.passages.map((passage, idx) => (
+                <div key={idx} className="mb-12">
+                  <h2 className="text-sm sm:text-md md:text-lg font-semibold text-gray-800 mb-4">
+                    {passage.passage}
+                  </h2>
+
+                  {/* Displaying related image to passage */}
+                  {blog.images[idx + 1] && (
+                    <div className="mb-8 mt-5">
+                      <Image
+                        alt={`Image related to passage ${idx + 1}`}
+                        width={1000}
+                        height={800}
+                        layout="responsive"
+                        src={blog.images[idx + 1]} // Corresponding image for each passage
+                        className="rounded-lg shadow-lg  transition-transform transform hover:scale-105"
+                      />
+                    </div>
+                  )}
+
+                  {/* Justified Text */}
+                  <p className="text-sm text-gray-700  leading-relaxed text-justify mb-8">
+                    {passage.content}
+                  </p>
                 </div>
               ))}
             </div>
-            <div className="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
-              <div className="p-4 border-t border-b md:border md:rounded">
-                <div className="flex py-2">
+
+            {/* Sidebar / Author Section */}
+            <div className="w-full lg:w-1/4 max-w-sm mx-auto lg:mx-0 mb-12 lg:mb-0">
+              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 ease-in-out">
+                <div className="flex flex-wrap justify-center items-center mb-6">
                   <Image
                     alt="Mike Sullivan"
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                    src="https://randomuser.me/api/portraits/men/97.jpg"
-                    className="h-10 w-10 rounded-full mr-2 object-cover"
+                    width={120}
+                    height={120}
+                    layout="intrinsic"
+                    src="/images/parth2.jpg"
+                    className="h-24 w-24 rounded-full object-cover border-4 border-green-700"
                   />
-                  <div>
-                    <p className="font-semibold text-gray-700 text-sm">Mike Sullivan</p>
-                    <p className="font-semibold text-gray-600 text-xs">Editor</p>
+                  <div className="ml-4">
+                    <p className="font-semibold text-lg text-gray-800">Mr. Parth Ruparel</p>
+                    <p className="text-sm text-center text-gray-600">Partner</p>
                   </div>
                 </div>
-                <p className="text-gray-700 py-3">
-                  Mike writes about technology. Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it.
+                <p className="text-gray-700 mb-4 text-lg">
+                  Mr. Parth Ruparel is a logistics expert dedicated to providing efficient and customized solutions, ensuring timely and secure deliveries globally.
                 </p>
-                <button className="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
-                  Follow
-                  <i className="bx bx-user-plus ml-2" />
-                </button>
+                <Button text="Contact Me" href={'/Contact'} />
               </div>
             </div>
           </div>
@@ -100,11 +102,10 @@ const Page = () => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export default Page;
-
 
 
 const blogData = [
@@ -128,8 +129,9 @@ const blogData = [
       "/images/b1.jpg",
       "/images/b2.jpg",
       "/images/b3.jpg",
-
-    ]
+    ]  ,"Date":"14-10-2024",
+    "Topic":"Loistics",
+    "id":1,
   }
   ,{
     "title": "The Importance of Warehousing in Supply Chain Management",
@@ -148,11 +150,12 @@ const blogData = [
       }
     ],
     "images": [
-      "/images/b4.jpg",
+     "/images/b4.jpg",
       "/images/b5.jpg",
       "/images/b6.jpg",
-
-    ]
+    ]   ,"Date":"1-10-2024",
+    "Topic":"Loistics",
+    "id":2,
   }
   ,{
     "title": "Customs Clearance: Simplifying Global Trade",
@@ -171,11 +174,12 @@ const blogData = [
       }
     ],
     "images": [
-      "/images/b7.jpg",
+     "/images/b7.jpg",
       "/images/b8.jpg",
       "/images/b9.jpg",
-
-    ]
+    ]   ,"Date":"11-9-2024",
+    "Topic":"Loistics",
+    "id":3,
   },
   {
     "title": "Freight Forwarding: Navigating Global Trade with Efficiency",
@@ -194,11 +198,12 @@ const blogData = [
       }
     ],
     "images": [
-      "/images/b10.jpg",
+     "/images/b10.jpg",
       "/images/b11.jpg",
       "/images/b12.jpg",
-
-    ]
+    ]   ,"Date":"1-09-2024",
+    "Topic":"Loistics",
+    "id":4,
   }
   ,{
     "title": "Warehouse Management: Streamlining Operations for Global Trade",
@@ -217,11 +222,12 @@ const blogData = [
       }
     ],
     "images": [
-      "/images/b13.jpg",
+    "/images/b13.jpg",
       "/images/b14.jpg",
       "/images/b15.jpg",
-
-    ]
+    ]   ,"Date":"25-10-2024",
+    "Topic":"Loistics",
+    "id":5,
   }
   ,{
     "title": "Customs Clearance: Ensuring Smooth International Trade",
@@ -236,15 +242,16 @@ const blogData = [
         "passage": "One of the key benefits of having a streamlined customs clearance process is the reduction of unnecessary delays. With accurate documentation and proper compliance with customs regulations, goods can be processed faster and shipped without disruption. Businesses can take advantage of simplified customs procedures through free trade agreements (FTAs) or programs like Authorized Economic Operator (AEO) status, which often provide preferential treatment in the clearance process. These advantages help reduce the time and costs involved in customs clearance, making international trade more efficient and competitive for companies. By improving the efficiency of customs clearance, businesses can maintain better control over their supply chains and enhance their ability to meet customer expectations."
       },
       {
-        "passage": "Technology has played an increasingly important role in modern customs clearance processes. Customs authorities around the world are integrating technologies like blockchain, artificial intelligence, and data analytics to automate procedures and ensure compliance. Blockchain, for example, can provide an immutable, transparent record of goods’ movement, making it easier to track shipments and verify compliance. AI and machine learning help customs officials predict risks, detect fraud, and expedite the clearance of goods by automating routine tasks. This technological shift enhances the overall efficiency of international trade, reduces the risk of errors, and provides businesses with greater transparency and predictability when navigating customs procedures."
+        "passage": "Technology has played an increasingly important role in modern customs clearance processes. Customs authorities around the world are integrating technologies like blockchain, artificial intelligence, and data analytics to automate procedures and ensure compliance. Blockchain, for example, can provide an immutable, transparent record of goods movement, making it easier to track shipments and verify compliance. AI and machine learning help customs officials predict risks, detect fraud, and expedite the clearance of goods by automating routine tasks. This technological shift enhances the overall efficiency of international trade, reduces the risk of errors, and provides businesses with greater transparency and predictability when navigating customs procedures."
       }
     ],
     "images": [
+     "/images/b16.jpg",
       "/images/b16.jpg",
       "/images/b17.jpg",
-      "/images/b18.jpg",
-
-    ]
+    ]   ,"Date":"10-11-2024",
+    "Topic":"Loistics",
+    "id":6,
   }
   ,{
     "title": "Freight Forwarding: Navigating Global Shipping Challenges",
@@ -263,11 +270,12 @@ const blogData = [
       }
     ],
     "images": [
+    "/images/b18.jpg",
       "/images/b19.jpg",
       "/images/b20.jpg",
-      "/images/b21.jpg",
-
-    ]
+    ]   ,"Date":"4-10-2024",
+    "Topic":"Loistics",
+    "id":7,
   }
   ,{
     "title": "Warehousing: The Backbone of Efficient Supply Chains",
@@ -286,11 +294,13 @@ const blogData = [
       }
     ],
     "images": [
+     "/images/b21.jpg",
       "/images/b22.jpg",
       "/images/b23.jpg",
-      "/images/b24.jpg",
-
     ]
+    ,"Date":"14-9-2024",
+    "Topic":"Loistics",
+    "id":8,
   }
   
   
