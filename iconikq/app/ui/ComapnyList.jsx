@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const ComapnyList = () => {
   return (
@@ -20,95 +21,119 @@ const ComapnyList = () => {
           strokeLinejoin="miter"
         />
       </svg>
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 text-center  ">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 text-center">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-light text-black sm:text-4xl sm:leading-tight">
             Trusted by world class companies
           </h2>
         </div>
-        <div className=" grid items-center max-w-4xl grid-cols-2 gap-4 mx-auto mt-12 md:mt-20 md:grid-cols-4  ">
+        <div className="grid items-center max-w-4xl grid-cols-2 gap-4 mx-auto mt-12 md:mt-20 md:grid-cols-4">
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-6 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-1.png"
-              alt=""
+              alt="Company Logo 1"
+              width={100}
+              height={24}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-2.png"
-              alt=""
+              alt="Company Logo 2"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-3.png"
-              alt=""
+              alt="Company Logo 3"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full mx-auto h-7"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-4.png"
-              alt=""
+              alt="Company Logo 4"
+              width={100}
+              height={28}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-5.png"
-              alt=""
+              alt="Company Logo 5"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-6.png"
-              alt=""
+              alt="Company Logo 6"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-7.png"
-              alt=""
+              alt="Company Logo 7"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-8.png"
-              alt=""
+              alt="Company Logo 8"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-9.png"
-              alt=""
+              alt="Company Logo 9"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full mx-auto h-7"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-10.png"
-              alt=""
+              alt="Company Logo 10"
+              width={100}
+              height={28}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-11.png"
-              alt=""
+              alt="Company Logo 11"
+              width={100}
+              height={32}
             />
           </div>
           <div className="bg-white h-12 flex shadow-lg items-center justify-center">
-            <img
+            <Image
               className="object-contain w-full h-8 mx-auto"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/logos/3/logo-12.png"
-              alt=""
+              alt="Company Logo 12"
+              width={100}
+              height={32}
             />
           </div>
         </div>
@@ -117,13 +142,9 @@ const ComapnyList = () => {
           <div className="w-2.5 h-2.5 rounded-full bg-gray-300 block" />
           <div className="w-2.5 h-2.5 rounded-full bg-gray-300 block" />
         </div>
-        <p className="mt-10 text-base text-center text-black md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
-          and, more companies
-        </p>
       </div>
     </section>
-  </>
-  
+    </>
   )
 }
 

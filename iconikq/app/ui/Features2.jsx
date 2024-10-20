@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Features2 = () => {
   return (
@@ -16,12 +17,12 @@ const Features2 = () => {
               >
                 in few easy steps
               </p>
-              <hh1
+              <h1
                 tabIndex={0}
                 className="focus:outline-none text-4xl lg:text-4xl font-extrabold text-center leading-10 text-gray-800 lg:w-5/12 md:w-9/12 pt-4"
               >
                 Create Beautiful Landing Pages &amp; Web Apps in a Jiffy
-              </hh1>
+              </h1>
             </div>
             <div
               tabIndex={0}
@@ -36,9 +37,11 @@ const Features2 = () => {
                 <div className="w-20 h-20 relative mr-5">
                   <div className="absolute top-0 right-0 bg-indigo-100 rounded w-16 h-16 mt-2 mr-1" />
                   <div className="absolute text-white bottom-0 left-0 bg-indigo-700 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                    <img
+                    <Image
                       src="https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG1.svg"
                       alt="drawer"
+                      width={64}
+                      height={64}
                     />
                   </div>
                 </div>
@@ -67,9 +70,11 @@ const Features2 = () => {
                 <div className="w-20 h-20 relative mr-5">
                   <div className="absolute top-0 right-0 bg-indigo-100 rounded w-16 h-16 mt-2 mr-1" />
                   <div className="absolute text-white bottom-0 left-0 bg-indigo-700 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                    <img
+                    <Image
                       src="https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG2.svg"
                       alt="check"
+                      width={64}
+                      height={64}
                     />
                   </div>
                 </div>
@@ -98,9 +103,11 @@ const Features2 = () => {
                 <div className="w-20 h-20 relative mr-5">
                   <div className="absolute top-0 right-0 bg-indigo-100 rounded w-16 h-16 mt-2 mr-1" />
                   <div className="absolute text-white bottom-0 left-0 bg-indigo-700 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                    <img
+                    <Image
                       src="https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG3.svg"
                       alt="html tag"
+                      width={64}
+                      height={64}
                     />
                   </div>
                 </div>
@@ -129,9 +136,11 @@ const Features2 = () => {
                 <div className="w-20 h-20 relative mr-5">
                   <div className="absolute top-0 right-0 bg-indigo-100 rounded w-16 h-16 mt-2 mr-1" />
                   <div className="absolute text-white bottom-0 left-0 bg-indigo-700 rounded w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                    <img
+                    <Image
                       src="https://tuk-cdn.s3.amazonaws.com/can-uploader/icon_and_text-SVG4.svg"
                       alt="monitor"
+                      width={64}
+                      height={64}
                     />
                   </div>
                 </div>
@@ -158,7 +167,6 @@ const Features2 = () => {
       </dh-component>
      </div>
   </>
-  
   )
 }
 

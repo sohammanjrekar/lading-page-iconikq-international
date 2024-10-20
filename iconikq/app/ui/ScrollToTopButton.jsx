@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image"; // Importing next/image for optimized images
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +23,7 @@ const ScrollToTopButton = () => {
 
   // Manually scroll to top function for slower and smoother behavior
   const scrollToTop = () => {
-    const scrollStep = window.scrollY / 50; // Determines the speed, higher division makes it slower
+    const scrollStep = window.scrollY / 50; // Determines the speed
     const scrollInterval = setInterval(() => {
       if (window.scrollY > 0) {
         window.scrollBy(0, -scrollStep); // Scroll up step by step
@@ -37,15 +38,18 @@ const ScrollToTopButton = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className=" z-50 shadow-inner shadow-[#e77979] fixed bottom-20 right-5 w-12 h-12 bg-transparent text-white rounded-full flex items-center justify-center transition-all duration-500 ease-in-out transform hover:scale-110 hover:bg-white hover:shadow-xl opacity-0 translate-y-2 hover:translate-y-0 hover:opacity-100 "
+          aria-label="Scroll to top" // Accessibility improvement
+          className="z-50 shadow-inner shadow-[#e77979] fixed bottom-20 right-5 w-12 h-12 bg-transparent text-white rounded-full flex items-center justify-center transition-all duration-500 ease-in-out transform hover:scale-110 hover:bg-white hover:shadow-xl opacity-0 translate-y-2 hover:translate-y-0 hover:opacity-100"
           style={{
             opacity: isVisible ? "1" : "0",
             transition: "opacity 0.8s ease-in-out, transform 0.8s ease-in-out",
           }}
         >
-          <img
-            src="images/up-arrow.png"
+          <Image
+            src="/images/up-arrow.png" // Using next/image for image optimization
             alt="Scroll to top"
+            width={50} // Set width and height for image optimization
+            height={50}
             className="h-[6vh] w-[7vw] transition-transform duration-500 ease-in-out hover:scale-105"
           />
         </button>

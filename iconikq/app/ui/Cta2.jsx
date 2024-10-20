@@ -13,7 +13,7 @@ const Cta2 = () => {
       <div className="mx-11 mb-4 text-sm text-gray-500">
         <p>
           Do you want to get notified when a new component is added to Flowbite?
-          Sign up for our newsletter and you'll be among the first to find out
+          Sign up for our newsletter and you&apos;ll be among the first to find out
           about new features, components, versions, and tools.
         </p>
       </div>
@@ -30,7 +30,7 @@ const Cta2 = () => {
       </div>
       <div>
         <p className="mx-11 mt-2 text-[15px] font-thin">
-          By subscribing, you agree with Revue’s{" "}
+          By subscribing, you agree with Revue&apos;s{" "}
           <a
             className="text-blue-700"
             href="https://www.getrevue.co/terms"
@@ -49,8 +49,7 @@ const Cta2 = () => {
         </p>
       </div>
     </div>
-  </>
-  
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+
 const videoData = {
     0: {
         src: 'videoes/water.mp4',
@@ -35,13 +36,13 @@ const VideoCarousel = () => {
     const totalItems = Object.keys(videoData).length;
     const autoScrollInterval = 6000; // Change video every 6 seconds
 
-    const updateCarousel = (index) => {
+    const updateCarousel = useCallback((index) => {
         if (carouselInnerRef.current) {
             const offset = -index * 100; // Calculate offset based on current index
             carouselInnerRef.current.style.transition = isTransitioning ? 'transform 1s ease-in-out' : 'none'; // Add smooth transition when required
             carouselInnerRef.current.style.transform = `translateX(${offset}%)`; // Move to the correct item
         }
-    };
+    }, [isTransitioning]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -69,14 +70,14 @@ const VideoCarousel = () => {
                 setCurrentIndex(0);
             }, 1000); // Wait for the transition to end
         }
-    }, [currentIndex, totalItems]);
+    }, [currentIndex, totalItems, updateCarousel]);
 
     return (
         <div className="relative h-[80vh] overflow-hidden video-carousel">
             <div ref={carouselInnerRef} className="flex transition-transform duration-1000 ease-in-out carousel-inner">
                 {/* Video Items */}
                 {Object.keys(videoData).map((key) => {
-                    const { src, name, description } = videoData[key];
+                    const { src, name } = videoData[key];
                     return (
                         <div key={key} className="min-w-full h-full relative carousel-item">
                             <video className="w-full h-full object-cover" loop muted autoPlay>
