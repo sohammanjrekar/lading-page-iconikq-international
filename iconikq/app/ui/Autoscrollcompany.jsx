@@ -6,7 +6,7 @@ import Image from "next/image";
 const AutoCarousel = () => {
   const images = [
     {
-      src: "/images/comapny1.png",
+      src: "/images/company1.png",
       name: "arveelabs",
     },
     {
