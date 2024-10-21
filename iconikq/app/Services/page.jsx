@@ -24,6 +24,7 @@ const page = () => {
   height={300}
   src={card.image}
   alt="image"
+    quality={75}
   className="w-[500px] h-[300px] object-cover"
 />
 

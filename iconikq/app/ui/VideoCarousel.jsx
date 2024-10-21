@@ -34,7 +34,7 @@ const VideoCarousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const totalItems = Object.keys(videoData).length;
-    const autoScrollInterval = 6000; // Change video every 6 seconds
+    const autoScrollInterval = 7000; // Change video every 7 seconds
 
     const updateCarousel = useCallback((index) => {
         if (carouselInnerRef.current) {
@@ -79,10 +79,17 @@ const VideoCarousel = () => {
                     const { src, name } = videoData[key];
                     return (
                         <div key={key} className="min-w-full h-[80vh] relative carousel-item">
-                            <video className="w-full h-full object-cover" loop muted autoPlay>
+                            <video
+                                className="w-full h-full object-cover object-center" // This ensures the video fills and centers
+                                loop
+                                muted
+                                autoPlay
+                                priority
+                                quality={75}
+                            >
                                 <source src={src} type="video/mp4" />
                             </video>
-                            <h1 className="shadow-2xl bg-myred rounded-lg backdrop-blur-sm bg-opacity-10 bg-white h-[18vh] sm:h-[22vh] md:h-[20vh] absolute w-2/3 lg:w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-center justify-center text-white text-[2vh] md:text-[5vh] lg:text-[5vh] font-bold uppercase my-auto">
+                            <h1 className="shadow-2xl rounded-lg backdrop-blur-sm bg-opacity-10  bg-black h-[18vh] sm:h-[22vh] md:h-[20vh] absolute w-2/3 lg:w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-end justify-center text-white text-[2vh] md:text-[5vh] lg:text-[5vh] font-bold uppercase top-[50vh] z-20">
                                 {name}
                             </h1>
                         </div>
@@ -91,10 +98,15 @@ const VideoCarousel = () => {
 
                 {/* Clone the first item for smooth transition */}
                 <div className="min-w-full h-full relative carousel-item">
-                    <video className="w-full h-full object-cover" loop muted autoPlay>
+                    <video
+                        className="w-full h-full object-cover object-center" // Ensures the video fills and centers
+                        loop
+                        muted
+                        autoPlay
+                    >
                         <source src={videoData[0].src} type="video/mp4" />
                     </video>
-                    <h1 className="shadow-2xl bg-myred rounded-lg backdrop-blur-sm bg-opacity-10 bg-white h-[20vh] absolute w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-center justify-center text-white text-[4vw] md:text-[5vw] lg:text-[7vh] font-bold uppercase my-auto">
+                    <h1 className="shadow-2xl rounded-lg backdrop-blur-sm bg-opacity-10  bg-black h-[18vh] sm:h-[22vh] md:h-[20vh] absolute w-2/3 lg:w-1/2 text-center mx-auto inset-0 flex flex-col flex-wrap items-end justify-center text-white text-[2vh] md:text-[5vh] lg:text-[5vh] font-bold uppercase top-[50vh] z-20">
                         {videoData[0].name}
                     </h1>
                 </div>
@@ -103,17 +115,29 @@ const VideoCarousel = () => {
             <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10 flex carousel-controls">
                 <button
                     onClick={() => setCurrentIndex((currentIndex - 1 + totalItems) % totalItems)}
-                    className="bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition duration-300"
+                    className="bg-myblue text-white px-4 py-2 rounded-full hover:bg-myred transition duration-300"
                 >
-                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                        className="h-6 w-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
                 <button
                     onClick={() => setCurrentIndex((currentIndex + 1) % (totalItems + 1))}
-                    className="bg-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-700 transition duration-300"
+                    className="bg-myblue text-white px-4 py-2 rounded-full hover:bg-myred transition duration-300"
                 >
-                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                        className="h-6 w-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>

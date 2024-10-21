@@ -13,7 +13,7 @@ const Footer = () => {
   <Image
     width={500}
     height={300}
-   
+    priority       quality={75}
     className="mb-4 max-h-[30vh] lg:max-h-[25vh] max-w-[50vw] sm:!max-w-[20vw]"
     src="/images/logo.png"
     alt="Logo"

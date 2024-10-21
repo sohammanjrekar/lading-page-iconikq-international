@@ -57,6 +57,7 @@ const Services = () => {
                   <Image
                     src={card.image}
                     alt={card.title}
+                     quality={75}
                     className="w-full h-[35vh] object-cover"
                     width={500} // Adjust based on your design
                     height={300} // Adjust based on your design
