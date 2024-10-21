@@ -130,7 +130,7 @@ const blogData = [
       "/images/b2.jpg",
       "/images/b3.jpg",
     ]  ,"Date":"14-10-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":1,
   }
   ,{
@@ -154,7 +154,7 @@ const blogData = [
       "/images/b5.jpg",
       "/images/b6.jpg",
     ]   ,"Date":"1-10-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":2,
   }
   ,{
@@ -178,7 +178,7 @@ const blogData = [
       "/images/b8.jpg",
       "/images/b9.jpg",
     ]   ,"Date":"11-9-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":3,
   },
   {
@@ -202,7 +202,7 @@ const blogData = [
       "/images/b11.jpg",
       "/images/b12.jpg",
     ]   ,"Date":"1-09-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":4,
   }
   ,{
@@ -226,7 +226,7 @@ const blogData = [
       "/images/b14.jpg",
       "/images/b15.jpg",
     ]   ,"Date":"25-10-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":5,
   }
   ,{
@@ -250,7 +250,7 @@ const blogData = [
       "/images/b16.jpg",
       "/images/b17.jpg",
     ]   ,"Date":"10-11-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":6,
   }
   ,{
@@ -274,7 +274,7 @@ const blogData = [
       "/images/b19.jpg",
       "/images/b20.jpg",
     ]   ,"Date":"4-10-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":7,
   }
   ,{
@@ -299,7 +299,7 @@ const blogData = [
       "/images/b23.jpg",
     ]
     ,"Date":"14-9-2024",
-    "Topic":"Loistics",
+    "Topic":"Logistics",
     "id":8,
   }
   

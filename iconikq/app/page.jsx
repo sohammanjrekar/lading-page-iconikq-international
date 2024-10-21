@@ -1,8 +1,7 @@
-
+import { ReactLenis } from 'lenis/react'; // Import ReactLenis for smooth scrolling
 import Footer from "./layout/Footer";
 import Navbar from "./layout/Navbar";
 import BlogSection from "./ui/BlogSection";
-
 import Gallery from "./ui/Gallery";
 import ScrollToTopButton from "./ui/ScrollToTopButton";
 import Services from "./ui/Service";
@@ -15,25 +14,22 @@ import Testimonial from "./ui/Testimonial";
 import Mapsection from "./ui/Mapsection";
 import VideoCarousel from "./ui/VideoCarousel";
 
-
 export default function Home() {
   return (
-  <>
-  <Navbar/>
-  <VideoCarousel/>
-
-  
- <Services/>
- <Autoscrollcompany/>
-<Team/>
-<Intro/>
-<Gallery/>
-<Testimonial/>
-<BlogSection/>
-<SocialMediaCards/>
-<Mapsection/>
-  <ScrollToTopButton/>
-  <Footer/>
-  </>
+    <ReactLenis root>
+      <Navbar />
+      <VideoCarousel />
+      <Services />
+      <Autoscrollcompany />
+      <Team />
+      <Intro />
+      <Gallery />
+      <Testimonial />
+      <BlogSection />
+      <SocialMediaCards />
+      <Mapsection />
+      <ScrollToTopButton />
+      <Footer />
+    </ReactLenis>
   );
 }
