@@ -12,7 +12,7 @@ const Modal = ({ showModal, setShowModal, certificate }) => {
     onClick={() => setShowModal(false)}
   >
     <Image
-      className="h-[70vh] rounded-lg object-cover"
+      className="h-[80vh] rounded-lg object-cover"
       src={certificate.image}
           alt={certificate.title}
       width={800} // Adjust width
@@ -29,26 +29,22 @@ const Certificate = () => {
 
   const certificates = [
     {
-      title: 'Nature Image 1',
+      title: 'STARTUP INDIA CERTIFICATE',
       image:
-        'https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        '/images/c1.jpg',
       description:
-        'This is a beautiful nature image placeholder. You can replace it with your own image.',
+      'This certificate recognizes the startup’s potential and innovation under the Startup India initiative, a flagship program of the Government of India.',
+   
     },
     {
-      title: 'Nature Image 2',
+      title: 'MSME CERTIFICATE',
       image:
-        'https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        '/images/c2.jpg',
       description:
-        'This is a beautiful nature image placeholder. You can replace it with your own image.',
+      'This certificate validates the registration of the company under the Ministry of Micro, Small, and Medium Enterprises (MSME), recognizing its contribution to the Indian economy.',
+ 
     },
-    {
-      title: 'Nature Image 3',
-      image:
-        'https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&q=80&w=1528&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      description:
-        'This is a beautiful nature image placeholder. You can replace it with your own image.',
-    },
+   
   ];
 
   const openModal = (certificate) => {
@@ -75,7 +71,7 @@ const Certificate = () => {
               <Image
                 src={certificate.image}
                 alt={certificate.title}
-                className="w-full h-auto object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
                 width={500}
                 height={500}
                 layout="responsive"
