@@ -3,12 +3,7 @@ import Image from 'next/image';
 
 const SocialMediaCards = () => {
   const socialMediaData = [
-    {
-      name: 'Instagram',
-      followers: '590k',
-      imageUrl: 'https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/riva-dashboard-tailwind/img/logos/instagram.svg',
-      altText: 'instagram',
-    },
+   
     {
       name: 'YouTube',
       followers: '58k',
@@ -30,7 +25,7 @@ const SocialMediaCards = () => {
   ];
 
   return (
-    <div className="flex flex-wrap mb-5">
+    <div className="flex flex-wrap mx-auto mb-5">
       <div className="w-full max-w-full px-3 mb-6 mx-auto bg-white">
         <div className="flex flex-wrap mt-5 mx-5 removable">
           {socialMediaData.map((social, index) => (

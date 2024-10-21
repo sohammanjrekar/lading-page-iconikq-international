@@ -16,12 +16,7 @@ const SocialButtons = () => {
         </button>
       </Tippy>
 
-      {/* WhatsApp Button */}
-      <Tippy content="WhatsApp" animation="fade">
-        <button className="bg-white border-2 border-green-600 text-green-500 w-10 h-10 rounded-full transition-transform transform hover:-translate-y-3 hover:bg-green-600 hover:text-white duration-500">
-          <FontAwesomeIcon icon={faWhatsapp} size="x" />
-        </button>
-      </Tippy>
+    
 
       {/* Twitter Button */}
       <Tippy content="Twitter" animation="fade">

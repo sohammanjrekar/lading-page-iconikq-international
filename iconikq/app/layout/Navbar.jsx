@@ -12,12 +12,33 @@ const Navbar = () => {
 
   return (
     <nav className="bg-myblue border w-full fixed z-50 border-gray-700 px-2 sm:px-8 py-[2vh] rounded-b-[20px] shadow-[inset_0_7px_5px_rgba(0,0,0,0.3),_0px_4px_10px_rgba(255,255,255,0.2)]">
-      <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <Link href="/" className="flex items-center">
-          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
-            <Image width={500} height={500} layout="responsive"   priority       quality={75}  src="/images/logo.png" alt="Logo" className="max-h-[6vh]" />
-          </span>
-        </Link>
+      <div className="container flex  flex-wrap justify-between items-center mx-auto">
+      <Link href="/" className="flex flex-col items-center">
+    <div className="flex flex-row items-center space-x-2">
+        <Image
+            width={500}
+            height={500}
+            layout="responsive"
+            priority
+            quality={75}
+            src="/images/30yrs.png"
+            alt="Logo 1"
+            className="max-h-[6vh]"
+        />
+        <Image
+            width={500}
+            height={500}
+            layout="responsive"
+            priority
+            quality={75}
+            src="/images/logo.png"
+            alt="Logo 2"
+            className="max-h-[6vh]"
+        />
+    </div>
+  
+</Link>
+
 
         {/* Mobile Menu Toggle Button */}
         <div className="flex items-center sm:hidden">
