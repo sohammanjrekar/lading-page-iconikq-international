@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const AnimatedWord = () => {
   const [isMounted, setIsMounted] = useState(false);
 
-  // Use useEffect to trigger the mounting state after initial render
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -19,7 +18,6 @@ const AnimatedWord = () => {
               isMounted ? "opacity-100" : "opacity-0"
             }`}
           >
-            {/* Each word spans one row */}
             <span className="animate-word animate-word-delay-1 col-span-full row-span-full flex justify-center items-center">
               TRANSPORTATION
             </span>
