@@ -42,38 +42,93 @@ html.lenis, html.lenis body {
   20% {
     transform: translateY(0);
   }
-  40%,
+  40% {
+    transform: translateY(-110%);
+  }
   100% {
     transform: translateY(-110%);
   }
 }
+
 .animate-word {
   animation: word 7s infinite;
 }
 
 .animate-word-delay-1 {
   animation: word 7s infinite;
-  animation-delay: 1.4s; /* Positive delay for staggered animation */
+  animation-delay: 0s; /* Start immediately */
 }
 
 .animate-word-delay-2 {
   animation: word 7s infinite;
-  animation-delay: 2.8s;
+  animation-delay: 1.4s; /* Delayed start for staggered effect */
 }
 
 .animate-word-delay-3 {
   animation: word 7s infinite;
-  animation-delay: 4.2s;
+  animation-delay: 2.8s; /* Adjusted delay */
 }
 
 .animate-word-delay-4 {
   animation: word 7s infinite;
-  animation-delay: 5.6s;
+  animation-delay: 4.2s; /* Adjusted delay */
 }
 
 .animate-word-delay-5 {
   animation: word 7s infinite;
-  animation-delay: 7.0s; /* Adjusted to match the timing sequence */
+  animation-delay: 5.6s; /* Adjusted delay */
+}
+
+/* Optional: If you want to add a clearer pause between animations */
+@keyframes word-with-pause {
+  0% {
+    transform: translateY(100%);
+  }
+  15% {
+    transform: translateY(-10%);
+    animation-timing-function: ease-out;
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-110%);
+  }
+  45% {
+    transform: translateY(-110%); /* Hold position */
+  }
+  100% {
+    transform: translateY(-110%);
+  }
+}
+
+.animate-word-pause {
+  animation: word-with-pause 7s infinite;
+}
+
+.animate-word-delay-pause-1 {
+  animation: word-with-pause 7s infinite;
+  animation-delay: 0s; /* Start immediately */
+}
+
+.animate-word-delay-pause-2 {
+  animation: word-with-pause 7s infinite;
+  animation-delay: 1.4s; /* Delayed start for staggered effect */
+}
+
+.animate-word-delay-pause-3 {
+  animation: word-with-pause 7s infinite;
+  animation-delay: 2.8s; /* Adjusted delay */
+}
+
+.animate-word-delay-pause-4 {
+  animation: word-with-pause 7s infinite;
+  animation-delay: 4.2s; /* Adjusted delay */
+}
+
+.animate-word-delay-pause-5 {
+  animation: word-with-pause 7s infinite;
+  animation-delay: 5.6s; /* Adjusted delay */
 }
 
 

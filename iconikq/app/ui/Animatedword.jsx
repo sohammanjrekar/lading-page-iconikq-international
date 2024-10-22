@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const AnimatedWord = () => {
   const [isMounted, setIsMounted] = useState(false);
 
-  // Use useEffect to trigger the mounting state after initial render
+  // Use useEffect to trigger the mounting state after the initial render
   useEffect(() => {
     setIsMounted(true);
   }, []);
