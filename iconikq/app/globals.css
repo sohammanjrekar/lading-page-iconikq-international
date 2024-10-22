@@ -23,9 +23,9 @@ html.lenis, html.lenis body {
 
 ::root {
   /* Color Variables */
-  --mybg-light: #fff; /* Light Pink */
-  --mybg-red: #EF412B; /* Bright Red */
-  --mybg-blue: #0B2A39;  /* Dark Blue */
+  --mylight: #fff; /* Light Pink */
+  --myred: #EF412B; /* Bright Red */
+  --myblue: #0B2A39;  /* Dark Blue */
 
   /* Font Variables */
   --font-headline: 'Raleway', sans-serif;
