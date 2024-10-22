@@ -25,7 +25,7 @@ const Intro = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 group bg-white shadow-xl shadow-neutral-100 border">
           <div className="p-10 flex flex-col items-center text-center group border-b md:border-r hover:bg-slate-50 cursor-pointer">
             <span className="p-5 rounded-full bg-white text-white shadow-lg shadow-myblue">
-              <Image loading="lazy"  loading="lazy" src="/images/icon1.png" alt="Warehousing Solutions" width={80} height={80} />
+              <Image loading="lazy"  src="/images/icon1.png" alt="Warehousing Solutions" width={80} height={80} />
             </span>
             <p className="text-xl font-medium text-slate-700 mt-3">Warehousing Solutions</p>
             <p className="mt-2 text-sm text-slate-500">
@@ -34,7 +34,7 @@ const Intro = () => {
           </div>
           <div className="p-10 flex flex-col items-center text-center group border-b md:border-r hover:bg-slate-50 cursor-pointer">
             <span className="p-5 rounded-full bg-white text-white shadow-lg shadow-myblue">
-              <Image loading="lazy"  loading="lazy" src="/images/icon2.png" alt="Customs Clearance" width={80} height={80} />
+              <Image loading="lazy"  src="/images/icon2.png" alt="Customs Clearance" width={80} height={80} />
             </span>
             <p className="text-xl font-medium text-slate-700 mt-3">Customs Clearance</p>
             <p className="mt-2 text-sm text-slate-500">
@@ -43,7 +43,7 @@ const Intro = () => {
           </div>
           <div className="p-10 flex flex-col items-center text-center group border-b hover:bg-slate-50 cursor-pointer">
             <span className="p-5 rounded-full bg-white text-white shadow-lg shadow-myblue">
-              <Image loading="lazy"  loading="lazy" src="/images/icon3.png" alt="Supply Chain Consulting" width={80} height={80} />
+              <Image loading="lazy"  src="/images/icon3.png" alt="Supply Chain Consulting" width={80} height={80} />
             </span>
             <p className="text-xl font-medium text-slate-700 mt-3">Supply Chain Consulting</p>
             <p className="mt-2 text-sm text-slate-500">
@@ -52,7 +52,7 @@ const Intro = () => {
           </div>
           <div className="p-10 flex flex-col items-center text-center group border-b md:border-r hover:bg-slate-50 cursor-pointer">
             <span className="p-5 rounded-full bg-white text-white shadow-lg shadow-myblue">
-              <Image loading="lazy"  loading="lazy" src="/images/icon4.png" alt="Transportation Services" width={80} height={80} />
+              <Image loading="lazy"  src="/images/icon4.png" alt="Transportation Services" width={80} height={80} />
             </span>
             <p className="text-xl font-medium text-slate-700 mt-3">Transportation Services</p>
             <p className="mt-2 text-sm text-slate-500">
@@ -61,7 +61,7 @@ const Intro = () => {
           </div>
           <div className="p-10 flex flex-col items-center text-center group border-b md:border-r hover:bg-slate-50 cursor-pointer">
             <span className="p-5 rounded-full bg-white text-white shadow-lg shadow-myblue">
-              <Image loading="lazy"  loading="lazy" src="/images/icon5.png" alt="Inventory Management" width={80} height={80} />
+              <Image loading="lazy"  src="/images/icon5.png" alt="Inventory Management" width={80} height={80} />
             </span>
             <p className="text-xl font-medium text-slate-700 mt-3">Inventory Management</p>
             <p className="mt-2 text-sm text-slate-500">
@@ -70,7 +70,7 @@ const Intro = () => {
           </div>
           <div className="p-10 flex flex-col items-center text-center group border-b hover:bg-slate-50 cursor-pointer">
             <span className="p-5 rounded-full bg-white text-white shadow-lg shadow-myblue">
-              <Image loading="lazy"  loading="lazy" src="/images/icon6.png" alt="Last-Mile Delivery" width={80} height={80} />
+              <Image loading="lazy"  src="/images/icon6.png" alt="Last-Mile Delivery" width={80} height={80} />
             </span>
             <p className="text-xl font-medium text-slate-700 mt-3">Last-Mile Delivery</p>
             <p className="mt-2 text-sm text-slate-500">

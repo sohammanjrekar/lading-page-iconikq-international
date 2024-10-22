@@ -49,7 +49,7 @@ const Page = () => {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
-                      <Image loading="lazy"  loading="lazy" width={500} height={500} layout="responsive" src="/images/icon4.png" alt="Freight Forwarding Icon" />
+                      <Image loading="lazy"  width={500} height={500} layout="responsive" src="/images/icon4.png" alt="Freight Forwarding Icon" />
                     </div>
                     <h6 className="text-xl font-semibold text-myred">FREIGHT FORWARDING</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
@@ -63,7 +63,7 @@ const Page = () => {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                      <Image loading="lazy"  loading="lazy" width={500} height={500} layout="responsive" src="/images/icon5.png" alt="Inventory Management Icon" />
+                      <Image loading="lazy"  width={500} height={500} layout="responsive" src="/images/icon5.png" alt="Inventory Management Icon" />
                     </div>
                     <h6 className="text-xl font-semibold text-myred">INVENTORY MANAGEMENT</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
@@ -77,7 +77,7 @@ const Page = () => {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
-                      <Image loading="lazy"  loading="lazy" width={500} height={500} layout="responsive" src="/images/icon1.png" alt="Warehousing Solutions Icon" />
+                      <Image loading="lazy"   width={500} height={500} layout="responsive" src="/images/icon1.png" alt="Warehousing Solutions Icon" />
                     </div>
                     <h6 className="text-xl font-semibold text-myred">WAREHOUSING SOLUTIONS</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
