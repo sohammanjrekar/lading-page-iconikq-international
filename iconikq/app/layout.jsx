@@ -1,16 +1,6 @@
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
-const geistSans = localFont({
-  src: "./fonts/Playfair.ttf",
-  variable: "--font-headline",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/Lora.ttf",
-  variable: "--font-content",
-  weight: "100 900",
-});
 
 export const metadata = {
   title: "ICONIKQ | Home",
@@ -20,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <head>
+      <head>
         {/* Default Favicon */}
         <link rel="icon" href="/images/favicon.ico" sizes="any" type="image/x-icon" />
 
@@ -37,10 +27,11 @@ export default function RootLayout({ children }) {
 
         {/* Manifest (optional if you have a web app manifest) */}
         <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Google Font Import for Raleway */}
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;900&display=swap" rel="stylesheet" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
         <Analytics />
       </body>
