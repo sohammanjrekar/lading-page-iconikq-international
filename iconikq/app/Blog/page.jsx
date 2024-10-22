@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Footer from '../layout/Footer';
-import Navbar from '../layout/Navbar';
+
 import Button from '../ui/Button';
 
 // Sample data for the blog posts
@@ -216,7 +215,7 @@ const BlogPage = () => {
   
   return (
     <>
-      <Navbar/>
+     
       <div className="text-gray-900 pt-12 bg-white">
         <div className="max-w-7xl mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16">
           <div className="flex flex-col items-center sm:px-5 md:flex-row">
@@ -278,7 +277,7 @@ const BlogPage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+       
     </>
   );
 };

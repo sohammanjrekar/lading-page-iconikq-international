@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Footer from '../../layout/Footer';
-import Navbar from '../../layout/Navbar';
+
 import Button from '../../ui/Button';
 
 const Page = ({ params }) => {
@@ -15,7 +14,7 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <Navbar />
+
       <div className="container w-[70vw] my-5 pt-10 mx-auto">
         <main className="mt-12">
           {/* Header Section */}
@@ -100,7 +99,7 @@ const Page = ({ params }) => {
           </div>
         </main>
       </div>
-      <Footer />
+     
     </>
   );
 };

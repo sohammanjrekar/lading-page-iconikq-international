@@ -1,13 +1,12 @@
 import React from 'react'
-import Footer from '../layout/Footer'
-import Navbar from '../layout/Navbar'
+
 import Button from '../ui/Button'
 import Image from 'next/image'
 
 const page = () => {
   return (
     <>
-  <Navbar/>
+
  
       <div className="container flex flex-col items-center mb-24  mx-3 sm:mx-auto my-21">
       <div class="relative w-full h-[50vh]"><Image loading="lazy"  class="absolute h-full w-full object-cover object-center" src="/images/contact.jpg" width={1000} height={500} alt="contact image" />
@@ -111,7 +110,7 @@ Mumbai:  400078
     
 
 
-  <Footer/>
+   
 </>
 
   )

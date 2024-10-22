@@ -1,6 +1,8 @@
 // import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
+import Footer from "./layout/Footer";
+import Navbar from "./layout/Navbar";
 
 export const metadata = {
   title: "ICONIKQ | Home",
@@ -32,8 +34,10 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;900&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased">
+        <Navbar/>
         {children}
         <Analytics />
+        <Footer/>
       </body>
     </html>
   );

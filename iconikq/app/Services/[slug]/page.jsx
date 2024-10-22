@@ -1,9 +1,6 @@
 
 import {data} from '../../Data';
-import Link from 'next/link';
-import Button from '../../ui/Button.jsx';
-import Navbar from '../../layout/Navbar.jsx';
-import Footer from '../../layout/Footer.jsx';
+
 import Image from 'next/image.js';
 
 const CategoryPage = ({ params }) => {
@@ -24,7 +21,7 @@ const CategoryPage = ({ params }) => {
 
     return (
      <>
-     <Navbar/>
+    
      
         
             
@@ -110,7 +107,7 @@ const CategoryPage = ({ params }) => {
             </div>
           </div>
         </section>
-     <Footer/>
+      
      </>
     )
   }

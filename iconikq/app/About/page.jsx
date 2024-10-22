@@ -1,7 +1,4 @@
-// components/LandingPage.js
 
-import Navbar from '../layout/Navbar';
-import Footer from '../layout/Footer';
 import Certificate from '../ui/Certificate';
 import Achevements from '../ui/Achevements';
 import Feature from '../ui/Feature';
@@ -10,7 +7,7 @@ import Image from 'next/image';
 const Page = () => {
   return (
     <>
-      <Navbar />
+   
       <section className="relative mt-10 bg-blueGray-50">
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center">
           <div
@@ -95,7 +92,6 @@ const Page = () => {
         </section>
       </section>
 
-      <Footer />
     </>
   );
 };

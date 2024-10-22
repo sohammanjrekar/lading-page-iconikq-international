@@ -1,14 +1,10 @@
 import React from 'react'
-import Navbar from '../layout/Navbar'
-import Footer from '../layout/Footer'
 import {data} from '../Data';
-
-import Button from '../ui/Button'
 import Image from 'next/image';
 const page = () => {
   return (
    <>
-   <Navbar/>
+  
    <section className="pt-20 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
         <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-center mb-8">
@@ -61,7 +57,7 @@ const page = () => {
           </div>
         </div>
       </section>
-   <Footer/>
+    
    </>
   )
 }

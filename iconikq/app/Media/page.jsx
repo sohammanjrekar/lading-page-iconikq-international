@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Navbar from '../layout/Navbar';
-import Footer from '../layout/Footer';
+
 
 const page = () => {
   const videos = [
@@ -50,7 +49,7 @@ const page = () => {
 
   return (
     <>
-      <Navbar />
+  
       <div className="flex bg-zinc-900 text-zinc-50 flex-col">
         <div className="flex flex-1">
           <main className="flex-1 bg-myred">
@@ -99,7 +98,7 @@ const page = () => {
           </main>
         </div>
       </div>
-      <Footer />
+    
     </>
   );
 };

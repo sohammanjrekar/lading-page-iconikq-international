@@ -17,7 +17,7 @@ const AnimatedWord = () => {
           newVisible[index] = true; // Set the current word to visible
           return newVisible;
         });
-      }, i * 1400)); // Staggered delay (1400ms for each word)
+      }, i * 3400)); // Staggered delay (1400ms for each word)
     });
 
     // Cleanup timers on unmount
@@ -37,7 +37,7 @@ const AnimatedWord = () => {
   return (
     <div className={`flex h-[10vh] container sm:min-h-[20vh] rounded-t-[20px] items-center justify-center font-bold text-myblue`}>
       <div className="text-center md:space-y-5">
-        <div className="text-center text-lg md:text-xl lg:text-5xl font-bold">
+        <div className="text-center text-lg md:text-xl uppercase lg:text-5xl font-bold">
           Services offered
           <div className="relative inline-grid grid-cols-1 grid-rows-5 gap-2 sm:gap-12 overflow-hidden text-myred">
             {wordsList.map((word, index) => (

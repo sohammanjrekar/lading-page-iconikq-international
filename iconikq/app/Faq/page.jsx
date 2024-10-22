@@ -1,6 +1,4 @@
 
-import Navbar from '../layout/Navbar';
-import Footer from '../layout/Footer';
 
 const FAQ = () => {
   const faqData = [
@@ -44,7 +42,7 @@ const FAQ = () => {
 
   return (
     <>
-<Navbar/>
+
     <div className=" mx-auto py-16 px-5 bg-white" >
       <div className="flex flex-col items-center">
         <h2 className="font-bold text-5xl mt-5 tracking-tight">FAQ</h2>
@@ -81,7 +79,7 @@ const FAQ = () => {
         ))}
       </div>
     </div>
-    <Footer/>
+     
     </>
   );
 };
