@@ -28,8 +28,8 @@ html.lenis, html.lenis body {
     --mybg-blue: #0B2A39;  /* Dark Blue */
 
     /* Font Variables */
-    --font-headline: 'Playfair', serif; /* Replace with your headline font */
-    --font-content: 'Lora', serif; /* Replace with your content font */
+    --font-headline: 'Raleway', sans-serif; /* Replace with your headline font */
+    --font-content:'Raleway', sans-serif; /* Replace with your content font */
 }
 @keyframes word {
   0% {
