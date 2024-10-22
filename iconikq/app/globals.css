@@ -57,6 +57,26 @@ html.lenis, html.lenis body {
   animation: word 7s infinite;
 }
 
+.animate-word-delay-1 {
+  animation-delay: 0s;
+}
+
+.animate-word-delay-2 {
+  animation-delay: 1.4s;
+}
+
+.animate-word-delay-3 {
+  animation-delay: 2.8s;
+}
+
+.animate-word-delay-4 {
+  animation-delay: 4.2s;
+}
+
+.animate-word-delay-5 {
+  animation-delay: 5.6s;
+}
+
 
 
 html, body {

@@ -3,15 +3,14 @@ import { useEffect, useState } from "react";
 
 const AnimatedWord = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [delays, setDelays] = useState([]);
 
-  // Use useEffect to trigger the mounting state after initial render
+  // Use useEffect to trigger the mounting state after the initial render
   useEffect(() => {
-    setIsMounted(true);
+    const timer = setTimeout(() => {
+      setIsMounted(true);
+    }, 300); // Delay to allow the component to mount without overlapping animations
 
-    // Set delays for each animation with staggered timing
-    const newDelays = Array.from({ length: 5 }, (_, i) => i * 1.4); // Delays: 0s, 1.4s, 2.8s, 4.2s, 5.6s
-    setDelays(newDelays);
+    return () => clearTimeout(timer); // Cleanup timeout on unmount
   }, []);
 
   return (
@@ -25,15 +24,21 @@ const AnimatedWord = () => {
             }`}
           >
             {/* Each word spans one row */}
-            {["TRANSPORTATION", "FREIGHT FORWARDING", "INVENTORY MANAGEMENT", "AEO CONSULTANTS", "WAREHOUSING"].map((word, index) => (
-              <span
-                key={index}
-                className={`animate-word col-span-full row-span-full flex justify-center items-center`}
-                style={{ animationDelay: `${delays[index]}s` }}
-              >
-                {word}
-              </span>
-            ))}
+            <span className={`animate-word ${isMounted ? 'animate-word-delay-1' : ''} col-span-full row-span-full flex justify-center items-center`}>
+              TRANSPORTATION
+            </span>
+            <span className={`animate-word ${isMounted ? 'animate-word-delay-2' : ''} col-span-full row-span-full flex justify-center items-center`}>
+              FREIGHT FORWARDING
+            </span>
+            <span className={`animate-word ${isMounted ? 'animate-word-delay-3' : ''} col-span-full row-span-full flex justify-center items-center`}>
+              INVENTORY MANAGEMENT
+            </span>
+            <span className={`animate-word ${isMounted ? 'animate-word-delay-4' : ''} col-span-full row-span-full flex justify-center items-center`}>
+              AEO CONSULTANTS
+            </span>
+            <span className={`animate-word ${isMounted ? 'animate-word-delay-5' : ''} col-span-full row-span-full flex justify-center items-center`}>
+              WAREHOUSING
+            </span>
           </div>
         </div>
       </div>
