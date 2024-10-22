@@ -33,49 +33,92 @@ html.lenis, html.lenis body {
 }
 @keyframes word {
   0% {
-    transform: translateY(100%);
+    transform: translateY(100%); /* Start off-screen at the bottom */
+    opacity: 0; /* Start hidden */
   }
   15% {
-    transform: translateY(-10%);
-    animation-timing-function: ease-out;
+    transform: translateY(-10%); /* Move slightly up */
+    opacity: 1; /* Fade in */
+    animation-timing-function: ease-out; /* Smooth transition */
   }
   20% {
-    transform: translateY(0);
+    transform: translateY(0); /* Final position */
   }
-  40%,
+  40% {
+    transform: translateY(-110%); /* Move off-screen at the top */
+    opacity: 0; /* Fade out */
+  }
   100% {
-    transform: translateY(-110%);
+    transform: translateY(-110%); /* Keep it off-screen */
+    opacity: 0; /* Ensure it's hidden */
   }
-}
-.animate-word {
-  animation: word 7s infinite;
 }
 
+.animate-word {
+  animation: word 7s infinite; /* Base animation */
+}
+
+/* Staggered animations */
 .animate-word-delay-1 {
-  animation: word 7s infinite;
-  animation-delay: 1.4s; /* Positive delay for staggered animation */
+  animation-delay: 1.4s; /* Delay for staggered animation */
 }
 
 .animate-word-delay-2 {
-  animation: word 7s infinite;
   animation-delay: 2.8s;
 }
 
 .animate-word-delay-3 {
-  animation: word 7s infinite;
   animation-delay: 4.2s;
 }
 
 .animate-word-delay-4 {
-  animation: word 7s infinite;
   animation-delay: 5.6s;
 }
 
 .animate-word-delay-5 {
-  animation: word 7s infinite;
-  animation-delay: 7.0s; /* Adjusted to match the timing sequence */
+  animation-delay: 7.0s; /* This matches the total duration */
 }
 
+.relative1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2rem; /* Adjust as needed */
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Adjust for your preferred effect */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-word {
+  animation: fadeIn 0.5s forwards; /* Adjust duration as needed */
+}
+
+.animate-word-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.animate-word-delay-2 {
+  animation-delay: 1s;
+}
+
+.animate-word-delay-3 {
+  animation-delay: 1.5s;
+}
+
+.animate-word-delay-4 {
+  animation-delay: 2s;
+}
+
+.animate-word-delay-5 {
+  animation-delay: 2.5s;
+}
 
 
 html, body {

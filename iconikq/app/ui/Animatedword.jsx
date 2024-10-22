@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const AnimatedWord = () => {
   const [isMounted, setIsMounted] = useState(false);
 
-  // Use useEffect to trigger the mounting state after initial render
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -15,26 +14,16 @@ const AnimatedWord = () => {
         <div className="text-center text-lg md:text-xl lg:text-5xl font-bold">
           Services offered
           <div
-            className={`relative inline-grid grid-cols-1 grid-rows-5 gap-2 sm:gap-12 overflow-hidden text-myred transition-opacity duration-500 ${
+            className={`relative1 grid grid-cols-1 grid-rows-5 gap-4 overflow-hidden transition-opacity duration-500 ${
               isMounted ? "opacity-100" : "opacity-0"
             }`}
           >
             {/* Each word spans one row */}
-            <span className="animate-word animate-word-delay-1 col-span-full row-span-full flex justify-center items-center">
-              TRANSPORTATION
-            </span>
-            <span className="animate-word animate-word-delay-2 col-span-full row-span-full flex justify-center items-center">
-              FREIGHT FORWARDING
-            </span>
-            <span className="animate-word animate-word-delay-3 col-span-full row-span-full flex justify-center items-center">
-              INVENTORY MANAGEMENT
-            </span>
-            <span className="animate-word animate-word-delay-4 col-span-full row-span-full flex justify-center items-center">
-              AEO CONSULTANTS
-            </span>
-            <span className="animate-word animate-word-delay-5 col-span-full row-span-full flex justify-center items-center">
-              WAREHOUSING
-            </span>
+            {["TRANSPORTATION", "FREIGHT FORWARDING", "INVENTORY MANAGEMENT", "AEO CONSULTANTS", "WAREHOUSING"].map((service, index) => (
+              <span key={index} className={`animate-word animate-word-delay-${index + 1} col-span-full row-span-full flex justify-center items-center`}>
+                {service}
+              </span>
+            ))}
           </div>
         </div>
       </div>
