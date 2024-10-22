@@ -45,18 +45,20 @@ html.lenis, html.lenis body {
   40% {
     transform: translateY(-110%);
   }
-  45% {
-    transform: translateY(-110%); /* Hold position */
-  }
   100% {
     transform: translateY(-110%);
   }
 }
 
 .animate-word {
-  animation: word 7s infinite;
+  animation: word 7s infinite forwards; /* Use forwards to retain final state */
 }
 
+.invisible {
+  visibility: hidden; /* Prevents the word from being seen before it animates */
+}
+
+/* Animation delay classes */
 .animate-word-delay-1 {
   animation-delay: 0s;
 }
