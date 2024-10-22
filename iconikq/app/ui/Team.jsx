@@ -18,7 +18,7 @@ const Team = () => {
           <div className="grid grid-cols-1 gap-5 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2">
           
               <div>
-                <Image 
+                <Image loading="lazy" 
                   className="object-cover rounded-xl h-[45vh] w-full"
                   src="/images/parth1.jpg" 
                   alt="Mr. Parth Ruparel" 
@@ -34,7 +34,7 @@ const Team = () => {
             
             
               <div>
-                <Image 
+                <Image loading="lazy" 
                   className="object-cover rounded-xl h-[45vh] w-full"
                   src="/images/drusti2.jpg" 
                   alt="Ms. Drishti Ruparel" 
