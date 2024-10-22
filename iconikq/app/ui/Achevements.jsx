@@ -39,7 +39,7 @@ const Achievements = () => {
               className="relative flex flex-col bg-clip-border bg-transparent text-gray-700 shadow-md min-h-[30rem] overflow-hidden rounded-xl cursor-pointer"
               onClick={() => openModal(src)}
             >
-              <Image
+              <Image loading="lazy" 
                 width={500}
                 height={1000}
                 src={src}
@@ -68,7 +68,7 @@ const Achievements = () => {
           className="fixed inset-0 bg-myblue bg-opacity-75 flex justify-center items-center z-50"
           onClick={closeModal}
         >
-          <Image
+          <Image loading="lazy" 
             className="h-[80vh] rounded-lg object-cover"
             src={selectedImage}
             alt="Enlarged"

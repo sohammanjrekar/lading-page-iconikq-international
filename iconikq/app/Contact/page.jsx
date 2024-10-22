@@ -10,7 +10,7 @@ const page = () => {
   <Navbar/>
  
       <div className="container flex flex-col items-center mb-24  mx-3 sm:mx-auto my-21">
-      <div class="relative w-full h-[50vh]"><Image loading="lazy" class="absolute h-full w-full object-cover object-center" src="/images/contact.jpg" width={1000} height={500} alt="contact image" />
+      <div class="relative w-full h-[50vh]"><Image loading="lazy"  loading="lazy" class="absolute h-full w-full object-cover object-center" src="/images/contact.jpg" width={1000} height={500} alt="contact image" />
     <div class="absolute inset-0 h-full w-full bg-black/50"></div>
     <div class="relative pt-24 sm:pt-36 text-center">
       <h2 class="block antialiased tracking-normal font-sans font-semibold leading-[1.3] text-white mb-4 text-5xl lg:text-4xl">Contact Information</h2>

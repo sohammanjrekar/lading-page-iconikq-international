@@ -31,7 +31,7 @@ const Page = ({ params }) => {
           {/* Top Image */}
           {blog.images[0] && (
             <div className="relative mb-12">
-              <Image
+              <Image loading="lazy" 
                 alt="Image of logistics"
                 width={800}
                 height={500}
@@ -55,7 +55,7 @@ const Page = ({ params }) => {
                   {/* Displaying related image to passage */}
                   {blog.images[idx + 1] && (
                     <div className="mb-8 mt-5">
-                      <Image
+                      <Image loading="lazy" 
                         alt={`Image related to passage ${idx + 1}`}
                         width={1000}
                         height={800}
@@ -78,7 +78,7 @@ const Page = ({ params }) => {
             <div className="w-full lg:w-1/4 max-w-sm mx-auto lg:mx-0 mb-12 lg:mb-0">
               <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 ease-in-out">
                 <div className="flex flex-wrap justify-center items-center mb-6">
-                  <Image
+                  <Image loading="lazy" 
                     alt="Mike Sullivan"
                     width={120}
                     height={120}

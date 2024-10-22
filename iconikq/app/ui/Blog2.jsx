@@ -4,7 +4,7 @@ import Image from 'next/image';
 const BlogPost = ({ title, imgSrc, description }) => (
   <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
     <div className="rounded-lg h-64 overflow-hidden">
-      <Image
+      <Image loading="lazy" 
         alt="content"
         className="object-cover object-center h-full w-full"
         src={imgSrc}

@@ -61,7 +61,7 @@ const AutoCarousel = () => {
         <div className="flex mt-12 animate-scroll" style={{ width: `${images.length * 20}vh` }}>
         {images.concat(images).map((image) => ( // Duplicate images for seamless scrolling
          
-          <Image
+          <Image loading="lazy" 
             key={image.name}
             src={image.src}
             alt={image.name}

@@ -237,7 +237,7 @@ const BlogPage = () => {
               </div>
             </div>
             <div className="w-full md:w-1/2">
-            <Image
+            <Image loading="lazy" 
                  width={500}
                  height={500}
                  layout="responsive"
@@ -252,7 +252,7 @@ const BlogPage = () => {
           <div className="grid grid-cols-12 sm:px-5 gap-x-8 gap-y-16">
             {sortedBlogData.slice(1, 6).map((post, index) => (  
               <div key={index} className="flex flex-col items-start col-span-12 sm:col-span-6 xl:col-span-4 space-y-3">
-                <Image
+                <Image loading="lazy" 
                  width={500}
                  height={500}
                  layout="responsive"

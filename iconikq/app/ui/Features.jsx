@@ -15,7 +15,7 @@ const Features = () => {
         <div className="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
           <div className="row-span-2 flex flex-col rounded-md border border-slate-200">
             <div className="h-1/2 flex-1">
-              <Image
+              <Image loading="lazy" 
                 src="https://d33wubrfki0l68.cloudfront.net/c43307b88fb814366e4f3a181c788796cba83faa/4c05c/new/landing/omnichannel.png"
                 className="w-full object-cover object-right-top"
                 alt="omnichannel"
@@ -54,7 +54,7 @@ const Features = () => {
             </div>
             <div className="relative hidden h-full w-1/3 overflow-hidden lg:block">
               <div className="absolute inset-0">
-                <Image
+                <Image loading="lazy" 
                   src="https://d33wubrfki0l68.cloudfront.net/e5290c26cc1703e54e0afe3d1472046098ecd819/53775/new/landing/live-chat.png"
                   className="h-full w-full object-cover object-left-top"
                   alt=""
@@ -80,7 +80,7 @@ const Features = () => {
             </div>
             <div className="relative hidden h-full w-1/3 overflow-hidden lg:block">
               <div className="absolute inset-0">
-                <Image
+                <Image loading="lazy" 
                   src="https://d33wubrfki0l68.cloudfront.net/1205a454c4b64452a51930c9b0043f8db9ff8271/d202e/new/landing/chat-bot.png"
                   className="h-full w-full object-cover object-left-top"
                   alt=""

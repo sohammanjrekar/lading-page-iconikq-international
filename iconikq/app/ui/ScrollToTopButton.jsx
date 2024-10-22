@@ -45,7 +45,7 @@ const ScrollToTopButton = () => {
             transition: "opacity 0.8s ease-in-out, transform 0.8s ease-in-out",
           }}
         >
-          <Image
+          <Image loading="lazy" 
             src="/images/up-arrow.png" // Using next/image for image optimization
             alt="Scroll to top"
             width={45} // Set width and height for image optimization

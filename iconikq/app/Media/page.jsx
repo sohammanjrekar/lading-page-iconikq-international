@@ -69,7 +69,7 @@ const page = () => {
                     <div className="flex flex-row mt-4 gap-3">
                       {/* Profile Picture */}
                       <a href="#">
-                        <Image
+                        <Image loading="lazy" 
                           src={video.profilePic}
                           alt="Profile Picture"
                           width={40}

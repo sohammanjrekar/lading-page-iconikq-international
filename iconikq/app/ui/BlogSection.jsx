@@ -20,7 +20,7 @@ const BlogSection = () => {
           {sortedBlogData.slice(0, 4).map((post, index) => ( 
             <div key={index} className="lg:flex">
               <div className="relative w-full h-56 lg:w-[45vw] rounded-lg">
-                <Image
+                <Image loading="lazy" 
                   className="object-cover w-full h-full rounded-lg"
                   src={post.images[0]} 
                   alt={post.title}

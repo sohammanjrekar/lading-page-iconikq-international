@@ -19,7 +19,7 @@ const page = () => {
             {data.map((card, index) => (
               <div key={index} className=" w-full md:w-1/2 xl:w-1/3 px-4">
                 <div className="shadow-2xl bg-white rounded-lg overflow-hidden mb-10">
-                <Image
+                <Image loading="lazy" 
   width={500}
   height={300}
   src={card.image}

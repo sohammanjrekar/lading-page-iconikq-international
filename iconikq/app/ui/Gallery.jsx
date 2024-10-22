@@ -79,7 +79,7 @@ const Gallery = () => {
                   </div>
                 </div>
               </div>
-              <Image
+              <Image loading="lazy" 
                 className="object-cover w-full h-[40vh] aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
                 src={src}
                 alt={`Image ${index + 1}`}
@@ -97,7 +97,7 @@ const Gallery = () => {
           className="fixed inset-0 bg-myblue bg-opacity-75 flex justify-center items-center z-50"
           onClick={closeModal}
         >
-          <Image
+          <Image loading="lazy" 
             className="h-[80vh] rounded-lg object-cover"
             src={selectedImage}
             alt="Enlarged"

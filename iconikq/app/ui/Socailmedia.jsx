@@ -32,7 +32,7 @@ const SocialMediaCards = () => {
             <div key={index} className="w-full max-w-full px-3 mb-6 sm:w-1/4 xl:mb-0 xl:w-1/4 drop-zone">
               <div className="shadow-2xl relative flex flex-col min-w-0 break-words border border-dashed bg-clip-border rounded-2xl border-stone-200 bg-light/30 draggable">
                 <div className="flex flex-row items-center justify-center flex-auto py-8 px-9">
-                  <Image
+                  <Image loading="lazy" 
                     className="w-[10vh] mr-3"
                     src={social.imageUrl}
                     alt={social.altText}

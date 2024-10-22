@@ -10,7 +10,7 @@ const Footer = () => {
 
          {/* Newsletter Section */}
 <div className="sm:col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
-  <Image
+  <Image loading="lazy" 
     width={500}
     height={300}
     priority       quality={75}

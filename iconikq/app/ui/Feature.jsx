@@ -19,7 +19,7 @@ const Feature = () => {
           <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
               <div className="relative p-8 space-y-8 flex flex-wrap justify-center items-center">
                 <div>
-                <Image
+                <Image loading="lazy" 
                   src="/images/edu.png"
                    className="h-[10vh] w-full"
                   width={80}
@@ -40,7 +40,7 @@ const Feature = () => {
             </div><div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
               <div className="relative p-8 space-y-8 flex flex-wrap justify-center items-center">
                 <div>
-                <Image
+                <Image loading="lazy" 
                 src="/images/tech.png"
                    className="h-[10vh] w-full"
                   width={40}
@@ -61,7 +61,7 @@ const Feature = () => {
             </div><div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
               <div className="relative p-8 space-y-8 flex flex-wrap justify-center items-center">
                 <div>
-                <Image
+                <Image loading="lazy" 
                    src="/images/safty.png"
                    className="h-[10vh] w-full"
                   width={40}
@@ -82,7 +82,7 @@ const Feature = () => {
             </div><div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
               <div className="relative p-8 space-y-8 flex flex-wrap justify-center items-center">
                 <div>
-                <Image
+                <Image loading="lazy" 
                    src="/images/env.png"
                   className="h-[10vh] w-full"
                   width={40}

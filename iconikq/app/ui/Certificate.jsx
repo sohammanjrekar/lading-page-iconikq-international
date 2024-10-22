@@ -11,7 +11,7 @@ const Modal = ({ showModal, setShowModal, certificate }) => {
       className="fixed inset-0 bg-myblue bg-opacity-75 flex justify-center items-center z-50"
       onClick={() => setShowModal(false)}
     >
-      <Image
+      <Image loading="lazy" 
         className="h-[80vh] rounded-lg object-cover"
         src={certificate.image}
         alt={certificate.title}
@@ -64,7 +64,7 @@ const Certificate = () => {
               className="mx-auto relative shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105"
             >
               <div className="relative w-full h-full">
-                <Image
+                <Image loading="lazy" 
                   src={certificate.image}
                   alt={certificate.title}
                   className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
