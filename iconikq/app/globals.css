@@ -33,46 +33,47 @@ html.lenis, html.lenis body {
 }
 @keyframes word {
   0% {
-    transform: translateY(100%); /* Start off-screen at the bottom */
-    opacity: 0; /* Start hidden */
+    transform: translateY(100%);
   }
-  10% {
-    transform: translateY(0); /* Move to final position */
-    opacity: 1; /* Fade in */
-    animation-timing-function: ease-out; /* Smooth transition */
+  15% {
+    transform: translateY(-10%);
+    animation-timing-function: ease-out;
   }
-  40% {
-    transform: translateY(0); /* Stay in position for a bit */
-    opacity: 1; /* Remain visible */
+  20% {
+    transform: translateY(0);
   }
+  40%,
   100% {
-    transform: translateY(-100%); /* Move off-screen at the top */
-    opacity: 0; /* Fade out */
+    transform: translateY(-110%);
   }
 }
-
 .animate-word {
-  animation: word 10s forwards; /* Total animation duration */
+  animation: word 7s infinite;
 }
 
 .animate-word-delay-1 {
-  animation-delay: 0s; /* No delay for the first word */
+  animation: word 7s infinite;
+  animation-delay: 1.4s; /* Positive delay for staggered animation */
 }
 
 .animate-word-delay-2 {
-  animation-delay: 2s; /* 2 seconds for each word visibility */
+  animation: word 7s infinite;
+  animation-delay: 2.8s;
 }
 
 .animate-word-delay-3 {
-  animation-delay: 4s; /* 2 seconds for each word visibility */
+  animation: word 7s infinite;
+  animation-delay: 4.2s;
 }
 
 .animate-word-delay-4 {
-  animation-delay: 6s; /* 2 seconds for each word visibility */
+  animation: word 7s infinite;
+  animation-delay: 5.6s;
 }
 
 .animate-word-delay-5 {
-  animation-delay: 8s; /* 2 seconds for each word visibility */
+  animation: word 7s infinite;
+  animation-delay: 7.0s; /* Adjusted to match the timing sequence */
 }
 
 
