@@ -21,24 +21,15 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-::root {
-  /* Color Variables */
-  --mylight: #fff; /* Light Pink */
-  --myred: #EF412B; /* Bright Red */
-  --myblue: #0B2A39;  /* Dark Blue */
+:root {
+    /* Color Variables */
+    --mybg-light: #fff; /* Light Pink */
+    --mybg-red: #EF412B; /* Bright Red */
+    --mybg-blue: #0B2A39;  /* Dark Blue */
 
-  /* Font Variables */
-  --font-headline: 'Raleway', sans-serif;
-  --font-content: 'Raleway', sans-serif;
-}
-
-/* Example usage */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headline);
-}
-
-p, span, div {
-  font-family: var(--font-content);
+    /* Font Variables */
+    --font-headline: 'Playfair', serif; /* Replace with your headline font */
+    --font-content: 'Lora', serif; /* Replace with your content font */
 }
 @keyframes word {
   0% {
