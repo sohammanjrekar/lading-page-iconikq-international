@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../ui/Button";
 import Social from "../ui/Social";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -65,10 +66,10 @@ const Footer = () => {
             <div className="flex flex-col my-4">
               <p className="font-medium text-bold text-2xl text-myred">Legal</p>
               <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight">
-                <a className="hover:text-myred" href="#">Privacy Policy</a>
-                <a className="hover:text-myred" href="#">Terms & Conditions</a>
-                <a className="hover:text-myred" href="#">Returns Policy</a>
-                <a className="hover:text-myred" href="#">Accessibility</a>
+                <Link className="hover:text-myred" href="/Privacy">Privacy Policy</Link>
+                <Link className="hover:text-myred" href="/Terms">Terms & Conditions</Link>
+               
+                <Link className="hover:text-myred" href="/Accessibility">Accessibility</Link>
               </nav>
             </div>
 
