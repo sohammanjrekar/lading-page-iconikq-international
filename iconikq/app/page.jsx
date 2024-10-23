@@ -29,7 +29,7 @@ export default function Home() {
       <SocialMediaCards />
       <Mapsection />
       <ScrollToTopButton />
-      <Footer />
+      
     </ReactLenis>
   );
 }
