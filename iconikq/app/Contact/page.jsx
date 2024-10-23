@@ -1,9 +1,10 @@
 import React from 'react';
+import Button from '../ui/Button';
 
 const Page = () => {
   return (
     <>
-      <div className="relative w-full py-40 h-full pb-20 flex flex-col flex-wrap overflow-hidden">
+      <div className="relative w-full py-[20vh] h-full pb-20 flex flex-col flex-wrap overflow-hidden">
         {/* Background Video */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -24,11 +25,11 @@ const Page = () => {
                   <h1 className="text-4xl sm:text-5xl text-myred font-extrabold tracking-tight">
                     Get in touch
                   </h1>
-                  <p className="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+                  <p className="text-normal text-lg sm:text-2xl font-medium text-white mt-2">
                     Fill in the form to start a conversation
                   </p>
 
-                  <div className="flex items-center mt-8 text-gray-600 dark:text-gray-400">
+                  <div className="flex items-center mt-8 text-white">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -36,7 +37,7 @@ const Page = () => {
                       strokeLinejoin="round"
                       strokeWidth="1.5"
                       viewBox="0 0 24 24"
-                      className="w-8 h-8 text-gray-500"
+                      className="w-8 h-8 text-myred"
                     >
                       <path
                         strokeLinecap="round"
@@ -52,11 +53,16 @@ const Page = () => {
                       />
                     </svg>
                     <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                      Acme Inc, Street, State, Postal Code
+                    704/705, Filix, Opposite
+Asian Paints, LBS Marg,
+Bhandup West,
+Mumbai – 400078
+
+
                     </div>
                   </div>
 
-                  <div className="flex items-center mt-4 text-white dark:text-gray-400">
+                  <div className="flex items-center mt-4 text-white ">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -64,7 +70,7 @@ const Page = () => {
                       strokeLinejoin="round"
                       strokeWidth="1.5"
                       viewBox="0 0 24 24"
-                      className="w-8 h-8 text-gray-500"
+                      className="w-8 h-8 text-myred"
                     >
                       <path
                         strokeLinecap="round"
@@ -73,12 +79,12 @@ const Page = () => {
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
-                    <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                      +44 1234567890
+                    <div className="ml-4 text-md tracking-wide font-semibold w-40 ">
+                    +91 9870725060
                     </div>
                   </div>
 
-                  <div className="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+                  <div className="flex items-center mt-2 text-white">
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -86,7 +92,7 @@ const Page = () => {
                       strokeLinejoin="round"
                       strokeWidth="1.5"
                       viewBox="0 0 24 24"
-                      className="w-8 h-8 text-gray-500"
+                      className="w-8 h-8 text-myred"
                     >
                       <path
                         strokeLinecap="round"
@@ -96,51 +102,46 @@ const Page = () => {
                       />
                     </svg>
                     <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                      info@acme.org
+                    info@iconikqinternational.com
                     </div>
                   </div>
                 </div>
 
-                <form className="p-6 flex flex-col justify-center bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl rounded-lg">
+                <form className="p-1 py-3 flex items-center flex-col justify-center bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl rounded-lg">
                   <div className="flex flex-col mb-4">
-                    <label htmlFor="name" className="hidden">Full Name</label>
+                    <label htmlFor="name" className="text-lg text-white font-bold">Full Name</label>
                     <input
                       type="text"
                       name="name"
                       id="name"
                       placeholder="Full Name"
-                      className="w-full py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-gray-400  text-white font-semibold focus:border-myred focus:outline-none"
+                      className="w-full md:w-[20vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white  text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
                   <div className="flex flex-col mb-4">
-                    <label htmlFor="email" className="hidden">Email</label>
+                    <label htmlFor="email" className="text-lg text-white font-bold">Email: </label>
                     <input
                       type="email"
                       name="email"
                       id="email"
                       placeholder="Email"
-                    className="w-full py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-gray-400  text-white font-semibold focus:border-myred focus:outline-none"
+                    className="w-full md:w-[20vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white  text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
                   <div className="flex flex-col mb-4">
-                    <label htmlFor="tel" className="hidden">Number</label>
+                    <label htmlFor="tel" className="text-lg text-white font-bold">Number:</label>
                     <input
                       type="tel"
                       name="tel"
                       id="tel"
                       placeholder="Telephone Number"
-                    className="w-full py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-gray-400  text-white font-semibold focus:border-myred focus:outline-none"
+                    className="w-full md:w-[20vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white  text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="md:w-32 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300"
-                  >
-                    Submit
-                  </button>
+                <Button text="Send"/>
                 </form>
               </div>
             </div>
