@@ -16,7 +16,7 @@ const Navbar = () => {
       <Link href="/" className="flex flex-col items-center">
     <div className="flex flex-row items-center space-x-2">
        
-        <Image loading="lazy" 
+        <Image 
             width={500}
             height={500}
             layout="responsive"
