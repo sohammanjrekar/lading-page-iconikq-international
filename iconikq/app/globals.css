@@ -22,15 +22,20 @@ html.lenis, html.lenis body {
 }
 
 :root {
-    /* Color Variables */
-    --mybg-light: #fff; /* Light Pink */
-    --mybg-red: #EF412B; /* Bright Red */
-    --mybg-blue: #0B2A39;  /* Dark Blue */
+  --mybg-light: #fff;
+  --mybg-red: #EF412B;
+  --mybg-blue: #0B2A39;
 
-    /* Font Variables */
-    --font-headline: 'Playfair', serif; /* Replace with your headline font */
-    --font-content: 'Lora', serif; /* Replace with your content font */
+  /* Font Variables */
+  --font-headline: 'Playfair', serif; 
+  --font-content: 'Lora', serif; 
+  --font-raleway: var(--font-raleway); /* Raleway font */
 }
+
+body {
+  font-family: var(--font-raleway), sans-serif;
+}
+
 @keyframes word {
   0% {
     transform: translateY(100%);
