@@ -1,8 +1,25 @@
 import React from 'react'
+export const metadata = {
+  title: 'ICONIKQ | Accessibility',
+  description: 'Learn about our commitment to accessibility and the measures we take to ensure our services are accessible to everyone.',
+  keywords: 'accessibility, inclusive design, ICONIKQ',
+  openGraph: {
+    title: 'ICONIKQ | Accessibility',
+    description: 'Discover how ICONIKQ ensures accessibility in our services for all users, including those with disabilities.',
+    url: 'https://www.iconikq.com/accessibility',
+    image: 'https://www.iconikq.com/images/accessibility-banner.jpg',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ICONIKQ | Accessibility',
+    description: 'We are committed to accessibility. Learn more about our efforts at ICONIKQ.',
+    image: 'https://www.iconikq.com/images/accessibility-banner.jpg',
+  },
+};
 
 const page = () => {
   return (
-    <div className="p-6 max-w-4xl mx-auto text-gray-800">
+    <div className="p-6 mt-24 max-w-[80vw] mx-auto text-gray-800">
       <h2 className="text-3xl font-bold border-b-4 border-blue-600 pb-3">
         Accessibility Statement for{" "}
         <span className="text-blue-600">

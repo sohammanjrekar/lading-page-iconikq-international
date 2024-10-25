@@ -1,6 +1,23 @@
 import Image from 'next/image';
 
 import Button from '../ui/Button';
+export const metadata = {
+  title: 'ICONIKQ | Blog',
+  description: 'Stay updated with the latest insights and trends in logistics and transportation on the ICONIKQ blog.',
+  keywords: 'logistics blog, transportation news, ICONIKQ insights',
+  openGraph: {
+    title: 'ICONIKQ | Blog',
+    description: 'Explore our blog for expert insights and tips on logistics, shipping, and freight forwarding.',
+    url: 'https://www.iconikq.com/blog',
+    image: 'https://www.iconikq.com/images/blog-banner.jpg',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ICONIKQ | Blog',
+    description: 'Check out the ICONIKQ blog for the latest logistics insights and updates.',
+    image: 'https://www.iconikq.com/images/blog-banner.jpg',
+  },
+};
 
 // Sample data for the blog posts
 

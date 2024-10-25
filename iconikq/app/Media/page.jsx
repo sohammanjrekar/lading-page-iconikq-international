@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import Head from 'next/head';
 
 const page = () => {
   const videos = [
@@ -49,7 +49,17 @@ const page = () => {
 
   return (
     <>
-  
+      <Head>
+        <title>Media</title>
+        <meta name="description" content="Explore our collection of educational videos on web development, design, and programming." />
+        <meta name="keywords" content="videos, web development, programming, CSS, HTML, Flexbox, tutorials" />
+        <meta property="og:title" content="Video Library" />
+        <meta property="og:description" content="Explore our collection of educational videos on web development, design, and programming." />
+        <meta property="og:image" content="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" />
+        <meta property="og:url" content="https://yourwebsite.com/video-library" />
+       
+      </Head>
+
       <div className="flex bg-zinc-900 text-zinc-50 flex-col">
         <div className="flex flex-1">
           <main className="flex-1 bg-myred">
@@ -68,7 +78,7 @@ const page = () => {
                     <div className="flex flex-row mt-4 gap-3">
                       {/* Profile Picture */}
                       <a href="#">
-                        <Image loading="lazy" 
+                        <Image loading="lazy"
                           src={video.profilePic}
                           alt="Profile Picture"
                           width={40}
@@ -98,7 +108,6 @@ const page = () => {
           </main>
         </div>
       </div>
-    
     </>
   );
 };

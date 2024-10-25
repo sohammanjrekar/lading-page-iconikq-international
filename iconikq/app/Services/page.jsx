@@ -1,6 +1,24 @@
 import React from 'react'
 import {data} from '../Data';
 import Image from 'next/image';
+export const metadata = {
+  title: 'ICONIKQ | Our Services',
+  description: 'Explore the range of logistics services offered by ICONIKQ, tailored to meet your business needs.',
+  keywords: 'logistics services, shipping, freight forwarding, ICONIKQ',
+  openGraph: {
+    title: 'ICONIKQ | Our Services',
+    description: 'Discover the comprehensive logistics solutions provided by ICONIKQ, designed for efficiency and reliability.',
+    url: 'https://www.iconikq.com/services',
+    image: 'https://www.iconikq.com/images/services-banner.jpg',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ICONIKQ | Our Services',
+    description: 'Looking for logistics solutions? Explore our services at ICONIKQ.',
+    image: 'https://www.iconikq.com/images/services-banner.jpg',
+  },
+};
+
 const page = () => {
   return (
    <>

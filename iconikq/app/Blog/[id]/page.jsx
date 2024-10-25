@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import Head from 'next/head'; // Import Head from next/head
 import Button from '../../ui/Button';
 
 const Page = ({ params }) => {
@@ -14,6 +14,15 @@ const Page = ({ params }) => {
 
   return (
     <>
+      {/* Dynamic Metadata */}
+      <Head>
+        <title>Iconikq | {blog.title} </title>
+        <meta name="description" content={`Read about ${blog.title}, discussing its impact on logistics and global trade.`} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={`Read about ${blog.title}, discussing its impact on logistics and global trade.`} />
+        <meta property="og:image" content={blog.images[0]} />
+        <meta property="og:url" content={`https://yourwebsite.com/blog/${id}`} />
+         </Head>
 
       <div className="container w-[70vw] my-5 pt-10 mx-auto">
         <main className="mt-12">
@@ -23,8 +32,8 @@ const Page = ({ params }) => {
               {blog.title}
             </h1>
             <div className="bg-myred flex w-[9vw] items-center text-center rounded-full text-white px-2 py-1 uppercase ">
-                  <p className="text-sm text-center font-medium">{blog.Topic}</p>
-                </div>    
+              <p className="text-sm text-center font-medium">{blog.Topic}</p>
+            </div>    
           </header>
 
           {/* Top Image */}
@@ -99,7 +108,6 @@ const Page = ({ params }) => {
           </div>
         </main>
       </div>
-     
     </>
   );
 };

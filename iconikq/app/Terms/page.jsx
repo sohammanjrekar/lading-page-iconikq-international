@@ -1,9 +1,26 @@
 import React from 'react'
+export const metadata = {
+  title: 'ICONIKQ | Terms and Conditions',
+  description: 'Review the terms and conditions governing the use of ICONIKQ’s services and website.',
+  keywords: 'terms and conditions, usage policy, ICONIKQ',
+  openGraph: {
+    title: 'ICONIKQ | Terms and Conditions',
+    description: 'Understand the terms of service for using ICONIKQ and our logistics solutions.',
+    url: 'https://www.iconikq.com/terms',
+    image: 'https://www.iconikq.com/images/terms-banner.jpg',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ICONIKQ | Terms and Conditions',
+    description: 'Read the terms and conditions for using ICONIKQ’s services.',
+    image: 'https://www.iconikq.com/images/terms-banner.jpg',
+  },
+};
 
 const page = () => {
   return (
-    <>
-    <h2>Terms and Conditions</h2>
+    <div className="p-6 mt-24 max-w-[80vw] mx-auto text-gray-800">
+      <h2 className="text-3xl font-bold border-b-4 border-blue-600 pb-3">n Terms and Conditions</h2>
     <p>Last updated: October 23, 2024</p>
     <p>
       Please read these terms and conditions carefully before using Our Service.
@@ -295,7 +312,7 @@ const page = () => {
         <p>By phone number: +91 9870725060</p>
       </li>
     </ul>
-  </>
+  </div>
   
   )
 }
