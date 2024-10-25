@@ -1,5 +1,10 @@
 import Image from 'next/image';
 import Head from 'next/head';
+export const metadata = {
+  title: 'ICONIKQ | Media',
+  description: 'Explore our media page at ICONIKQ, where you can watch success story videos and podcasts showcasing our logistics solutions and client experiences on YouTube.',
+  keywords: 'media, logistics, ICONIKQ, podcasts, success stories, YouTube, video content',
+};
 
 const page = () => {
   const videos = [
@@ -49,16 +54,7 @@ const page = () => {
 
   return (
     <>
-      <Head>
-        <title>Media</title>
-        <meta name="description" content="Explore our collection of educational videos on web development, design, and programming." />
-        <meta name="keywords" content="videos, web development, programming, CSS, HTML, Flexbox, tutorials" />
-        <meta property="og:title" content="Video Library" />
-        <meta property="og:description" content="Explore our collection of educational videos on web development, design, and programming." />
-        <meta property="og:image" content="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" />
-        <meta property="og:url" content="https://yourwebsite.com/video-library" />
-       
-      </Head>
+    
 
       <div className="flex bg-zinc-900 text-zinc-50 flex-col">
         <div className="flex flex-1">

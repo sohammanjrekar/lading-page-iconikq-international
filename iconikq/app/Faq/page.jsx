@@ -1,6 +1,6 @@
 
 export const metadata = {
-  title: 'ICONIKQ | Frequently Asked Questions',
+  title: 'ICONIKQ | FAQ',
   description: 'Find answers to the most common questions about our logistics services and processes at ICONIKQ.',
   keywords: 'FAQ, frequently asked questions, logistics, ICONIKQ',
   openGraph: {
