@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
 
       <h4 className="text-lg font-semibold mb-2">Usage Data</h4>
       <p className="mb-4">
-        Usage Data is collected automatically when using the Service. Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.
+        Usage Data is collected automatically when using the Service. Usage Data may include information such as Your Device&apos;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.
       </p>
     </div>
   );
