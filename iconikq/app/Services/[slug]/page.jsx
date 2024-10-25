@@ -32,11 +32,7 @@ const CategoryPage = ({ params }) => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://www.iconikq.com/services/${slug}`} />
-        <meta property="og:image" content="https://www.iconikq.com/images/default-banner.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://www.iconikq.com/images/default-banner.jpg" />
+        
       </Head>
 
       <section className="pt-20 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">

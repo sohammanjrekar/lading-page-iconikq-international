@@ -24,15 +24,14 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/images/android-chrome-512x512.png" sizes="512x512" type="image/png" />
         <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="icon" href="/images/favicon-16x16.png" sizes="16x16" type="image/png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="author" content="Iconikq International" />
 
-        {/* Open Graph Metadata */}
-        <meta property="og:title" content="Iconikq International - Logistics Solutions" />
-        <meta property="og:description" content="Discover efficient and reliable logistics services tailored for your business needs." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.iconikq.com" />
-        <meta property="og:image" content="/images/og-image.png" />
+        <meta property="og:title" content="Iconikq International - Logistics Solutions"/>
+<meta property="og:description" content="Discover efficient and reliable logistics services tailored for your business needs."/>
+<meta property="og:image" content="https://64.media.tumblr.com/e724b44dfdb02b39cfd60979183fcab4/fcc8680e411f77fc-3c/s1280x1920/c5efbaa434e0112d1c12651ca5596b7fa2da83af.pnj"/>
+<meta property="og:url" content="https://www.iconikqinternational.com/"/>
+<meta property="og:type" content="website"/>
       </Head>
       <body className="antialiased">
         <Navbar />
