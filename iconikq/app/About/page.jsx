@@ -7,18 +7,7 @@ export const metadata = {
   title: 'ICONIKQ | About Us',
   description: 'Learn more about ICONIKQ, our mission, and how we provide exceptional logistics solutions for our clients.',
   keywords: 'about ICONIKQ, logistics company, transportation services',
-  openGraph: {
-    title: 'ICONIKQ | About Us',
-    description: 'Get to know ICONIKQ, a leading logistics company dedicated to providing customized solutions for all your shipping needs.',
-    url: 'https://www.iconikq.com/about',
-    image: 'https://www.iconikq.com/images/about-banner.jpg',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ICONIKQ | About Us',
-    description: 'Discover the story behind ICONIKQ and our commitment to excellence in logistics.',
-    image: 'https://www.iconikq.com/images/about-banner.jpg',
-  },
+  
 };
 
 const Page = () => {

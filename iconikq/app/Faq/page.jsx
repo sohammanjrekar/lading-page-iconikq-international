@@ -3,18 +3,7 @@ export const metadata = {
   title: 'ICONIKQ | FAQ',
   description: 'Find answers to the most common questions about our logistics services and processes at ICONIKQ.',
   keywords: 'FAQ, frequently asked questions, logistics, ICONIKQ',
-  openGraph: {
-    title: 'ICONIKQ | Frequently Asked Questions',
-    description: 'Get the answers to your questions about ICONIKQ’s logistics services and operations.',
-    url: 'https://www.iconikq.com/faq',
-    image: 'https://www.iconikq.com/images/faq-banner.jpg',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ICONIKQ | FAQ',
-    description: 'Have questions? Check out our FAQ page for more information about our logistics services.',
-    image: 'https://www.iconikq.com/images/faq-banner.jpg',
-  },
+  
 };
 
 const FAQ = () => {

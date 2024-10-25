@@ -3,18 +3,7 @@ export const metadata = {
   title: 'ICONIKQ | Accessibility',
   description: 'Learn about our commitment to accessibility and the measures we take to ensure our services are accessible to everyone.',
   keywords: 'accessibility, inclusive design, ICONIKQ',
-  openGraph: {
-    title: 'ICONIKQ | Accessibility',
-    description: 'Discover how ICONIKQ ensures accessibility in our services for all users, including those with disabilities.',
-    url: 'https://www.iconikq.com/accessibility',
-    image: 'https://www.iconikq.com/images/accessibility-banner.jpg',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ICONIKQ | Accessibility',
-    description: 'We are committed to accessibility. Learn more about our efforts at ICONIKQ.',
-    image: 'https://www.iconikq.com/images/accessibility-banner.jpg',
-  },
+  
 };
 
 const page = () => {

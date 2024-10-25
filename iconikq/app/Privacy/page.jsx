@@ -3,18 +3,7 @@ export const metadata = {
   title: 'ICONIKQ | Privacy Policy',
   description: 'Read our privacy policy to understand how ICONIKQ collects, uses, and protects your information.',
   keywords: 'privacy policy, data protection, ICONIKQ',
-  openGraph: {
-    title: 'ICONIKQ | Privacy Policy',
-    description: 'Learn about our commitment to your privacy and how we handle your personal data at ICONIKQ.',
-    url: 'https://www.iconikq.com/privacy',
-    image: 'https://www.iconikq.com/images/privacy-banner.jpg',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ICONIKQ | Privacy Policy',
-    description: 'Your privacy matters. Read our policy to see how we protect your information at ICONIKQ.',
-    image: 'https://www.iconikq.com/images/privacy-banner.jpg',
-  },
+  
 };
 
 const PrivacyPolicy = () => {

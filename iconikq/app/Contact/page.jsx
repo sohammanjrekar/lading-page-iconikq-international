@@ -4,18 +4,7 @@ export const metadata = {
   title: 'ICONIKQ | Contact Us',
   description: 'Get in touch with ICONIKQ for any inquiries about our logistics services. We’re here to help!',
   keywords: 'contact ICONIKQ, logistics inquiries, customer support',
-  openGraph: {
-    title: 'ICONIKQ | Contact Us',
-    description: 'Reach out to ICONIKQ for any questions or support regarding our logistics services.',
-    url: 'https://www.iconikq.com/contact',
-    image: 'https://www.iconikq.com/images/contact-banner.jpg',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ICONIKQ | Contact Us',
-    description: 'Have questions? Contact ICONIKQ for expert logistics support.',
-    image: 'https://www.iconikq.com/images/contact-banner.jpg',
-  },
+  
 };
 
 const Page = () => {

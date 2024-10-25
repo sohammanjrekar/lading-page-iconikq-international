@@ -3,18 +3,7 @@ export const metadata = {
   title: 'ICONIKQ | Terms and Conditions',
   description: 'Review the terms and conditions governing the use of ICONIKQ’s services and website.',
   keywords: 'terms and conditions, usage policy, ICONIKQ',
-  openGraph: {
-    title: 'ICONIKQ | Terms and Conditions',
-    description: 'Understand the terms of service for using ICONIKQ and our logistics solutions.',
-    url: 'https://www.iconikq.com/terms',
-    image: 'https://www.iconikq.com/images/terms-banner.jpg',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ICONIKQ | Terms and Conditions',
-    description: 'Read the terms and conditions for using ICONIKQ’s services.',
-    image: 'https://www.iconikq.com/images/terms-banner.jpg',
-  },
+  
 };
 
 const page = () => {
