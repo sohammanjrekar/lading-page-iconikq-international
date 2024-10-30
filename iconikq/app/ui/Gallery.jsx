@@ -1,37 +1,26 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { supabase } from '../utils/supabase/client'; // Adjust path as needed
 
 const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [visibleImages, setVisibleImages] = useState(6); // Initially show 9 images
+  const [visibleImages, setVisibleImages] = useState(6);
+  const [images, setImages] = useState([]); 
 
-  const images = [
-    "/images/img10.jpg",
-    "/images/img11.jpg",
-    "/images/img8.jpg",
-    "/images/img9.jpg",
-    "/images/img12.jpg",
-    "/images/img13.jpg",
-    "/images/img14.jpg",
-    "/images/img15.jpg",
-    "/images/img16.jpg",
-    "/images/img17.jpg",
-    "/images/img18.jpg",
-    "/images/img19.jpg",
-    "/images/img20.jpg",
-  
-    "/images/img2.jpg",
-    "/images/img3.jpg",
-    "/images/img4.jpg",
-   
-     
-    "/images/img7.jpg",
-    "/images/img1.jpg",
-    "/images/img6.jpg",
-   
-  ];
+  useEffect(() => {
+    const fetchImages = async () => {
+      const { data, error } = await supabase.from('gallery').select('id, title, description, image_url');
+      if (error) {
+        console.error("Error fetching images:", error);
+      } else {
+        setImages(data);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   const openModal = (src) => {
     setSelectedImage(src);
@@ -44,7 +33,7 @@ const Gallery = () => {
   };
 
   const loadMoreImages = () => {
-    setVisibleImages((prev) => prev + 6); // Load 9 more images
+    setVisibleImages((prev) => prev + 6);
   };
 
   return (
@@ -59,33 +48,29 @@ const Gallery = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-        {images.slice(0, visibleImages).map((src, index) => (
+        {images.slice(0, visibleImages).map((image, index) => (
           <div
             className="group relative cursor-pointer"
-            key={index}
-            onClick={() => openModal(src)}
+            key={image.id}
+            onClick={() => openModal(image.image_url)}
           >
             <div className="overflow-hidden bg-red-400 cursor-pointer rounded-xl relative group">
               <div className="rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
                 <div>
                   <div className="transform-gpu p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
-                    <div className="font-bold">Jessie Watsica</div>
+                    <div className="font-bold">{image.title}</div>
                     <div className="opacity-60 text-sm ">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
-                      dolores error iure, perferendis sequi totam. Ad aliquam aperiam atque
-                      deleniti dolor dolorem enim esse et in, inventore itaque, pariatur
-                      reprehenderit.
+                      {image.description.slice(0, 100)}{image.description.length > 100 && "..."}
                     </div>
                   </div>
                 </div>
               </div>
               <Image loading="lazy" 
                 className="object-cover w-full h-[40vh] aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
-                src={src}
-                alt={`Image ${index + 1}`}
-                width={500} // Adjust width
-                height={500} // Adjust height
-             
+                src={image.image_url}
+                alt={image.title}
+                width={500}
+                height={500}
               />
             </div>
           </div>
@@ -101,14 +86,13 @@ const Gallery = () => {
             className="h-[80vh] rounded-lg object-cover"
             src={selectedImage}
             alt="Enlarged"
-            width={800} // Adjust width
-            height={800} // Adjust height
-            layout="intrinsic" // Adjust the layout to fit
+            width={800}
+            height={800}
+            layout="intrinsic"
           />
         </div>
       )}
 
-      {/* Show More Button */}
       {visibleImages < images.length && (
         <div className="flex justify-center mt-6">
           <button onClick={loadMoreImages} className='shadow-inner shadow-[#e77979] group font-medium tracking-wide select-none text-base relative inline-flex items-center justify-center cursor-pointer h-12 border-2 border-solid py-0 px-6 rounded-lg overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-myred text-white border-myred hover:text-myred focus:text-myred'>

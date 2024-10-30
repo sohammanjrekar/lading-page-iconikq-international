@@ -1,0 +1,19 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  todos     Todo[]   // Relation to Todo model
+}
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  task      String
+  completed Boolean   @default(false)
+  userId    Int
+  user      User      @relation(fields: [userId], references: [id])
+}

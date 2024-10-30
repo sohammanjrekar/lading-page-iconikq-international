@@ -43,7 +43,7 @@ export default function Home() {
       <Gallery />
       <Testimonial />
       <BlogSection />
-      <SocialMediaCards />
+   
       <Mapsection />
       <ScrollToTopButton />
       

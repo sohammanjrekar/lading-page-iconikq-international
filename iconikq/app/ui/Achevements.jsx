@@ -1,10 +1,30 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { supabase } from "../utils/supabase/client"; // Ensure this path is correct
 
 const Achievements = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [achievementData, setAchievementData] = useState([]); // State to hold fetched data
+  const [loading, setLoading] = useState(true); // Loading state
+
+  useEffect(() => {
+    const fetchAchievements = async () => {
+      const { data, error } = await supabase
+        .from("achievements") // Your Supabase table name
+        .select("id, title, description, image_url"); // Specify the fields you need
+
+      if (error) {
+        console.error("Error fetching achievements:", error);
+      } else {
+        setAchievementData(data);
+      }
+      setLoading(false); // Stop loading
+    };
+
+    fetchAchievements();
+  }, []);
 
   const openModal = (src) => {
     setSelectedImage(src);
@@ -16,11 +36,7 @@ const Achievements = () => {
     setSelectedImage(null);
   };
 
-  const achievementImages = [
-    "https://bucket.material-tailwind.com/magic-ai/58b51625af5803baea7811b7e9128c8b23c0706c3271fa863b6bc287c2d3958a.jpg",
-    "https://bucket.material-tailwind.com/magic-ai/58b51625af5803baea7811b7e9128c8b23c0706c3271fa863b6bc287c2d3958a.jpg",
-    "https://bucket.material-tailwind.com/magic-ai/58b51625af5803baea7811b7e9128c8b23c0706c3271fa863b6bc287c2d3958a.jpg",
-  ];
+  if (loading) return <p>Loading...</p>; // Show loading state
 
   return (
     <>
@@ -33,30 +49,24 @@ const Achievements = () => {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3">
-          {achievementImages.map((src, index) => (
+          {achievementData.map((achievement) => (
             <div
-              key={index}
+              key={achievement.id}
               className="relative flex flex-col bg-clip-border bg-transparent text-gray-700 shadow-md min-h-[30rem] overflow-hidden rounded-xl cursor-pointer"
-              onClick={() => openModal(src)}
+              onClick={() => openModal(achievement.image_url)}
             >
-              <Image loading="lazy" 
+              <Image
+                loading="lazy"
                 width={500}
                 height={1000}
-                src={src}
-                alt={`Achievement ${index + 1}`}
+                src={achievement.image_url}
+                alt={achievement.title}
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-black opacity-30"></div>
               <div className="absolute bottom-0 p-6 bg-gradient-to-t from-black to-transparent w-full">
-                <h4 className="text-white text-2xl font-semibold">
-                  Record-breaking Profits
-                </h4>
-                <p className="text-white text-base mt-2">
-                  We are proud to announce that our bank has achieved
-                  record-breaking profits this year. Thanks to our dedicated
-                  team and loyal customers, we have surpassed all expectations
-                  and set new industry standards.
-                </p>
+                <h4 className="text-white text-2xl font-semibold">{achievement.title}</h4>
+                <p className="text-white text-base mt-2">{achievement.description}</p>
               </div>
             </div>
           ))}
@@ -68,7 +78,8 @@ const Achievements = () => {
           className="fixed inset-0 bg-myblue bg-opacity-75 flex justify-center items-center z-50"
           onClick={closeModal}
         >
-          <Image loading="lazy" 
+          <Image
+            loading="lazy"
             className="h-[80vh] rounded-lg object-cover"
             src={selectedImage}
             alt="Enlarged"
