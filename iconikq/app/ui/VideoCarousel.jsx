@@ -3,29 +3,29 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 const videoData = {
     0: {
-        src: 'videoes/water.mp4',
+        src: 'https://res.cloudinary.com/mybazaar/video/upload/v1730380667/iconikq/water_obkgje.mp4',
         name: 'Navigate. Transport. Deliver Globally.',
-        description: 'Description for Video 1',
+       
     },
     1: {
-        src: 'videoes/Air.mp4',
+        src: 'https://res.cloudinary.com/mybazaar/video/upload/v1730380668/iconikq/air_hwmesx.mp4',
         name: 'Fly High. Deliver Fast. Reach Global.',
-        description: 'Fly High. Deliver Fast. Reach Global.',
+        
     },
     2: {
-        src: 'videoes/road.mp4',
+        src: 'https://res.cloudinary.com/mybazaar/video/upload/v1730380667/iconikq/road_vrbxde.mp4',
         name: 'Smooth. Efficient. Connect Seamlessly.',
-        description: 'Smooth. Efficient. Connect Seamlessly.',
+       
     },
     3: {
-        src: 'videoes/tain.mp4',
+        src: 'https://res.cloudinary.com/mybazaar/video/upload/v1730380675/iconikq/tain_x570ns.mp4',
         name: 'Swift. Reliable. Connect Everywhere',
-        description: 'Swift. Reliable. Connect Everywhere',
+        
     },
     4: {
-        src: 'videoes/warehouse.mp4',
+        src: 'https://res.cloudinary.com/mybazaar/video/upload/v1730380667/iconikq/warehouse_qhj8ps.mp4',
         name: 'Store Smart. Manage Efficiently. Deliver Fast',
-        description: 'Description for Video 5',
+       
     },
 };
 
