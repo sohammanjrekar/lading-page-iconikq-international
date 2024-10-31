@@ -259,8 +259,10 @@ const BlogPage = () => {
 
       <div className="post-list mt-8 mb-14 container mx-auto w-[90vw]">
         <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">Blog Posts</h3>
+        <div className="container flex flex-row">
         {blogPosts.map(post => (
-          <div key={post.id} className="post bg-white p-6 shadow-md mb-4">
+post && post.title ? ( // Add this check
+  <div key={post.id} className="post bg-white p-6 shadow-md mb-4 w-[40vw]">
             <h4 className="text-lg font-semibold">Title: {post.title}</h4>
             <p className="text-sm text-gray-700 my-2">Topic: {post.topic}</p>
             <p className="text-sm text-gray-700 my-2">Passage1:
@@ -284,8 +286,9 @@ const BlogPage = () => {
             >
               Delete
             </button>
-          </div>
-        ))}
+          </div>          ) : null 
+
+        ))}</div>
       </div>
     </>
   );
