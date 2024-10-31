@@ -40,7 +40,7 @@ const Achievements = () => {
 
   return (
     <>
-      <section className="container mx-auto px-8 py-3">
+      <section className="container mx-auto w-[90vw] px-8 py-3">
         <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 lg:!text-4xl">
           Latest Achievements
         </h2>

@@ -1,37 +1,40 @@
-
 import Certificate from '../ui/Certificate';
 import Achevements from '../ui/Achevements';
 import Feature from '../ui/Feature';
 import Image from 'next/image';
+
 export const metadata = {
   title: 'ICONIKQ | About Us',
   description: 'Learn more about ICONIKQ, our mission, and how we provide exceptional logistics solutions for our clients.',
   keywords: 'about ICONIKQ, logistics company, transportation services',
-  
 };
 
 const Page = () => {
   return (
     <>
-   
-      <section className="relative mt-10 bg-blueGray-50">
+      <section className="relative mt-10 ">
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center">
-          <div
-            className="absolute top-0 w-full h-full bg-center bg-cover"
-            style={{
-              backgroundImage: "url('/images/cfd.jpg')",
-            }}
-          >
+          <div className="absolute top-0 w-full h-full overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="https://res.cloudinary.com/mybazaar/video/upload/v1730380669/iconikq/about_aynwpu.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <span id="blackOverlay" className="w-full h-full absolute opacity-60 bg-myblue"></span>
           </div>
           <div className="container relative mx-auto">
             <div className="items-center flex flex-wrap">
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                <div className="pr-12">
+                <div className="pr-12 shadow-2xl rounded-lg backdrop-blur-sm bg-opacity-10  bg-black">
                   <h1 className="text-myred font-semibold text-5xl">
                     Your story starts with us.
                   </h1>
-                  <p className="mt-4 text-lg text-white">
+                  <p className="mt-4 text-xl text-white">
                     Welcome to Iconikq International, a leading logistics company based in Mumbai, MH. With our extensive industry experience and a dedicated team of professionals, we are committed to providing efficient and reliable logistics solutions to our clients.
                   </p>
                 </div>
@@ -52,7 +55,7 @@ const Page = () => {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
-                      <Image loading="lazy"  width={500} height={500} layout="responsive" src="/images/icon4.png" alt="Freight Forwarding Icon" />
+                      <Image loading="lazy" width={500} height={500} layout="responsive" src="/images/icon4.png" alt="Freight Forwarding Icon" />
                     </div>
                     <h6 className="text-xl font-semibold text-myred">FREIGHT FORWARDING</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
@@ -66,7 +69,7 @@ const Page = () => {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                      <Image loading="lazy"  width={500} height={500} layout="responsive" src="/images/icon5.png" alt="Inventory Management Icon" />
+                      <Image loading="lazy" width={500} height={500} layout="responsive" src="/images/icon5.png" alt="Inventory Management Icon" />
                     </div>
                     <h6 className="text-xl font-semibold text-myred">INVENTORY MANAGEMENT</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
@@ -80,7 +83,7 @@ const Page = () => {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 mb-5 shadow-lg rounded-full bg-white">
-                      <Image loading="lazy"   width={500} height={500} layout="responsive" src="/images/icon1.png" alt="Warehousing Solutions Icon" />
+                      <Image loading="lazy" width={500} height={500} layout="responsive" src="/images/icon1.png" alt="Warehousing Solutions Icon" />
                     </div>
                     <h6 className="text-xl font-semibold text-myred">WAREHOUSING SOLUTIONS</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
@@ -90,14 +93,12 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <Feature/>
+            <Feature />
             <Achevements />
             <Certificate />
-         
           </div>
         </section>
       </section>
-
     </>
   );
 };

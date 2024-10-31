@@ -47,7 +47,7 @@ const Page = () => {
           muted
           preload="auto"
         >
-          <source src="/videoes/world.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/mybazaar/video/upload/v1730380672/iconikq/world_cb2p6k.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
