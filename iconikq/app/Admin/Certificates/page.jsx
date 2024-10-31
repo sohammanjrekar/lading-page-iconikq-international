@@ -1,28 +1,61 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { supabase } from './../../utils/supabase/client';
-import { useRouter } from 'next/navigation'; // Use this in the App Router
+import { useRouter } from 'next/navigation';
 import { useSessionStore } from '../../store/sessionStore';
 
-const CertificatesPage = () => {
+const CertificatePage = () => {
   const router = useRouter();
   const isAuthenticated = useSessionStore((state) => state.isAuthenticated);
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/Admin/Login'); // Redirect to login if not authenticated
+      router.push('/Admin/Login');
     }
   }, [isAuthenticated, router]);
-
-  if (!isAuthenticated) {
-    return null; // Prevent rendering until authentication is confirmed
-  }
 
   const [certificates, setCertificates] = useState([]);
   const [newTitle, setNewTitle] = useState('');
   const [newDescription, setNewDescription] = useState('');
   const [newImageUrl, setNewImageUrl] = useState('');
   const [editId, setEditId] = useState(null);
+  const [cloudinaryLoaded, setCloudinaryLoaded] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widget.cloudinary.com/v2.0/global/all.js";
+    script.async = true;
+    script.onload = () => setCloudinaryLoaded(true);
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const openWidget = (setImageCallback) => {
+    if (!window.cloudinary) {
+      console.error("Cloudinary widget not loaded");
+      return;
+    }
+
+    const widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "mybazaar",
+        uploadPreset: "cgpgirkm",
+        folder: "iconikq",
+      },
+      (error, result) => {
+        if (result.event === "success" && result.info.resource_type === "image") {
+          const imageUrl = `https://res.cloudinary.com/mybazaar/image/upload/v1730371595/${result.info.public_id}.${result.info.format}`;
+          setImageCallback(imageUrl);
+        }
+      }
+    );
+    widget.open();
+  };
 
   useEffect(() => {
     const fetchCertificates = async () => {
@@ -33,39 +66,70 @@ const CertificatesPage = () => {
     fetchCertificates();
   }, []);
 
-  const handleAddCertificate = async () => {
-    const { data, error } = await supabase
-      .from('certificates')
-      .insert([{
-        title: newTitle,
-        description: newDescription,
-        image_url: newImageUrl,
-      }]);
-    if (error) console.error('Error adding certificate:', error);
-    else setCertificates([...certificates, ...data]);
-    clearFields();
+  const showMessage = (type, message) => {
+    if (type === 'success') setSuccessMessage(message);
+    if (type === 'error') setErrorMessage(message);
+    setTimeout(() => {
+      setSuccessMessage('');
+      setErrorMessage('');
+    }, 5000);
   };
 
-  const handleEditCertificate = async () => {
-    const { data, error } = await supabase
-      .from('certificates')
-      .update({
-        title: newTitle,
-        description: newDescription,
-        image_url: newImageUrl,
-      })
-      .eq('id', editId);
-    if (error) console.error('Error updating certificate:', error);
-    else {
-      setCertificates(certificates.map(cert => (cert.id === editId ? data[0] : cert)));
-      clearFields();
+  const handleAddOrUpdateCertificate = async () => {
+    if (editId) {
+      // Update existing certificate
+      const { data, error } = await supabase
+        .from('certificates')
+        .update({
+          title: newTitle,
+          description: newDescription,
+          image_url: newImageUrl
+        })
+        .eq('id', editId);
+      if (error) {
+        console.error('Error updating certificate:', error);
+        showMessage('error', 'Failed to update certificate.');
+      } else {
+        setCertificates(certificates.map(cert => (cert.id === editId ? data[0] : cert)));
+        showMessage('success', 'Certificate updated successfully!');
+        clearFields();
+      }
+    } else {
+      // Add new certificate
+      const { data, error } = await supabase
+        .from('certificates')
+        .insert([{
+          title: newTitle,
+          description: newDescription,
+          image_url: newImageUrl
+        }]);
+      if (error) {
+        console.error('Error adding certificate:', error);
+        showMessage('error', 'Failed to add certificate.');
+      } else {
+        showMessage('success', 'Certificate added successfully!');
+        setCertificates([...certificates, ...(Array.isArray(data) ? data : [data])]);
+        clearFields();
+      }
     }
   };
 
   const handleDeleteCertificate = async (id) => {
     const { error } = await supabase.from('certificates').delete().eq('id', id);
-    if (error) console.error('Error deleting certificate:', error);
-    else setCertificates(certificates.filter(cert => cert.id !== id));
+    if (error) {
+      console.error('Error deleting certificate:', error);
+      showMessage('error', 'Failed to delete certificate.');
+    } else {
+      setCertificates(certificates.filter(cert => cert.id !== id));
+      showMessage('success', 'Certificate deleted successfully!');
+    }
+  };
+
+  const setEditCertificate = (cert) => {
+    setEditId(cert.id);
+    setNewTitle(cert.title);
+    setNewDescription(cert.description);
+    setNewImageUrl(cert.image_url);
   };
 
   const clearFields = () => {
@@ -77,29 +141,38 @@ const CertificatesPage = () => {
 
   return (
     <>
-      <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800">Manage Certificates</div>
+      <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800 container">New Certificate</div>
 
-      <div className="editor mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 shadow-lg">
+      <div className="editor mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 w-[90vw] shadow-lg">
         <input
           className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-          placeholder="Certificate Title"
+          placeholder="Title"
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
         />
         <textarea
           className="description bg-gray-100 p-3 h-20 border border-gray-300 outline-none mb-4"
           placeholder="Description"
+          rows={5}
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
         />
-        <input
-          className="image_url bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-          placeholder="Image URL"
-          value={newImageUrl}
-          onChange={(e) => setNewImageUrl(e.target.value)}
-        />
 
-        <div className="buttons flex">
+        {/* Image Upload */}
+        <div className="mb-4 flex flex-row">
+          <button
+            className="upload-btn bg-blue-500 text-white py-2 px-4 rounded"
+            onClick={() => openWidget(setNewImageUrl)}
+          >
+            Upload Image
+          </button>
+
+          {newImageUrl && (
+            <img src={newImageUrl} alt="Preview" className="mx-5 h-40" />
+          )}
+        </div>
+
+        <div className="buttons flex mx-auto my-3">
           <button
             className="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-auto"
             onClick={clearFields}
@@ -108,54 +181,52 @@ const CertificatesPage = () => {
           </button>
           <button
             className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500"
-            onClick={editId ? handleEditCertificate : handleAddCertificate}
+            onClick={handleAddOrUpdateCertificate}
           >
-            {editId ? 'Save' : 'Add Certificate'}
+            {editId ? "Update Certificate" : "Save Certificate"}
           </button>
+        
         </div>
+          {/* Success or Error Message */}
+          {successMessage && (
+            <div className="bg-white p-6 md:mx-auto text-center">
+              <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">{successMessage}</h3>
+            </div>
+          )}
+          {errorMessage && (
+            <div className="bg-white p-6 md:mx-auto text-center">
+              <h3 className="md:text-2xl text-base text-red-600 font-semibold text-center">{errorMessage}</h3>
+            </div>
+          )}
       </div>
 
-      {/* Display List */}
-      <ul className="container mt-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="certificate-list mt-8 mb-14 container mx-auto w-[90vw]">
+        <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">Certificates</h3>
         {certificates.map(cert => (
-          <li key={cert.id} className="mb-6">
-            <div className="relative flex flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-              <div className="p-6">
-                <h4 className="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                  {cert.title}
-                </h4>
-                <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                  {cert.description}
-                </p>
-                {cert.image_url && (
-                  <img src={cert.image_url} alt={cert.title} className="w-48 h-auto mb-4" />
-                )}
-                <div className="flex">
-                  <button
-                    className="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    onClick={() => {
-                      setEditId(cert.id);
-                      setNewTitle(cert.title);
-                      setNewDescription(cert.description);
-                      setNewImageUrl(cert.image_url);
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="text-red-500 hover:underline ml-4"
-                    onClick={() => handleDeleteCertificate(cert.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </div>
-          </li>
+          <div key={cert.id} className="certificate bg-white p-6 shadow-md mb-4">
+            <h4 className="text-lg font-semibold">Title: {cert.title}</h4>
+            <p className="text-sm text-gray-700 my-2">Description: {cert.description}</p>
+
+            {cert.image_url && (
+              <img src={cert.image_url} alt="Certificate" className="rounded-lg my-5 h-28 object-cover" />
+            )}
+            <button
+              className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+              onClick={() => setEditCertificate(cert)}
+            >
+              Edit
+            </button>
+            <button
+              className="btn border border-red-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+              onClick={() => handleDeleteCertificate(cert.id)}
+            >
+              Delete
+            </button>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 };
 
-export default CertificatesPage;
+export default CertificatePage;

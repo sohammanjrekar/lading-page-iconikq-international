@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { supabase } from './../../utils/supabase/client';
-import { useRouter } from 'next/navigation'; // Use this in the App Router
+import { useRouter } from 'next/navigation';
 import { useSessionStore } from '../../store/sessionStore';
 
 const GalleryPage = () => {
@@ -10,19 +10,52 @@ const GalleryPage = () => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/Admin/Login'); // Redirect to login if not authenticated
+      router.push('/Admin/Login');
     }
   }, [isAuthenticated, router]);
-
-  if (!isAuthenticated) {
-    return null; // Prevent rendering until authentication is confirmed
-  }
 
   const [galleryItems, setGalleryItems] = useState([]);
   const [newTitle, setNewTitle] = useState('');
   const [newDescription, setNewDescription] = useState('');
   const [newImageUrl, setNewImageUrl] = useState('');
   const [editId, setEditId] = useState(null);
+  const [cloudinaryLoaded, setCloudinaryLoaded] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widget.cloudinary.com/v2.0/global/all.js";
+    script.async = true;
+    script.onload = () => setCloudinaryLoaded(true);
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const openWidget = (setImageCallback) => {
+    if (!window.cloudinary) {
+      console.error("Cloudinary widget not loaded");
+      return;
+    }
+
+    const widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: "mybazaar",
+        uploadPreset: "cgpgirkm",
+        folder: "iconikq",
+      },
+      (error, result) => {
+        if (result.event === "success" && result.info.resource_type === "image") {
+          const imageUrl = `https://res.cloudinary.com/mybazaar/image/upload/v1730371595/${result.info.public_id}.${result.info.format}`;
+          setImageCallback(imageUrl);
+        }
+      }
+    );
+    widget.open();
+  };
 
   useEffect(() => {
     const fetchGalleryItems = async () => {
@@ -33,39 +66,70 @@ const GalleryPage = () => {
     fetchGalleryItems();
   }, []);
 
-  const handleAddGalleryItem = async () => {
-    const { data, error } = await supabase
-      .from('gallery')
-      .insert([{
-        title: newTitle,
-        description: newDescription,
-        image_url: newImageUrl
-      }]);
-    if (error) console.error('Error adding gallery item:', error);
-    else setGalleryItems([...galleryItems, ...data]);
-    clearFields();
+  const showMessage = (type, message) => {
+    if (type === 'success') setSuccessMessage(message);
+    if (type === 'error') setErrorMessage(message);
+    setTimeout(() => {
+      setSuccessMessage('');
+      setErrorMessage('');
+    }, 5000);
   };
 
-  const handleEditGalleryItem = async () => {
-    const { data, error } = await supabase
-      .from('gallery')
-      .update({
-        title: newTitle,
-        description: newDescription,
-        image_url: newImageUrl
-      })
-      .eq('id', editId);
-    if (error) console.error('Error updating gallery item:', error);
-    else {
-      setGalleryItems(galleryItems.map(item => (item.id === editId ? data[0] : item)));
-      clearFields();
+  const handleAddOrUpdateGalleryItem = async () => {
+    if (editId) {
+      // Update existing gallery item
+      const { data, error } = await supabase
+        .from('gallery')
+        .update({
+          title: newTitle,
+          description: newDescription,
+          image_url: newImageUrl
+        })
+        .eq('id', editId);
+      if (error) {
+        console.error('Error updating gallery item:', error);
+        showMessage('error', 'Failed to update gallery item.');
+      } else {
+        setGalleryItems(galleryItems.map(item => (item.id === editId ? data[0] : item)));
+        showMessage('success', 'Gallery item updated successfully!');
+        clearFields();
+      }
+    } else {
+      // Add new gallery item
+      const { data, error } = await supabase
+        .from('gallery')
+        .insert([{
+          title: newTitle,
+          description: newDescription,
+          image_url: newImageUrl
+        }]);
+      if (error) {
+        console.error('Error adding gallery item:', error);
+        showMessage('error', 'Failed to add gallery item.');
+      } else {
+        showMessage('success', 'Gallery item added successfully!');
+        setGalleryItems([...galleryItems, ...(Array.isArray(data) ? data : [data])]);
+        clearFields();
+      }
     }
   };
 
   const handleDeleteGalleryItem = async (id) => {
     const { error } = await supabase.from('gallery').delete().eq('id', id);
-    if (error) console.error('Error deleting gallery item:', error);
-    else setGalleryItems(galleryItems.filter(item => item.id !== id));
+    if (error) {
+      console.error('Error deleting gallery item:', error);
+      showMessage('error', 'Failed to delete gallery item.');
+    } else {
+      setGalleryItems(galleryItems.filter(item => item.id !== id));
+      showMessage('success', 'Gallery item deleted successfully!');
+    }
+  };
+
+  const setEditGalleryItem = (item) => {
+    setEditId(item.id);
+    setNewTitle(item.title);
+    setNewDescription(item.description);
+    setNewImageUrl(item.image_url);
   };
 
   const clearFields = () => {
@@ -77,9 +141,9 @@ const GalleryPage = () => {
 
   return (
     <>
-      <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800">New Gallery Item</div>
+      <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800 container">New Gallery Item</div>
 
-      <div className="editor mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 shadow-lg">
+      <div className="editor mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 w-[90vw] shadow-lg">
         <input
           className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
           placeholder="Title"
@@ -89,17 +153,26 @@ const GalleryPage = () => {
         <textarea
           className="description bg-gray-100 p-3 h-20 border border-gray-300 outline-none mb-4"
           placeholder="Description"
+          rows={5}
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
         />
-        <input
-          className="image-url bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-          placeholder="Image URL"
-          value={newImageUrl}
-          onChange={(e) => setNewImageUrl(e.target.value)}
-        />
 
-        <div className="buttons flex">
+        {/* Image Upload */}
+        <div className="mb-4 flex flex-row">
+          <button
+            className="upload-btn bg-blue-500 text-white py-2 px-4 rounded"
+            onClick={() => openWidget(setNewImageUrl)}
+          >
+            Upload Image
+          </button>
+
+          {newImageUrl && (
+            <img src={newImageUrl} alt="Preview" className="mx-5 h-40" />
+          )}
+        </div>
+
+        <div className="buttons flex mx-auto my-3">
           <button
             className="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-auto"
             onClick={clearFields}
@@ -108,50 +181,52 @@ const GalleryPage = () => {
           </button>
           <button
             className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500"
-            onClick={editId ? handleEditGalleryItem : handleAddGalleryItem}
+            onClick={handleAddOrUpdateGalleryItem}
           >
-            {editId ? 'Save' : 'Add'}
+            {editId ? "Update Gallery Item" : "Save Gallery Item"}
           </button>
         </div>
+
+        {/* Success or Error Message */}
+        {successMessage && (
+          <div className="bg-white p-6 md:mx-auto text-center">
+            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">{successMessage}</h3>
+          </div>
+        )}
+        {errorMessage && (
+          <div className="bg-white p-6 md:mx-auto text-center">
+            <h3 className="md:text-2xl text-base text-red-600 font-semibold text-center">{errorMessage}</h3>
+          </div>
+        )}
       </div>
 
-      {/* Display List */}
-      <ul className="container mt-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        {galleryItems.map(item => (
-          <li key={item.id} className="mb-6">
-            <div className="relative flex flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-              <div className="p-6">
-                <h4 className="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                  {item.title}
-                </h4>
-                <p className="mb-8 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                  {item.description}
-                </p>
-                <img src={item.image_url} alt={item.title} className="w-full h-auto mb-4 rounded-lg" />
-                <div className="flex">
-                  <button
-                    className="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    onClick={() => {
-                      setEditId(item.id);
-                      setNewTitle(item.title);
-                      setNewDescription(item.description);
-                      setNewImageUrl(item.image_url);
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="text-red-500 hover:underline ml-4"
-                    onClick={() => handleDeleteGalleryItem(item.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
+      <div className="gallery-list mt-8 mb-14 container mx-auto w-[90vw]">
+        <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">Gallery Items</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {galleryItems.map(item => (
+            <div key={item.id} className="gallery-item bg-white p-4 shadow-md">
+              <h4 className="text-lg font-semibold">Title: {item.title}</h4>
+              <p className="text-sm text-gray-700 my-2">Description: {item.description}</p>
+
+              {item.image_url && (
+                <img src={item.image_url} alt="Gallery Item" className="rounded-lg my-5 h-40 object-cover" />
+              )}
+              <button
+                className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+                onClick={() => setEditGalleryItem(item)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn border border-red-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+                onClick={() => handleDeleteGalleryItem(item.id)}
+              >
+                Delete
+              </button>
             </div>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

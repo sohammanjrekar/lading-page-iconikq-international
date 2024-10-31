@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { supabase } from './../../utils/supabase/client';
-import { useRouter } from 'next/navigation'; // Use this in the App Router
+import { useRouter } from 'next/navigation';
 import { useSessionStore } from '../../store/sessionStore';
 
 const MediaPage = () => {
@@ -10,19 +10,26 @@ const MediaPage = () => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/Admin/Login'); // Redirect to login if not authenticated
+      router.push('/Admin/Login');
     }
   }, [isAuthenticated, router]);
-
-  if (!isAuthenticated) {
-    return null; // Prevent rendering until authentication is confirmed
-  }
 
   const [mediaItems, setMediaItems] = useState([]);
   const [newTitle, setNewTitle] = useState('');
   const [newDescription, setNewDescription] = useState('');
-  const [newYoutubeIframe, setNewYoutubeIframe] = useState('');
+  const [newIframe, setNewIframe] = useState('');
   const [editId, setEditId] = useState(null);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const showMessage = (type, message) => {
+    if (type === 'success') setSuccessMessage(message);
+    if (type === 'error') setErrorMessage(message);
+    setTimeout(() => {
+      setSuccessMessage('');
+      setErrorMessage('');
+    }, 5000);
+  };
 
   useEffect(() => {
     const fetchMediaItems = async () => {
@@ -33,73 +40,97 @@ const MediaPage = () => {
     fetchMediaItems();
   }, []);
 
-  const handleAddMediaItem = async () => {
-    const { data, error } = await supabase
-      .from('media')
-      .insert([{
-        title: newTitle,
-        description: newDescription,
-        youtube_iframe: newYoutubeIframe,
-      }]);
-    if (error) console.error('Error adding media item:', error);
-    else setMediaItems([...mediaItems, ...data]);
-    clearFields();
-  };
-
-  const handleEditMediaItem = async () => {
-    const { data, error } = await supabase
-      .from('media')
-      .update({
-        title: newTitle,
-        description: newDescription,
-        youtube_iframe: newYoutubeIframe,
-      })
-      .eq('id', editId);
-    if (error) console.error('Error updating media item:', error);
-    else {
-      setMediaItems(mediaItems.map(item => (item.id === editId ? data[0] : item)));
-      clearFields();
+  const handleAddOrUpdateMediaItem = async () => {
+    if (editId) {
+      // Update existing media item
+      const { data, error } = await supabase
+        .from('media')
+        .update({
+          title: newTitle,
+          description: newDescription,
+          youtube_iframe: newIframe
+        })
+        .eq('id', editId);
+      if (error) {
+        console.error('Error updating media item:', error);
+        showMessage('error', 'Failed to update media item.');
+      } else {
+        setMediaItems(mediaItems.map(item => (item.id === editId ? data[0] : item)));
+        showMessage('success', 'Media item updated successfully!');
+        clearFields();
+      }
+    } else {
+      // Add new media item
+      const { data, error } = await supabase
+        .from('media')
+        .insert([{
+          title: newTitle,
+          description: newDescription,
+          youtube_iframe: newIframe
+        }]);
+      if (error) {
+        console.error('Error adding media item:', error);
+        showMessage('error', 'Failed to add media item.');
+      } else {
+        showMessage('success', 'Media item added successfully!');
+        setMediaItems([...mediaItems, ...(Array.isArray(data) ? data : [data])]);
+        clearFields();
+      }
     }
   };
 
   const handleDeleteMediaItem = async (id) => {
     const { error } = await supabase.from('media').delete().eq('id', id);
-    if (error) console.error('Error deleting media item:', error);
-    else setMediaItems(mediaItems.filter(item => item.id !== id));
+    if (error) {
+      console.error('Error deleting media item:', error);
+      showMessage('error', 'Failed to delete media item.');
+    } else {
+      setMediaItems(mediaItems.filter(item => item.id !== id));
+      showMessage('success', 'Media item deleted successfully!');
+    }
+  };
+
+  const setEditMediaItem = (item) => {
+    setEditId(item.id);
+    setNewTitle(item.title);
+    setNewDescription(item.description);
+    setNewIframe(item.youtube_iframe);
   };
 
   const clearFields = () => {
     setNewTitle('');
     setNewDescription('');
-    setNewYoutubeIframe('');
+    setNewIframe('');
     setEditId(null);
   };
 
   return (
     <>
-      <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800">Manage Media</div>
+      <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800 container">New Media Item</div>
 
-      <div className="editor mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 shadow-lg">
+      <div className="editor mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 w-[90vw] shadow-lg">
         <input
           className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-          placeholder="Media Title"
+          placeholder="Title"
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
         />
         <textarea
           className="description bg-gray-100 p-3 h-20 border border-gray-300 outline-none mb-4"
           placeholder="Description"
+          rows={5}
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
         />
-        <input
-          className="youtube_iframe bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
-          placeholder="YouTube Iframe URL"
-          value={newYoutubeIframe}
-          onChange={(e) => setNewYoutubeIframe(e.target.value)}
+        <textarea
+          className="iframe bg-gray-100 p-3 h-20 border border-gray-300 outline-none mb-4"
+          placeholder="YouTube Iframe"
+          rows={5}
+          value={newIframe}
+          onChange={(e) => setNewIframe(e.target.value)}
         />
 
-        <div className="buttons flex">
+        <div className="buttons flex mx-auto my-3">
           <button
             className="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-auto"
             onClick={clearFields}
@@ -108,52 +139,52 @@ const MediaPage = () => {
           </button>
           <button
             className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500"
-            onClick={editId ? handleEditMediaItem : handleAddMediaItem}
+            onClick={handleAddOrUpdateMediaItem}
           >
-            {editId ? 'Save' : 'Add Media'}
+            {editId ? "Update Media Item" : "Save Media Item"}
           </button>
         </div>
+
+        {/* Success or Error Message */}
+        {successMessage && (
+          <div className="bg-white p-6 md:mx-auto text-center">
+            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">{successMessage}</h3>
+          </div>
+        )}
+        {errorMessage && (
+          <div className="bg-white p-6 md:mx-auto text-center">
+            <h3 className="md:text-2xl text-base text-red-600 font-semibold text-center">{errorMessage}</h3>
+          </div>
+        )}
       </div>
 
-      {/* Display List */}
-      <ul className="container mt-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        {mediaItems.map(item => (
-          <li key={item.id} className="mb-6">
-            <div className="relative flex flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-              <div className="p-6">
-                <h4 className="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                  {item.title}
-                </h4>
-                <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                  {item.description}
-                </p>
-                {item.youtube_iframe && (
-                  <div className="youtube-video mb-4" dangerouslySetInnerHTML={{ __html: item.youtube_iframe }} />
-                )}
-                <div className="flex">
-                  <button
-                    className="flex select-none items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    onClick={() => {
-                      setEditId(item.id);
-                      setNewTitle(item.title);
-                      setNewDescription(item.description);
-                      setNewYoutubeIframe(item.youtube_iframe);
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="text-red-500 hover:underline ml-4"
-                    onClick={() => handleDeleteMediaItem(item.id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
+      <div className="media-list mt-8 mb-14 container mx-auto w-[90vw]">
+        <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">Media Items</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+          {mediaItems.map(item => (
+            <div key={item.id} className="media-item bg-white p-4 shadow-md">
+              <h4 className="text-lg font-semibold">Title: {item.title}</h4>
+              <p className="text-sm text-gray-700 my-2">Description: {item.description}</p>
+
+              {item.youtube_iframe && (
+                <div className="iframe-container my-5" dangerouslySetInnerHTML={{ __html: item.youtube_iframe }} />
+              )}
+              <button
+                className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+                onClick={() => setEditMediaItem(item)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn border border-red-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+                onClick={() => handleDeleteMediaItem(item.id)}
+              >
+                Delete
+              </button>
             </div>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

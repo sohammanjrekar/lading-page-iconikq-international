@@ -26,12 +26,13 @@ const ContactPage = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       const { data, error, count } = await supabase
-        .from('contact')
+        .from('contacts')
         .select('*', { count: 'exact' })
         .range((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage - 1);
 
-      if (error) console.error('Error fetching contacts:', error);
-      else {
+      if (error) {
+        console.error('Error fetching contacts:', error);
+      } else {
         setContacts(data);
         setTotalPages(Math.ceil(count / itemsPerPage));
       }
@@ -39,33 +40,47 @@ const ContactPage = () => {
     fetchContacts();
   }, [currentPage]);
 
-  const handleExportCSV = () => {
-    const csvContent = [
-      ['ID', 'Name', 'Email', 'Phone', 'Created At'],
-      ...contacts.map(contact => [
-        contact.id,
-        contact.name,
-        contact.email,
-        contact.phone,
-        contact.created_at,
-      ]),
-    ]
-      .map(e => e.join(","))
-      .join("\n");
+  const handleExportCSV = async () => {
+    const { data: allContacts, error } = await supabase
+      .from('contacts')
+      .select('*');
 
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'contacts.csv');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (error) {
+      console.error('Error fetching all contacts for CSV export:', error);
+      return;
+    }
+
+    if (allContacts && allContacts.length > 0) {
+      const csvContent = [
+        ['ID', 'Name', 'Email', 'Phone', 'Created At'],
+        ...allContacts.map(contact => [
+          contact.id,
+          contact.name,
+          contact.email,
+          contact.phone,
+          new Date(contact.created_at).toLocaleString(), // Format date for CSV
+        ]),
+      ]
+        .map(e => e.join(","))
+        .join("\n");
+
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'contacts.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      console.error('No contacts found for CSV export.');
+    }
   };
 
   return (
     <>
-      <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800">Manage Contacts</div>
+    <div className='container mx-auto w-[90vw] my-5'>
+      <div className="mt-[15vh] container w-[90vw] text-center font-bold text-2xl m-5 text-gray-800">Manage Contacts</div>
       <button
         className="bg-blue-500 text-white py-2 px-4 rounded mb-4"
         onClick={handleExportCSV}
@@ -73,7 +88,7 @@ const ContactPage = () => {
         Export as CSV
       </button>
 
-      <table className="min-w-full bg-white border border-gray-300">
+      <table className="container w-[90vw] bg-white border border-gray-300">
         <thead>
           <tr>
             <th className="border border-gray-300 p-2">ID</th>
@@ -90,7 +105,7 @@ const ContactPage = () => {
               <td className="border border-gray-300 p-2">{contact.name}</td>
               <td className="border border-gray-300 p-2">{contact.email}</td>
               <td className="border border-gray-300 p-2">{contact.phone}</td>
-              <td className="border border-gray-300 p-2">{new Date(contact.created_at).toLocaleString()}</td>
+              <td className="border border-gray-300 p-2">{new Date(contact.created_at).toLocaleString()}</td> {/* Display formatted date */}
             </tr>
           ))}
         </tbody>
@@ -100,7 +115,7 @@ const ContactPage = () => {
         <button
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className="border border-gray-300 p-2 rounded"
+          className="border border-gray-300 p-2 bg-myred rounded"
         >
           Previous
         </button>
@@ -110,11 +125,11 @@ const ContactPage = () => {
         <button
           onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
-          className="border border-gray-300 p-2 rounded"
+          className="border border-gray-300 bg-myred p-2 rounded"
         >
           Next
         </button>
-      </div>
+      </div></div>
     </>
   );
 };
