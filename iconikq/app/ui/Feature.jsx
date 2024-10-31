@@ -5,8 +5,8 @@ const Feature = () => {
   return (
     <>
       {/* component */}
-      <div className="py-16 bg-gray-50 overflow-hidden">
-        <div className="container m-auto px-6 space-y-8 text-gray-500 md:px-12">
+      <div className="py-16 bg-gray-50  overflow-hidden">
+        <div className="container w-[90vw] m-auto px-6 space-y-8 text-gray-500 md:px-12">
           <div>
             <span className="text-center text-myred text-xl font-semibold">
              Our Core values
