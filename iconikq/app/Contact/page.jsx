@@ -12,8 +12,11 @@ const Page = () => {
 
   const addContact = async (e) => {
     e.preventDefault();
+    
+    // Validate form inputs
     if (!name || !email || !tel) {
       setErrorMessage("Please fill out all fields.");
+      setSuccessMessage("");  // Clear success message if present
       return;
     }
 
