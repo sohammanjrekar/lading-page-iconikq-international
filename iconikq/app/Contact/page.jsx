@@ -4,6 +4,7 @@ import Image from "next/image";
 import { supabase } from "./../utils/supabase/client";
 
 const Page = () => {
+  // Hooks are called at the top level to avoid conditional hook errors
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
@@ -12,11 +13,10 @@ const Page = () => {
 
   const addContact = async (e) => {
     e.preventDefault();
-    
-    // Validate form inputs
+
+    // Simple validation, without conditionally calling hooks
     if (!name || !email || !tel) {
       setErrorMessage("Please fill out all fields.");
-      setSuccessMessage("");  // Clear success message if present
       return;
     }
 
