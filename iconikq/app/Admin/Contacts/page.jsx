@@ -8,21 +8,20 @@ const ContactPage = () => {
   const router = useRouter();
   const isAuthenticated = useSessionStore((state) => state.isAuthenticated);
 
+  // State variables
+  const [contacts, setContacts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const itemsPerPage = 10;
+
+  // Check authentication and redirect if not authenticated
   useEffect(() => {
     if (!isAuthenticated) {
       router.push('/Admin/Login'); // Redirect to login if not authenticated
     }
   }, [isAuthenticated, router]);
 
-  if (!isAuthenticated) {
-    return null; // Prevent rendering until authentication is confirmed
-  }
-
-  const [contacts, setContacts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
-  const itemsPerPage = 10;
-
+  // Fetch contacts
   useEffect(() => {
     const fetchContacts = async () => {
       const { data, error, count } = await supabase
@@ -40,6 +39,7 @@ const ContactPage = () => {
     fetchContacts();
   }, [currentPage]);
 
+  // Handle CSV export
   const handleExportCSV = async () => {
     const { data: allContacts, error } = await supabase
       .from('contacts')
@@ -77,8 +77,12 @@ const ContactPage = () => {
     }
   };
 
+  // Prevent rendering until authentication is confirmed
+  if (!isAuthenticated) {
+    return null; // You can also return a loading indicator here
+  }
+
   return (
-    <>
     <div className='container mx-auto w-[90vw] my-5'>
       <div className="mt-[15vh] container w-[90vw] text-center font-bold text-2xl m-5 text-gray-800">Manage Contacts</div>
       <button
@@ -129,8 +133,8 @@ const ContactPage = () => {
         >
           Next
         </button>
-      </div></div>
-    </>
+      </div>
+    </div>
   );
 };
 
