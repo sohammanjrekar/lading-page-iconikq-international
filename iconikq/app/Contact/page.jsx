@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Button from '../ui/Button';
 import { supabase } from './../utils/supabase/client';
+import Image from 'next/image';
 
 const Page = () => {
   const [name, setName] = useState('');
@@ -55,40 +56,40 @@ const Page = () => {
           <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div className="mt-8 overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-6 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl sm:rounded-lg">
+                <div className="p-6 bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg shadow-2xl sm:rounded-lg">
                   <h1 className="text-4xl sm:text-5xl text-myred font-extrabold tracking-tight">
                     Get in touch
                   </h1>
                   <p className="text-normal text-lg sm:text-2xl font-medium text-white mt-2">
                     Fill in the form to start a conversation
                   </p>
-                  {/* Existing contact information */}
-                  <div className="flex items-center mt-8 text-white">
-                    <svg /* Address Icon SVG */ />
-                    <div className="ml-4 text-md tracking-wide font-semibold w-40">
+                  
+                  <div className="flex justify-start items-center mt-8 text-white">
+                    <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386968/iconikq/location_q0sjon.png'} alt='address' height={50} width={50}/>
+                    <div className="text-md tracking-wide font-semibold w-full mx-3">
                       704/705, Filix, Opposite Asian Paints, LBS Marg, Bhandup West, Mumbai – 400078
                     </div>
                   </div>
 
-                  <div className="flex items-center mt-4 text-white">
-                    <svg /* Phone Icon SVG */ />
-                    <div className="ml-4 text-md tracking-wide font-semibold w-40">
+                  <div className="flex justify-start items-center mt-4 text-white">
+                  <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386190/iconikq/phone_veerqa.png'} alt='address' height={50} width={50}/>
+                    <div className="text-md tracking-wide font-semibold w-full ml-3">
                       +91 9870725060
                     </div>
                   </div>
 
-                  <div className="flex items-center mt-2 text-white">
-                    <svg /* Email Icon SVG */ />
-                    <div className="ml-4 text-md tracking-wide font-semibold w-40">
+                  <div className="flex justify-start items-center mt-2 text-white">
+                  <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386190/iconikq/email_s9ybuk.png'} alt='address' height={50} width={50}/>
+                    <div className=" text-md tracking-wide font-semibold w-full ml-3">
                       info@iconikqinternational.com
                     </div>
                   </div>
                 </div>
 
                 {/* Contact Form */}
-                <form onSubmit={addContact} className="p-1 py-3 flex items-center flex-col justify-center bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl rounded-lg">
+                <form onSubmit={addContact} className="p-1 py-3 flex items-center flex-col justify-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg shadow-2xl rounded-lg">
                   <div className="flex flex-col mb-4">
-                    <label htmlFor="name" className="text-lg text-white font-bold">Full Name</label>
+                    <label htmlFor="name" className="text-lg text-myred font-bold">Full Name</label>
                     <input
                       type="text"
                       name="name"
@@ -96,12 +97,12 @@ const Page = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Full Name"
-                      className="w-full md:w-[20vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
+                      className="w-full md:w-[30vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
                   <div className="flex flex-col mb-4">
-                    <label htmlFor="email" className="text-lg text-white font-bold">Email:</label>
+                    <label htmlFor="email" className="text-lg text-myred font-bold">Email:</label>
                     <input
                       type="email"
                       name="email"
@@ -109,12 +110,12 @@ const Page = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Email"
-                      className="w-full md:w-[20vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
+                      className="w-full md:w-[30vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
                   <div className="flex flex-col mb-4">
-                    <label htmlFor="tel" className="text-lg text-white font-bold">Number:</label>
+                    <label htmlFor="tel" className="text-lg text-myred font-bold">Phone Number:</label>
                     <input
                       type="tel"
                       name="tel"
@@ -122,7 +123,7 @@ const Page = () => {
                       value={tel}
                       onChange={(e) => setTel(e.target.value)}
                       placeholder="Telephone Number"
-                      className="w-full md:w-[20vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
+                      className="w-full md:w-[30vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
