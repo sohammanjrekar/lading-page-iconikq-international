@@ -35,7 +35,17 @@ const Page = () => {
       setName('');
       setEmail('');
       setTel('');
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setSuccessMessage('');
+      }, 3000);
     }
+
+    // Hide error message after 5 seconds
+    setTimeout(() => {
+      setErrorMessage('');
+    }, 3000);
   };
 
   return (
@@ -63,7 +73,7 @@ const Page = () => {
                   <p className="text-normal text-lg sm:text-2xl font-medium text-white mt-2">
                     Fill in the form to start a conversation
                   </p>
-                  
+
                   <div className="flex justify-start items-center mt-8 text-white">
                     <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386968/iconikq/location_q0sjon.png'} alt='address' height={50} width={50}/>
                     <div className="text-md tracking-wide font-semibold w-full mx-3">
@@ -72,15 +82,15 @@ const Page = () => {
                   </div>
 
                   <div className="flex justify-start items-center mt-4 text-white">
-                  <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386190/iconikq/phone_veerqa.png'} alt='address' height={50} width={50}/>
+                    <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386190/iconikq/phone_veerqa.png'} alt='address' height={50} width={50}/>
                     <div className="text-md tracking-wide font-semibold w-full ml-3">
                       +91 9870725060
                     </div>
                   </div>
 
                   <div className="flex justify-start items-center mt-2 text-white">
-                  <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386190/iconikq/email_s9ybuk.png'} alt='address' height={50} width={50}/>
-                    <div className=" text-md tracking-wide font-semibold w-full ml-3">
+                    <Image src={'https://res.cloudinary.com/mybazaar/image/upload/v1730386190/iconikq/email_s9ybuk.png'} alt='address' height={50} width={50}/>
+                    <div className="text-md tracking-wide font-semibold w-full ml-3">
                       info@iconikqinternational.com
                     </div>
                   </div>
@@ -97,7 +107,7 @@ const Page = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Full Name"
-                      className="w-full md:w-[30vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
+                      className="w-full md:w-[25vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
@@ -110,7 +120,7 @@ const Page = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Email"
-                      className="w-full md:w-[30vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
+                      className="w-full md:w-[25vw]  py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
@@ -123,12 +133,12 @@ const Page = () => {
                       value={tel}
                       onChange={(e) => setTel(e.target.value)}
                       placeholder="Telephone Number"
-                      className="w-full md:w-[30vw] py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
+                      className="w-full md:w-[25vw]  py-3 px-3 rounded-lg bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-2xl border border-white text-white font-semibold focus:border-myred focus:outline-none"
                     />
                   </div>
 
-                  {successMessage && <p className="text-green-500">{successMessage}</p>}
-                  {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+                  {successMessage && <p className="text-xl text-green-900">{successMessage}</p>}
+                  {errorMessage && <p className="text-xl text-red-900">{errorMessage}</p>}
 
                   <button className='mx-2 shadow-inner shadow-[#e77979] group font-medium tracking-wide select-none text-base relative inline-flex items-center justify-center cursor-pointer h-10 border-2 border-solid py-0 px-6 rounded-lg overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-myred text-white border-myred hover:text-myred focus:text-myred' type="submit">Submit</button>
                 </form>
