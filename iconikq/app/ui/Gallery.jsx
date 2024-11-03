@@ -1,26 +1,19 @@
 "use client";
+
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { supabase } from '../utils/supabase/client'; // Adjust path as needed
+import { useGalleryStore } from '../store/galleryStore'; // Adjust the path as needed
 
 const Gallery = () => {
+  const { galleryData, loading, error, fetchGalleryData } = useGalleryStore();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [visibleImages, setVisibleImages] = useState(6);
-  const [images, setImages] = useState([]); 
 
+  // Fetch gallery data when the component mounts
   useEffect(() => {
-    const fetchImages = async () => {
-      const { data, error } = await supabase.from('gallery').select('id, title, description, image_url');
-      if (error) {
-        console.error("Error fetching images:", error);
-      } else {
-        setImages(data);
-      }
-    };
-
-    fetchImages();
-  }, []);
+    fetchGalleryData();
+  }, [fetchGalleryData]);
 
   const openModal = (src) => {
     setSelectedImage(src);
@@ -36,6 +29,9 @@ const Gallery = () => {
     setVisibleImages((prev) => prev + 6);
   };
 
+  if (loading) return <p>Loading gallery...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <div className="container mx-auto pt-12 p-4">
       <div className="flex flex-col text-center w-full mb-10">
@@ -48,7 +44,7 @@ const Gallery = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-        {images.slice(0, visibleImages).map((image, index) => (
+        {galleryData.slice(0, visibleImages).map((image) => (
           <div
             className="group relative cursor-pointer"
             key={image.id}
@@ -65,7 +61,7 @@ const Gallery = () => {
                   </div>
                 </div>
               </div>
-              <Image loading="lazy" 
+              <Image loading="lazy"
                 className="object-cover w-full h-[40vh] aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
                 src={image.image_url}
                 alt={image.title}
@@ -82,7 +78,7 @@ const Gallery = () => {
           className="fixed inset-0 bg-myblue bg-opacity-75 flex justify-center items-center z-50"
           onClick={closeModal}
         >
-          <Image loading="lazy" 
+          <Image loading="lazy"
             className="h-[80vh] rounded-lg object-cover"
             src={selectedImage}
             alt="Enlarged"
@@ -93,7 +89,7 @@ const Gallery = () => {
         </div>
       )}
 
-      {visibleImages < images.length && (
+      {visibleImages < galleryData.length && (
         <div className="flex justify-center mt-6">
           <button onClick={loadMoreImages} className='shadow-inner shadow-[#e77979] group font-medium tracking-wide select-none text-base relative inline-flex items-center justify-center cursor-pointer h-12 border-2 border-solid py-0 px-6 rounded-lg overflow-hidden z-10 transition-all duration-300 ease-in-out outline-0 bg-myred text-white border-myred hover:text-myred focus:text-myred'>
             <strong className='font-medium'>Show More</strong>
