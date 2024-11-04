@@ -75,7 +75,7 @@ const BlogAdmin = () => {
   }
 
   return (
-    <div className="container w-[70vw] mx-auto  my-28">
+    <div className="container min-h-screen w-[70vw] mx-auto  my-28">
       <div className="p-4">
         <div class="container mx-auto text-center">
           <h2 class="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-4">Admin Dashboard</h2>

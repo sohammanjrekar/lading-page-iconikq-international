@@ -1,7 +1,7 @@
 import { useSessionStore } from '../stores/sessionStore';
 import { useRouter } from 'next/router';
 
-const LogoutButton = () => {
+const Logout = () => {
   const logout = useSessionStore((state) => state.logout);
   const router = useRouter();
 
@@ -17,4 +17,4 @@ const LogoutButton = () => {
   );
 };
 
-export default LogoutButton;
+export default Logout;

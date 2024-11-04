@@ -25,7 +25,7 @@ const FAQ = () => {
           <div className="py-5" key={faq.id}>
             <details className="group">
               <summary className="flex justify-between text-xl items-center font-medium cursor-pointer list-none">
-                <span className='text-myblue'>Q.{index + 1} &ensp;  {faq.question}</span>
+                <span className='text-myblue'> <span className='text-myred'>Q.{index + 1}</span> &ensp;  {faq.question}</span>
                 <span className="text-myred transition group-open:rotate-180">
                   <svg
                     fill="none"

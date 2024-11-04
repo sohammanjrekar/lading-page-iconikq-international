@@ -161,7 +161,7 @@ const ServicesPage = () => {
         <>
             <div className="mt-[15vh] text-center font-bold text-2xl m-5 text-gray-800 container">New Service</div>
 
-            <div className="editor mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 w-[90vw] shadow-lg">
+            <div className="editor  mx-auto container flex flex-col text-gray-800 border border-gray-300 p-8 w-[90vw] shadow-lg">
                 <input
                     className="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none"
                     placeholder="Title"

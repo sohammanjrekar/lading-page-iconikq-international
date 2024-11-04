@@ -34,7 +34,6 @@ export const metadata = {
 export default function Home() {
   return (
     <ReactLenis root>
-      <Navbar />
       <VideoCarousel />
       <Services />
       <Autoscrollcompany />
@@ -43,10 +42,8 @@ export default function Home() {
       <Gallery />
       <Testimonial />
       <BlogSection />
-   
       <Mapsection />
       <ScrollToTopButton />
-      
     </ReactLenis>
   );
 }

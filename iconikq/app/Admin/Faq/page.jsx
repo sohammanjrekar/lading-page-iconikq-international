@@ -24,11 +24,15 @@ const FAQPage = () => {
   useEffect(() => {
     const fetchFAQs = async () => {
       const { data, error } = await supabase.from('faqs').select('*');
-      if (error) console.error('Error fetching FAQs:', error);
-      else setFAQs(data);
+      if (error) {
+        console.error('Error fetching FAQs:', error);
+      } else {
+        setFAQs(data); // Ensure data is valid before setting state
+      }
     };
     fetchFAQs();
   }, []);
+  
 
   const showMessage = (type, message) => {
     if (type === 'success') setSuccessMessage(message);
@@ -42,18 +46,22 @@ const FAQPage = () => {
   const handleAddOrUpdateFAQ = async () => {
     if (editId) {
       // Update existing FAQ
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('faqs')
         .update({
           question: newQuestion,
           answer: newAnswer
         })
         .eq('id', editId);
+      
       if (error) {
         console.error('Error updating FAQ:', error);
         showMessage('error', 'Failed to update FAQ.');
       } else {
-        setFAQs(faqs.map(faq => (faq.id === editId ? data[0] : faq)));
+        // Directly update the local state
+        setFAQs(faqs.map(faq => 
+          faq.id === editId ? { ...faq, question: newQuestion, answer: newAnswer } : faq
+        ));
         showMessage('success', 'FAQ updated successfully!');
         clearFields();
       }
@@ -65,6 +73,7 @@ const FAQPage = () => {
           question: newQuestion,
           answer: newAnswer
         }]);
+      
       if (error) {
         console.error('Error adding FAQ:', error);
         showMessage('error', 'Failed to add FAQ.');
@@ -75,7 +84,8 @@ const FAQPage = () => {
       }
     }
   };
-
+  
+  
   const handleDeleteFAQ = async (id) => {
     const { error } = await supabase.from('faqs').delete().eq('id', id);
     if (error) {
@@ -136,7 +146,7 @@ const FAQPage = () => {
         {/* Success or Error Message */}
         {successMessage && (
           <div className="bg-white p-6 md:mx-auto text-center">
-            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">{successMessage}</h3>
+            <h3 className="md:text-2xl text-base text-green-600 font-semibold text-center">{successMessage}</h3>
           </div>
         )}
         {errorMessage && (
@@ -148,24 +158,26 @@ const FAQPage = () => {
 
       <div className="faq-list mt-8 mb-14 container mx-auto w-[90vw]">
         <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">FAQs</h3>
-        {faqs.map(faq => (
-          <div key={faq.id} className="faq bg-white p-6 shadow-md mb-4">
-            <h4 className="text-lg font-semibold">Question: {faq.question}</h4>
-            <p className="text-sm text-gray-700 my-2">Answer: {faq.answer}</p>
-            <button
-              className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
-              onClick={() => setEditFAQ(faq)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn border border-red-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
-              onClick={() => handleDeleteFAQ(faq.id)}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
+        {faqs.filter(faq => faq).map(faq => (
+  <div key={faq.id} className="faq bg-white p-6 shadow-md mb-4">
+    <h4 className="text-lg text-myred font-semibold">Question: {faq.question}</h4>
+    <p className="text-md text-myblue my-2">Answer: {faq.answer}</p>
+    <p className="text-sm text-myblue">Created At: {new Date(faq.created_at).toLocaleString()}</p>
+    <button
+      className="btn my-3 border bg-indigo-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
+      onClick={() => setEditFAQ(faq)}
+    >
+      Edit
+    </button>
+    <button
+      className="btn border bg-red-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
+      onClick={() => handleDeleteFAQ(faq.id)}
+    >
+      Delete
+    </button>
+  </div>
+))}
+
       </div>
     </>
   );

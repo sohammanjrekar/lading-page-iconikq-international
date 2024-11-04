@@ -20,7 +20,7 @@ const Page = () => {
 
   return (
     <>
-      <section className="pt-20 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
+      <section className="pt-20 min-h-screen lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
         <div className="container mx-auto">
           <h1 className="text-4xl font-bold text-center mb-8">All Services</h1>
           <div className="flex flex-wrap mx-4">

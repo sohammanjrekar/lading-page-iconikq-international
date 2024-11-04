@@ -2,34 +2,72 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useSessionStore } from '../store/sessionStore';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const logout = useSessionStore((state) => state.logout);
+  const router = useRouter();
+
+  // Replace this with your actual admin check
+  const isAdmin = useSessionStore((state) => state.isAuthenticated);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLogout = () => {
+    logout();
+    router.push('/Admin/Login');
+  };
+
+  const commonLinks = [
+    { href: "/", label: "Home" },
+    { href: "/About", label: "About" },
+    { href: "/Services", label: "Services" },
+    { href: "/Faq", label: "FAQ" },
+    { href: "/Blog", label: "Blog" },
+    { href: "/Media", label: "Media" },
+    { href: "/Contact", label: "Contact" },
+  ];
+
+  const adminLinks = [
+    { href: "/Admin", label: "Admin" },
+    { href: "/Admin/faq", label: "FAQ Admin" },
+    { href: "/Admin/Services", label: "Services Admin" },
+    { href: "/Admin/Contacts", label: "Contact Admin" },
+    { href: "/Admin/Blog", label: "Blog Admin" },
+    { href: "/Admin/Media", label: "Media Admin" },
+    { href: "/Admin/Gallery", label: "Gallery Admin" },
+    { href: "/Admin/Certificates", label: "Certificates Admin" },
+  ];
+
+  const renderLinks = (links) => (
+    links.map(link => (
+      <li key={link.href}>
+        <Link href={link.href} className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">
+          {link.label}
+        </Link>
+      </li>
+    ))
+  );
+
   return (
     <nav className="bg-myblue border w-full fixed z-50 border-gray-700 px-2 sm:px-8 py-[2vh] rounded-b-[20px] shadow-[inset_0_7px_5px_rgba(0,0,0,0.3),_0px_4px_10px_rgba(255,255,255,0.2)]">
-      <div className="container flex  flex-wrap justify-between items-center mx-auto">
-      <Link href="/" className="flex flex-col items-center">
-    <div className="flex flex-row items-center space-x-2">
-       
-        <Image 
+      <div className="container flex flex-wrap justify-between items-center mx-auto">
+        <Link href="/" className="flex flex-col items-center">
+          <Image
             width={500}
             height={500}
             layout="responsive"
             priority
             quality={75}
             src="/images/logo.png"
-            alt="Logo 2"
-            className="max-h-[6vh]"
-        />
-    </div>
-  
-</Link>
-
+            alt="Logo"
+            className="max-h-[3vh] md:max-h-[4vh] lg:max-h-[6vh]"
+          />
+        </Link>
 
         {/* Mobile Menu Toggle Button */}
         <div className="flex items-center sm:hidden">
@@ -46,28 +84,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className={`w-full sm:hidden ${menuOpen ? '' : 'hidden'}`} id="mobile-menu">
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center">
-            <li>
-              <Link href="/" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0" aria-current="page">Home</Link>
-            </li>
-            <li>
-              <Link href="/About" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">About</Link>
-            </li>
-            <li>
-              <Link href="/Services" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Services</Link>
-            </li>
-            <li>
-              <Link href="/Faq" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">FAQ</Link>
-            </li>
-            <li>
-              <Link href="/Blog" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Blog</Link>
-            </li>
-            <li>
-              <Link href="/Media" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Media</Link>
-            </li>
-            <li>
-              <Link href="/Contact" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">Contact</Link>
-            </li>
+          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center list-none">
+            {renderLinks(isAdmin ? [...adminLinks] : commonLinks)}
             {/* Search bar */}
             <li>
               <form action="" className="relative mx-auto w-max">
@@ -84,14 +102,13 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu (visible on sm and larger screens) */}
-        <div className="hidden sm:!flex sm:text-[2vh]  items-center text-xl space-x-8 sm:space-x-4">
-          <Link href="/" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Home</Link>
-          <Link href="/About" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">About</Link>
-          <Link href="/Services" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Services</Link>
-          <Link href="/Faq" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">FAQ</Link>
-          <Link href="/Blog" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Blog</Link>
-          <Link href="/Media" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Media</Link>
-          <Link href="/Contact" className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded">Contact</Link>
+        <div className="hidden sm:flex items-center text-sm lg:text-xl space-x-7 md:space-x-4 sm:space-x-2 list-none">
+          {renderLinks(isAdmin ? [...adminLinks] : commonLinks)}
+          {isAdmin && (
+            <button onClick={handleLogout} className="text-red-500">
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </nav>

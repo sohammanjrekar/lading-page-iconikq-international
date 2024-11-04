@@ -13,9 +13,6 @@ const LoginPage = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        console.log('Input Password:', password);
-        console.log('Admin Password:', adminPassword); // Debugging line
-
         if (password === adminPassword) {
             login();
             setAlert({ type: 'success', message: 'Login successful! Redirecting...' });
@@ -28,7 +25,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="container min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
+        <div className="container mx-auto min-h-screen flex flex-col sm:justify-center items-center justify-center pt-6 sm:pt-0">
             <div className="w-full sm:max-w-md p-5 mx-auto">
                 <h2 className="mb-12 text-center text-5xl font-extrabold">Welcome to Iconikq Admin Dashboard</h2>
 
