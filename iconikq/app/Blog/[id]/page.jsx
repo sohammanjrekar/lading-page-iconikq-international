@@ -96,25 +96,25 @@ const Page = ({ params }) => {
             {/* Sidebar / Author Section */}
             <div className="w-full lg:w-1/4 max-w-sm mx-auto lg:mx-0 mb-12 lg:mb-0">
               <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 ease-in-out">
-                <div className="flex flex-wrap justify-center items-center mb-6">
+                <div className="flex flex-wrap flex-col justify-center items-center mb-6">
                   <Image
                     loading="lazy"
-                    alt="Mr. Parth Ruparel"
+                    alt= {blog.id % 2 === 0 ? 'Drusti Ruparel' : 'Mr. Parth Ruparel'}
                     width={120}
                     height={120}
                     layout="intrinsic"
-                    src="/images/parth2.jpg"
+                    src= {blog.id % 2 === 0 ? '/images/drusti2.jpg' : '/images/parth2.jpg'}
                     className="h-24 w-24 rounded-full object-cover border-4 border-green-700"
                   />
                   <div className="ml-4">
-                    <p className="font-semibold text-lg text-gray-800">Mr. Parth Ruparel</p>
-                    <p className="text-sm text-center text-gray-600">Partner</p>
+                    <p className="font-semibold text-lg text-gray-800">{blog.id  % 2 === 0 ? 'Drusti Ruparel' : 'Mr. Parth Ruparel'}</p>
+                    <p className="text-md text-center text-gray-600">Partner</p>
                   </div>
                 </div>
-                <p className="text-gray-700 mb-4 text-lg">
-                  Mr. Parth Ruparel is a logistics expert dedicated to providing efficient and customized solutions, ensuring timely and secure deliveries globally.
+                <p className="text-gray-700 mb-4 text-lg leading-relaxed text-justify">
+                {blog.id  % 2 === 0 ? 'Drusti Ruparel' : 'Mr. Parth Ruparel'} is a logistics expert dedicated to providing efficient and customized solutions, ensuring timely and secure deliveries globally.
                 </p>
-                <Button text="Contact Me" href={'/Contact'} />
+                <Button className="mx-auto" text="Contact Me" href={'/Contact'} />
               </div>
             </div>
           </div>

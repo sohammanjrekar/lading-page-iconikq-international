@@ -40,42 +40,43 @@ const ContactPage = () => {
   }, [currentPage]);
 
   // Handle CSV export
-  const handleExportCSV = async () => {
-    const { data: allContacts, error } = await supabase
-      .from('contacts')
-      .select('*');
+const handleExportCSV = async () => {
+  const { data: allContacts, error } = await supabase
+    .from('contacts')
+    .select('*');
 
-    if (error) {
-      console.error('Error fetching all contacts for CSV export:', error);
-      return;
-    }
+  if (error) {
+    console.error('Error fetching all contacts for CSV export:', error);
+    return;
+  }
 
-    if (allContacts && allContacts.length > 0) {
-      const csvContent = [
-        ['ID', 'Name', 'Email', 'Phone', 'Created At'],
-        ...allContacts.map(contact => [
-          contact.id,
-          contact.name,
-          contact.email,
-          contact.phone,
-          new Date(contact.created_at).toLocaleString(), // Format date for CSV
-        ]),
-      ]
-        .map(e => e.join(","))
-        .join("\n");
+  if (allContacts && allContacts.length > 0) {
+    const csvContent = [
+      ['ID', 'Name', 'Email', 'Phone', 'Messages', 'Created At'], // Include 'Messages' in header
+      ...allContacts.map(contact => [
+        contact.id,
+        contact.name,
+        contact.email,
+        contact.phone,
+        contact.messages, // Include messages in the CSV
+        new Date(contact.created_at).toLocaleString(), // Format date for CSV
+      ]),
+    ]
+      .map(e => e.join(","))
+      .join("\n");
 
-      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'contacts.csv');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      console.error('No contacts found for CSV export.');
-    }
-  };
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'contacts.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } else {
+    console.error('No contacts found for CSV export.');
+  }
+};
 
   // Prevent rendering until authentication is confirmed
   if (!isAuthenticated) {
@@ -99,6 +100,7 @@ const ContactPage = () => {
             <th className="border border-gray-300 p-2">Name</th>
             <th className="border border-gray-300 p-2">Email</th>
             <th className="border border-gray-300 p-2">Phone</th>
+            <th className="border border-gray-300 p-2">Messages</th> {/* Added Messages column */}
             <th className="border border-gray-300 p-2">Created At</th>
           </tr>
         </thead>
@@ -109,6 +111,7 @@ const ContactPage = () => {
               <td className="border border-gray-300 p-2">{contact.name}</td>
               <td className="border border-gray-300 p-2">{contact.email}</td>
               <td className="border border-gray-300 p-2">{contact.phone}</td>
+              <td className="border border-gray-300 p-2">{contact.messages}</td> {/* Display messages */}
               <td className="border border-gray-300 p-2">{new Date(contact.created_at).toLocaleString()}</td> {/* Display formatted date */}
             </tr>
           ))}

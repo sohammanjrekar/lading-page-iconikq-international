@@ -20,11 +20,11 @@ const MediaPage = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="flex min-h-screen bg-zinc-900 text-zinc-50 flex-col">
+    <div className="flex min-h-screen bg-zinc-900 text-myblue flex-col">
       <div className="flex flex-1">
-        <main className="flex-1 bg-myred">
-          <div className="bg-gradient-to-br from-myblue py-20">
-            <h1 className="mt-20 text-4xl font-semibold ml-5 text-center">Video Library</h1>
+        <main className="flex-1 bg-myred min-h-screen">
+          <div className="bg-mylight py-20 min-h-screen">
+            <h1 className="mt-20 text-4xl font-semibold uppercase ml-5 text-center">Video Library</h1>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-3 sm:px-10">
               {mediaData.map((video) => (
                 <div key={video.id} className="group my-3 col-span-1">
@@ -39,11 +39,11 @@ const MediaPage = () => {
                     {/* Video Information */}
                     <div className="flex flex-col">
                       <a href="#">
-                        <p className="text-white text-md font-semibold group-hover:text-white transition">
+                        <p className="text-myred text-lg font-semibold  transition">
                           {video.title}
                         </p>
                       </a>
-                      <a className="text-white text-xs mt-2 hover:text-gray-100" href="#">
+                      <a className="text-myblue text-md mt-2" href="#">
                         {video.description.slice(0, 100)}{video.description.length > 100 && "..."}
                       </a>
                     </div>

@@ -46,7 +46,7 @@ const Services = () => {
 
   return (
     <>
-      <section className="pb-5 lg:pb-10 bg-[#F3F4F6]">
+      <section className="pb-5 pt-20 lg:pb-10 mt-5 bg-mylight">
         <div className="container mx-auto">
           <Animatedword />
           <div className="flex flex-wrap mx-4">
