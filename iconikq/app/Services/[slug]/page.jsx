@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useServicesStore } from '@/store/servicesStore';
+import { useServicesStore } from './../../store/servicesStore';
 
 const CategoryPage = ({ params }) => {
   const { slug } = params;
