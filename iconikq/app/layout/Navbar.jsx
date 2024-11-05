@@ -103,19 +103,16 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Desktop Menu (visible on sm and larger screens) */}
-        <div className="hidden sm:flex items-center text-sm lg:text-xl space-x-7 md:space-x-4 sm:space-x-2 list-none">
-          {renderLinks(isAdmin ? [...adminLinks] : commonLinks)}
-          {isAdmin && (
-            <button onClick={handleLogout} className="text-red-500">
-              Logout
-            </button>
-          )}
+        <div className="sm:flex items-center text-sm lg:text-xl space-x-7 md:space-x-4 sm:space-x-2 list-none hidden">
+  {renderLinks(isAdmin ? adminLinks : commonLinks)}
+  {isAdmin && (
+    <button onClick={handleLogout} className="text-red-500">
+      Logout
+    </button>
+  )}
         </div>
+</div>
 
-        {/* Debugging information for authentication status */}
-        {!isAdmin && <p className="text-red-500">User is not authenticated!</p>}
-      </div>
     </nav>
   );
 };
