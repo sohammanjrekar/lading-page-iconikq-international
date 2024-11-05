@@ -1,22 +1,18 @@
-
 import Link from "next/link";
 
-
+// Assuming each item in your data has a unique `id`
 export async function generateStaticParams() {
-  // Get all slugs for categories and titles
+  // Return an array of objects with `id` for each service
   return data.map((item) => ({
-    slug: item.categorySlug,
-    titleslug: item.titleSlug,
+    id: item.id,
   }));
 }
 
 const ServiceDetailPage = ({ params }) => {
-  const { slug, titleslug } = params;
+  const { id } = params;
 
-  // Find the specific card based on the slugs from the data
-  const card = data.find(
-    (item) => item.categorySlug === slug && item.titleSlug === titleslug
-  );
+  // Find the specific card based on the `id` from the data
+  const card = data.find((item) => item.id === id);
 
   // If no matching service is found, show a fallback UI
   if (!card) {
@@ -30,7 +26,6 @@ const ServiceDetailPage = ({ params }) => {
 
   return (
     <>
-     
       <nav className="text-sm sm:text-base mt-20 bg-white p-2 md:p-4 lg:p-4 rounded-md shadow-lg w-full">
         <ol className="list-none p-0 inline-flex space-x-2">
           <li className="flex items-center">
@@ -46,25 +41,19 @@ const ServiceDetailPage = ({ params }) => {
             <span className="mx-2">/</span>
           </li>
           <li className="flex items-center">
-            <Link
-              href="/Service"
-              className="text-gray-600 hover:text-blue-500 transition-colors duration-300"
-            >
+            <Link href="/Service" className="text-gray-600 hover:text-blue-500 transition-colors duration-300">
               Services
             </Link>
             <span className="mx-2">/</span>
           </li>
           <li className="flex items-center">
-            <Link
-              href={`/Services/${card.categorySlug}`}
-              className="text-gray-600 hover:text-blue-500 transition-colors duration-300"
-            >
-              {slug}
+            <Link href={`/Services/${card.categorySlug}`} className="text-gray-600 hover:text-blue-500 transition-colors duration-300">
+              {card.categorySlug}
             </Link>
             <span className="mx-2">/</span>
           </li>
           <li className="flex items-center">
-            <span className="text-gray-800">{titleslug}</span>
+            <span className="text-gray-800">{card.title}</span>
           </li>
         </ol>
       </nav>
@@ -81,7 +70,6 @@ const ServiceDetailPage = ({ params }) => {
           </div>
         </div>
       </header>
-
     </>
   );
 };

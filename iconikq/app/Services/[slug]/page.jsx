@@ -1,14 +1,36 @@
-
+import { supabase } from '@/lib/supabaseClient';
 import Image from 'next/image';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 const CategoryPage = ({ params }) => {
   const { slug } = params;
+  const [filteredCards, setFilteredCards] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Filter cardData to get only the services belonging to the current category
-  const filteredCards = data.filter((item) => item.categorySlug === slug);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('servicesStore') // Replace with your actual table name
+        .select('*')
+        .eq('categorySlug', slug);
 
-  // If no matching services are found for the category
+      if (error) {
+        console.error('Error fetching data:', error);
+      } else {
+        setFilteredCards(data);
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [slug]);
+
+  if (loading) {
+    return <div className="text-center">Loading...</div>;
+  }
+
   if (filteredCards.length === 0) {
     return (
       <div className="text-center text-red-500">
@@ -18,7 +40,6 @@ const CategoryPage = ({ params }) => {
     );
   }
 
-  // Generate dynamic metadata
   const title = `ICONIKQ | ${slug.charAt(0).toUpperCase() + slug.slice(1)} Services`;
   const description = `Explore our ${slug} services at ICONIKQ. We provide exceptional logistics solutions tailored to your needs.`;
   const keywords = `${slug}, logistics, services, ICONIKQ`;
@@ -32,7 +53,6 @@ const CategoryPage = ({ params }) => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://www.iconikq.com/services/${slug}`} />
-        
       </Head>
 
       <section className="pt-20 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
@@ -81,7 +101,6 @@ const CategoryPage = ({ params }) => {
                     alt={card.title}
                     className="w-[500px] h-[300px] object-cover"
                   />
-
                   <div className="p-4 sm:p-6 md:p-4 xl:p-6 text-center">
                     <h3>
                       <a
