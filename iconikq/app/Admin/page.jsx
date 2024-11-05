@@ -53,6 +53,9 @@ const BlogAdmin = () => {
       const { count: mediaCount } = await supabase
         .from('media')
         .select('*', { count: 'exact', head: true });
+        const { count: AchievementCount } = await supabase
+        .from('achievements')
+        .select('*', { count: 'exact', head: true });
       return {
         contactCount,
         blogPostCount,
@@ -60,7 +63,8 @@ const BlogAdmin = () => {
         certificateCount,
         faqCount,
         galleryCount,
-        mediaCount
+        mediaCount,
+        AchievementCount
       };
     } catch (error) {
       console.error('Error fetching counts:', error);
@@ -175,6 +179,20 @@ const BlogAdmin = () => {
                 <div className="p-4 text-right">
                   <p className="block antialiased font-sans text-2xl leading-normal font-normal text-blue-gray-600">Gallery</p>
                   <h4 className="block mt-10 antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900">{counts.galleryCount}</h4>
+                </div>
+              </div>
+            </Link>
+
+
+            {/* gallery Count Card */}
+            <Link href={'/Admin/Achievements'}>
+              <div className="relative flex flex-col bg-clip-border rounded-xl bg-white h-[40vh] lg:h-[20vh] text-gray-700 shadow-md">
+                <div className="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-green-500/40 shadow-lg absolute -mt-4 grid h-24 w-24 place-items-center">
+                  <Image src={'/images/picture.png'} height={516} width={516} alt="Achievement" />
+                </div>
+                <div className="p-4 text-right">
+                  <p className="block antialiased font-sans text-2xl leading-normal font-normal text-blue-gray-600">Achievements</p>
+                  <h4 className="block mt-10 antialiased tracking-normal font-sans text-3xl font-semibold leading-snug text-blue-gray-900">{counts.AchievementCount}</h4>
                 </div>
               </div>
             </Link>

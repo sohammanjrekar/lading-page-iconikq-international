@@ -57,12 +57,16 @@ const CertificatePage = () => {
     widget.open();
   };
 
+  const fetchCertificates = async () => {
+    const { data, error } = await supabase.from('certificates').select('*');
+    if (error) {
+      console.error('Error fetching certificates:', error);
+    } else {
+      setCertificates(data);
+    }
+  };
+
   useEffect(() => {
-    const fetchCertificates = async () => {
-      const { data, error } = await supabase.from('certificates').select('*');
-      if (error) console.error('Error fetching certificates:', error);
-      else setCertificates(data);
-    };
     fetchCertificates();
   }, []);
 
@@ -77,7 +81,6 @@ const CertificatePage = () => {
 
   const handleAddOrUpdateCertificate = async () => {
     if (editId) {
-      // Update existing certificate
       const { data, error } = await supabase
         .from('certificates')
         .update({
@@ -86,16 +89,16 @@ const CertificatePage = () => {
           image_url: newImageUrl
         })
         .eq('id', editId);
+
       if (error) {
         console.error('Error updating certificate:', error);
         showMessage('error', 'Failed to update certificate.');
       } else {
-        setCertificates(certificates.map(cert => (cert.id === editId ? data[0] : cert)));
         showMessage('success', 'Certificate updated successfully!');
         clearFields();
+        fetchCertificates(); // Fetch all certificates after update
       }
     } else {
-      // Add new certificate
       const { data, error } = await supabase
         .from('certificates')
         .insert([{
@@ -103,13 +106,14 @@ const CertificatePage = () => {
           description: newDescription,
           image_url: newImageUrl
         }]);
+
       if (error) {
         console.error('Error adding certificate:', error);
         showMessage('error', 'Failed to add certificate.');
       } else {
         showMessage('success', 'Certificate added successfully!');
-        setCertificates([...certificates, ...(Array.isArray(data) ? data : [data])]);
         clearFields();
+        fetchCertificates(); // Fetch all certificates after adding a new one
       }
     }
   };
@@ -120,8 +124,8 @@ const CertificatePage = () => {
       console.error('Error deleting certificate:', error);
       showMessage('error', 'Failed to delete certificate.');
     } else {
-      setCertificates(certificates.filter(cert => cert.id !== id));
       showMessage('success', 'Certificate deleted successfully!');
+      fetchCertificates(); // Fetch all certificates after deletion
     }
   };
 
@@ -161,7 +165,7 @@ const CertificatePage = () => {
         {/* Image Upload */}
         <div className="mb-4 flex flex-row">
           <button
-            className="upload-btn bg-blue-500 text-white py-2 px-4 rounded"
+            className="upload-btn bg-myred text-white py-2 px-4 rounded"
             onClick={() => openWidget(setNewImageUrl)}
           >
             Upload Image
@@ -190,7 +194,7 @@ const CertificatePage = () => {
           {/* Success or Error Message */}
           {successMessage && (
             <div className="bg-white p-6 md:mx-auto text-center">
-              <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">{successMessage}</h3>
+              <h3 className="md:text-2xl text-base text-green-500 font-semibold text-center">{successMessage}</h3>
             </div>
           )}
           {errorMessage && (
@@ -202,28 +206,32 @@ const CertificatePage = () => {
 
       <div className="certificate-list mt-8 mb-14 container mx-auto w-[90vw]">
         <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">Certificates</h3>
-        {certificates.map(cert => (
-          <div key={cert.id} className="certificate bg-white p-6 shadow-md mb-4">
-            <h4 className="text-lg font-semibold">Title: {cert.title}</h4>
-            <p className="text-sm text-gray-700 my-2">Description: {cert.description}</p>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+        {certificates && certificates.map(cert => (
+          cert ? (
+            <div key={cert.id} className="certificate bg-white p-6 shadow-md mb-4">
+              <h4 className="text-lg font-semibold"><span className="text-myred">Title:</span> {cert.title}</h4>
+              <p className="text-md text-gray-700 my-2"><span className="text-myred">Description: </span>{cert.description}</p>
 
-            {cert.image_url && (
-              <img src={cert.image_url} alt="Certificate" className="rounded-lg my-5 h-28 object-cover" />
-            )}
-            <button
-              className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
-              onClick={() => setEditCertificate(cert)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn border border-red-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
-              onClick={() => handleDeleteCertificate(cert.id)}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
+              {cert.image_url && (
+                <img src={cert.image_url} alt="Certificate" className="rounded-lg my-5 h-[20vh] object-cover" />
+              )}
+              <button
+                className="btn border  rounded-md shadow-2xl bg-indigo-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
+                onClick={() => setEditCertificate(cert)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn border  rounded-md shadow-2xl  bg-red-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
+                onClick={() => handleDeleteCertificate(cert.id)}
+              >
+                Delete
+              </button>
+            </div>
+          ) : null
+        ))}</div>
+
       </div>
     </>
   );

@@ -160,28 +160,28 @@ const MediaPage = () => {
 
       <div className="media-list mt-8 mb-14 container mx-auto w-[90vw]">
         <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">Media Items</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
-          {mediaItems.map(item => (
-            <div key={item.id} className="media-item bg-white p-4 shadow-md">
-              <h4 className="text-lg font-semibold">Title: {item.title}</h4>
-              <p className="text-sm text-gray-700 my-2">Description: {item.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2">
+          {mediaItems && mediaItems.map(item => (
+          item ? (  <div key={item.id} className="media-item bg-white p-4 shadow-md">
+              <h4 className="text-lg font-semibold"><span className="text-myred">Title: </span>{item.title}</h4>
+              <p className="text-md text-myblue my-2"><span className="text-myred">Description:</span> {item.description}</p>
 
               {item.youtube_iframe && (
                 <div className="iframe-container my-5" dangerouslySetInnerHTML={{ __html: item.youtube_iframe }} />
               )}
               <button
-                className="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+                className="btn rounded-md shadow-2xl shadow-indigo-600 border bg-indigo-500 p-1 px-4 font-semibold cursor-pointer text-myblue 0 ml-2"
                 onClick={() => setEditMediaItem(item)}
               >
                 Edit
               </button>
               <button
-                className="btn border border-red-500 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-2"
+                className="btn border  rounded-md shadow-2xl shadow-red-600 bg-red-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
                 onClick={() => handleDeleteMediaItem(item.id)}
               >
                 Delete
               </button>
-            </div>
+            </div>):null
           ))}
         </div>
       </div>

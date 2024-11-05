@@ -16,10 +16,11 @@ const ServicesPage = () => {
 
     const [services, setServices] = useState([]);
     const [newTitle, setNewTitle] = useState('');
-    const [newImageUrl, setNewImageUrl] = useState(''); // This should reference the correct image property
+    const [newImageUrl, setNewImageUrl] = useState(''); 
     const [newPassage1, setNewPassage1] = useState('');
     const [newPassage2, setNewPassage2] = useState('');
     const [newDescription, setNewDescription] = useState('');
+    const [newSlug, setNewSlug] = useState(''); // State for slug
     const [editId, setEditId] = useState(null);
     const [cloudinaryLoaded, setCloudinaryLoaded] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
@@ -89,10 +90,11 @@ const ServicesPage = () => {
                 .from('services')
                 .update({
                     title: newTitle,
-                    image: newImageUrl, // Ensure this references the correct image property
+                    image: newImageUrl,
                     passage1: newPassage1,
                     passage2: newPassage2,
-                    description: newDescription
+                    description: newDescription,
+                    categoryslug: newSlug // Include slug in update
                 })
                 .eq('id', editId);
             if (error) {
@@ -112,7 +114,8 @@ const ServicesPage = () => {
                     image: newImageUrl,
                     passage1: newPassage1,
                     passage2: newPassage2,
-                    description: newDescription
+                    description: newDescription,
+                    categoryslug: newSlug // Include slug in insert
                 }]);
             if (error) {
                 console.error('Error adding service:', error);
@@ -141,10 +144,11 @@ const ServicesPage = () => {
     const setEditService = (serv) => {
         setEditId(serv.id);
         setNewTitle(serv.title);
-        setNewImageUrl(serv.image); // Ensure this references the correct property
+        setNewImageUrl(serv.image);
         setNewPassage1(serv.passage1);
         setNewPassage2(serv.passage2);
         setNewDescription(serv.description);
+        setNewSlug(serv.categoryslug); // Set slug when editing
     };
 
     // Clear form fields
@@ -154,8 +158,20 @@ const ServicesPage = () => {
         setNewPassage1('');
         setNewPassage2('');
         setNewDescription('');
+        setNewSlug(''); // Clear slug
         setEditId(null);
     };
+
+    // Options for the category slug
+    const slugOptions = [
+        { value: '', label: 'Select Category' },
+        { value: 'transportation', label: 'Transportation' },
+        { value: 'freight-forwarding', label: 'Freight Forwarding' },
+        { value: 'inventory-management', label: 'Inventory Management' },
+        { value: 'custom-broker-services', label: 'Custom Broker Services' },
+        { value: 'supply-chain-consulting', label: 'Supply Chain Consulting' },
+        { value: 'legal-consultants', label: 'Legal Consultants' },
+    ];
 
     return (
         <>
@@ -190,6 +206,19 @@ const ServicesPage = () => {
                     onChange={(e) => setNewDescription(e.target.value)}
                 />
 
+                {/* Select Dropdown for Slug */}
+                <select
+                    className="categoryslug bg-gray-100 border border-gray-300 p-2 mb-4"
+                    value={newSlug}
+                    onChange={(e) => setNewSlug(e.target.value)}
+                >
+                    {slugOptions.map(option => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+
                 {/* Image Upload */}
                 <div className="mb-4 flex flex-row">
                     <button
@@ -200,44 +229,46 @@ const ServicesPage = () => {
                     </button>
 
                     {newImageUrl && (
-                        <img src={newImageUrl} alt="Preview" className="mx-5 h-40" />
+                        <img src={newImageUrl} alt="Preview" className="ml-4 h-20" />
                     )}
                 </div>
 
-                <div className="buttons flex mx-auto my-3">
+                <div className="flex justify-center">
                     <button
-                        className="btn border border-gray-300 p-2 rounded text-gray-800 mx-2"
-                        onClick={clearFields}
-                    >
-                        Clear
-                    </button>
-                    <button
-                        className="btn border border-gray-300 p-2 rounded text-gray-800 mx-2"
+                        className="submit-btn bg-green-500 text-white py-2 px-4 rounded mr-2"
                         onClick={handleAddOrUpdateService}
                     >
                         {editId ? 'Update Service' : 'Add Service'}
                     </button>
+
+                    {editId && (
+                        <button
+                            className="delete-btn bg-red-500 text-white py-2 px-4 rounded"
+                            onClick={() => handleDeleteService(editId)}
+                        >
+                            Delete Service
+                        </button>
+                    )}
                 </div>
-                {successMessage && <div className="success-message text-green-600">{successMessage}</div>}
-                {errorMessage && <div className="error-message text-red-600">{errorMessage}</div>}
+
+                {successMessage && <div className="mt-4 text-green-500">{successMessage}</div>}
+                {errorMessage && <div className="mt-4 text-red-500">{errorMessage}</div>}
             </div>
 
-            <div className="services-list mb-5 container w-[90vw] mx-auto mt-10">
-                <h2 className="text-center font-bold text-xl mb-4">Services List</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {services.map((serv) => (
-                        <div key={serv.id} className="service-card border border-gray-300 p-4 rounded">
-                            <h3 className="text-lg font-bold">{serv.title}</h3>
-                           
-                            <p>{serv.description}</p>
-                            <img src={serv.image} alt={serv.title} className="h-32 object-cover" />
-                            <div className="buttons flex justify-between mt-4">
-                                <button className="text-blue-500" onClick={() => setEditService(serv)}>Edit</button>
-                                <button className="text-red-500" onClick={() => handleDeleteService(serv.id)}>Delete</button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+            <div className="mt-8 text-center font-bold text-2xl m-5 text-gray-800 container">All Services</div>
+            <div className="flex flex-wrap justify-center">
+                {services.map((serv) => (
+                    <div key={serv.id} className="service-card border border-gray-300 m-4 p-4 w-64">
+                        <img src={serv.image} alt={serv.title} className="mb-2 h-32 w-full object-cover" />
+                        <h3 className="font-bold">{serv.title}</h3>
+                        <button
+                            className="edit-btn bg-yellow-500 text-white py-1 px-2 rounded mt-2"
+                            onClick={() => setEditService(serv)}
+                        >
+                            Edit
+                        </button>
+                    </div>
+                ))}
             </div>
         </>
     );

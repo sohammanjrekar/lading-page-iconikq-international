@@ -31,17 +31,18 @@ const Navbar = () => {
     { href: "/Media", label: "Media" },
     { href: "/Contact", label: "Contact" },
   ];
-
   const adminLinks = [
-    { href: "/Admin", label: "Admin" },
-    { href: "/Admin/faq", label: "FAQ Admin" },
-    { href: "/Admin/Services", label: "Services Admin" },
-    { href: "/Admin/Contacts", label: "Contact Admin" },
-    { href: "/Admin/Blog", label: "Blog Admin" },
-    { href: "/Admin/Media", label: "Media Admin" },
-    { href: "/Admin/Gallery", label: "Gallery Admin" },
-    { href: "/Admin/Certificates", label: "Certificates Admin" },
+    { href: "/Admin", label: "Dashboard" },
+    { href: "/Admin/faq", label: "FAQ" },
+    { href: "/Admin/Services", label: "Services" },
+    { href: "/Admin/Contacts", label: "Contacts" },
+    { href: "/Admin/Blog", label: "Blog" },
+    { href: "/Admin/Media", label: "Media" },
+    { href: "/Admin/Gallery", label: "Gallery" },
+    { href: "/Admin/Certificates", label: "Certificates" },
+    { href: "/Admin/Achievements", label: "Achievements" },
   ];
+  
 
   const renderLinks = (links) => (
     links.map(link => (
