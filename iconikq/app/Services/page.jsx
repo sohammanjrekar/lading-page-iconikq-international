@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Animatedword from "./Animatedword";
-import Button from "./Button";
+import Animatedword from "./../ui/Animatedword";
+import Button from "./../ui/Button";
 import Link from "next/link"; // Import Next.js Link
 
 const Services = () => {

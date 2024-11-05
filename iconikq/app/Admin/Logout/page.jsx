@@ -1,5 +1,5 @@
 import { useSessionStore } from '../stores/sessionStore';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const Logout = () => {
   const logout = useSessionStore((state) => state.logout);
