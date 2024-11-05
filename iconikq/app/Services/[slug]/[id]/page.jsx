@@ -1,4 +1,4 @@
-import { data } from '../../../Data';
+
 import Link from "next/link";
 
 
