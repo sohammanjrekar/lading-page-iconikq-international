@@ -7,10 +7,13 @@ export const useServicesStore = create((set) => ({
   loading: false,
   error: null,
 
-  fetchServicesData: async () => {
+  fetchServicesData: async (categorySlug) => {
     set({ loading: true, error: null });
     try {
-      const { data, error } = await supabase.from('services').select('*'); // Fetch all columns
+      const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .eq('categorySlug', categorySlug); // Fetch data based on category slug
       if (error) throw error;
       set({ servicesData: data, loading: false });
     } catch (err) {
