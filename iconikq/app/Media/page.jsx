@@ -20,10 +20,8 @@ const MediaPage = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="flex min-h-screen bg-zinc-900 text-myblue flex-col">
-      <div className="flex flex-1">
-        <main className="flex-1 bg-myred min-h-screen">
-          <div className="bg-mylight py-20 min-h-screen">
+  
+          <div className="bg-mylight py-20 ccontainer w-[90vw] mx-auto min-h-screen">
             <h1 className="mt-20 text-4xl font-semibold uppercase ml-5 text-center">Video Library</h1>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-3 sm:px-10">
               {mediaData.map((video) => (
@@ -31,7 +29,7 @@ const MediaPage = () => {
                   <div className="relative w-full h-0 pb-[56.25%] overflow-hidden bg-black rounded-lg shadow-lg">
                     {/* Responsive Iframe Container */}
                     <div
-                      className="absolute top-0 left-0 w-full h-full video-iframe"
+                      className="absolute  shadow-2xl top-0 left-0 w-full h-full video-iframe"
                       dangerouslySetInnerHTML={{ __html: video.youtube_iframe }}
                     />
                   </div>
@@ -52,9 +50,7 @@ const MediaPage = () => {
               ))}
             </div>
           </div>
-        </main>
-      </div>
-    </div>
+       
   );
 };
 

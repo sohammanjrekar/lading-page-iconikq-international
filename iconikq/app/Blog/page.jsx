@@ -11,18 +11,16 @@ const BlogPage = () => {
   useEffect(() => {
     fetchBlogPosts();
   }, [fetchBlogPosts]);
-
   const convertToDate = (dateStr) => {
-    // Ensure the input date format is consistent
-    const parts = dateStr.split('-');
-    if (parts.length !== 3) {
+    // Check if the date format is valid (yyyy-mm-dd)
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!regex.test(dateStr)) {
       console.error(`Invalid date format: ${dateStr}`);
       return new Date(NaN); // Return an invalid date
     }
-    const [day, month, year] = parts.map(part => part.trim()); // Trim whitespace
-    return new Date(`${year}-${month}-${day}`);
+    return new Date(dateStr); // Directly create a Date object from the string
   };
-
+  
   const formatDate = (dateStr) => {
     const date = convertToDate(dateStr);
     if (isNaN(date)) {
@@ -31,6 +29,7 @@ const BlogPage = () => {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
   };
+  
 
   // Sort blog posts based on date
   const sortedBlogData = blogPosts.slice().sort((a, b) => convertToDate(b.date) - convertToDate(a.date));
@@ -54,7 +53,7 @@ const BlogPage = () => {
                   {sortedBlogData[0].title}
                 </a>
                 <div className="text-sm font-medium flex items-center justify-between w-full">
-                  <span>Date: {sortedBlogData[0].date} </span>
+                  <span>Date: {formatDate(sortedBlogData[0].date)} </span>
                   <Button text="Read More" href={`/Blog/${sortedBlogData[0].id}`} />
                 </div>
               </div>

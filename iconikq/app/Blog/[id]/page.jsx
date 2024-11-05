@@ -9,6 +9,25 @@ const Page = ({ params }) => {
   const { id } = params;
   const { blogPosts = [], fetchBlogPosts } = useBlogStore(); // Use fetchBlogPosts and default to an empty array
 
+  const convertToDate = (dateStr) => {
+    // Check if the date format is valid (yyyy-mm-dd)
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!regex.test(dateStr)) {
+      console.error(`Invalid date format: ${dateStr}`);
+      return new Date(NaN); // Return an invalid date
+    }
+    return new Date(dateStr); // Directly create a Date object from the string
+  };
+  
+  const formatDate = (dateStr) => {
+    const date = convertToDate(dateStr);
+    if (isNaN(date)) {
+      return "Invalid Date"; // Return a message for invalid dates
+    }
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  };
+  
   useEffect(() => {
     // Fetch blog data if not already loaded
     if (blogPosts.length === 0) {
@@ -38,14 +57,21 @@ const Page = ({ params }) => {
       <div className=" min-h-screen  container w-[70vw] my-8 pt-10 mx-auto">
         <main className="mt-12">
           {/* Header Section */}
-          <header className="mb-12">
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
-              {blog.title}
-            </h1>
-            <div className="bg-myred w-[10vw] flex px-3  items-center text-center rounded-full text-white  py-1 uppercase">
-              <p className="text-sm text-center font-medium mx-auto">{blog.topic}</p>
-            </div>
-          </header>
+          <header className="mb-12 text-center">
+  <h1 className="text-2xl sm:text-4xl font-extrabold text-myblue leading-tight mb-4">
+    {blog.title}
+  </h1>
+  <div className="flex flex-row items-center justify-center mb-2">
+    <div className="bg-myred w-[10vw] flex items-center rounded-full text-white py-1 uppercase mr-2">
+      <p className="text-sm font-medium text-center mx-auto">{blog.topic}</p>
+    </div>
+    <p className="text-md font-bold text-myblue">Date: {formatDate(blog.date)}</p>
+  </div>
+</header>
+
+
+
+
 
           {/* Top Image */}
           {blog.image1 && (

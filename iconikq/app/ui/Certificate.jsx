@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { supabase } from '../utils/supabase/client'; // Make sure the path is correct
+import { useCertificateStore } from '../store/certificateStore';
 
 // Modal Component
 const Modal = ({ showModal, setShowModal, certificate }) => {
@@ -14,12 +14,12 @@ const Modal = ({ showModal, setShowModal, certificate }) => {
     >
       <Image 
         loading="lazy"
-        className="h-[80vh] rounded-lg object-cover"
-        src={certificate.image_url} // Updated to use image_url from Supabase
+        className="h-[90vh] rounded-lg object-cover"
+        src={certificate.image_url} 
         alt={certificate.title}
-        width={800} // Adjust width
-        height={800} // Adjust height
-        layout="intrinsic" // Adjust the layout to fit
+        width={800}
+        height={800}
+        layout="intrinsic"
       />
     </div>
   );
@@ -28,32 +28,19 @@ const Modal = ({ showModal, setShowModal, certificate }) => {
 const Certificate = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
-  const [certificates, setCertificates] = useState([]); // State for fetched certificates
-  const [loading, setLoading] = useState(true); // Loading state
+  const { certificateData, loading, error, fetchCertificateData } = useCertificateStore();
 
   useEffect(() => {
-    const fetchCertificates = async () => {
-      const { data, error } = await supabase
-        .from("certificate") // Your Supabase table name
-        .select("id, title, description, image_url"); // Specify the fields you need
-
-      if (error) {
-        console.error("Error fetching certificates:", error);
-      } else {
-        setCertificates(data);
-      }
-      setLoading(false); // Stop loading after fetching data
-    };
-
-    fetchCertificates();
-  }, []);
+    fetchCertificateData(); // Fetch data from the store when the component mounts
+  }, [fetchCertificateData]);
 
   const openModal = (certificate) => {
     setSelectedCertificate(certificate);
     setShowModal(true);
   };
 
-  if (loading) return <p>Loading...</p>; // Show loading state
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <>
@@ -64,26 +51,26 @@ const Certificate = () => {
         <p className="block antialiased font-sans text-xl leading-relaxed text-inherit mt-2 w-full font-normal !text-gray-500 lg:w-5/12">
           Read about our latest achievements and milestones.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {certificates.map((certificate) => (
+        <div className="grid my-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {certificateData.map((certificate) => (
             <div
-              key={certificate.id} // Use id from Supabase data
+              key={certificate.id}
               onClick={() => openModal(certificate)}
-              className="mx-auto relative shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105"
+              className="relative shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 group"
             >
               <div className="relative w-full h-full">
                 <Image 
                   loading="lazy"
-                  src={certificate.image_url} // Updated to use image_url from Supabase
+                  src={certificate.image_url} 
                   alt={certificate.title}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+                  className="w-full h-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-70"
                   width={500}
                   height={500}
                   layout="responsive"
                 />
-                <div className="absolute bottom-0 left-0 right-0 h-40 bg-myblue bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg transition-all duration-300 opacity-0 hover:opacity-100">
-                  <h1 className="text-2xl font-semibold">{certificate.title}</h1>
-                  <p className="mt-2">{certificate.description}</p>
+                <div className="absolute bottom-0 left-0 right-0 h-40 bg-myblue backdrop-blur-xl text-white p-4 rounded-b-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                  <h1 className="text-xl text-myred font-semibold">{certificate.title}</h1>
+                  <p className="mt-2 text-md">{certificate.description}</p>
                 </div>
               </div>
             </div>

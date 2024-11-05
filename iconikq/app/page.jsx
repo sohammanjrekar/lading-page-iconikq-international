@@ -13,6 +13,7 @@ import Autoscrollcompany from "./ui/Autoscrollcompany";
 import Testimonial from "./ui/Testimonial";
 import Mapsection from "./ui/Mapsection";
 import VideoCarousel from "./ui/VideoCarousel";
+import Companytree from "./ui/Companytree";
 export const metadata = {
   title: 'ICONIKQ | Home',
   description: 'Welcome to ICONIKQ, your trusted logistics partner for efficient and reliable solutions. Explore our services today!',
@@ -37,8 +38,11 @@ export default function Home() {
       <VideoCarousel />
       <Services />
       <Autoscrollcompany />
+      <Companytree/>
       <Team />
+      
       <Intro />
+     
       <Gallery />
       <Testimonial />
       <BlogSection />

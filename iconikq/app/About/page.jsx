@@ -14,7 +14,7 @@ const Page = () => {
     <>
       <section className="relative mt-10 ">
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center">
-          <div className="absolute top-0 w-full h-full overflow-hidden">
+          <div className="absolute top-0 w-full h-[55vh] overflow-hidden">
             <video
               autoPlay
               loop
@@ -27,7 +27,7 @@ const Page = () => {
             </video>
             <span id="blackOverlay" className="w-full h-full absolute opacity-60 bg-myblue"></span>
           </div>
-          <div className="container relative mx-auto">
+          <div className="container mt-10 relative mx-auto">
             <div className="items-center flex flex-wrap">
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12 shadow-2xl rounded-lg backdrop-blur-sm bg-opacity-10  bg-black">

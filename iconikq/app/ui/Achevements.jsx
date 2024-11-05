@@ -1,30 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { supabase } from "../utils/supabase/client"; // Ensure this path is correct
+import { useAchievementStore } from "../store/achievementStore"; // Import the store
 
 const Achievements = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [achievementData, setAchievementData] = useState([]); // State to hold fetched data
-  const [loading, setLoading] = useState(true); // Loading state
 
+  // Access store state and actions
+  const { achievementData, loading, fetchAchievementData } = useAchievementStore();
+
+  // Fetch achievements on component mount
   useEffect(() => {
-    const fetchAchievements = async () => {
-      const { data, error } = await supabase
-        .from("achievements") // Your Supabase table name
-        .select("id, title, description, image_url"); // Specify the fields you need
-
-      if (error) {
-        console.error("Error fetching achievements:", error);
-      } else {
-        setAchievementData(data);
-      }
-      setLoading(false); // Stop loading
-    };
-
-    fetchAchievements();
-  }, []);
+    fetchAchievementData();
+  }, [fetchAchievementData]);
 
   const openModal = (src) => {
     setSelectedImage(src);
@@ -40,7 +29,7 @@ const Achievements = () => {
 
   return (
     <>
-      <section className="container mx-auto w-[90vw] px-8 py-3">
+      <section className="container mx-auto py-5 w-[85vw]">
         <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 lg:!text-4xl">
           Latest Achievements
         </h2>
