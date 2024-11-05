@@ -1,5 +1,5 @@
 "use client"
-import { useSessionStore } from '../stores/sessionStore';
+import { useSessionStore } from '../../store/sessionStore';
 import { useRouter } from 'next/navigation';
 
 const Logout = () => {
