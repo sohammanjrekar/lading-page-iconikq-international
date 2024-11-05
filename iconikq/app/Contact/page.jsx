@@ -44,7 +44,7 @@ const ContactPage = () => {
       <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 
       {/* Contact Section Start */}
-      <section className="bg-white mt-16 py-20 lg:py-[120px] overflow-hidden relative z-10">
+      <section className=" w-[90vw] mx-auto mt-16 py-20 lg:py-[120px] overflow-hidden relative z-10">
         <div className="container">
           <div className="flex flex-wrap lg:justify-between -mx-4">
             <div className="w-full lg:w-1/2 xl:w-6/12 px-4">
@@ -126,8 +126,8 @@ const ContactPage = () => {
                     </button>
                   </div>
                 </form>
-                {successMessage && (
-  <div className=" bg-green-500 my-3 text-white rounded-lg p-4 shadow-lg w-full">
+              {successMessage && (
+  <div className="absolute top-4 left-4 bg-green-500 text-white rounded-lg p-4 shadow-lg">
     <div className="flex items-start">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -150,14 +150,32 @@ const ContactPage = () => {
           {successMessage}
         </p>
       </div>
-     
+      <button
+        onClick={() => setSuccessMessage('')} // Clear success message on close
+        className="ml-auto w-max rounded-lg p-1 transition-all hover:bg-white hover:bg-opacity-20"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 )}
 
 {errorMessage && <p className="text-red-600 mt-4">{errorMessage}</p>}
   <div>
-                  <span className="absolute -top-10 -right-9 z-[-1] ">
+                  <span className="absolute -top-10 -right-9 z-[-1]">
                     <svg
                       width="100"
                       height="100"
@@ -170,7 +188,6 @@ const ContactPage = () => {
                         clipRule="evenodd"
                         d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z"
                         fill="#EF412B"
-                        className='shadow-2xl shadow-myred'
                       />
                     </svg>
                   </span>

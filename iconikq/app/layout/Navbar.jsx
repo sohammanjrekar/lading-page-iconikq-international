@@ -47,7 +47,7 @@ const Navbar = () => {
   const renderLinks = (links) => (
     links.map(link => (
       <li key={link.href}>
-        <Link href={link.href} className="block py-2 pr-4 pl-3 text-white hover:text-myred rounded md:bg-transparent md:p-0">
+        <Link href={link.href} className="block py-2 px-4 text-white hover:text-myred rounded md:bg-transparent md:px-2">
           {link.label}
         </Link>
       </li>
