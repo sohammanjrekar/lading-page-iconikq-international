@@ -10,8 +10,9 @@ const Navbar = () => {
   const logout = useSessionStore((state) => state.logout);
   const router = useRouter();
 
-  // Replace this with your actual admin check
+  // Check if user is authenticated
   const isAdmin = useSessionStore((state) => state.isAuthenticated);
+  console.log('Is Authenticated:', isAdmin); // Debugging line
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,6 +32,7 @@ const Navbar = () => {
     { href: "/Media", label: "Media" },
     { href: "/Contact", label: "Contact" },
   ];
+  
   const adminLinks = [
     { href: "/Admin", label: "Dashboard" },
     { href: "/Admin/faq", label: "FAQ" },
@@ -42,7 +44,6 @@ const Navbar = () => {
     { href: "/Admin/Certificates", label: "Certificates" },
     { href: "/Admin/Achievements", label: "Achievements" },
   ];
-  
 
   const renderLinks = (links) => (
     links.map(link => (
@@ -111,6 +112,9 @@ const Navbar = () => {
             </button>
           )}
         </div>
+
+        {/* Debugging information for authentication status */}
+        {!isAdmin && <p className="text-red-500">User is not authenticated!</p>}
       </div>
     </nav>
   );
