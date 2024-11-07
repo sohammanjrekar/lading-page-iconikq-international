@@ -20,7 +20,7 @@ const ServicesPage = () => {
     const [newPassage1, setNewPassage1] = useState('');
     const [newPassage2, setNewPassage2] = useState('');
     const [newDescription, setNewDescription] = useState('');
-    const [newSlug, setNewSlug] = useState(''); // State for slug
+    const [newSlug, setNewSlug] = useState('');
     const [editId, setEditId] = useState(null);
     const [cloudinaryLoaded, setCloudinaryLoaded] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
@@ -63,12 +63,13 @@ const ServicesPage = () => {
     };
 
     // Fetch services from the database
+    const fetchServices = async () => {
+        const { data, error } = await supabase.from('services').select('*');
+        if (error) console.error('Error fetching services:', error);
+        else setServices(data);
+    };
+
     useEffect(() => {
-        const fetchServices = async () => {
-            const { data, error } = await supabase.from('services').select('*');
-            if (error) console.error('Error fetching services:', error);
-            else setServices(data);
-        };
         fetchServices();
     }, []);
 
@@ -94,16 +95,16 @@ const ServicesPage = () => {
                     passage1: newPassage1,
                     passage2: newPassage2,
                     description: newDescription,
-                    categoryslug: newSlug // Include slug in update
+                    categoryslug: newSlug
                 })
                 .eq('id', editId);
             if (error) {
                 console.error('Error updating service:', error);
                 showMessage('error', 'Failed to update service.');
             } else {
-                setServices(services.map(serv => (serv.id === editId ? data[0] : serv)));
                 showMessage('success', 'Service updated successfully!');
                 clearFields();
+                fetchServices(); // Refresh services after update
             }
         } else {
             // Add new service
@@ -115,14 +116,14 @@ const ServicesPage = () => {
                     passage1: newPassage1,
                     passage2: newPassage2,
                     description: newDescription,
-                    categoryslug: newSlug // Include slug in insert
+                    categoryslug: newSlug
                 }]);
             if (error) {
                 console.error('Error adding service:', error);
                 showMessage('error', 'Failed to add service.');
             } else {
                 showMessage('success', 'Service added successfully!');
-                setServices([...services, ...(Array.isArray(data) ? data : [data])]);
+                fetchServices(); // Refresh services after add
                 clearFields();
             }
         }
@@ -135,8 +136,8 @@ const ServicesPage = () => {
             console.error('Error deleting service:', error);
             showMessage('error', 'Failed to delete service.');
         } else {
-            setServices(services.filter(serv => serv.id !== id));
             showMessage('success', 'Service deleted successfully!');
+            fetchServices(); // Refresh services after delete
         }
     };
 
@@ -148,7 +149,7 @@ const ServicesPage = () => {
         setNewPassage1(serv.passage1);
         setNewPassage2(serv.passage2);
         setNewDescription(serv.description);
-        setNewSlug(serv.categoryslug); // Set slug when editing
+        setNewSlug(serv.categoryslug);
     };
 
     // Clear form fields
@@ -158,19 +159,19 @@ const ServicesPage = () => {
         setNewPassage1('');
         setNewPassage2('');
         setNewDescription('');
-        setNewSlug(''); // Clear slug
+        setNewSlug('');
         setEditId(null);
     };
 
     // Options for the category slug
     const slugOptions = [
         { value: '', label: 'Select Category' },
-        { value: 'transportation', label: 'Transportation' },
-        { value: 'freight-forwarding', label: 'Freight Forwarding' },
-        { value: 'inventory-management', label: 'Inventory Management' },
-        { value: 'custom-broker-services', label: 'Custom Broker Services' },
-        { value: 'supply-chain-consulting', label: 'Supply Chain Consulting' },
-        { value: 'legal-consultants', label: 'Legal Consultants' },
+        { value: 'Transportation', label: 'Transportation' },
+        { value: 'Freight Forwarding', label: 'Freight Forwarding' },
+        { value: 'Inventory Management', label: 'Inventory Management' },
+        { value: 'Custom Broker Services', label: 'Custom Broker Services' },
+        { value: 'Supply Chain Consulting', label: 'Supply Chain Consulting' },
+        { value: 'Legal Consultants', label: 'Legal Consultants' },
     ];
 
     return (

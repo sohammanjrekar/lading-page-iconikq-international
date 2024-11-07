@@ -148,7 +148,7 @@ const MediaPage = () => {
         {/* Success or Error Message */}
         {successMessage && (
           <div className="bg-white p-6 md:mx-auto text-center">
-            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">{successMessage}</h3>
+            <h3 className="md:text-2xl text-base text-green-600 font-semibold text-center">{successMessage}</h3>
           </div>
         )}
         {errorMessage && (
