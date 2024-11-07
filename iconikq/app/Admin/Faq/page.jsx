@@ -21,19 +21,19 @@ const FAQPage = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  const fetchFAQs = async () => {
+    const { data, error } = await supabase.from('faqs').select('*');
+    if (error) {
+      console.error('Error fetching FAQs:', error);
+    } else {
+      setFAQs(data || []); // Ensure data is an array
+    }
+  };
+
   useEffect(() => {
-    const fetchFAQs = async () => {
-      const { data, error } = await supabase.from('faqs').select('*');
-      if (error) {
-        console.error('Error fetching FAQs:', error);
-      } else {
-        setFAQs(data); // Ensure data is valid before setting state
-      }
-    };
     fetchFAQs();
   }, []);
   
-
   const showMessage = (type, message) => {
     if (type === 'success') setSuccessMessage(message);
     if (type === 'error') setErrorMessage(message);
@@ -45,55 +45,43 @@ const FAQPage = () => {
 
   const handleAddOrUpdateFAQ = async () => {
     if (editId) {
-      // Update existing FAQ
       const { error } = await supabase
         .from('faqs')
-        .update({
-          question: newQuestion,
-          answer: newAnswer
-        })
+        .update({ question: newQuestion, answer: newAnswer })
         .eq('id', editId);
       
       if (error) {
         console.error('Error updating FAQ:', error);
         showMessage('error', 'Failed to update FAQ.');
       } else {
-        // Directly update the local state
-        setFAQs(faqs.map(faq => 
-          faq.id === editId ? { ...faq, question: newQuestion, answer: newAnswer } : faq
-        ));
         showMessage('success', 'FAQ updated successfully!');
+        fetchFAQs();  // Refetch FAQs after update
         clearFields();
       }
     } else {
-      // Add new FAQ
       const { data, error } = await supabase
         .from('faqs')
-        .insert([{
-          question: newQuestion,
-          answer: newAnswer
-        }]);
+        .insert([{ question: newQuestion, answer: newAnswer }]);
       
       if (error) {
         console.error('Error adding FAQ:', error);
         showMessage('error', 'Failed to add FAQ.');
       } else {
         showMessage('success', 'FAQ added successfully!');
-        setFAQs([...faqs, ...(Array.isArray(data) ? data : [data])]);
+        fetchFAQs();  // Refetch FAQs after addition
         clearFields();
       }
     }
   };
-  
-  
+
   const handleDeleteFAQ = async (id) => {
     const { error } = await supabase.from('faqs').delete().eq('id', id);
     if (error) {
       console.error('Error deleting FAQ:', error);
       showMessage('error', 'Failed to delete FAQ.');
     } else {
-      setFAQs(faqs.filter(faq => faq.id !== id));
       showMessage('success', 'FAQ deleted successfully!');
+      fetchFAQs(); // Refetch FAQs after deletion
     }
   };
 
@@ -143,7 +131,6 @@ const FAQPage = () => {
           </button>
         </div>
         
-        {/* Success or Error Message */}
         {successMessage && (
           <div className="bg-white p-6 md:mx-auto text-center">
             <h3 className="md:text-2xl text-base text-green-600 font-semibold text-center">{successMessage}</h3>
@@ -158,26 +145,30 @@ const FAQPage = () => {
 
       <div className="faq-list mt-8 mb-14 container mx-auto w-[90vw]">
         <h3 className="text-2xl text-center font-semibold text-gray-800 mb-4">FAQs</h3>
-        {faqs.filter(faq => faq).map(faq => (
-  <div key={faq.id} className="faq bg-white p-6 shadow-md mb-4">
-    <h4 className="text-lg text-myred font-semibold">Question: {faq.question}</h4>
-    <p className="text-md text-myblue my-2">Answer: {faq.answer}</p>
-    <p className="text-sm text-myblue">Created At: {new Date(faq.created_at).toLocaleString()}</p>
-    <button
-      className="btn my-3 border bg-indigo-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
-      onClick={() => setEditFAQ(faq)}
-    >
-      Edit
-    </button>
-    <button
-      className="btn border bg-red-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
-      onClick={() => handleDeleteFAQ(faq.id)}
-    >
-      Delete
-    </button>
-  </div>
-))}
-
+        {faqs.length > 0 ? (
+          faqs.map(faq => (
+            faq &&(
+            <div key={faq.id} className="faq bg-white p-6 shadow-md mb-4">
+              <h4 className="text-lg text-myred font-semibold">Question: {faq.question}</h4>
+              <p className="text-md text-myblue my-2">Answer: {faq.answer}</p>
+              <p className="text-sm text-myblue">Created At: {new Date(faq.created_at).toLocaleString()}</p>
+              <button
+                className="btn my-3 border bg-indigo-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
+                onClick={() => setEditFAQ(faq)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn border bg-red-500 p-1 px-4 font-semibold cursor-pointer text-myblue ml-2"
+                onClick={() => handleDeleteFAQ(faq.id)}
+              >
+                Delete
+              </button>
+            </div>
+          )))
+        ) : (
+          <p className="text-center text-gray-600">No FAQs available to display.</p>
+        )}
       </div>
     </>
   );
