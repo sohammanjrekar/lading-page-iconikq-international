@@ -57,12 +57,13 @@ const GalleryPage = () => {
     widget.open();
   };
 
+  const fetchGalleryItems = async () => {
+    const { data, error } = await supabase.from('gallery').select('*');
+    if (error) console.error('Error fetching gallery items:', error);
+    else setGalleryItems(data);
+  };
+
   useEffect(() => {
-    const fetchGalleryItems = async () => {
-      const { data, error } = await supabase.from('gallery').select('*');
-      if (error) console.error('Error fetching gallery items:', error);
-      else setGalleryItems(data);
-    };
     fetchGalleryItems();
   }, []);
 
@@ -77,7 +78,6 @@ const GalleryPage = () => {
 
   const handleAddOrUpdateGalleryItem = async () => {
     if (editId) {
-      // Update existing gallery item
       const { data, error } = await supabase
         .from('gallery')
         .update({
@@ -90,12 +90,11 @@ const GalleryPage = () => {
         console.error('Error updating gallery item:', error);
         showMessage('error', 'Failed to update gallery item.');
       } else {
-        setGalleryItems(galleryItems.map(item => (item.id === editId ? data[0] : item)));
         showMessage('success', 'Gallery item updated successfully!');
+        fetchGalleryItems();
         clearFields();
       }
     } else {
-      // Add new gallery item
       const { data, error } = await supabase
         .from('gallery')
         .insert([{
@@ -108,7 +107,7 @@ const GalleryPage = () => {
         showMessage('error', 'Failed to add gallery item.');
       } else {
         showMessage('success', 'Gallery item added successfully!');
-        setGalleryItems([...galleryItems, ...(Array.isArray(data) ? data : [data])]);
+        fetchGalleryItems();
         clearFields();
       }
     }
