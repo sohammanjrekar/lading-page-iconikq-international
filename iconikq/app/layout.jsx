@@ -5,6 +5,8 @@ import { Analytics } from '@vercel/analytics/react';
 import Footer from './layout/Footer';
 import Navbar from './layout/Navbar';
 import Head from 'next/head';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+ 
 
 // Import the Raleway font from the local file
 const raleway = localFont({
@@ -37,6 +39,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Analytics />
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
