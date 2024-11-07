@@ -258,18 +258,30 @@ const ServicesPage = () => {
 
             <div className="mt-8 text-center font-bold text-2xl m-5 text-gray-800 container">All Services</div>
             <div className="flex flex-wrap justify-center">
-                {services.map((serv) => (
-                    <div key={serv.id} className="service-card border border-gray-300 m-4 p-4 w-64">
-                        <img src={serv.image} alt={serv.title} className="mb-2 h-32 w-full object-cover" />
-                        <h3 className="font-bold">{serv.title}</h3>
-                        <button
-                            className="edit-btn bg-yellow-500 text-white py-1 px-2 rounded mt-2"
-                            onClick={() => setEditService(serv)}
-                        >
-                            Edit
-                        </button>
-                    </div>
-                ))}
+            <div className="flex flex-wrap justify-center">
+    {services.map((serv) => (
+        serv &&
+        <div key={serv.id} className="service-card border border-gray-300 m-4 p-4 w-64">
+            <img src={serv.image} alt={serv.title} className="mb-2 h-32 w-full object-cover" />
+            <h3 className="font-bold">{serv.title}</h3>
+            <div className="flex justify-between mt-2">
+                <button
+                    className="edit-btn bg-yellow-500 text-white py-1 px-2 rounded"
+                    onClick={() => setEditService(serv)}
+                >
+                    Edit
+                </button>
+                <button
+                    className="delete-btn bg-red-500 text-white py-1 px-2 rounded"
+                    onClick={() => handleDeleteService(serv.id)}
+                >
+                    Delete
+                </button>
+            </div>
+        </div>
+    ))}
+</div>
+
             </div>
         </>
     );
