@@ -180,7 +180,7 @@ const ServicesPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map(serv => (
                     serv &&
-                    <div key={serv.id} className="service-card rounded-lg border border-gray-300 m-4 p-4">
+                    <div key={serv.id} className="service-card rounded-lg border border-gray-300 p-4">
                         <img src={serv.image} alt={serv.title} className="rounded-lg my-5 h-40 object-cover w-auto" />
                         <h3 className="font-bold">{serv.title}</h3>
                         <p className="font-bold">{serv.description}</p>
