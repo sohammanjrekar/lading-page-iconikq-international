@@ -9,7 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Import the Raleway font from the local file
 const raleway = localFont({
-  src: '/Raleway.ttf', // Path to the font file
+  src: '../public/Raleway.ttf', // Path to the font file
   variable: '--font-raleway', // CSS variable to reference this font
   display: 'swap',
 });
