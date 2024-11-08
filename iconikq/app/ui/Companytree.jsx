@@ -21,7 +21,7 @@ const Companies = () => {
             alt="Iconikq"
             width={400}
             height={400}
-            className="mx-auto h-[20vh]  mb-4"
+            className="mx-auto h-[30vh]  mb-4"
           />
           <h3 className="text-2xl font-semibold text-blue-gray-900">IconikQ - Freight Forwarding</h3>
           <p className="text-gray-600 mt-2">
@@ -36,7 +36,7 @@ const Companies = () => {
             alt="Sheron Customs Broker"
             width={400}
             height={400}
-            className="mx-auto h-[20vh]  mb-4"
+            className="mx-auto h-[30vh]  mb-4"
           />
           <h3 className="text-2xl font-semibold text-blue-gray-900">Sheron  - Customs Brokers</h3>
           <p className="text-gray-600 mt-2">
@@ -51,7 +51,7 @@ const Companies = () => {
             alt="Amity Logistics and Customs Broker"
             width={400}
             height={400}
-            className="mx-auto  h-[20vh] mb-4"
+            className="mx-auto  h-[30vh] mb-4"
           />
           <h3 className="text-2xl font-semibold text-blue-gray-900">Amity - Logistics & Customs Broker</h3>
           <p className="text-gray-600 mt-2">
