@@ -58,7 +58,7 @@ const Footer = () => {
                 <Link className="hover:text-myred" href="/services/freight-forwarding">Freight Forwarding</Link>
                 <Link className="hover:text-myred" href="/services/inventory-management">Inventory Management</Link>
                 <Link className="hover:text-myred" href="/services/supply-chain-consulting">Supply Chain Consulting</Link>
-                <Link className="hover:text-myred" href="/services/aeo-consultants">AEO Consultants</Link>
+                <Link className="hover:text-myred" href="/services/legal-consultants">Legal Consultants</Link>
               </nav>
             </div>
 
