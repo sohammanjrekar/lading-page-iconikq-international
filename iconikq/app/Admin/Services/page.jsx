@@ -139,12 +139,12 @@ const ServicesPage = () => {
 
     const slugOptions = [
         { value: '', label: 'Select Category' },
-        { value: 'Transportation', label: 'Transportation' },
-        { value: 'Freight Forwarding', label: 'Freight Forwarding' },
-        { value: 'Inventory Management', label: 'Inventory Management' },
-        { value: 'Custom Broker Services', label: 'Custom Broker Services' },
-        { value: 'Supply Chain Consulting', label: 'Supply Chain Consulting' },
-        { value: 'Legal Consultants', label: 'Legal Consultants' },
+        { value: 'transportation', label: 'Transportation' },
+        { value: 'freight-forwarding', label: 'Freight Forwarding' },
+        { value: 'inventory-management', label: 'Inventory Management' },
+        { value: 'custom-broker-services', label: 'Custom Broker Services' },
+        { value: 'supply-chain-consulting', label: 'Supply Chain Consulting' },
+        { value: 'legal-consultants', label: 'Legal Consultants' },
     ];
 
     return (

@@ -16,31 +16,31 @@ const Services = () => {
       image: '/images/freight forwarder.png',
       title: 'FREIGHT FORWARDING',
       description: 'Iconikq International offers reliable global freight forwarding with tailored air and sea cargo solutions. Our expert team ensures smooth shipping and flexible delivery to key markets worldwide.',
-      link: '/services/freight-forwarding', // Replace with actual link
+      link: 'freight-forwarding', // Replace with actual link
     },
     {
       image: '/images/inventory.jpg',
       title: 'INVENTORY MANAGEMENT',
       description: 'Iconikq International offers expert inventory management services to streamline your supply chain. Our solutions ensure optimal stock levels, reduce costs, and enhance order accuracy.',
-      link: '/services/inventory-management', // Replace with actual link
+      link: 'inventory-management', // Replace with actual link
     },
     {
       image: '/images/custom.jpg',
       title: 'CUSTOM BROKER SERVICES',
       description: 'Iconikq International provides fast and reliable sea and air customs clearance. Our expert team ensures smooth processing with services like import/export clearance, documentation, shipment examination, and warehousing.',
-      link: '/services/custom-broker-services', // Replace with actual link
+      link: 'custom-broker-services', // Replace with actual link
     },
     {
       image: '/images/supply.png',
       title: 'SUPPLY CHAIN CONSULTING',
       description: 'We offer expert supply chain consulting services, optimizing logistics for seamless operations. From customs clearance to freight management, we streamline your entire supply chain.',
-      link: '/services/supply-chain-consulting', // Replace with actual link
+      link: 'supply-chain-consulting', // Replace with actual link
     },
     {
       image: '/images/aeo.jpg',
       title: 'Legal CONSULTANTS',
       description: 'Our AEO certification offers significant benefits, including faster customs clearance, reduced inspections, and priority treatment. Maximize efficiency and minimize delays with our trusted AEO status.',
-      link: '/services/Legal Consultants', // Replace with actual link
+      link: 'legal-consultants', // Replace with actual link
     },
   ];
 
@@ -79,7 +79,7 @@ const Services = () => {
                         ? `${card.description.slice(0, 130)}...`
                         : card.description}
                     </p>
-                    <Button text="View Details" href={card.link} />
+                    <Button text="View Details" href={`/Services/${card.link}`}  />
                   </div>
                 </div>
               </div>
