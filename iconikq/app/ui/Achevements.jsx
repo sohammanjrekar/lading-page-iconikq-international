@@ -8,8 +8,7 @@ const Achievements = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Access store state and actions
-  const { achievementData, loading, fetchAchievementData } =
-    useAchievementStore();
+  const { achievementData, loading, fetchAchievementData } = useAchievementStore();
 
   // Fetch achievements on component mount
   useEffect(() => {
@@ -38,11 +37,11 @@ const Achievements = () => {
           Read about our latest achievements and milestones.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2">
           {achievementData.map((achievement) => (
             <div
               key={achievement.id}
-              className="relative flex flex-col bg-clip-border bg-transparent text-gray-700 shadow-md min-h-[30rem] overflow-hidden rounded-xl cursor-pointer"
+              className="relative group flex flex-col bg-clip-border bg-transparent text-gray-700 shadow-md min-h-[30rem] overflow-hidden rounded-xl cursor-pointer"
               onClick={() => openModal(achievement.image_url)}
             >
               <Image
@@ -54,7 +53,7 @@ const Achievements = () => {
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-black opacity-30"></div>
-              <div className="absolute bottom-0 p-6 bg-gradient-to-t from-black to-transparent w-full">
+              <div className="absolute bottom-0 p-6 bg-gradient-to-t from-black to-transparent w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h4 className="text-white text-2xl font-semibold">
                   {achievement.title}
                 </h4>
