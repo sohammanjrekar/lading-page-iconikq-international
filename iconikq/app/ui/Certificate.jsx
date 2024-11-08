@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { useCertificateStore } from '../store/certificateStore';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { useCertificateStore } from "../store/certificateStore";
 
 // Modal Component
 const Modal = ({ showModal, setShowModal, certificate }) => {
@@ -12,10 +12,10 @@ const Modal = ({ showModal, setShowModal, certificate }) => {
       className="fixed inset-0 bg-myblue bg-opacity-75 flex justify-center items-center z-50"
       onClick={() => setShowModal(false)}
     >
-      <Image 
+      <Image
         loading="lazy"
         className="h-[90vh] rounded-lg object-cover"
-        src={certificate.image_url} 
+        src={certificate.image_url}
         alt={certificate.title}
         width={800}
         height={800}
@@ -28,7 +28,8 @@ const Modal = ({ showModal, setShowModal, certificate }) => {
 const Certificate = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
-  const { certificateData, loading, error, fetchCertificateData } = useCertificateStore();
+  const { certificateData, loading, error, fetchCertificateData } =
+    useCertificateStore();
 
   useEffect(() => {
     fetchCertificateData(); // Fetch data from the store when the component mounts
@@ -59,9 +60,9 @@ const Certificate = () => {
               className="relative shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 group"
             >
               <div className="relative w-full h-full">
-                <Image 
+                <Image
                   loading="lazy"
-                  src={certificate.image_url} 
+                  src={certificate.image_url}
                   alt={certificate.title}
                   className="w-full h-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-70"
                   width={500}
@@ -69,7 +70,9 @@ const Certificate = () => {
                   layout="responsive"
                 />
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-myblue backdrop-blur-xl text-white p-4 rounded-b-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                  <h1 className="text-xl text-myred font-semibold">{certificate.title}</h1>
+                  <h1 className="text-xl text-myred font-semibold">
+                    {certificate.title}
+                  </h1>
                   <p className="mt-2 text-md">{certificate.description}</p>
                 </div>
               </div>

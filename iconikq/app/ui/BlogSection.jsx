@@ -1,9 +1,9 @@
 "use client";
-import Image from 'next/image';
-import Button from '../ui/Button';
-import { useEffect } from 'react';
-import { useBlogStore } from '../store/blogStore';
-import Link from 'next/link';
+import Image from "next/image";
+import Button from "../ui/Button";
+import { useEffect } from "react";
+import { useBlogStore } from "../store/blogStore";
+import Link from "next/link";
 
 const BlogPage = () => {
   const { blogPosts, fetchBlogPosts, loading, error } = useBlogStore();
@@ -20,16 +20,16 @@ const BlogPage = () => {
     }
     return new Date(dateStr); // Directly create a Date object from the string
   };
-  
+
   const formatDate = (dateStr) => {
     const date = convertToDate(dateStr);
     if (isNaN(date)) {
       return "Invalid Date"; // Return a message for invalid dates
     }
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return date.toLocaleDateString("en-US", options);
   };
-  
+
   // Sort blog posts based on date
   const sortedBlogData = blogPosts
     .slice() // Create a shallow copy of the blogPosts array
@@ -69,9 +69,13 @@ const BlogPage = () => {
                       {post.title || "Untitled"}
                     </p>
                   </Link>
-                  <span className="text-sm text-white">On: {formatDate(post.date) || "Unknown date"}</span>
+                  <span className="text-sm text-white">
+                    On: {formatDate(post.date) || "Unknown date"}
+                  </span>
                   <p className="text-sm text-white mb-2">
-                    {post.passage1.substring(0, 200) || "No description available"}...
+                    {post.passage1.substring(0, 200) ||
+                      "No description available"}
+                    ...
                   </p>
                   <Button text="Read More" href={`/Blog/${post.id}`} />
                 </div>

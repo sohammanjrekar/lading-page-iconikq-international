@@ -8,7 +8,8 @@ const Achievements = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Access store state and actions
-  const { achievementData, loading, fetchAchievementData } = useAchievementStore();
+  const { achievementData, loading, fetchAchievementData } =
+    useAchievementStore();
 
   // Fetch achievements on component mount
   useEffect(() => {
@@ -54,8 +55,12 @@ const Achievements = () => {
               />
               <div className="absolute inset-0 bg-black opacity-30"></div>
               <div className="absolute bottom-0 p-6 bg-gradient-to-t from-black to-transparent w-full">
-                <h4 className="text-white text-2xl font-semibold">{achievement.title}</h4>
-                <p className="text-white text-base mt-2">{achievement.description}</p>
+                <h4 className="text-white text-2xl font-semibold">
+                  {achievement.title}
+                </h4>
+                <p className="text-white text-base mt-2">
+                  {achievement.description}
+                </p>
               </div>
             </div>
           ))}

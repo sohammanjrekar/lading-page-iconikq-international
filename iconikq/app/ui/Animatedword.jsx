@@ -2,22 +2,30 @@
 import { useEffect, useState } from "react";
 
 const AnimatedWord = () => {
-  const [visibleWords, setVisibleWords] = useState([false, false, false, false, false]);
+  const [visibleWords, setVisibleWords] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   // Use useEffect to control visibility of each word after mounting
   useEffect(() => {
     const timers = [];
-    
+
     // Set a timeout for each word to become visible
     const words = [0, 1, 2, 3, 4]; // Array representing the index of words
     words.forEach((index, i) => {
-      timers.push(setTimeout(() => {
-        setVisibleWords((prev) => {
-          const newVisible = [...prev];
-          newVisible[index] = true; // Set the current word to visible
-          return newVisible;
-        });
-      }, i * 3400)); // Staggered delay (1400ms for each word)
+      timers.push(
+        setTimeout(() => {
+          setVisibleWords((prev) => {
+            const newVisible = [...prev];
+            newVisible[index] = true; // Set the current word to visible
+            return newVisible;
+          });
+        }, i * 3400)
+      ); // Staggered delay (1400ms for each word)
     });
 
     // Cleanup timers on unmount
@@ -35,7 +43,9 @@ const AnimatedWord = () => {
   ];
 
   return (
-    <div className={`flex h-[10vh] container sm:min-h-[20vh] rounded-t-[20px] items-center justify-center font-bold text-myblue`}>
+    <div
+      className={`flex h-[10vh] container sm:min-h-[20vh] rounded-t-[20px] items-center justify-center font-bold text-myblue`}
+    >
       <div className="text-center md:space-y-5">
         <div className="text-center text-lg md:text-xl uppercase lg:text-5xl font-bold">
           Services offered
@@ -44,7 +54,9 @@ const AnimatedWord = () => {
               <span
                 key={index}
                 className={`animate-word col-span-full row-span-full flex justify-center items-center ${
-                  visibleWords[index] ? `animate-word-delay-${index + 1}` : "invisible"
+                  visibleWords[index]
+                    ? `animate-word-delay-${index + 1}`
+                    : "invisible"
                 }`}
               >
                 {word}

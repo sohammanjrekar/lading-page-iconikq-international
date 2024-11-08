@@ -1,10 +1,10 @@
-
-import Image from 'next/image';
+import Image from "next/image";
 
 const BlogPost = ({ title, imgSrc, description }) => (
   <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
     <div className="rounded-lg h-64 overflow-hidden">
-      <Image loading="lazy" 
+      <Image
+        loading="lazy"
         alt="content"
         className="object-cover object-center h-full w-full"
         src={imgSrc}
@@ -12,9 +12,7 @@ const BlogPost = ({ title, imgSrc, description }) => (
         objectFit="cover"
       />
     </div>
-    <h2 className="text-xl font-medium title-font text-white mt-5">
-      {title}
-    </h2>
+    <h2 className="text-xl font-medium title-font text-white mt-5">{title}</h2>
     <p className="text-base leading-relaxed mt-2">{description}</p>
     <a className="text-indigo-400 inline-flex items-center mt-3">
       Learn More
@@ -36,22 +34,22 @@ const BlogPost = ({ title, imgSrc, description }) => (
 const Blog2 = () => {
   const posts = [
     {
-      title: 'Shooting Stars',
-      imgSrc: 'https://dummyimage.com/1203x503',
+      title: "Shooting Stars",
+      imgSrc: "https://dummyimage.com/1203x503",
       description:
-        'Swag shoindxgoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.',
+        "Swag shoindxgoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.",
     },
     {
-      title: 'The Catalyzer',
-      imgSrc: 'https://dummyimage.com/1204x504',
+      title: "The Catalyzer",
+      imgSrc: "https://dummyimage.com/1204x504",
       description:
-        'Swag shoindxgoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.',
+        "Swag shoindxgoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.",
     },
     {
-      title: 'The 400 Blows',
-      imgSrc: 'https://dummyimage.com/1205x505',
+      title: "The 400 Blows",
+      imgSrc: "https://dummyimage.com/1205x505",
       description:
-        'Swag shoindegoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.',
+        "Swag shoindegoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.",
     },
   ];
 

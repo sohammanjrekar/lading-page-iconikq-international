@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 const AboutSection = () => {
   return (
@@ -9,7 +9,8 @@ const AboutSection = () => {
           <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-4">
               <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
-                <Image loading="lazy" 
+                <Image
+                  loading="lazy"
                   width={500}
                   height={500}
                   layout="responsive"
@@ -46,11 +47,11 @@ const AboutSection = () => {
                   <blockquote className="mt-6 text-xl font-semibold leading-8 text-white">
                     <p>
                       What happens is not as important as how you react to what
-                      happens. &ldquo;The journey of a thousand miles begins with one
-                      step.&rdquo; &ldquo;The only true wisdom is in knowing you know nothing.&rdquo;
-                      Just as treasures are uncovered from the earth, so virtue
-                      appears from good deeds, and wisdom appears from a pure and
-                      peaceful mind..
+                      happens. &ldquo;The journey of a thousand miles begins
+                      with one step.&rdquo; &ldquo;The only true wisdom is in
+                      knowing you know nothing.&rdquo; Just as treasures are
+                      uncovered from the earth, so virtue appears from good
+                      deeds, and wisdom appears from a pure and peaceful mind..
                     </p>
                   </blockquote>
                   <figcaption className="mt-6 text-sm leading-6 text-gray-300">
@@ -71,11 +72,12 @@ const AboutSection = () => {
                   Peaceful minds
                 </h1>
                 <p className="mt-6 text-lg text-gray-700">
-                  Just as treasures are uncovered from the earth, so virtue appears
-                  from good deeds, and wisdom appears from a pure and peaceful
-                  mind. A man who does not think and express himself clearly, and
-                  who has difficulty getting his ideas across to others, can hardly
-                  expect to be understood or get the results he desires.
+                  Just as treasures are uncovered from the earth, so virtue
+                  appears from good deeds, and wisdom appears from a pure and
+                  peaceful mind. A man who does not think and express himself
+                  clearly, and who has difficulty getting his ideas across to
+                  others, can hardly expect to be understood or get the results
+                  he desires.
                 </p>
                 <div className="mt-8">
                   <a
