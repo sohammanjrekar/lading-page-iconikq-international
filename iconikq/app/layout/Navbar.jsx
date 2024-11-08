@@ -104,7 +104,7 @@ const Navbar = () => {
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center list-none">
             {renderLinks(isAdmin ? [...adminLinks] : commonLinks)}
             {/* Search bar */}
-            <li>
+            {/* <li>
               <form action="" className="relative mx-auto w-max">
                 <input
                   type="search"
@@ -125,7 +125,7 @@ const Navbar = () => {
                   />
                 </svg>
               </form>
-            </li>
+            </li> */}
           </ul>
         </div>
 

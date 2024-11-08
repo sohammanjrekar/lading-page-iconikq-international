@@ -54,4 +54,13 @@ export const useServicesStore = create((set) => ({
       set({ error: 'Failed to fetch single service data', loading: false });
     }
   },
+   // Set the search query and filter services
+   setSearchQuery: (query) => {
+    set((state) => {
+      const filteredServices = state.servicesData.filter((service) =>
+        service.title.toLowerCase().includes(query.toLowerCase())
+      );
+      return { searchQuery: query, filteredServices };
+    });
+  },
 }));
