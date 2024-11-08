@@ -13,7 +13,7 @@ const videoData = {
         
     },
     2: {
-        src: 'https://res.cloudinary.com/mybazaar/video/upload/v1730380667/iconikq/road_vrbxde.mp4',
+        src: 'https://res.cloudinary.com/mybazaar/video/upload/v1731070872/iconikq/Untitled_design_1_d49zgc.mp4',
         name: 'Smooth. Efficient. Connect Seamlessly.',
        
     },
@@ -34,7 +34,7 @@ const VideoCarousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const totalItems = Object.keys(videoData).length;
-    const autoScrollInterval = 7000; // Change video every 7 seconds
+    const autoScrollInterval = 8000; // Change video every 7 seconds
 
     const updateCarousel = useCallback((index) => {
         if (carouselInnerRef.current) {
@@ -85,7 +85,7 @@ const VideoCarousel = () => {
                                 muted
                                 autoPlay
                                 priority
-                                quality={75}
+                                quality={100}
                             >
                                 <source src={src} type="video/mp4" />
                             </video>

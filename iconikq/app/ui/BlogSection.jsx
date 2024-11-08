@@ -65,18 +65,22 @@ const BlogPage = () => {
                 </div>
                 <div className="flex flex-col justify-center items-start gap-2 sm:justify-between py-1 lg:mx-6">
                   <Link href={`/Blog/${post.id}`}>
-                    <p className="text-xl font-semibold hover:underline text-myred">
-                      {post.title || "Untitled"}
-                    </p>
+                  <p
+  className="text-2xl font-bold text-myred hover:underline leading-relaxed tracking-wide drop-shadow-sm"
+>
+  {post.title || "Untitled"}
+</p>
+
                   </Link>
-                  <span className="text-sm text-white">
+                  <span className="text-lg text-white">
                     On: {formatDate(post.date) || "Unknown date"}
                   </span>
-                  <p className="text-sm text-white mb-2">
-                    {post.passage1.substring(0, 200) ||
-                      "No description available"}
-                    ...
-                  </p>
+                  <p
+  className="text-xl text-white leading-snug mb-2 drop-shadow-sm"
+>
+  {post.passage1?.substring(0, 200) || "No description available"}...
+</p>
+
                   <Button text="Read More" href={`/Blog/${post.id}`} />
                 </div>
               </div>
