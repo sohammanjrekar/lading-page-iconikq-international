@@ -8,10 +8,9 @@ const Footer = () => {
     <footer className="bg-myblue shadow-3xl shadow-white">
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
           {/* Newsletter Section */}
           <div className="sm:col-span-2 pl-7 lg:col-span-1 flex flex-col items-center lg:items-start">
-            <Image 
+            <Image
               width={500}
               height={500}
               priority
@@ -37,28 +36,66 @@ const Footer = () => {
 
           {/* Footer Links Section */}
           <div className="grid grid-cols-1 sm:col-span-2 gap=8 md:gap-10 lg:grid-cols-3 sm:grid-cols-3 lg:col-span-3 mx-auto items-start justify-items-center text-center">
-
             {/* Company Section */}
             <div className="flex flex-col my-4">
-              <p className="font-medium text-bold text-2xl text-myred">Company</p>
+              <p className="font-medium text-bold text-2xl text-myred">
+                Company
+              </p>
               <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight">
-                <Link className="hover:text-myred" href="/About">About</Link>
-                <Link className="hover:text-myred" href="/Faq">FAQ</Link>
-                <Link className="hover:text-myred" href="/Media">Media</Link>
-                <Link className="hover:text-myred" href="/Blog">Blogs</Link>
+                <Link className="hover:text-myred" href="/About">
+                  About
+                </Link>
+                <Link className="hover:text-myred" href="/Faq">
+                  FAQ
+                </Link>
+                <Link className="hover:text-myred" href="/Media">
+                  Media
+                </Link>
+                <Link className="hover:text-myred" href="/Blog">
+                  Blogs
+                </Link>
               </nav>
             </div>
 
             {/* Services Section */}
             <div className="flex flex-col my-4">
-              <p className="font-medium text-bold text-2xl text-myred">Services</p>
+              <p className="font-medium text-bold text-2xl text-myred">
+                Services
+              </p>
               <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight">
-                <Link className="hover:text-myred" href="/services/transportation">Transportation</Link>
-                <Link className="hover:text-myred" href="/services/warehousing">Warehousing</Link>
-                <Link className="hover:text-myred" href="/services/freight-forwarding">Freight Forwarding</Link>
-                <Link className="hover:text-myred" href="/services/inventory-management">Inventory Management</Link>
-                <Link className="hover:text-myred" href="/services/supply-chain-consulting">Supply Chain Consulting</Link>
-                <Link className="hover:text-myred" href="/services/legal-consultants">Legal Consultants</Link>
+                <Link
+                  className="hover:text-myred"
+                  href="/services/transportation"
+                >
+                  Transportation
+                </Link>
+                <Link className="hover:text-myred" href="/services/warehousing">
+                  Warehousing
+                </Link>
+                <Link
+                  className="hover:text-myred"
+                  href="/services/freight-forwarding"
+                >
+                  Freight Forwarding
+                </Link>
+                <Link
+                  className="hover:text-myred"
+                  href="/services/inventory-management"
+                >
+                  Inventory Management
+                </Link>
+                <Link
+                  className="hover:text-myred"
+                  href="/services/supply-chain-consulting"
+                >
+                  Supply Chain Consulting
+                </Link>
+                <Link
+                  className="hover:text-myred"
+                  href="/services/legal-consultants"
+                >
+                  Legal Consultants
+                </Link>
               </nav>
             </div>
 
@@ -66,12 +103,17 @@ const Footer = () => {
             <div className="flex flex-col my-4">
               <p className="font-medium text-bold text-2xl text-myred">Legal</p>
               <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight">
-                <Link className="hover:text-myred" href="/Privacy">Privacy Policy</Link>
-                <Link className="hover:text-myred" href="/Terms">Terms & Conditions</Link>
-                <Link className="hover:text-myred" href="/Accessibility">Accessibility</Link>
+                <Link className="hover:text-myred" href="/Privacy">
+                  Privacy Policy
+                </Link>
+                <Link className="hover:text-myred" href="/Terms">
+                  Terms & Conditions
+                </Link>
+                <Link className="hover:text-myred" href="/Accessibility">
+                  Accessibility
+                </Link>
               </nav>
             </div>
-
           </div>
         </div>
       </div>
@@ -79,7 +121,8 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="px-8 py-3 mt-10 flex flex-col sm:flex-row flex-wrap justify-center sm:justify-between items-center shadow-2xl bg-myblue shadow-white">
         <div className="text-[2vh] md:text-sm text-bold my-4 mx-2 text-gray-300">
-          © 2024 <span className="text-myred">ICONIKQ</span>. All Rights Reserved.
+          © 2024 <span className="text-myred">ICONIKQ</span>. All Rights
+          Reserved.
         </div>
         <Social />
       </div>

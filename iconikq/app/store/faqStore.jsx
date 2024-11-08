@@ -1,6 +1,6 @@
 // store/faqStore.js
-import { create } from 'zustand';
-import { supabase } from '../utils/supabase/client';
+import { create } from "zustand";
+import { supabase } from "../utils/supabase/client";
 
 export const useFaqStore = create((set) => ({
   faqData: [],
@@ -10,12 +10,12 @@ export const useFaqStore = create((set) => ({
   fetchFaqData: async () => {
     set({ loading: true, error: null });
     try {
-      const { data, error } = await supabase.from('faqs').select('*');
+      const { data, error } = await supabase.from("faqs").select("*");
       if (error) throw error;
       set({ faqData: data, loading: false });
     } catch (err) {
-      console.error('Error fetching FAQ data:', err);
-      set({ error: 'Failed to fetch FAQ data', loading: false });
+      console.error("Error fetching FAQ data:", err);
+      set({ error: "Failed to fetch FAQ data", loading: false });
     }
   },
 }));

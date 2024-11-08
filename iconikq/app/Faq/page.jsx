@@ -1,6 +1,6 @@
 "use client";
-import { useEffect } from 'react';
-import { useFaqStore } from '../store/faqStore';
+import { useEffect } from "react";
+import { useFaqStore } from "../store/faqStore";
 
 const FAQ = () => {
   const { faqData, fetchFaqData, loading, error } = useFaqStore();
@@ -17,7 +17,9 @@ const FAQ = () => {
     <div className="mx-auto min-h-screen mt-12 py-16 px-5 container bg-white">
       <div className="flex flex-col items-center">
         <h2 className="font-bold text-5xl mt-5 tracking-tight">FAQ</h2>
-        <p className="text-neutral-500 text-2xl mt-3">Frequently asked questions</p>
+        <p className="text-neutral-500 text-2xl mt-3">
+          Frequently asked questions
+        </p>
       </div>
 
       <div className="grid divide-y divide-neutral-200 mx-auto mt-8">
@@ -25,7 +27,11 @@ const FAQ = () => {
           <div className="py-5" key={faq.id}>
             <details className="group">
               <summary className="flex justify-between text-xl items-center font-medium cursor-pointer list-none">
-                <span className='text-myblue'> <span className='text-myred'>Q.{index + 1}</span> &ensp;  {faq.question}</span>
+                <span className="text-myblue">
+                  {" "}
+                  <span className="text-myred">Q.{index + 1}</span> &ensp;{" "}
+                  {faq.question}
+                </span>
                 <span className="text-myred transition group-open:rotate-180">
                   <svg
                     fill="none"

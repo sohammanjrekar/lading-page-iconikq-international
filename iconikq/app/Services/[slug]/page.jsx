@@ -1,13 +1,14 @@
 "use client";
-import { useEffect } from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useServicesStore } from '../../store/servicesStore';
+import { useEffect } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { useServicesStore } from "../../store/servicesStore";
 
 const CategoryPage = ({ params }) => {
   const { slug } = params; // Category slug from the URL
-  const { servicesData, loading, error, fetchServicesData } = useServicesStore();
+  const { servicesData, loading, error, fetchServicesData } =
+    useServicesStore();
 
   useEffect(() => {
     if (slug) {
@@ -44,7 +45,9 @@ const CategoryPage = ({ params }) => {
   }
 
   // Set dynamic title and description
-  const title = `ICONIKQ | ${slug.charAt(0).toUpperCase() + slug.slice(1)} Services`;
+  const title = `ICONIKQ | ${
+    slug.charAt(0).toUpperCase() + slug.slice(1)
+  } Services`;
   const description = `Explore our ${slug} services at ICONIKQ. We provide exceptional logistics solutions tailored to your needs.`;
 
   return (
@@ -54,12 +57,17 @@ const CategoryPage = ({ params }) => {
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content={`https://www.iconikq.com/services/${slug}`} />
+        <meta
+          property="og:url"
+          content={`https://www.iconikq.com/services/${slug}`}
+        />
       </Head>
 
       <section className="pt-20 lg:pt-[120px] pb-5 lg:pb-10 bg-[#F3F4F6]">
         <div className="container mx-auto">
-          <h1 className="text-4xl mt-8 font-bold text-center mb-8">Services in {slug} Category</h1>
+          <h1 className="text-4xl mt-8 font-bold text-center mb-8">
+            Services in {slug} Category
+          </h1>
           <div className="flex flex-wrap mx-4">
             {servicesData.map((card, index) => (
               <div key={index} className="w-full md:w-1/2 xl:w-1/3 px-4">
@@ -73,10 +81,8 @@ const CategoryPage = ({ params }) => {
                     className="w-[500px] h-[300px] object-cover"
                   />
                   <div className="p-4 sm:p-6 text-center">
-                    <h3  className=" text-myred font-semibold text-dark text-xl mb-4 block hover:text-primary">
-                          {card.title}
-                        
-                      
+                    <h3 className=" text-myred font-semibold text-dark text-xl mb-4 block hover:text-primary">
+                      {card.title}
                     </h3>
                     <p className="text-base text-body-color leading-relaxed mb-7">
                       {card.description.length > 200
@@ -84,7 +90,6 @@ const CategoryPage = ({ params }) => {
                         : card.description}
                     </p>
                     {/* <Button text="View Details" href={`/Services/${card.categoryslug}/${card.id}`}  /> */}
-
                   </div>
                 </div>
               </div>

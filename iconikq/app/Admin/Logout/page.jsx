@@ -1,6 +1,6 @@
-"use client"
-import { useSessionStore } from '../../store/sessionStore';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useSessionStore } from "../../store/sessionStore";
+import { useRouter } from "next/navigation";
 
 const Logout = () => {
   const logout = useSessionStore((state) => state.logout);
@@ -8,7 +8,7 @@ const Logout = () => {
 
   const handleLogout = () => {
     logout();
-    router.push('/login');
+    router.push("/login");
   };
 
   return (

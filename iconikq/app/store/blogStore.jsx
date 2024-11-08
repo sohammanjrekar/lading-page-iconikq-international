@@ -1,6 +1,6 @@
 // store/blogStore.js
-import { create } from 'zustand';
-import { supabase } from '../utils/supabase/client';
+import { create } from "zustand";
+import { supabase } from "../utils/supabase/client";
 
 export const useBlogStore = create((set) => ({
   blogPosts: [],
@@ -10,12 +10,12 @@ export const useBlogStore = create((set) => ({
   fetchBlogPosts: async () => {
     set({ loading: true, error: null });
     try {
-      const { data, error } = await supabase.from('blog_posts').select('*');
+      const { data, error } = await supabase.from("blog_posts").select("*");
       if (error) throw error;
       set({ blogPosts: data, loading: false });
     } catch (err) {
-      console.error('Error fetching blog posts:', err);
-      set({ error: 'Failed to fetch blog posts', loading: false });
+      console.error("Error fetching blog posts:", err);
+      set({ error: "Failed to fetch blog posts", loading: false });
     }
   },
 }));

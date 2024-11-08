@@ -1,9 +1,9 @@
 "use client";
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useSessionStore } from '../store/sessionStore';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useSessionStore } from "../store/sessionStore";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ const Navbar = () => {
 
   // Check if user is authenticated
   const isAdmin = useSessionStore((state) => state.isAuthenticated);
-  console.log('Is Authenticated:', isAdmin); // Debugging line
+  console.log("Is Authenticated:", isAdmin); // Debugging line
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -20,7 +20,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    router.push('/Admin/Login');
+    router.push("/Admin/Login");
   };
 
   const commonLinks = [
@@ -45,15 +45,17 @@ const Navbar = () => {
     { href: "/Admin/Achievements", label: "Achievements" },
   ];
 
-  const renderLinks = (links) => (
-    links.map(link => (
+  const renderLinks = (links) =>
+    links.map((link) => (
       <li key={link.href}>
-        <Link href={link.href} className="block py-2 px-4 text-white hover:text-myred rounded md:bg-transparent md:px-2">
+        <Link
+          href={link.href}
+          className="block py-2 px-4 text-white hover:text-myred rounded md:bg-transparent md:px-2"
+        >
           {link.label}
         </Link>
       </li>
-    ))
-  );
+    ));
 
   return (
     <nav className="bg-myblue border w-full fixed z-50 border-gray-700 px-2 sm:px-8 py-[2vh] rounded-b-[20px] shadow-[inset_0_7px_5px_rgba(0,0,0,0.3),_0px_4px_10px_rgba(255,255,255,0.2)]">
@@ -78,14 +80,27 @@ const Navbar = () => {
             className="inline-flex items-center p-2 ml-3 text-sm rounded-lg focus:outline-none focus:ring-2 text-white hover:bg-gray-700 focus:ring-gray-600"
           >
             <span className="sr-only">Open main menu</span>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
             </svg>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`w-full sm:hidden ${menuOpen ? '' : 'hidden'}`} id="mobile-menu">
+        <div
+          className={`w-full sm:hidden ${menuOpen ? "" : "hidden"}`}
+          id="mobile-menu"
+        >
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium items-center list-none">
             {renderLinks(isAdmin ? [...adminLinks] : commonLinks)}
             {/* Search bar */}
@@ -95,8 +110,19 @@ const Navbar = () => {
                   type="search"
                   className="peer cursor-pointer relative z-10 h-10 w-10 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-myred focus:pl-16 focus:pr-4"
                 />
-                <svg xmlns="http://www.w3.org/2000/svg" className="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-myred peer-focus:stroke-myred" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-myred peer-focus:stroke-myred"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </form>
             </li>
@@ -111,9 +137,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-
       </div>
-
     </nav>
   );
 };
