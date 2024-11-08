@@ -79,7 +79,7 @@ const Gallery = () => {
           onClick={closeModal}
         >
           <Image loading="lazy"
-            className="h-[80vh] rounded-lg object-cover"
+            className="max-h-[80vh] rounded-lg object-cover"
             src={selectedImage}
             alt="Enlarged"
             width={800}

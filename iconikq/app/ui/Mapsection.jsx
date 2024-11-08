@@ -3,38 +3,45 @@ import React, { useState } from "react";
 import { supabase } from "../utils/supabase/client";
 
 const MapSection = () => {
-  const [name, setName] = useState(""); // Added state for name
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [tel, setTel] = useState(""); // Added state for phone number
+  const [tel, setTel] = useState("");
   const [message, setMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (e) => {
+  const addContact = async (e) => {
     e.preventDefault();
+    
+    // Check if all fields are filled
     if (!name || !email || !tel || !message) {
       setErrorMessage("Please fill out all fields.");
       return;
     }
 
+    // Insert contact details into the 'contacts' table in Supabase
     const { data, error } = await supabase
-      .from("feedback")
-      .insert([{ name, email, tel, message }]); // Insert all fields
+      .from("contacts")
+      .insert([{ name, email, phone: tel, messages: message }]);
 
     if (error) {
-      setErrorMessage(`Failed to send feedback: ${error.message}`);
+      setErrorMessage(`Failed to add contact: ${error.message}`);
       setSuccessMessage("");
     } else {
       setSuccessMessage("Thank you for your feedback!");
       setErrorMessage("");
+      
+      // Clear input fields after successful submission
       setName("");
       setEmail("");
       setTel("");
       setMessage("");
 
+      // Clear success message after 3 seconds
       setTimeout(() => setSuccessMessage(""), 3000);
     }
 
+    // Clear error message after 3 seconds
     setTimeout(() => setErrorMessage(""), 3000);
   };
 
@@ -64,7 +71,7 @@ const MapSection = () => {
             Iconikq International.
           </p>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={addContact}>
             <div className="mb-6">
               <input
                 type="text"
