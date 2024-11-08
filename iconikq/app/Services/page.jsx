@@ -40,7 +40,7 @@ const Services = () => {
       image: '/images/aeo.jpg',
       title: 'Legal CONSULTANTS',
       description: 'Our AEO certification offers significant benefits, including faster customs clearance, reduced inspections, and priority treatment. Maximize efficiency and minimize delays with our trusted AEO status.',
-      link: '/services/legal-consultants', // Replace with actual link
+      link: '/services/Legal Consultants', // Replace with actual link
     },
   ];
 
