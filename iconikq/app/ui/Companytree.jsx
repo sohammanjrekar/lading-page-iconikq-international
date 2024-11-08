@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Companies = () => {
   return (
-    <div className="container mx-auto py-16 px-8 space-y-12">
+    <div className="container mx-auto py-8 px-8 space-y-12">
       {/* Header Section */}
       <section className="text-center">
         <h1 className="text-5xl font-bold text-blue-gray-900 mb-4">Our Companies</h1>
