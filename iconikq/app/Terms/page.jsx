@@ -10,7 +10,7 @@ const page = () => {
   return (
     <div className="p-6 mt-24 max-w-[80vw] mx-auto text-gray-800">
       <h2 className="text-3xl font-bold border-b-4 border-blue-600 pb-3">
-        n Terms and Conditions
+        Terms and Conditions
       </h2>
       <p>Last updated: October 23, 2024</p>
       <p>
