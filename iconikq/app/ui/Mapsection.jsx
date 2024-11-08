@@ -1,24 +1,25 @@
 "use client";
 import React, { useState } from "react";
-import Button from "./Button"; // Import custom Button component
 import { supabase } from "../utils/supabase/client";
 
 const MapSection = () => {
+  const [name, setName] = useState(""); // Added state for name
   const [email, setEmail] = useState("");
+  const [tel, setTel] = useState(""); // Added state for phone number
   const [message, setMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !message) {
+    if (!name || !email || !tel || !message) {
       setErrorMessage("Please fill out all fields.");
       return;
     }
 
     const { data, error } = await supabase
       .from("feedback")
-      .insert([{ email, message }]);
+      .insert([{ name, email, tel, message }]); // Insert all fields
 
     if (error) {
       setErrorMessage(`Failed to send feedback: ${error.message}`);
@@ -26,7 +27,9 @@ const MapSection = () => {
     } else {
       setSuccessMessage("Thank you for your feedback!");
       setErrorMessage("");
+      setName("");
       setEmail("");
+      setTel("");
       setMessage("");
 
       setTimeout(() => setSuccessMessage(""), 3000);
@@ -62,52 +65,51 @@ const MapSection = () => {
           </p>
 
           <form onSubmit={handleSubmit}>
-          <div className="mb-6">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <input
-                      type="tel"
-                      placeholder="Your Phone"
-                      value={tel}
-                      onChange={(e) => setTel(e.target.value)}
-                      className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <textarea
-                      rows="6"
-                      placeholder="Your Message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] resize-none outline-none focus-visible:shadow-none focus:border-primary"
-                    ></textarea>
-                  </div>
-                  <div>
-                    <button
-                      type="submit"
-                      className="w-full text-white bg-myred rounded shadow-inner shadow-red-200 p-3 transition hover:bg-opacity-90"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </form>
-              
+            <div className="mb-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full rounded py-3 px-[14px] text-body-color text-base border border-gray-300 outline-none focus:border-primary"
+              />
+            </div>
+            <div className="mb-6">
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full rounded py-3 px-[14px] text-body-color text-base border border-gray-300 outline-none focus:border-primary"
+              />
+            </div>
+            <div className="mb-6">
+              <input
+                type="tel"
+                placeholder="Your Phone"
+                value={tel}
+                onChange={(e) => setTel(e.target.value)}
+                className="w-full rounded py-3 px-[14px] text-body-color text-base border border-gray-300 outline-none focus:border-primary"
+              />
+            </div>
+            <div className="mb-6">
+              <textarea
+                rows="6"
+                placeholder="Your Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full rounded py-3 px-[14px] text-body-color text-base border border-gray-300 resize-none outline-none focus:border-primary"
+              ></textarea>
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="w-full text-white bg-myred rounded shadow-inner shadow-red-200 p-3 transition hover:bg-opacity-90"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
 
           {successMessage && (
             <p className="text-green-600 mt-4">{successMessage}</p>
