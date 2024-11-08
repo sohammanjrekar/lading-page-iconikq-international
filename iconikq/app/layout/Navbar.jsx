@@ -103,7 +103,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="hidden sm:!flex items-center text-sm lg:text-xl space-x-7 md:space-x-4 sm:space-x-2 list-none">
+        <div className="hidden sm:!flex items-center text-sm lg:text-lg space-x-7 md:space-x-4 sm:space-x-2 list-none">
           {renderLinks(isAdmin ? adminLinks : commonLinks)}
           {isAdmin && (
             <button onClick={handleLogout} className="text-red-500">
