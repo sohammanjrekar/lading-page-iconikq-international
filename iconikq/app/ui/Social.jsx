@@ -11,9 +11,11 @@ const SocialButtons = () => {
     <div className="flex space-x-4">
       {/* YouTube Button */}
       <Tippy content="YouTube" animation="fade">
+        <Link href="https://www.youtube.com/@ICONIKQINTERNATIONAL">
         <button className="bg-white border-2 border-red-500 text-red-500 w-10 h-10 rounded-full transition-transform transform hover:-translate-y-3 hover:bg-red-500 hover:text-white duration-500">
           <FontAwesomeIcon icon={faYoutube} size="x" />
         </button>
+        </Link>
       </Tippy>
 
     
