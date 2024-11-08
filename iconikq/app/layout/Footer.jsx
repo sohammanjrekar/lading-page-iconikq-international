@@ -17,7 +17,7 @@ const Footer = () => {
               priority
               quality={75}
               className="mb-4 max-h-[50vh] sm:max-h-[20vh] lg:max-h-[20vh] max-w-[50vw] sm:!max-w-[20vw]"
-              src="/images/logo.png"
+              src="https://res.cloudinary.com/mybazaar/image/upload/v1731050860/iconikq/logo_dt9v6c.png"
               alt="Logo"
             />
             <h1 className="text-lg font-semibold tracking-tight xl:text-xl text-white text-center lg:text-left">

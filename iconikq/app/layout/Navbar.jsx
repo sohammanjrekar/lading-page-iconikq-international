@@ -65,7 +65,7 @@ const Navbar = () => {
             layout="responsive"
             priority
             quality={75}
-            src="/images/logo.png"
+            src="https://res.cloudinary.com/mybazaar/image/upload/v1731050860/iconikq/logo_dt9v6c.png"
             alt="Logo"
             className="max-h-[3vh] md:max-h-[4vh] lg:max-h-[6vh]"
           />

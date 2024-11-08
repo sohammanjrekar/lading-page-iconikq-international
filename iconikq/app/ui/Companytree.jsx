@@ -12,70 +12,53 @@ const Companies = () => {
         </p>
       </section>
 
-      {/* Parent Company Section */}
-      <section className="bg-blue-50 p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
-        <Image
-          src="/path/to/parent-company-logo.png" // Replace with actual logo path
-          alt="Parent Company Logo"
-          width={120}
-          height={120}
-          className="mb-4"
-        />
-        <h2 className="text-3xl font-semibold text-blue-gray-900">Parent Company</h2>
-        <p className="text-gray-700 mt-2 max-w-md">
-          Leading the charge in innovation and commitment, our parent company drives success across all our sister companies with a focus on quality, growth, and sustainability.
-        </p>
-      </section>
-
       {/* Sister Companies Section */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Sister Company 1 */}
+        {/* IconikQ (Freight Forwarding) */}
         <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
           <Image
-            src="/path/to/sister-company1-logo.png" // Replace with actual logo path
-            alt="Sister Company 1 Logo"
+            src="https://res.cloudinary.com/mybazaar/image/upload/v1731050860/iconikq/logo_dt9v6c.png"
+            alt="Iconikq"
             width={100}
             height={100}
             className="mx-auto mb-4"
           />
-          <h3 className="text-2xl font-semibold text-blue-gray-900">Sister Company 1</h3>
+          <h3 className="text-2xl font-semibold text-blue-gray-900">IconikQ - Freight Forwarding</h3>
           <p className="text-gray-600 mt-2">
-            Focused on delivering exceptional services in [industry 1], Sister Company 1 has set benchmarks with its innovative solutions and dedicated team.
+            IconikQ specializes in freight forwarding, providing efficient and reliable logistics solutions. We manage the movement of goods globally, ensuring timely delivery and cost-effective shipping strategies.
           </p>
         </div>
 
-        {/* Sister Company 2 */}
+        {/* Sheran (Customs Brokers) */}
         <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
           <Image
-            src="/path/to/sister-company2-logo.png" // Replace with actual logo path
-            alt="Sister Company 2 Logo"
+            src="https://res.cloudinary.com/mybazaar/image/upload/v1731050532/iconikq/amity_sharon_logo_1_i8ptah.png"
+            alt="Sheran Customs Broker"
             width={100}
             height={100}
             className="mx-auto mb-4"
           />
-          <h3 className="text-2xl font-semibold text-blue-gray-900">Sister Company 2</h3>
+          <h3 className="text-2xl font-semibold text-blue-gray-900">Sheran - Customs Brokers</h3>
           <p className="text-gray-600 mt-2">
-            A leader in [industry 2], Sister Company 2 offers pioneering solutions that enhance efficiency and bring about transformative change.
+            Sheran is a leading customs brokerage firm specializing in navigating the complexities of customs clearance. We provide expert advice and smooth handling of import/export processes to ensure compliance and efficiency.
           </p>
         </div>
 
-        {/* Sister Company 3 */}
+        {/* Amity (Logistics and Customs Broker) */}
         <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
           <Image
-            src="/path/to/sister-company3-logo.png" // Replace with actual logo path
-            alt="Sister Company 3 Logo"
+            src="https://res.cloudinary.com/mybazaar/image/upload/v1731050533/iconikq/amity_sharon_logo_2_zu2nex.png"
+            alt="Amity Logistics and Customs Broker"
             width={100}
             height={100}
             className="mx-auto mb-4"
           />
-          <h3 className="text-2xl font-semibold text-blue-gray-900">Sister Company 3</h3>
+          <h3 className="text-2xl font-semibold text-blue-gray-900">Amity - Logistics & Customs Broker</h3>
           <p className="text-gray-600 mt-2">
-            With an unwavering focus on [industry 3], Sister Company 3 is committed to driving excellence and delivering superior value to its customers.
+            Amity excels in logistics and customs brokerage services, offering tailored solutions for freight forwarding, supply chain management, and customs clearance. We help clients optimize their global supply chains with strategic insights and reliable execution.
           </p>
         </div>
       </section>
-
-     
     </div>
   );
 };
