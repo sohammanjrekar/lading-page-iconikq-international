@@ -19,9 +19,9 @@ const Companies = () => {
           <Image
             src="https://res.cloudinary.com/mybazaar/image/upload/v1731050860/iconikq/logo_dt9v6c.png"
             alt="Iconikq"
-            width={100}
-            height={100}
-            className="mx-auto mb-4"
+            width={400}
+            height={400}
+            className="mx-auto h-[20vh]  mb-4"
           />
           <h3 className="text-2xl font-semibold text-blue-gray-900">IconikQ - Freight Forwarding</h3>
           <p className="text-gray-600 mt-2">
@@ -33,12 +33,12 @@ const Companies = () => {
         <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
           <Image
             src="https://res.cloudinary.com/mybazaar/image/upload/v1731050532/iconikq/amity_sharon_logo_1_i8ptah.png"
-            alt="Sheran Customs Broker"
-            width={100}
-            height={100}
-            className="mx-auto mb-4"
+            alt="Sheron Customs Broker"
+            width={400}
+            height={400}
+            className="mx-auto h-[20vh]  mb-4"
           />
-          <h3 className="text-2xl font-semibold text-blue-gray-900">Sheran - Customs Brokers</h3>
+          <h3 className="text-2xl font-semibold text-blue-gray-900">Sheron  - Customs Brokers</h3>
           <p className="text-gray-600 mt-2">
             Sheran is a leading customs brokerage firm specializing in navigating the complexities of customs clearance. We provide expert advice and smooth handling of import/export processes to ensure compliance and efficiency.
           </p>
@@ -49,9 +49,9 @@ const Companies = () => {
           <Image
             src="https://res.cloudinary.com/mybazaar/image/upload/v1731050533/iconikq/amity_sharon_logo_2_zu2nex.png"
             alt="Amity Logistics and Customs Broker"
-            width={100}
-            height={100}
-            className="mx-auto mb-4"
+            width={400}
+            height={400}
+            className="mx-auto  h-[20vh] mb-4"
           />
           <h3 className="text-2xl font-semibold text-blue-gray-900">Amity - Logistics & Customs Broker</h3>
           <p className="text-gray-600 mt-2">
