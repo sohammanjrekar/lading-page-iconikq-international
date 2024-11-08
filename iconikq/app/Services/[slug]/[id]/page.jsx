@@ -48,14 +48,9 @@ const Page = ({ params }) => {
 
       <div className="min-h-screen  container w-[70vw] my-8 pt-20 mx-auto">
         <main className="mt-12">
-          {/* Header Section */}
-          <header className="mb-12 text-center">
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-myblue leading-tight mb-4">
-              {singleServiceData.name}
+            <h1 className=" text-center text-2xl sm:text-4xl font-extrabold text-myblue leading-tight mb-4">
+              {singleServiceData.title}
             </h1>
-            
-          </header>
-
           {/* Top Image */}
           {singleServiceData.image && (
             <div className="relative mb-12">
@@ -75,6 +70,9 @@ const Page = ({ params }) => {
           <div className="flex flex-col lg:flex-row lg:space-x-12">
             {/* Main Content */}
             <div className=" px-4 lg:px-0 mb-12 lg:mb-0">
+            <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-justify mb-8">
+                {singleServiceData.description}
+              </p>
               <p className="text-sm md:text-lg text-gray-700 leading-relaxed text-justify mb-8">
                 {singleServiceData.passage1}
               </p>
