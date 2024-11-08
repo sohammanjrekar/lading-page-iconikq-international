@@ -42,23 +42,23 @@ const Footer = () => {
             <div className="flex flex-col my-4">
               <p className="font-medium text-bold text-2xl text-myred">Company</p>
               <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight">
-                <a className="hover:text-myred" href="#">About</a>
-                <a className="hover:text-myred" href="#">Meet The Team</a>
-                <a className="hover:text-myred" href="#">History</a>
-                <a className="hover:text-myred" href="#">Careers</a>
+                <Link className="hover:text-myred" href="/About">About</Link>
+                <Link className="hover:text-myred" href="/Faq">FAQ</Link>
+                <Link className="hover:text-myred" href="/Media">Media</Link>
+                <Link className="hover:text-myred" href="/Blog">Blogs</Link>
               </nav>
             </div>
 
             {/* Services Section */}
             <div className="flex flex-col my-4">
               <p className="font-medium text-bold text-2xl text-myred">Services</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight ">
-                <a className="hover:text-myred" href="#">Transportation</a>
-                <a className="hover:text-myred" href="#">Warehousing</a>
-                <a className="hover:text-myred" href="#">Freight Forwarding</a>
-                <a className="hover:text-myred" href="#">Inventory Management</a>
-                <a className="hover:text-myred" href="#">Supply Chain Consulting</a>
-                <a className="hover:text-myred" href="#">AEO Consultants</a>
+              <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight">
+                <Link className="hover:text-myred" href="/services/transportation">Transportation</Link>
+                <Link className="hover:text-myred" href="/services/warehousing">Warehousing</Link>
+                <Link className="hover:text-myred" href="/services/freight-forwarding">Freight Forwarding</Link>
+                <Link className="hover:text-myred" href="/services/inventory-management">Inventory Management</Link>
+                <Link className="hover:text-myred" href="/services/supply-chain-consulting">Supply Chain Consulting</Link>
+                <Link className="hover:text-myred" href="/services/aeo-consultants">AEO Consultants</Link>
               </nav>
             </div>
 
@@ -68,7 +68,6 @@ const Footer = () => {
               <nav className="flex flex-col mt-4 space-y-2 text-md text-mylight">
                 <Link className="hover:text-myred" href="/Privacy">Privacy Policy</Link>
                 <Link className="hover:text-myred" href="/Terms">Terms & Conditions</Link>
-               
                 <Link className="hover:text-myred" href="/Accessibility">Accessibility</Link>
               </nav>
             </div>
@@ -78,7 +77,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="px-8 py-3 mt-10 flex flex-col  sm:flex-row flex-wrap justify-center sm:justify-between items-center shadow-2xl bg-myblue shadow-white">
+      <div className="px-8 py-3 mt-10 flex flex-col sm:flex-row flex-wrap justify-center sm:justify-between items-center shadow-2xl bg-myblue shadow-white">
         <div className="text-[2vh] md:text-sm text-bold my-4 mx-2 text-gray-300">
           © 2024 <span className="text-myred">ICONIKQ</span>. All Rights Reserved.
         </div>
