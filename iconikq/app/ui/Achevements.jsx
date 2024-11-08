@@ -52,7 +52,7 @@ const Achievements = () => {
                 alt={achievement.title}
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-black opacity-30"></div>
+              <div className="absolute inset-0 bg-black opacity-10"></div>
               <div className="absolute bottom-0 p-6 bg-gradient-to-t from-black to-transparent w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h4 className="text-white text-2xl font-semibold">
                   {achievement.title}
