@@ -22,16 +22,20 @@ const SocialButtons = () => {
 
       {/* Twitter Button */}
       <Tippy content="Twitter" animation="fade">
+          <Link href="https://www.youtube.com/@ICONIKQINTERNATIONAL">
         <button className="bg-white border-2 border-blue-400 text-blue-400 w-10 h-10 rounded-full transition-transform transform hover:-translate-y-3 hover:bg-blue-400 hover:text-white duration-500">
           <FontAwesomeIcon icon={faTwitter} size="x" />
         </button>
+        </Link>
       </Tippy>
 
       {/* LinkedIn Button */}
       <Tippy content="LinkedIn" animation="fade">
+      <Link href="https://www.linkedin.com/company/iconikqinternational.com">
         <button className="bg-white border-2 border-blue-500 text-blue-500 w-10 h-10 rounded-full transition-transform transform hover:-translate-y-3 hover:bg-blue-500 hover:text-white duration-500">
           <FontAwesomeIcon icon={faLinkedinIn} size="x" />
         </button>
+        </Link>
       </Tippy>
     </div>
   );

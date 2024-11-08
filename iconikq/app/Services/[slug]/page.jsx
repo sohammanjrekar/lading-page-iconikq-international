@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useServicesStore } from "../../store/servicesStore";
+import Button from "../../ui/Button";
 
 const CategoryPage = ({ params }) => {
   const { slug } = params; // Category slug from the URL
@@ -89,7 +90,7 @@ const CategoryPage = ({ params }) => {
                         ? `${card.description.slice(0, 200)}...`
                         : card.description}
                     </p>
-                    {/* <Button text="View Details" href={`/Services/${card.categoryslug}/${card.id}`}  /> */}
+                    <Button text="View Details" href={`/Services/${card.categoryslug}/${card.id}`}  />
                   </div>
                 </div>
               </div>
