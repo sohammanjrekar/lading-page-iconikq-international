@@ -17,7 +17,7 @@ const Companies = () => {
         {/* IconikQ (Freight Forwarding) */}
         <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
           <Image
-            src="https://res.cloudinary.com/mybazaar/image/upload/v1731050860/iconikq/logo_dt9v6c.png"
+            src="https://res.cloudinary.com/mybazaar/image/upload/v1731051498/iconikq/WhatsApp_Image_2024-11-08_at_13.07.41_6c6cea6d_l7tuwv.jpg"
             alt="Iconikq"
             width={400}
             height={400}
